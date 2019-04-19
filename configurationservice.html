@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>配置服务</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/configurationservice.js"></script>
+    <script src="https://cdn.bootcss.com/FileSaver.js/2014-11-29/FileSaver.js"></script>
+    <link href="css/configurationservice.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="pz">
+        <input type="text" class="txt" id="data" placeholder="请按不同功能输入参数，例如fin.SC300001(包.模块); fin.SC300001.xml(包.配置文件名)" />
+        <input type="button" class="btn" value="测试请求(form格式)" id="btn" />
+        <ul id="cmd">
+            <li class="p1">历史请求参数</li>
+            <li><div id="get"></div></li>
+            <li><input type="button" class="btn" id="p1" value="保存" /> </li>
+            <li class="p1">返回结果</li>
+            <li><textarea class="textarea1" id="get2"></textarea></li>
+        </ul>
+        <br />
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>历史问题</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/no-problem.js"></script>
+    <link href="css/no-problem-css.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="problem">
+        <ul>
+            <li class="problem--top">
+                <span class="problem--top__left">已解决问题</span>
+                <input type="text" placeholder="标题关键字" class="keyword">
+                <!--<input type="submit" value="搜索" class="search">-->
+                <span class="problem--top__right">日期: <input type="date" class="data" id="data"><button>搜索</button></span>
+            </li>
+            <li class="li">
+                <span class="number">序号</span>
+                <span class="title">标题</span>
+                <span class="present" id="introducer">提出人
+                    <b class="introducer b">全部</b>
+                    <b class="introducer b">0</b>
+                    <b class="introducer b">1</b>
+                </span>
+                <span>提出时间</span>
+                <span>提交时间</span>
+                <span class="present" id="receiver">受理人
+                    <b class="receiver b">全部</b>
+                    <b class="receiver b">黄金时代</b>
+                    <b class="receiver b">丝黛芬妮</b>
+                    <!--<b class="receiver b">欧舒丹</b>-->
+                    <!--<b class="receiver b">摸金符和</b>-->
+                </span>
+                <span class="present" id="acceptor">验收人
+                    <b class="acceptor b">全部</b>
+                    <b class="acceptor b">是</b>
+                    <b class="acceptor b">否</b>
+                    <!--<b class="acceptor b">4</b>-->
+                    <!--<b class="acceptor b">5</b>-->
+                </span>
+                <span>是否验收</span>
+                <span>验收时间</span>
+                <span>是否提交知识库</span>
+            </li>
+            <!--<li class="datas">-->
+                <!--<span class="number">1</span>-->
+                <!--<span class="caption"><a href="update.html">11651566adasda666666636asdad56r5ghfyhrtty65uhy111111116541g651642</a></span>-->
+                <!--<span>12</span>-->
+                <!--<span>2019.3.6</span>-->
+                <!--<span>12</span>-->
+                <!--<span>12</span>-->
+                <!--<span>12</span>-->
+                <!--<span>否</span>-->
+                <!--<span>2019.3.6</span>-->
+                <!--<input type="submit" class="submit">-->
+            <!--</li>-->
+        </ul>
+        <ul id="ul"></ul>
+    </div>
+    <ul id="select">
+
+    </ul>
+    <div id="box">
+        <ul class="pagination" id="pagination"></ul>
+        <input type="text" id="txt03" />
+        <input type="button" id="btn04" value="跳转" />
+    </div>
+</body>
+</html>

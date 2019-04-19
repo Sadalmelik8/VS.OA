@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/servicelogs.js"></script>
+    <link rel="stylesheet" href="css/public.css">
+    <link href="css/servicelogs-css.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="service">
+       <div class="service--top">
+           <input id="flush" type="button" value="刷新 " class="btn-info">
+           <h3 class="top">服务列表</h3>
+           <input type="text" class="search" placeholder="搜索服务" id="seek">
+           <button id="search">搜索</button>
+       </div>
+        <span class="span-success">序号</span>
+        <span id="message">服务名称</span>
+        <label class="label-success" id="label-success">服务状态</label>
+        <span class="span-success" id="control">服务控制</span>
+        <ul id="ul1">
+        </ul>
+    </div>
+    <div id="box">
+        <ul class="pagination" id="pagination"></ul>
+        <input type="text" id="txt03" />
+        <input type="button" id="btn04" value="跳转" />
+    </div>
+</body>
+</html>
+

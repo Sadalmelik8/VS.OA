@@ -1,0 +1,65 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../img/download.jpg');
+}
+
+.user {
+    width: 280px;
+    height: 220px;
+    border: 0px black inset;
+    border-radius: 5px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.hand {
+    border-bottom: 1px #808080 inset;
+    width: 280px;
+    height: 50px;
+}
+
+    .hand h4 {
+        line-height: 50px;
+    }
+
+.user span {
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.pin {
+    padding-left: 2px
+}
+
+.user label {
+    border-right: 1px black solid;
+    background-color: #eae0e0;
+}
+
+.user input {
+    border: none;
+    line-height: 12px;
+    margin-top: 25px;
+    color: #808080;
+    outline: medium;
+}
+
+
+#btn {
+    background-color: #25a8d3;
+    width: 210px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+}

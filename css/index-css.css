@@ -1,0 +1,171 @@
+﻿
+body {
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*div {
+    float: left;
+}*/
+
+.left {
+    height: 860px;
+    width: 260px;
+    background-color: rgba(45, 159, 203, 0.92);
+}
+
+.top {
+    width: 1920px;
+    height: 65px;
+    background-color: rgba(45, 159, 203, 0.92);
+}
+
+    .top span {
+        color: white;
+        font-size: 20px;
+        line-height: 65px;
+        margin-left: 30px;
+    }
+
+    .top a {
+        color: white;
+        line-height: 65px;
+        margin-left: 20px;
+    }
+
+#messge {
+    margin-left: 1400px;
+}
+
+table tr td {
+}
+
+.tree {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+    background-color: rgba(45, 159, 203, 0.92);
+}
+    /*隐藏input*/
+    .tree li input {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+        z-index: 2;
+        cursor: pointer;
+        height: 1em;
+        width: 1em;
+        top: 0;
+    }
+    /*所有菜单项设置统一样式*/
+    .tree li {
+        position: relative;
+        list-style: none;
+    }
+    /*一级菜单加下边线*/
+    .tree > li {
+        border-bottom: 1px solid black;
+    }
+    /*给有子菜单的菜单项添加背景图标*/
+    .tree li label {
+        max-width: 999px;
+        cursor: pointer;
+        display: block;
+        margin: 0 0 0 -50px;
+        padding: 15px 10px 15px 70px;
+        /*background: url(img/xia.png) no-repeat right center;*/
+        background-position: 95% 50%;
+        /*文本不换行*/
+        white-space: nowrap;
+        overflow: hidden;
+        /*多余内容以...表示*/
+        text-overflow: ellipsis;
+    }
+
+        /*鼠标悬停 菜单特效*/
+        .tree li label:hover, li label:focus {
+            background-color: #a7a7a7;
+            color: #fff;
+        }
+    /*清除所有展开的子菜单的display*/
+    .tree li input + ol {
+        display: none;
+    }
+    /*当input被选中时，给所有展开的子菜单设置样式*/
+    .tree input:checked + ol {
+        padding-left: 18px;
+        height: auto;
+        display: block;
+    }
+
+    /*.tree input:checked + ol > li {
+                    height: auto;
+                }*/
+    /*末层菜单为A标签，设置样式*/
+    .tree li.file a {
+        margin: 0 -10px 0 -50px;
+        padding: 15px 20px 15px 70px;
+        text-decoration: none;
+        display: block;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+        /*鼠标悬停 字体特效*/
+        .tree li.file a:hover, li.file a:focus {
+            background-color: #a7a7a7;
+            color: black;
+        }
+    /*不同层级的菜单字体大小不同*/
+    .tree .folderOne {
+        font-size: 18px;
+    }
+
+    .tree .folderTwo {
+        font-size: 16px;
+    }
+
+    .tree .folderThree {
+        font-size: 14px;
+    }
+
+
+.center {
+    width: 1628px;
+    height: 860px;
+}
+
+    .center iframe {
+        height: 855px;
+        width: 100%;
+        border: none;
+    }
+
+
+    table td {
+        vertical-align: top
+    }
+
+/*.td {
+    background-color: #3da7cf;
+}*/
+
+/*#hide {
+    text-decoration: none;
+    color: #4cff00;
+}*/
+
+/*.left {
+    width: 10px;
+}
+
+    .left:hover {
+        width: 260px;
+    }*/
+#hide {
+    width: 30px;
+    height: 30px;
+}

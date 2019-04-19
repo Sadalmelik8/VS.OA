@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日志</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link href="css/log-css.css" rel="stylesheet" />
+    <script src="js/log.js"></script>
+</head>
+<body>
+    <div class="log">
+        <div class="log--header">
+            <span>当前服务:</span>
+            <span class="log--header__serve" id="service"></span>
+            <span>日期：</span>
+            <input type="date" id="data">
+        </div>
+        <div class="log--title">
+            <span class="log--title__left">时间</span>
+            <span class="log--title__middle" id="log--title__name">日志名称</span>
+            <span class="log--title__right">日志文件内容</span>
+        </div>
+        <div class="log--icon">
+            <ul id="ul"></ul>
+            <textarea class="log--icon__icon" id="icon"></textarea>
+        </div>
+    </div>
+</body>
+</html>
