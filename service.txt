@@ -1,0 +1,5 @@
+#查询所有服务信息
+#服务号：webadmin_00005
+#参数：{svr:all}-----all为获取全部服务
+#返回：json,
+#ret={svr:，status：}status为服务运行状态（0/1）
