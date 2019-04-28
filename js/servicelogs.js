@@ -9,7 +9,7 @@ function LoadFunction() {
 function erryFunction() {
     //alert('error')
 }
-//获取cookkie
+//获取cookie
 function GetCookie(key) {
     var aCookie = document.cookie.split("; ");
     for (var i = 0; i < aCookie.length; i++) {
@@ -27,42 +27,27 @@ let redirect = function () {
         location.href = "insert.html?age=" + oltid;
     });
 };
-//获取fsession
-var Fsession = function () {
-    var aCookie = GetCookie('wytSession');
-    session = eval('(' + aCookie + ')');
-    
-    var fsession = session.fsession;
-    //if (session) {
-    //    if (session.fsession == "undefined") {
-    //        window.open('login.html', '_self');
-    //        return;
-    //    }
-    //}
-    //else {
-    //    window.open('login.html', '_self');
-    //    return;
-    //}
-    var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
-    var URL = "/webadmin/?" + s;
-    var form = new FormData();
-    form.append("data", (JSON.stringify(_template1)));
-}
-//获取data
-function buildJson(mode) {
-    var std = JSON.stringify({});
-    var stdTemplate = JSON.parse(std);
-    stdTemplate.svr = 'all';
-    stdTemplate.mode = mode;
-    return stdTemplate;
-}
 //获取后台服务列表
 var call = function () {
-    Fsession();
+    var aCookie = GetCookie('wytSession');
+    session = eval('(' + aCookie + ')');
+    if (session) {
+        if (session.fsession == "undefined") {
+            window.open('login.html', '_self');
+            return;
+        }
+    }
+    else {
+        window.open('login.html', '_self');
+        return;
+    }
+    var fsession = session.fsession;
+    var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
+    var URL = "/webadmin/?" + s;
     $.ajax({
-        type: "post", //请求的方式，也有get请求
+        type: "get", //请求的方式，也有get请求
         url: URL,
-        data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+        data: {},//data是传给后台的字段，后台需要哪些就传入哪些
         dataType: "json", //json格式，后台返回的数据为json格式的。
         beforeSend: LoadFunction, //加载执行方法
         error: erryFunction,  //错误执行方法
@@ -124,7 +109,7 @@ var paginationed = function () {
                         con += "<li>"
                             + "<span class='span-success'>" + (indexs + 1) + "</span>"
                             + "<span class='message'>" + msg.ret.svr + "</span>"
-                            + "<lable class='label-success'>" + msg.ret.status + "</lable>"
+                            + "<lable class='label-success'>" + msg.ret.sts + "</lable>"
                             + "<button></button>" + "<hr/>"
                             + "</li>";
                         $("#ul1").html(con); //把内容入到这个div中
@@ -149,7 +134,7 @@ var paginationed = function () {
                                 con += "<li>"
                                     + "<span class='span-success'>" + (indexs + 1) + "</span>"
                                     + "<span class='message'>" + msg.ret.svr + "</span>"
-                                    + "<lable class='label-success'>" + msg.ret.status + "</lable>"
+                                    + "<lable class='label-success'>" + msg.ret.sts + "</lable>"
                                     + "<button></button>" + "<hr/>"
                                     + "</li>";
                                 $("#ul1").html(con); //把内容入到这个div中
@@ -191,7 +176,7 @@ var paginationed = function () {
                         con += "<li>"
                             + "<span class='span-success'>" + (indexs + 1) + "</span>"
                             + "<span class='message'>" + msg.ret.svr + "</span>"
-                            + "<lable class='label-success'>" + msg.ret.status + "</lable>"
+                            + "<lable class='label-success'>" + msg.ret.sts + "</lable>"
                             + "<button></button>" + "<hr/>"
                             + "</li>";
                         $("#ul1").html(con); //把内容入到这个div中
@@ -216,7 +201,7 @@ var paginationed = function () {
                                 con += "<li>"
                                     + "<span class='span-success'>" + (indexs + 1) + "</span>"
                                     + "<span class='message'>" + msg.ret.svr + "</span>"
-                                    + "<lable class='label-success'>" + msg.ret.status + "</lable>"
+                                    + "<lable class='label-success'>" + msg.ret.sts + "</lable>"
                                     + "<button></button>" + "<hr/>"
                                     + "</li>";
                                 $("#ul1").html(con); //把内容入到这个div中
@@ -299,6 +284,10 @@ var control = function () {
                 lable[vid[1]].innerText = 1;
                 btn[vid[1]].innerHTML = "启动";
                 btn[vid[1]].style.backgroundColor = "green";
+                $.ajax({
+
+
+                })
             } else /*(lable[vid[1]].innerText.trim() == 1)*/ {
                 lable[vid[1]].innerText = 0;
                 btn[vid[1]].innerHTML = "停止";
@@ -318,6 +307,21 @@ $(document).ready(function () {
     $("#search").click(function () {
         Fsession();
         var seek = document.getElementById("seek").value;
+        var aCookie = GetCookie('wytSession');
+        session = eval('(' + aCookie + ')');
+        if (session) {
+            if (session.fsession == "undefined") {
+                window.open('login.html', '_self');
+                return;
+            }
+        }
+        else {
+            window.open('login.html', '_self');
+            return;
+        }
+        var fsession = session.fsession;
+        var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
+        var URL = "/webadmin/?" + s;
         $.ajax({
             type: "get", //请求的方式，也有get请求
             url: URL,
@@ -334,15 +338,14 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result;//返回的result为json格式的数据
                 $.each(dataObj, function (index, item) {
-                    if (item.age == seek) {
+                    if (item.ret.svr == seek) {
                         location.href = "insert.html?age=" + seek;
                         return false;
                     }
-                    if (item.age != seek && dataObj.length == (index + 1)) {
+                    if (tem.ret.svr != seek && dataObj.length == (index + 1)) {
                         alert("无此服务");
                     }
                 });
-                //$("#sss").html(con); //把内容入到这个div中即完成
             }
         })
     })

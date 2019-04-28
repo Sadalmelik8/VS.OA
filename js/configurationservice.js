@@ -1,12 +1,60 @@
-﻿$(document).ready(function () {
+﻿//获取fsession
+var Fsession = function () {
+    var aCookie = GetCookie('wytSession');
+    session = eval('(' + aCookie + ')');
+    if (session) {
+        if (session.fsession == "undefined") {
+            window.open('login.html', '_self');
+            return;
+        }
+    }
+    else {
+        window.open('login.html', '_self');
+        return;
+    }
+}
+//获取cookkie
+function GetCookie(key) {
+    var aCookie = document.cookie.split("; ");
+    for (var i = 0; i < aCookie.length; i++) {
+        var aCrumb = aCookie[i].split("=");
+        if (key == aCrumb[0]) {
+            return unescape(aCrumb[1]);
+        }
+    }
+}
+$(document).ready(function () {
+    Fsession();
+})
+$(document).ready(function () {
     var datas = "";
     $('#btn').click(function () {
         var data = document.getElementById('data').value;
+        var s = "";
         if (data != "") {
             datas += data + "<br/>";
-            //$('#get').html(datas);
             document.getElementById('get').innerHTML = datas;
-
+            var t = new Date().getTime();
+            var URL = "/finservices/?" + data + "&t=" + t;
+            $.ajax({
+                type: "get",
+                url: URL,
+                cache: true,
+                processData: false,
+                contentType: false,
+                success: function (msg) {
+                    try {
+                        s = JSON.stringify(msg);
+                        $("#get2").val(s);
+                        alert(s);
+                    }
+                    catch (e) {
+                        alert(e);
+                    }
+                },
+                erryFunction() {
+                }
+            });
         }
     });
     $('#p1').click(function () {
