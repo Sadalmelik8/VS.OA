@@ -108,6 +108,7 @@ let saved = function (fsession) {
                     //    alert("更新失败");
                     //}
                     console.log(1);
+
                 },
                 error: function () {
                     alert("请求失败");
