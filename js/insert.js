@@ -8,147 +8,11 @@ function GetCookie(key) {
         }
     }
 }
-//点击保存
-let save = function () {
 
-        //如果有数据为空
-        if (package.value === '' ||
-            module.value === '' ||
-            service.value === '' ||
-            state.value === '' ||
-            log.value === '' ||
-            explain.value === '' ||
-            ago.value === '' ||
-            later.value === '' ||
-            whether.value === '' ||
-            code.value === '') {
-            alert("请把信息填完整");
-        }
-        //没有数据为空，则上传
-        else {
-            //获取fsession
-            var aCookie = GetCookie('wytSession');
-            session = eval('(' + aCookie + ')');
-            if (session) {
-                if (session.fsession == "undefined") {
-                    window.open('login.html', '_self');
-                    return;
-                }
-            }
-            else {
-                window.open('login.html', '_self');
-                return;
-            }
-            fsession = session.fsession;
-            _template1 = buildJson();
-            var s = ("svr=webadmin_00002" + "&fsession=" + fsession);
-            var URL = "/webadmin/?" + s;
-            var form = new FormData();
-            form.append("data", (JSON.stringify(_template1)));
-            $.ajax({
-                type: 'post',
-                url: URL,
-                contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
-                data: form,
-                cache: false,
-                processData: false,
-                contentType: false,
-                dataType: "json",//期待返回的数据类型
-                success: function () {
-                    //if (id === 1) {
-                    //    alert('新增成功！')
-                    //} else {
-                    //    alert("新增失败");
-                    //}
-                    console.log(1);
-                },
-                error: function () {
-                    alert("请求失败");
-                }
-            });
-            function buildJson() {
-                var std = JSON.stringify({});
-                var stdTemplate = JSON.parse(std);
-                stdTemplate.pg = package.value;
-                stdTemplate.md = module.value;
-                stdTemplate.svr = service.value;
-                stdTemplate.sts = state.value;
-                stdTemplate.log = log.value;
-                stdTemplate.note = explain.value;
-                stdTemplate.after = ago.value;
-                stdTemplate.before = later.value;
-                stdTemplate.content = code.value;
-                return stdTemplate;
-            }
-    }
-};
 
 //点击更新
 let saved = function () {
-        //如果有数据为空
-        if (package.value === '' ||
-            module.value === '' ||
-            service.value === '' ||
-            state.value === '' ||
-            log.value === '' ||
-            explain.value === '' ||
-            ago.value === '' ||
-            later.value === '' ||
-            whether.value === '' ||
-            code.value === '') {
-            alert("请把信息填完整");
-        }
-        //没有数据为空，则上传
-        else {
-            //获取fsession
-            var aCookie = GetCookie('wytSession');
-            session = eval('(' + aCookie + ')');
-            if (session) {
-                if (session.fsession == "undefined") {
-                    window.open('login.html', '_self');
-                    return;
-                }
-            }
-            else {
-                window.open('login.html', '_self');
-                return;
-            }
-            fsession = session.fsession;
-            _template1 = buildJson();
-            var s = ("svr=webadmin_00006" + "&fsession=" + fsession);
-            var URL = "/webadmin/?" + s;
-            var form = new FormData();
-            form.append("data", (JSON.stringify(_template1)));
-            $.ajax({
-                type: 'post',
-                url: URL,
-                contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
-                data: form,
-                cache: false,
-                processData: false,
-                contentType: false,
-                dataType: "json",//期待返回的数据类型
-                success: function () {
-                    //if (id === 1) {
-                    //    alert('更新成功！')
-                    //} else {
-                    //    alert("更新失败");
-                    //}
-                    console.log(1);
 
-                },
-                error: function () {
-                    alert("请求失败");
-                }
-            });
-            function buildJson() {
-                var std = JSON.stringify({});
-                var stdTemplate = JSON.parse(std);
-                stdTemplate.svr = service.value;
-                stdTemplate.content = code.value;
-                return stdTemplate;
-            }
-    }
 };
 $(document).ready(function () {
     //获取fsession
@@ -170,8 +34,78 @@ $(document).ready(function () {
     //获取url中"?"符后的字串
     let oltid = url.substr(url.indexOf("=") + 1);
     if (oltid == '') {
+        //保存
         $("#bottom").click(function () {
-            save();
+            //如果有数据为空
+            if (package.value === '' ||
+                module.value === '' ||
+                service.value === '' ||
+                state.value === '' ||
+                log.value === '' ||
+                explain.value === '' ||
+                ago.value === '' ||
+                later.value === '' ||
+                whether.value === '' ||
+                code.value === '') {
+                alert("请把信息填完整");
+            }
+            //没有数据为空，则上传
+            else {
+                //获取fsession
+                var aCookie = GetCookie('wytSession');
+                session = eval('(' + aCookie + ')');
+                if (session) {
+                    if (session.fsession == "undefined") {
+                        window.open('login.html', '_self');
+                        return;
+                    }
+                }
+                else {
+                    window.open('login.html', '_self');
+                    return;
+                }
+                fsession = session.fsession;
+                _template1 = buildJson();
+                var s = ("svr=webadmin_00002" + "&fsession=" + fsession);
+                var URL = "/webadmin/?" + s;
+                var form = new FormData();
+                form.append("data", (JSON.stringify(_template1)));
+                $.ajax({
+                    type: 'post',
+                    url: URL,
+                    contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
+                    data: form,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",//期待返回的数据类型
+                    success: function () {
+                        //if (id === 1) {
+                        //    alert('新增成功！')
+                        //} else {
+                        //    alert("新增失败");
+                        //}
+                        console.log(1);
+                    },
+                    error: function () {
+                        alert("请求失败");
+                    }
+                });
+                function buildJson() {
+                    var std = JSON.stringify({});
+                    var stdTemplate = JSON.parse(std);
+                    stdTemplate.pg = package.value;
+                    stdTemplate.md = module.value;
+                    stdTemplate.svr = service.value;
+                    stdTemplate.sts = state.value;
+                    stdTemplate.log = log.value;
+                    stdTemplate.note = explain.value;
+                    stdTemplate.after = ago.value;
+                    stdTemplate.before = later.value;
+                    stdTemplate.content = code.value;
+                    return stdTemplate;
+                }
+            }
         });
         state.value = 1;
         log.value = 1;
@@ -183,8 +117,72 @@ $(document).ready(function () {
         })
     }
     if (oltid != '') {
+        //更新
         $("#bottom").click(function () {
-            saved();
+            //如果有数据为空
+            if (package.value === '' ||
+                module.value === '' ||
+                service.value === '' ||
+                state.value === '' ||
+                log.value === '' ||
+                explain.value === '' ||
+                ago.value === '' ||
+                later.value === '' ||
+                whether.value === '' ||
+                code.value === '') {
+                alert("请把信息填完整");
+            }
+            //没有数据为空，则上传
+            else {
+                //获取fsession
+                var aCookie = GetCookie('wytSession');
+                session = eval('(' + aCookie + ')');
+                if (session) {
+                    if (session.fsession == "undefined") {
+                        window.open('login.html', '_self');
+                        return;
+                    }
+                }
+                else {
+                    window.open('login.html', '_self');
+                    return;
+                }
+                fsession = session.fsession;
+                _template1 = buildJson();
+                var s = ("svr=webadmin_00006" + "&fsession=" + fsession);
+                var URL = "/webadmin/?" + s;
+                var form = new FormData();
+                form.append("data", (JSON.stringify(_template1)));
+                $.ajax({
+                    type: 'post',
+                    url: URL,
+                    contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
+                    data: form,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",//期待返回的数据类型
+                    success: function () {
+                        //if (id === 1) {
+                        //    alert('更新成功！')
+                        //} else {
+                        //    alert("更新失败");
+                        //}
+                        console.log(1);
+
+                    },
+                    error: function () {
+                        alert("请求失败");
+                    }
+                });
+                function buildJson() {
+                    var std = JSON.stringify({});
+                    var stdTemplate = JSON.parse(std);
+                    stdTemplate.svr = service.value;
+                    stdTemplate.content = code.value;
+                    return stdTemplate;
+                }
+            }
         });
         let keep = document.getElementById('bottom');
         let package = document.getElementById("package");
