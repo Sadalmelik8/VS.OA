@@ -282,12 +282,17 @@ var control = function () {
         $("#" + btnid).click(function (e) {
             var vid = e.target.id.split('btn');
             if (lable[vid[1]].innerText.trim() == 0) {
-                var data = li[i].span[1];
+                var data = li[i].span[2*i+1].innerHTML;
                 _template1 = buildJson(data);
                 var s = ("svr=webadmin_00007" + "&fsession=" + fsession);
                 var URL = "/webadmin/?" + s;
                 var form = new FormData();
                 form.append("data", (JSON.stringify(_template1)));
+                //var data;
+                //var ul = document.getElementById('ul1');
+                //var li = ul.getElementsByTagName('li');
+                //var span = li[0].getElementsByTagName('span');
+                //console.log(span[0].innerText);
                 $.ajax({
                     type: "post", //请求的方式，也有get请求
                     url: URL,
@@ -320,7 +325,7 @@ var control = function () {
                     return stdTemplate;
                 }
             } else /*(lable[vid[1]].innerText.trim() == 1)*/ {
-                var data = li[i].span[1];
+                var data = li[i].span[2 * i + 1].innerHTML;
                 _template1 = buildJson(data);
                 var s = ("svr=webadmin_00007" + "&fsession=" + fsession);
                 var URL = "/webadmin/?" + s;
