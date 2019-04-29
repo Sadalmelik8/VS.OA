@@ -266,97 +266,32 @@ var control = function () {
     var li = ul.getElementsByTagName("li");
     var btn = ul.getElementsByTagName("button");
     var lable = ul.getElementsByTagName("lable");
-    var span = ul.getElementsByTagName("span");
     for (var i = 0; i < li.length; i++) {
-        if (lable[i].innerText.trim() == 1) {
+        if (lable[i].innerText.trim() == 0) {
             btn[i].innerHTML = "停止";
             btn[i].style.backgroundColor = "red";
         }
-        if (lable[i].innerText.trim() == 0) {
+        if (lable[i].innerText.trim() == 1) {
             btn[i].innerHTML = "启动";
             btn[i].style.backgroundColor = "green";
         }
-        li[i].id = "li" + i;
         btn[i].id = "btn" + i;
+        lable[i].id = "lable" + i;
         var btnid = btn[i].id;
         $("#" + btnid).click(function (e) {
             var vid = e.target.id.split('btn');
             if (lable[vid[1]].innerText.trim() == 0) {
-                var data = li[i].span[1];
-                _template1 = buildJson(data);
-                var s = ("svr=webadmin_00007" + "&fsession=" + fsession);
-                var URL = "/webadmin/?" + s;
-                var form = new FormData();
-                form.append("data", (JSON.stringify(_template1)));
+                lable[vid[1]].innerText = 1;
+                btn[vid[1]].innerHTML = "启动";
+                btn[vid[1]].style.backgroundColor = "green";
                 $.ajax({
-                    type: "post", //请求的方式，也有get请求
-                    url: URL,
-                    contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
-                    data: form,
-                    cache: false,
-                    processData: false,
-                    contentType: false,
-                    data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-                    dataType: "json", //json格式，后台返回的数据为json格式的。
-                    success: function () {
-                        if (id === 1) {
-                            alert('已启动服务！')
-                            lable[vid[1]].innerText = 1;
-                            btn[vid[1]].innerHTML = "停止";
-                            btn[vid[1]].style.backgroundColor = "red";
-                        } else {
-                            alert("启动失败");
-                        }
-                    },
-                    error: function () {
-                        alert("请求失败");
-                    }
+
+
                 })
-                function buildJson(data) {
-                    var std = JSON.stringify({});
-                    var stdTemplate = JSON.parse(std);
-                    stdTemplate.svr = data;
-                    stdTemplate.status = '1';
-                    return stdTemplate;
-                }
             } else /*(lable[vid[1]].innerText.trim() == 1)*/ {
-                var data = li[i].span[1];
-                _template1 = buildJson(data);
-                var s = ("svr=webadmin_00007" + "&fsession=" + fsession);
-                var URL = "/webadmin/?" + s;
-                var form = new FormData();
-                form.append("data", (JSON.stringify(_template1)));
-                $.ajax({
-                    type: "post", //请求的方式，也有get请求
-                    url: URL,
-                    contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
-                    data: form,
-                    cache: false,
-                    processData: false,
-                    contentType: false,
-                    data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-                    dataType: "json", //json格式，后台返回的数据为json格式的。
-                    success: function () {
-                        if (id === 1) {
-                            alert('已停止服务！')
-                            lable[vid[1]].innerText = 0;
-                            btn[vid[1]].innerHTML = "启动";
-                            btn[vid[1]].style.backgroundColor = "green";
-                        } else {
-                            alert("停止失败");
-                        }
-                    },
-                    error: function () {
-                        alert("请求失败");
-                    }
-                })
-                function buildJson(data) {
-                    var std = JSON.stringify({});
-                    var stdTemplate = JSON.parse(std);
-                    stdTemplate.svr = data;
-                    stdTemplate.status = '0';
-                    return stdTemplate;
-                }
+                lable[vid[1]].innerText = 0;
+                btn[vid[1]].innerHTML = "停止";
+                btn[vid[1]].style.backgroundColor = "red";
             }
         })
     }
