@@ -9,7 +9,7 @@ function GetCookie(key) {
     }
 }
 //点击保存
-let save = function (fsession) {
+let save = function () {
     $("#bottom").click(function () {
         //如果有数据为空
         if (package.value === '' ||
@@ -26,6 +26,20 @@ let save = function (fsession) {
         }
         //没有数据为空，则上传
         else {
+            //获取fsession
+            var aCookie = GetCookie('wytSession');
+            session = eval('(' + aCookie + ')');
+            if (session) {
+                if (session.fsession == "undefined") {
+                    window.open('login.html', '_self');
+                    return;
+                }
+            }
+            else {
+                window.open('login.html', '_self');
+                return;
+            }
+            fsession = session.fsession;
             _template1 = buildJson();
             var s = ("svr=webadmin_00002" + "&fsession=" + fsession);
             var URL = "/webadmin/?" + s;
@@ -71,7 +85,7 @@ let save = function (fsession) {
 };
 
 //点击更新
-let saved = function (fsession) {
+let saved = function () {
     $("#bottom").click(function () {
         //如果有数据为空
         if (package.value === '' ||
@@ -88,6 +102,20 @@ let saved = function (fsession) {
         }
         //没有数据为空，则上传
         else {
+            //获取fsession
+            var aCookie = GetCookie('wytSession');
+            session = eval('(' + aCookie + ')');
+            if (session) {
+                if (session.fsession == "undefined") {
+                    window.open('login.html', '_self');
+                    return;
+                }
+            }
+            else {
+                window.open('login.html', '_self');
+                return;
+            }
+            fsession = session.fsession;
             _template1 = buildJson();
             var s = ("svr=webadmin_00006" + "&fsession=" + fsession);
             var URL = "/webadmin/?" + s;
@@ -145,7 +173,7 @@ $(document).ready(function () {
     //获取url中"?"符后的字串
     let oltid = url.substr(url.indexOf("=") + 1);
     if (oltid == '') {
-        save(fsession);
+        save();
         state.value = 1;
         log.value = 1;
         ago.value = 1;
@@ -156,7 +184,7 @@ $(document).ready(function () {
         })
     }
     if (oltid != '') {
-        saved(fsession);
+        saved();
         let keep = document.getElementById('bottom');
         let package = document.getElementById("package");
         let module = document.getElementById("module");
@@ -184,7 +212,7 @@ $(document).ready(function () {
         saved();
         $('#btn').click(function () {
             location.href = "log.html?age=" + oltid;
-        });        
+        });
         _template1 = buildJson(mode);
         var s = ("svr=webadmin_00001" + "&fsession=" + fsession);
         var URL = "/webadmin/?" + s;
