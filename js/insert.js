@@ -102,11 +102,12 @@ let saved = function (fsession) {
                 contentType: false,
                 dataType: "json",//期待返回的数据类型
                 success: function () {
-                    if (id === 1) {
-                        alert('更新成功！')
-                    } else {
-                        alert("更新失败");
-                    }
+                    //if (id === 1) {
+                    //    alert('更新成功！')
+                    //} else {
+                    //    alert("更新失败");
+                    //}
+                    console.log(1);
                 },
                 error: function () {
                     alert("请求失败");
