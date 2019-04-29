@@ -9,7 +9,7 @@ function GetCookie(key) {
     }
 }
 //点击保存
-let save = function () {
+let save = function (fsession) {
     $("#bottom").click(function () {
         //如果有数据为空
         if (package.value === '' ||
@@ -70,7 +70,7 @@ let save = function () {
 };
 
 //点击更新
-let saved = function () {
+let saved = function (fsession) {
     $("#bottom").click(function () {
         //如果有数据为空
         if (package.value === '' ||
@@ -142,7 +142,7 @@ $(document).ready(function () {
     //获取url中"?"符后的字串
     let oltid = url.substr(url.indexOf("=") + 1);
     if (oltid == '') {
-        save();
+        save(fsession);
         state.value = 1;
         log.value = 1;
         ago.value = 1;
@@ -153,7 +153,7 @@ $(document).ready(function () {
         })
     }
     if (oltid != '') {
-        saved();
+        saved(fsession);
         let keep = document.getElementById('bottom');
         let package = document.getElementById("package");
         let module = document.getElementById("module");
