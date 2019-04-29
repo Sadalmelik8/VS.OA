@@ -10,7 +10,7 @@ function GetCookie(key) {
 }
 //点击保存
 let save = function () {
-    $("#bottom").click(function () {
+
         //如果有数据为空
         if (package.value === '' ||
             module.value === '' ||
@@ -80,13 +80,11 @@ let save = function () {
                 stdTemplate.content = code.value;
                 return stdTemplate;
             }
-        }
-    });
+    }
 };
 
 //点击更新
 let saved = function () {
-    $("#bottom").click(function () {
         //如果有数据为空
         if (package.value === '' ||
             module.value === '' ||
@@ -150,8 +148,7 @@ let saved = function () {
                 stdTemplate.content = code.value;
                 return stdTemplate;
             }
-        }
-    });
+    }
 };
 $(document).ready(function () {
     //获取fsession
@@ -173,7 +170,9 @@ $(document).ready(function () {
     //获取url中"?"符后的字串
     let oltid = url.substr(url.indexOf("=") + 1);
     if (oltid == '') {
-        save();
+        $("#bottom").click(function () {
+            save();
+        });
         state.value = 1;
         log.value = 1;
         ago.value = 1;
@@ -184,7 +183,9 @@ $(document).ready(function () {
         })
     }
     if (oltid != '') {
-        saved();
+        $("#bottom").click(function () {
+            saved();
+        });
         let keep = document.getElementById('bottom');
         let package = document.getElementById("package");
         let module = document.getElementById("module");
