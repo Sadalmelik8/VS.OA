@@ -53,7 +53,7 @@ var call = function () {
         error: erryFunction,  //错误执行方法
         success: function (result) {
             dataObj = result; //返回的result为json格式的数据
-            age = dataObj.length;
+            age = dataObj.ret.length;
             $(document).ready(function () {
                 paginationed();
             })
@@ -104,12 +104,12 @@ var paginationed = function () {
                 a[i - 1].id = "a" + i;
                 var aid = a[i - 1].id;
                 //每页显示条数
-                $.each(dataObj, function (indexs, msg) {
+                $.each(dataObj.ret, function (indexs, msg) {
                     if (indexs < page) {
                         con += "<li>"
                             + "<span class='span-success'>" + (indexs + 1) + "</span>"
-                            + "<span class='message'>" + msg.ret.svr + "</span>"
-                            + "<lable class='label-success'>" + msg.ret.sts + "</lable>"
+                            + "<span class='message'>" + msg.svr + "</span>"
+                            + "<lable class='label-success'>" + msg.sts + "</lable>"
                             + "<button></button>" + "<hr/>"
                             + "</li>";
                         $("#ul1").html(con); //把内容入到这个div中
@@ -128,13 +128,13 @@ var paginationed = function () {
                                 li[i].className = "none";
                             }
                         }
-                        $.each(dataObj, function (indexs, msg) {
+                        $.each(dataObj.ret, function (indexs, msg) {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
                                 con += "<li>"
                                     + "<span class='span-success'>" + (indexs + 1) + "</span>"
-                                    + "<span class='message'>" + msg.ret.svr + "</span>"
-                                    + "<lable class='label-success'>" + msg.ret.sts + "</lable>"
+                                    + "<span class='message'>" + msg.svr + "</span>"
+                                    + "<lable class='label-success'>" + msg.sts + "</lable>"
                                     + "<button></button>" + "<hr/>"
                                     + "</li>";
                                 $("#ul1").html(con); //把内容入到这个div中
@@ -171,12 +171,12 @@ var paginationed = function () {
                 a[i - 1].id = "a" + i;
                 var aid = a[i - 1].id;
                 //每页显示条数
-                $.each(dataObj, function (indexs, msg) {
+                $.each(dataObj.ret, function (indexs, msg) {
                     if (indexs < page) {
                         con += "<li>"
                             + "<span class='span-success'>" + (indexs + 1) + "</span>"
-                            + "<span class='message'>" + msg.ret.svr + "</span>"
-                            + "<lable class='label-success'>" + msg.ret.sts + "</lable>"
+                            + "<span class='message'>" + msg.svr + "</span>"
+                            + "<lable class='label-success'>" + msg.sts + "</lable>"
                             + "<button></button>" + "<hr/>"
                             + "</li>";
                         $("#ul1").html(con); //把内容入到这个div中
@@ -195,13 +195,13 @@ var paginationed = function () {
                                 li[i].className = "none";
                             }
                         }
-                        $.each(dataObj, function (indexs, msg) {
+                        $.each(dataObj.ret, function (indexs, msg) {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
                                 con += "<li>"
                                     + "<span class='span-success'>" + (indexs + 1) + "</span>"
-                                    + "<span class='message'>" + msg.ret.svr + "</span>"
-                                    + "<lable class='label-success'>" + msg.ret.sts + "</lable>"
+                                    + "<span class='message'>" + msg.svr + "</span>"
+                                    + "<lable class='label-success'>" + msg.sts + "</lable>"
                                     + "<button></button>" + "<hr/>"
                                     + "</li>";
                                 $("#ul1").html(con); //把内容入到这个div中
@@ -223,13 +223,13 @@ var paginationed = function () {
         $("#btn04").click(function () {
             var txt03 = document.getElementById("txt03").value;
             if (txt03 <= Math.ceil(age / page)) {
-                $.each(dataObj, function (indexs, msg) {
+                $.each(dataObj.ret, function (indexs, msg) {
                     if (indexs >= page * (txt03 - 1) && indexs < page * txt03) {
                         // i = li.length - 1;
                         con += "<li>"
                             + "<span class='span-success'>" + (indexs + 1) + "</span>"
-                            + "<span class='message'>" + msg.ret.svr + "</span>"
-                            + "<lable class='label-success'>" + msg.ret.status + "</lable>"
+                            + "<span class='message'>" + msg.svr + "</span>"
+                            + "<lable class='label-success'>" + msg.status + "</lable>"
                             + "<button></button>" + "<hr/>"
                             + "</li>";
                         $("#ul1").html(con); //把内容入到这个div中
@@ -407,12 +407,12 @@ $(document).ready(function () {
             },
             success: function (result) {
                 dataObj = result;//返回的result为json格式的数据
-                $.each(dataObj, function (index, item) {
-                    if (item.ret.svr == seek) {
+                $.each(dataObj.ret, function (index, item) {
+                    if (item.svr == seek) {
                         location.href = "insert.html?age=" + seek;
                         return false;
                     }
-                    if (tem.ret.svr != seek && dataObj.length == (index + 1)) {
+                    if (item.svr != seek && dataObj.ret.length == (index + 1)) {
                         alert("无此服务");
                     }
                 });
