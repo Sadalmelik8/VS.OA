@@ -41,11 +41,12 @@ let save = function (fsession) {
                 contentType: false,
                 dataType: "json",//期待返回的数据类型
                 success: function () {
-                    if (id === 1) {
-                        alert('新增成功！')
-                    } else {
-                        alert("新增失败");
-                    }
+                    //if (id === 1) {
+                    //    alert('新增成功！')
+                    //} else {
+                    //    alert("新增失败");
+                    //}
+                    console.log(1);
                 },
                 error: function () {
                     alert("请求失败");
@@ -183,21 +184,7 @@ $(document).ready(function () {
         saved();
         $('#btn').click(function () {
             location.href = "log.html?age=" + oltid;
-        });
-        //获取fsession
-        var aCookie = GetCookie('wytSession');
-        session = eval('(' + aCookie + ')');
-        if (session) {
-            if (session.fsession == "undefined") {
-                window.open('login.html', '_self');
-                return;
-            }
-        }
-        else {
-            window.open('login.html', '_self');
-            return;
-        }
-        var fsession = session.fsession;
+        });        
         _template1 = buildJson(mode);
         var s = ("svr=webadmin_00001" + "&fsession=" + fsession);
         var URL = "/webadmin/?" + s;
