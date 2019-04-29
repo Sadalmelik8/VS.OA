@@ -1,59 +1,41 @@
-查询服务详情（服务名称进行匹配）
-
-服务号：webadmin_00001
-
-参数：{svr:name}-----服务名称
-
-返回：json
-ret={pg:,md:,svr:,sts:,log:,note:,bh:,ah:,brs:,content:}
-ret={id:1}返回失败
-
-
-
-新增服务
-
-服务号：webadmin_00002 
-
-参数：{pg:,md:,svr:,sts:,log:,note:,adter:,before:,allowWeb:,content:} 
-
-返回：json
-
-ret={id:} 1新增成功 0新增失败
-
-
-
-
-获取
-所有服务名称，服务状态
-
+1.查看服务
+获取所有服务名称，服务状态
 服务号：webadmin_00005
-
-参数：无
-
-返回：json
-
-ret=[{svr:,sts:},...]status为服务运行状态
-
+参数：{svr:all}-----all为获取全部服务
+返回：json,
+ret={svr:,status:}status为服务运行状态
 ret={id:1}返回失败
 
-更新服务
-
+2.更新服务
 服务号：webadmin_00006
+参数：{svr:,content:}-----获取服务名称和服务代码
+返回：json,
+ret={id:}0返回成功 1返回失败
 
-参数：{svr:,content:}-----服务名称和服务代码
+3.查询服务详情（服务名称进行匹配）
+服务号：webadmin_00001
+参数：{svr:}-----获取name的服务
+返回：json,
+ret={pg:,md:,svr:,sts:,log:,note:,adter:,before:,allowWeb:,content:,}
+ret={id:1}返回失败
 
-返回：json
-
-ret={id:}0 失败
-
-按钮控制
-
+4.查看日志
 服务号：webadmin_00007
+参数：{svr:,log:,time:}-----获取name的服务日志
+返回：json,
+ret={svr:,log:,time:}如果日志名称为空，返回所有日志，如果不为空，则返回日志名称的内容
+		     如果时间为空，默认返回当天所有的日志
+ret={id:1}返回失败
 
+5.按钮控制
+服务号：webadmin_00008
 参数：{svr:,status:}-----服务名称和服务状态
-
-返回：json
-
+返回：json,
 ret={svr:,status:id}status为服务运行状态
+ret={id:1}返回失败
 
-ret={id:1}
+6.新增服务
+服务号：webadmin_00002 
+参数：{pg:,md:,svr:,sts:,log:,note:,adter:,before:,allowWeb:,content:,} 
+返回：json,
+ret={id:}0返回成功 1返回失败

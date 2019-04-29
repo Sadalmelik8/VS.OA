@@ -72,18 +72,6 @@ let save = function () {
 //点击更新
 let saved = function () {
     $("#bottom").click(function () {
-        let jsondata = {
-            //"pg": package.value,
-            //"md": module.value,
-            "svr": service.value,
-            //"svrst": state.value,
-            //"log": log.value,
-            //"fun": explain.value,
-            //"bh": ago.value,
-            //"ah": later.value,
-            //"brs": whether.value,
-            "content": code.value
-        };
         //如果有数据为空
         if (package.value === '' ||
             module.value === '' ||
