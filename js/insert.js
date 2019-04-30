@@ -10,10 +10,7 @@ function GetCookie(key) {
 }
 
 
-//点击更新
-let saved = function () {
 
-};
 $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
@@ -79,13 +76,13 @@ $(document).ready(function () {
                     processData: false,
                     contentType: false,
                     dataType: "json",//期待返回的数据类型
-                    success: function () {
-                        //if (id === 1) {
-                        //    alert('新增成功！')
-                        //} else {
-                        //    alert("新增失败");
-                        //}
-                        console.log(1);
+                    success: function (msg) {
+                        if (msg.status == 'ok') {
+                            alert('新增成功');
+                        }
+                        else {
+                            alert('新增失败');
+                        }
                     },
                     error: function () {
                         alert("请求失败");
@@ -162,14 +159,13 @@ $(document).ready(function () {
                     processData: false,
                     contentType: false,
                     dataType: "json",//期待返回的数据类型
-                    success: function () {
-                        //if (id === 1) {
-                        //    alert('更新成功！')
-                        //} else {
-                        //    alert("更新失败");
-                        //}
-                        console.log(1);
-
+                    success: function (msg) {
+                        if (msg.status == 'ok') {
+                            alert('更新成功');
+                        }
+                        else {
+                            alert('更新失败');
+                        }
                     },
                     error: function () {
                         alert("请求失败");
