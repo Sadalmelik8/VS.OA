@@ -8,9 +8,6 @@ function GetCookie(key) {
         }
     }
 }
-
-
-
 $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
