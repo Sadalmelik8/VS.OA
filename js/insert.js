@@ -96,6 +96,7 @@ $(document).ready(function () {
                     stdTemplate.note = explain.value;
                     stdTemplate.after = ago.value;
                     stdTemplate.before = later.value;
+                    stdTemplate.allowWeb = whether.value;
                     stdTemplate.content = code.value;
                     return stdTemplate;
                 }
@@ -103,8 +104,8 @@ $(document).ready(function () {
         });
         state.value = 1;
         log.value = 1;
-        ago.value = 1;
-        later.value = 1;
+        ago.value = fin.handle._afterHandle;
+        later.value = fin.handle._beforeHandle;
         whether.value = 0;
         $('#btn').click(function () {
             alert("无服务");

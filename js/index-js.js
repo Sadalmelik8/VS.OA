@@ -17,8 +17,19 @@
 
 
 
-//获取fsession
-var Fsession = function () {
+
+//获取cookkie
+function GetCookie(key) {
+    var aCookie = document.cookie.split("; ");
+    for (var i = 0; i < aCookie.length; i++) {
+        var aCrumb = aCookie[i].split("=");
+        if (key == aCrumb[0]) {
+            return unescape(aCrumb[1]);
+        }
+    }
+}
+$(document).ready(function () {
+    //获取fsession
     var aCookie = GetCookie('wytSession');
     session = eval('(' + aCookie + ')');
     if (session) {
@@ -31,26 +42,34 @@ var Fsession = function () {
         window.open('login.html', '_self');
         return;
     }
-}
-//获取cookkie
-function GetCookie(key) {
-    var aCookie = document.cookie.split("; ");
-    for (var i = 0; i < aCookie.length; i++) {
-        var aCrumb = aCookie[i].split("=");
-        if (key == aCrumb[0]) {
-            return unescape(aCrumb[1]);
-        }
+    var fsession = session.fsession;
+    var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
+    var URL = "/webadmin/?" + s;
+    setInterval(test(), 1000);
+    function test() {
+        $.ajax({
+            type: "get", //请求的方式，也有get请求
+            url: URL,
+            async: true,
+            dataType: "json", //json格式，后台返回的数据为json格式的。
+            beforeSend: LoadFunction, //加载执行方法
+            error: erryFunction,  //错误执行方法
+            success: function (result) {
+                dataObj = result; //返回的result为json格式的数据
+                age = dataObj.ret.length;
+                $(document).ready(function () {
+                    paginationed();
+                })
+            }
+        })
     }
-}
-$(document).ready(function () {
-    Fsession();
 })
 function hide() {
     var a = document.getElementById("hide");
     var div = document.getElementsByClassName("left")[0];
     var iframe = document.getElementsByClassName("center")[0];
-    if (a.src == "file:///C:/Users/Administrator/Desktop/login/img/left.png") {
-        a.src = "file:///C:/Users/Administrator/Desktop/login/img/right.png";
+    if (a.src == "img/left.png") {
+        a.src = "img/right.png";
         div.style.display = "none";
         iframe.style.width = "1870px";
     }
