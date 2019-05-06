@@ -1,6 +1,6 @@
 1.查询新消息提醒
 服务号：webadmin_00017
-参数：{}
+参数：{user}
 返回：json,
-ret={title:,introducer:,executor:,acceptor:}
+ret={title,introducer,executor,acceptor,date}
 ret={id:1}返回失败

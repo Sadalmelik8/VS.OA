@@ -104,8 +104,8 @@ $(document).ready(function () {
         });
         state.value = 1;
         log.value = 1;
-        ago.value = fin.handle._afterHandle;
-        later.value = fin.handle._beforeHandle;
+        ago.value = "fin.handle._afterHandle";
+        later.value = "fin.handle._beforeHandle";
         whether.value = 0;
         $('#btn').click(function () {
             alert("无服务");
