@@ -1,6 +1,6 @@
 1.提交问题
 提交问题到问题库表（问题库表(T_ Problem)）
-服务号：WS_00001
+服务号：WS_000001
 参数：{title:,content:,introducer:,proposetime:,file:}--标题、内容、提出人、提出时间，上传文件内容
 返回：json,
 ret={id:1}返回失败
