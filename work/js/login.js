@@ -9,7 +9,7 @@ var login = function () {
     var username = document.getElementById('nm').value;
     var password = document.getElementById('pw').value;
     var t = new Date().getTime();
-    var s = "svr=webadmin_00000&userNum=" + username + "&pd=" + password + "&t=" + t;
+    var s = "svr=WS_00000&userNum=" + username + "&pd=" + password + "&t=" + t;
     var URL = "/webadmin/?" + s;
     $.ajax({
         type: 'get',
@@ -37,7 +37,6 @@ var login = function () {
                         + '\',\'UPD_OPER\':\'' + msg.UPD_OPER + '\',\'LOG_MOD\':\''
                         + msg.LOG_MOD + '\',\'OPER_NM\':\'' + msg.ret.user.nm
                         + '\',\'OPER_NO\':\'' + msg.ret.user.id + '\',';
-
                     aCookie += '\'keep_NM\':\'0\'';
                     aCookie += '}';
                     var expdate = new Date();

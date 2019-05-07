@@ -74,7 +74,7 @@ function hide() {
         iframe.style.width = "1870px";
     }
     else {
-        a.src = "file:///C:/Users/Administrator/Desktop/login/img/left.png";
+        a.src = "img/left.png";
         div.style.display = "block";
         iframe.style.width = "1628px";
     }
