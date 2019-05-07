@@ -14,12 +14,8 @@
 //        iframe.style.width = "1628px";
 //    }
 
-
-
-
-
 //获取cookkie
-function GetCookie(key) {
+function GetCookie(key) {   
     var aCookie = document.cookie.split("; ");
     for (var i = 0; i < aCookie.length; i++) {
         var aCrumb = aCookie[i].split("=");

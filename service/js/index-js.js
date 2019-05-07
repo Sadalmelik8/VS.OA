@@ -42,27 +42,6 @@ $(document).ready(function () {
         window.open('login.html', '_self');
         return;
     }
-    var fsession = session.fsession;
-    var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
-    var URL = "/webadmin/?" + s;
-    setInterval(test(), 1000);
-    function test() {
-        $.ajax({
-            type: "get", //请求的方式，也有get请求
-            url: URL,
-            async: true,
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            beforeSend: LoadFunction, //加载执行方法
-            error: erryFunction,  //错误执行方法
-            success: function (result) {
-                dataObj = result; //返回的result为json格式的数据
-                age = dataObj.ret.length;
-                $(document).ready(function () {
-                    paginationed();
-                })
-            }
-        })
-    }
 })
 function hide() {
     var a = document.getElementById("hide");
