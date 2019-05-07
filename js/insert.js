@@ -202,7 +202,6 @@ $(document).ready(function () {
         ago.readOnly = true;
         later.readOnly = true;
         whether.readOnly = true;
-        saved();
         $('#btn').click(function () {
             location.href = "log.html?age=" + oltid;
         });
