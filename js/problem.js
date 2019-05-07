@@ -533,7 +533,7 @@ var call = function () {
     }
     fsession = session.fsession;
     _template1 = buildJson();
-    var s = ("svr=webadmin_00002" + "&fsession=" + fsession);
+    var s = ("svr=webadmin_00010" + "&fsession=" + fsession);
     var URL = "/webadmin/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
