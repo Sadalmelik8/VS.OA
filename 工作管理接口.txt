@@ -1,16 +1,17 @@
-1.提交问题
-提交问题到问题库表（问题库表(T_ Problem)）
+1.提出问题
+提出问题到问题库表（问题库表(T_ Problem)）和消息提醒表（T_Message）
 服务号：WS_00001
-参数：{title:,content:,introducer:,proposetime:,file:}--标题、内容、提出人、提出时间，上传文件内容
+参数：{title:,content:,introducer:,proposetime:,pic:,receiver:C,operation:,sts:0}--标题、内容、提出人、提出时间，上传图片，消息接收人，操作，状态
 返回：json,
+ret={title,introducer,date,operation} ---标题，提出人，时间，操作
 ret={id:1}返回失败
 
 2.问题
-获取所有问题名称、提出人、提出时间、受理人
+获取所有问题名称、问题编号、提出人、提出时间、受理人
 服务号：WS_00002
 参数：{}-----为获取全部问题
 返回：json,
-ret={title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间
 ret={id:1}返回失败
 
 3.模糊搜索
@@ -32,23 +33,26 @@ ret={id:1}返回失败
 5.问题详情
 查看问题的详情
 服务号：WS_00005
-参数：{title:}-----查看问题的详情信息
+参数：{num:}-----查看问题的详情信息
 返回：json,
 ret={problemstate:,executor:,title:,content:}--判断是否验收，受理人、标题、问题内容
 ret={id:1}返回失败
 
 6.提交
-选择受理人和修改
+选择受理人和修改问题库表，提交到消息提醒表
 服务号：WS_00006
-参数：{executor:,title:,content:,contents:,remarks:,level}-----受理人、问题标题、问题内容、追加问题问题、备注、问题紧急度
+操作，后台判断，该问题是否有受理人，或者受理人是否更改，如果为空或者更改受理人，则为分配任务，消息接收人为受理人
+参数：{executor:,num:,content:,contents:,remarks:,level:,date:,title:,sts:0}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度、操作时间、标题、状态
 返回：json,
+ret={title,executor,date,operation} ---标题，受理人，时间，操作 
 ret={id:1}返回失败
 
 7.验收
-问题解决完放到历史问题
+问题解决完放到历史问题和提交到消息提醒表（T_Message）
 服务号：WS_00007
-参数：{title:,introducer:,problemstate:}-----标题，提出人，验收状态
+参数：{num:,problemstate:,date:,title:,sts:0}-----问题编号，验收状态，操作时间、问题标题，状态
 返回：json,
+ret={title,acceptor,date,operation} --标题，提出人，受理人，时间，操作
 ret={id:1}返回失败
 
 8.历史记录
@@ -56,5 +60,5 @@ ret={id:1}返回失败
 服务号：WS_00008
 参数：{title}-----通过标题查看历史记录
 返回：json
-ret={title:,content:,remarks:,}---标题、内容、备注
+ret={title:,content:,remarks:}---标题、内容、备注
 ret={id:返回失败
