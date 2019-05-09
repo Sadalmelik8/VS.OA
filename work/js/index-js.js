@@ -15,7 +15,7 @@
 //    }
 
 //获取cookkie
-function GetCookie(key) {   
+function GetCookie(key) {
     var aCookie = document.cookie.split("; ");
     for (var i = 0; i < aCookie.length; i++) {
         var aCrumb = aCookie[i].split("=");
@@ -39,7 +39,8 @@ $(document).ready(function () {
         return;
     }
     var fsession = session.fsession;
-    var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
+    var userName = session.ORG_NM;
+    var s = ("svr=webadmin_00006" + "&fsession=" + fsession + userName);
     var URL = "/webadmin/?" + s;
     setInterval(test(), 1000);
     function test() {
