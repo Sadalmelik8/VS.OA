@@ -1,7 +1,9 @@
 1.新增问题
-新增问题到问题库表（问题库表(T_ Problem)）和消息提醒表（T_Message）
+新增问题到问题库表（问题库表(T_ Problem)）
 服务号：WS_00001
-参数：{title:,content:,introducer:,proposetime:,pic:,receiver:C,operation:,sts:0}--标题、内容、提出人、提出时间，上传图片，消息接收人，操作，状态
+参数：{title:,content:,introducer:,proposetime:,pic:}--标题、内容、提出人、提出时间，上传图片
+新增消息到消息提醒表（T_Message）
+参数：{title:}--标题
 返回：json,
 ret={id:1}返回失败
 
@@ -17,32 +19,35 @@ ret={id:1}返回失败
 3.模糊搜索
 获取标题
 服务号：WS_00003
-参数：{title:,problemstate:}-----包含title的问题
+参数：{title:,problemstate:0/1}-----包含title的问题
 返回：json,
-ret={title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--标题、提出人、提交时间、受理人、验收人、是否验收、验收时间
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（传 0 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间（传 1 时)
 ret={id:1}返回失败
 
 4.日期搜索
 获取提出时间的所有问题
 服务号：WS_0004
-参数：{time:}-----time时间所有的未解决的问题
+参数：{time:,problemstate:0/1}-----time时间所有的未解决的问题
 返回：json,
-ret={title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--标题、提出人、提交时间、受理人、验收人、是否验收、验收时间
-ret={id:1}返回失败
+ret=ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（传 0 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间（传 1或2 时)
 
 5.问题详情
 查看问题的详情
 服务号：WS_00005
-参数：{num:}-----查看问题的详情信息
+参数：{num:,}-----查看问题的详情信息
 返回：json,
-ret={problemstate:,executor:,title:,content:}--判断是否验收，受理人、标题、问题内容
+ret={problemstate:0/1,executor:,title:,content:}--判断是否验收，受理人、标题、问题内容
 ret={id:1}返回失败
 
 6.提交
-选择受理人和修改问题库表，提交到消息提醒表
+选择受理人和修改到问题库表
+操作，后台判断，该问题是否有受理人，或者受理人是否更改，如果为空或者更改受理人，则为分配任务，消息接收人为受理人。如果受理人不变，则是完成问题并提交
 服务号：WS_00006
-操作，后台判断，该问题是否有受理人，或者受理人是否更改，如果为空或者更改受理人，则为分配任务，消息接收人为受理人
-参数：{executor:,num:,content:,contents:,remarks:,level:,date:,title:,sts:0}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度、操作时间、标题、状态
+参数：{executor:,num:,content:,contents:,remarks:,level:}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度
+新增消息到消息提醒表（T_Message）
+参数：{title:}---标题、操作人
 返回：json,
 ret={id:1}返回失败
 
@@ -50,6 +55,7 @@ ret={id:1}返回失败
 问题解决完放到历史问题和提交到消息提醒表（T_Message）
 服务号：WS_00007
 参数：{num:,problemstate:,date:,title:,sts:0}-----问题编号，验收状态，操作时间、问题标题，状态
+参数：{title:}---标题
 返回：json,
 ret={id:1}返回失败
 
@@ -66,7 +72,5 @@ ret={id:返回失败
 服务号：WS_00009
 参数：{}
 返回：json,
-ret={title,introducer,date,operation} ---标题，提出人，操作时间，操作（提出问题）受理人为空，则为新增
-ret={title,executor,date,operation} ---标题，受理人，操作时间，操作 （提交问题）后台判断该问题是否有受理人，或者受理人是否更改，如果为空或者更改受理人，则为分配任务，消息接收人为受理人。如果受理人不发生变化，则为完成了问题并提交，消息接收人为分配任务的人
-ret={title,acceptor,date,operation} --标题，提出人，受理人，操作时间，操作（验收问题）
+ret={title,username,date,operation} ---标题，操作人，操作时间，操作
 ret={id:1}返回失败
