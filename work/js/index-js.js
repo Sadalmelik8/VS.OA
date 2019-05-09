@@ -27,7 +27,7 @@ function GetCookie(key) {
 $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
-    session = eval('(' + aCookie + ')');
+    session = aCookie;
     if (session) {
         if (session.fsession == "undefined") {
             window.open('login.html', '_self');

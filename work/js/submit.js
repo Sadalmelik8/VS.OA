@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#submit").click(function () {
         var aCookie = GetCookie('wytSession');
-        session = eval('(' + aCookie + ')');
+        session = aCookie;
         fsession = session.fsession;
         _template1 = buildJson();
         var s = ("svr = WS_00001" + "&fsession=" + fsession);
