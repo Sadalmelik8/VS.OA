@@ -44,18 +44,7 @@ $(document).ready(function () {
     $('#dl').click(function () {
         //获取fsession
         var aCookie = GetCookie('wytSession');
-        session = eval('(' + aCookie + ')');
-        if (session) {
-            if (session.fsession == "undefined") {
-                window.open('login.html', '_self');
-                return;
-            }
-        }
-        else {
-            window.open('login.html', '_self');
-            return;
-        }
-        var fsession = session.fsession;
+        var fsession = aCookie;
         tohtml = "index.html";
         var username = document.getElementById('nm').value;
         var password = document.getElementById('pw').value;
