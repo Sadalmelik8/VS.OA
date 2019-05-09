@@ -13,7 +13,7 @@ ret={id:1}返回失败
 服务号：WS_00002
 参数：{problemstate:0/1/2,}-----是否验收   2为获取全部问题
 返回：json,
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（传 0 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（problemstate为 0 时)
 ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间（传 1或2 时)
 ret={id:1}返回失败
 
