@@ -25,7 +25,7 @@ $(document).ready(function () {
             type: 'get',
             url: URL,
             contentType: "application/json",
-            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
             dataType: "json", //json格式，后台返回的数据为json格式的。
             cache: false,
             processData: false,
