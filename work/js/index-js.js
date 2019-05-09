@@ -40,7 +40,7 @@ $(document).ready(function () {
     }
     var fsession = session.fsession;
     var userName = session.ORG_NM;
-    var s = ("svr=WS_000010" + "&fsession=" + fsession + userName);
+    var s = ("svr=WS_000010" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     setInterval(test(), 1000);
     function test() {

@@ -2,9 +2,10 @@ $(document).ready(function () {
     $("#submit").click(function () {
         var aCookie = GetCookie('wytSession');
         session = aCookie;
-        fsession = session.fsession;
+        var fsession = session.fsession;
+        var userName = session.ORG_NM;
         _template1 = buildJson();
-        var s = ("svr = WS_00002" + "&fsession=" + fsession);
+        var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/WS/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));

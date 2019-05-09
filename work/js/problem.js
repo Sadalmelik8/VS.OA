@@ -499,9 +499,10 @@ var call = function () {
         window.open('login.html', '_self');
         return;
     }
-    fsession = session.fsession;
+    var fsession = session.fsession;
+    var userName = session.ORG_NM;
     _template1 = buildJson();
-    var s = ("svr=WS_00003" + "&fsession=" + fsession);
+    var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
@@ -546,9 +547,10 @@ $(document).ready(function () {
         window.open('login.html', '_self');
         return;
     }
-    fsession = session.fsession;
+    var fsession = session.fsession;
+    var userName = session.ORG_NM;
     _template1 = buildJson();
-    var s = ("svr=WS_00003" + "&fsession=" + fsession);
+    var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
@@ -692,9 +694,10 @@ $(document).ready(function () {
             window.open('login.html', '_self');
             return;
         }
-        fsession = session.fsession;
+        var fsession = session.fsession;
+        var userName = session.ORG_NM;
         _template1 = buildJson();
-        var s = ("svr=WS_00003" + "&fsession=" + fsession);
+        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
@@ -753,9 +756,10 @@ $(document).ready(function () {
             window.open('login.html', '_self');
             return;
         }
-        fsession = session.fsession;
+        var fsession = session.fsession;
+        var userName = session.ORG_NM;
         _template1 = buildJson();
-        var s = ("svr=WS_00003" + "&fsession=" + fsession);
+        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
@@ -813,9 +817,10 @@ $(document).ready(function () {
             window.open('login.html', '_self');
             return;
         }
-        fsession = session.fsession;
+        var fsession = session.fsession;
+        var userName = session.ORG_NM;
         _template1 = buildJson();
-        var s = ("svr=WS_00003" + "&fsession=" + fsession);
+        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
