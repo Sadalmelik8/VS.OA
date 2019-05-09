@@ -13,11 +13,18 @@ function GetCookie(key) {
         }
     }
 }
+//
+function GetRnd() {
+    var num;
+    for (var i = 0; i < 5; i++) {
+        num += toString(Math.floor(Math.random() * 10));
+        return num;
+    }
+}
 $(document).ready(function () {
     var tohtml = "";
     $('#session').click(function () {
-        Math.floor(Math.random() * 10);
-        var rnd = 18181;
+        var rnd = GetRnd();
         var username = document.getElementById('nm').value;
         var s = "svr=WS_00001&rnd=" + rnd + "&mobile=" + username;
         var URL = "/webservice/?" + s;
