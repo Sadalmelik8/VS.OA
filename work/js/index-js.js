@@ -40,8 +40,8 @@ $(document).ready(function () {
     }
     var fsession = session.fsession;
     var userName = session.ORG_NM;
-    var s = ("svr=webadmin_00006" + "&fsession=" + fsession + userName);
-    var URL = "/webadmin/?" + s;
+    var s = ("svr=WS_000010" + "&fsession=" + fsession + userName);
+    var URL = "/webservice/?" + s;
     setInterval(test(), 1000);
     function test() {
         $.ajax({
