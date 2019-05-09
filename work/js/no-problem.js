@@ -541,7 +541,7 @@ var call = function () {
     }
     fsession = session.fsession;
     _template1 = buildJson();
-    var s = ("svr=WS_00002" + "&fsession=" + fsession);
+    var s = ("svr=WS_00003" + "&fsession=" + fsession);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
@@ -588,7 +588,7 @@ $(document).ready(function () {
     }
     fsession = session.fsession;
     _template1 = buildJson();
-    var s = ("svr=WS_00002" + "&fsession=" + fsession);
+    var s = ("svr=WS_00003" + "&fsession=" + fsession);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
@@ -738,7 +738,7 @@ $(document).ready(function () {
         }
         fsession = session.fsession;
         _template1 = buildJson();
-        var s = ("svr=WS_00002" + "&fsession=" + fsession);
+        var s = ("svr=WS_00003" + "&fsession=" + fsession);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
@@ -799,7 +799,7 @@ $(document).ready(function () {
         }
         fsession = session.fsession;
         _template1 = buildJson();
-        var s = ("svr=WS_00002" + "&fsession=" + fsession);
+        var s = ("svr=WS_00003" + "&fsession=" + fsession);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
@@ -859,7 +859,7 @@ $(document).ready(function () {
         }
         fsession = session.fsession;
         _template1 = buildJson();
-        var s = ("svr=WS_00002" + "&fsession=" + fsession);
+        var s = ("svr=WS_00003" + "&fsession=" + fsession);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
