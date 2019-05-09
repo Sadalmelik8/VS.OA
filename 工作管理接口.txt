@@ -9,7 +9,7 @@ ret={id:1}返回失败
 2.问题
 获取所有问题名称、问题编号、提出人、提出时间、受理人
 服务号：WS_00002
-参数：{}-----为获取全部问题
+参数：{problemstate:,}-----是否验收   为获取全部问题
 返回：json,
 ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间
 ret={id:1}返回失败
