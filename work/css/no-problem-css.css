@@ -1,4 +1,11 @@
-﻿* {
+﻿
+.number{
+    display: inline-block;
+    font-size: 15px;
+    height: 50px;
+    line-height: 50px;
+}
+* {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -47,13 +54,6 @@ li {
     line-height: 80px;
 }
 
-/*.search {*/
-    /*width: 5%;*/
-    /*height: 31px;*/
-    /*color: #666;*/
-    /*border: none;*/
-/*}*/
-
 .problem--top__right {
     width: 50%;
     height: 80px;
@@ -91,7 +91,7 @@ li > * {
     text-align: center;
     border-right: 1px solid #777;
     font-size: 15px;
-    width: 10%;
+    width: 7.5%;
     color: #666;
     /*line-height: 50px;*/
 }
@@ -101,11 +101,11 @@ li > * {
 }
 
 .title {
-    width: 50%;
+    width: 40%;
 }
 
 .caption{
-    width: 50%;
+    width: 40%;
     font-size: 15px;
     text-decoration: none;
     display: inline-block;
@@ -168,6 +168,11 @@ b:hover{
     top: 0;
     left: 0;
 }
+#acceptor{
+    position: relative;
+    top: 0;
+    left: 0;
+}
 #receiver{
     position: relative;
     top: 0;
@@ -184,6 +189,16 @@ b:hover{
     cursor: pointer;
     color: #3BA9E8;
 }
+#acceptor:hover{
+    cursor: pointer;
+    color: #3BA9E8;
+}
+.submit{
+    width: 5.5%;
+    margin-left: 1%;
+    background: #40c2f2;
+}
+
 
 #box{
     display: inline-block;
