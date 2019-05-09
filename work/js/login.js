@@ -17,14 +17,16 @@ $(document).ready(function () {
     var tohtml = "";
     $('#session').click(function () {
         Math.floor(Math.random() * 10);
-        var rnd;
+        var rnd = 18181;
         var username = document.getElementById('nm').value;
         var s = "svr=WS_00001&rnd=" + rnd + "&mobile=" + username;
         var URL = "/webservice/?" + s;
         $.ajax({
             type: 'get',
             url: URL,
-            datatype: 'json',
+            contentType: "application/json",
+            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+            dataType: "json", //json格式，后台返回的数据为json格式的。
             cache: false,
             processData: false,
             contentType: false,
@@ -41,18 +43,7 @@ $(document).ready(function () {
     $('#dl').click(function () {
         //获取fsession
         var aCookie = GetCookie('wytSession');
-        session = eval('(' + aCookie + ')');
-        if (session) {
-            if (session.fsession == "undefined") {
-                window.open('login.html', '_self');
-                return;
-            }
-        }
-        else {
-            window.open('login.html', '_self');
-            return;
-        }
-        var fsession = session.fsession;
+        var fsession = aCookie;
         tohtml = "index.html";
         var username = document.getElementById('nm').value;
         var password = document.getElementById('pw').value;
