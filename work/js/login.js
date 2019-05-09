@@ -44,7 +44,18 @@ $(document).ready(function () {
     $('#dl').click(function () {
         //获取fsession
         var aCookie = GetCookie('wytSession');
-        var fsession = aCookie;
+        session = eval('(' + aCookie + ')');
+        if (session) {
+            if (session.fsession == "undefined") {
+                window.open('login.html', '_self');
+                return;
+            }
+        }
+        else {
+            window.open('login.html', '_self');
+            return;
+        }
+        var fsession = session.fsession;
         tohtml = "index.html";
         var username = document.getElementById('nm').value;
         var password = document.getElementById('pw').value;
@@ -61,7 +72,7 @@ $(document).ready(function () {
                 try {
                     if (msg.status == "ok") {
                         var aCookie = '{\'ORG_NM\':\'' + msg.ret.username;
-                        aCookie += '\',\'fsession\':\'' + msg.ret.session;
+                        aCookie += '\',\'fsession\':\'' + msg.ret.session+"/'";
                         aCookie += '}';
                         var expdate = new Date();
                         expdate.setTime(expdate.getTime() + (86400 * 1000 * 1));

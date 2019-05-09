@@ -488,7 +488,7 @@ var paginationeds = function (fsession) {
 var call = function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
-    session = aCookie;
+    session = eval('(' + aCookie + ')');
     if (session) {
         if (session.fsession == "undefined") {
             window.open('login.html', '_self');
@@ -536,7 +536,7 @@ var call = function () {
 $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
-    session = aCookie;
+    session = eval('(' + aCookie + ')');
     if (session) {
         if (session.fsession == "undefined") {
             window.open('login.html', '_self');
@@ -683,7 +683,7 @@ $(document).ready(function () {
         }
         //获取fsession
         var aCookie = GetCookie('wytSession');
-        session = aCookie;
+        session = eval('(' + aCookie + ')');
         if (session) {
             if (session.fsession == "undefined") {
                 window.open('login.html', '_self');
@@ -745,7 +745,7 @@ $(document).ready(function () {
         }
         //获取fsession
         var aCookie = GetCookie('wytSession');
-        session = aCookie;
+        session = eval('(' + aCookie + ')');
         if (session) {
             if (session.fsession == "undefined") {
                 window.open('login.html', '_self');
@@ -806,7 +806,7 @@ $(document).ready(function () {
         }
         //获取fsession
         var aCookie = GetCookie('wytSession');
-        session = aCookie;
+        session = eval('(' + aCookie + ')');
         if (session) {
             if (session.fsession == "undefined") {
                 window.open('login.html', '_self');
