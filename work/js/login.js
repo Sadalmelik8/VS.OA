@@ -60,7 +60,7 @@ $(document).ready(function () {
             success: function (msg) {
                 try {
                     if (msg.status == "ok") {
-                        var aCookie = '{\'ORG_NM\':\'' + msg.ret.username;
+                        var aCookie = '{\'User_NM\':\'' + msg.ret.username;
                         aCookie += '\',\'fsession\':\'' + msg.ret.session+"/'";
                         aCookie += '}';
                         var expdate = new Date();

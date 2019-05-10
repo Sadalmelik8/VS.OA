@@ -47,7 +47,7 @@ var actived = function () {
     }
 };
 //页面内容
-var paginationed = function (fsession) {
+var paginationed = function () {
     var page = 10,//每页显示条数
         con = "",
         pagination = "";
@@ -260,7 +260,7 @@ var paginationed = function (fsession) {
     });
 };
 //页面内容
-var paginationeds = function (fsession) {
+var paginationeds = function () {
     var page = 10,//每页显示条数
         con = "",
         pagination = "";
@@ -500,7 +500,7 @@ var call = function () {
         return;
     }
     var fsession = session.fsession;
-    var userName = session.ORG_NM;
+    var userName = session.User_NM;
     _template1 = buildJson();
     var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
@@ -521,7 +521,7 @@ var call = function () {
             dataObj = result; //返回的result为json格式的数据
             age = dataObj.ret.length;
             $(document).ready(function () {
-                paginationed(fsession);
+                paginationed();
             })
         }
     });
@@ -548,7 +548,7 @@ $(document).ready(function () {
         return;
     }
     var fsession = session.fsession;
-    var userName = session.ORG_NM;
+    var userName = session.User_NM;
     _template1 = buildJson();
     var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
@@ -695,7 +695,7 @@ $(document).ready(function () {
             return;
         }
         var fsession = session.fsession;
-        var userName = session.ORG_NM;
+        var userName = session.User_NM;
         _template1 = buildJson();
         var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
@@ -757,7 +757,7 @@ $(document).ready(function () {
             return;
         }
         var fsession = session.fsession;
-        var userName = session.ORG_NM;
+        var userName = session.User_NM;
         _template1 = buildJson();
         var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
@@ -818,7 +818,7 @@ $(document).ready(function () {
             return;
         }
         var fsession = session.fsession;
-        var userName = session.ORG_NM;
+        var userName = session.User_NM;
         _template1 = buildJson();
         var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;

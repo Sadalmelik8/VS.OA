@@ -540,7 +540,7 @@ var call = function () {
         return;
     }
     var fsession = session.fsession;
-    var userName = session.ORG_NM;
+    var userName = session.User_NM;
     _template1 = buildJson();
     var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
@@ -588,7 +588,7 @@ $(document).ready(function () {
         return;
     }
     var fsession = session.fsession;
-    var userName = session.ORG_NM;
+    var userName = session.User_NM;
     _template1 = buildJson();
     var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
@@ -739,7 +739,7 @@ $(document).ready(function () {
             return;
         }
         var fsession = session.fsession;
-        var userName = session.ORG_NM;
+        var userName = session.User_NM;
         _template1 = buildJson();
         var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
@@ -801,7 +801,7 @@ $(document).ready(function () {
             return;
         }
         var fsession = session.fsession;
-        var userName = session.ORG_NM;
+        var userName = session.User_NM;
         _template1 = buildJson();
         var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
@@ -862,7 +862,7 @@ $(document).ready(function () {
             return;
         }
         var fsession = session.fsession;
-        var userName = session.ORG_NM;
+        var userName = session.User_NM;
         _template1 = buildJson();
         var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
