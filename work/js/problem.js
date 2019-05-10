@@ -85,7 +85,7 @@ var paginationed = function () {
                     if (indexs < page) {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption'>" + item.title + "</span>"//标题
+                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                             + "<span>" + item.introducer + "</span>"//提出人
                             + "<span>" + item.proposetime + "</span>"//提出时间
                             + "<span>" + item.executor + "</span>"//受理人
@@ -111,7 +111,7 @@ var paginationed = function () {
                                 i = li.length - 1;
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                                    + "<span class='caption'>" + item.title + "</span>"//标题
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span>" + item.proposetime + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
@@ -154,7 +154,7 @@ var paginationed = function () {
                     if (indexs < page) {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption'>" + item.title + "</span>"//标题
+                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                             + "<span>" + item.introducer + "</span>"//提出人
                             + "<span>" + item.proposetime + "</span>"//提出时间
                             + "<span>" + item.executor + "</span>"//受理人
@@ -180,7 +180,7 @@ var paginationed = function () {
                                 i = li.length - 1;
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                                    + "<span class='caption'>" + item.title + "</span>"//标题
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span>" + item.proposetime + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
@@ -224,7 +224,7 @@ var paginationed = function () {
                         //i = li.length - 1;
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption'>" + item.title + "</span>"//标题
+                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                             + "<span>" + item.introducer + "</span>"//提出人
                             + "<span>" + item.proposetime + "</span>"//提出时间
                             + "<span>" + item.executor + "</span>"//受理人
@@ -301,7 +301,7 @@ var paginationeds = function () {
                         if (arr.length <= page && (x == item.introducer || x == item.executor)) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"//序号
-                                + "<span class='caption'>" + item.title + "</span>"//标题
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
@@ -333,7 +333,7 @@ var paginationeds = function () {
                                     i = li.length - 1;
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + xx + "</span>"
-                                        + "<span class='caption'>" + item.title + "</span>"//标题
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
@@ -381,7 +381,7 @@ var paginationeds = function () {
                         if (xx <= page)
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"
-                                + "<span class='caption'>" + item.title + "</span>"//标题
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
@@ -413,7 +413,7 @@ var paginationeds = function () {
                                     i = li.length - 1;
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + xx + "</span>"
-                                        + "<span class='caption'>" + item.title + "</span>"//标题
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
@@ -447,7 +447,7 @@ var paginationeds = function () {
                             //i = li.length - 1;
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"
-                                + "<span class='caption'>" + item.title + "</span>"//标题
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
@@ -592,7 +592,7 @@ $(document).ready(function () {
                                     if (arr_1[s[1]] === item.title) {
                                         con += "<li class='datas'>"
                                             + "<span class='number'>" + (indexs + 1) + "</span>"
-                                            + "<span class='caption'>" + item.title + "</span>"//标题
+                                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                             + "<span>" + item.introducer + "</span>"//提出人
                                             + "<span>" + item.proposetime + "</span>"//提出时间
                                             + "<span>" + item.executor + "</span>"//受理人

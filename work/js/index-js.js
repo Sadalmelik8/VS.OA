@@ -49,8 +49,6 @@ $(document).ready(function () {
             url: URL,
             async: true,
             dataType: "json", //json格式，后台返回的数据为json格式的。
-            beforeSend: LoadFunction, //加载执行方法
-            error: erryFunction,  //错误执行方法
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据
                 age = dataObj.ret.length;

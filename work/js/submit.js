@@ -3,7 +3,7 @@ $(document).ready(function () {
         var aCookie = GetCookie('wytSession');
         session = aCookie;
         var fsession = session.fsession;
-        var userName = session.ORG_NM;
+        var userName = session.User_NM;
         _template1 = buildJson();
         var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/WS/?" + s;
@@ -32,12 +32,12 @@ $(document).ready(function () {
         });
     });
     function buildJson() {
-        let title = document.getElementsByClassName('title')[0].value;
+        let num = document.getElementsByClassName('title')[0].id;
         let particular = document.getElementById('icon').value;
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.title = title;
-        stdTemplate. content = particular;
+        stdTemplate.num = num;
+        stdTemplate.content = particular;
         return stdTemplate;
     }
 });

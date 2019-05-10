@@ -85,7 +85,7 @@ var paginationed = function () {
                     if (indexs < page) {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"
-                            + "<span class='caption'>" + item.title + "</span>"
+                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                             + "<span>" + item.content + "</span>"
                             + "<span>" + item.introducer + "</span>"
                             + "<span>" + item.proposeTime + "</span>"
@@ -115,7 +115,7 @@ var paginationed = function () {
                                 i = li.length - 1;
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"
-                                    + "<span class='caption'>" + item.title + "</span>"
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                     + "<span>" + item.content + "</span>"
                                     + "<span>" + item.introducer + "</span>"
                                     + "<span>" + item.proposeTime + "</span>"
@@ -162,7 +162,7 @@ var paginationed = function () {
                     if (indexs < page) {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"
-                            + "<span class='caption'>" + item.title + "</span>"
+                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                             + "<span>" + item.content + "</span>"
                             + "<span>" + item.introducer + "</span>"
                             + "<span>" + item.proposeTime + "</span>"
@@ -192,7 +192,7 @@ var paginationed = function () {
                                 i = li.length - 1;
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"
-                                    + "<span class='caption'>" + item.title + "</span>"
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                     + "<span>" + item.content + "</span>"
                                     + "<span>" + item.introducer + "</span>"
                                     + "<span>" + item.proposeTime + "</span>"
@@ -240,7 +240,7 @@ var paginationed = function () {
                         //i = li.length - 1;
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"
-                            + "<span class='caption'>" + item.title + "</span>"
+                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                             + "<span>" + item.content + "</span>"
                             + "<span>" + item.introducer + "</span>"
                             + "<span>" + item.proposeTime + "</span>"
@@ -321,7 +321,7 @@ var paginationeds = function () {
                         if (arr.length <= page && (x == item.introducer || x == item.executor || x == item.acceptor)) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"
-                                + "<span class='caption'>" + item.title + "</span>"
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                 + "<span>" + item.content + "</span>"
                                 + "<span>" + item.introducer + "</span>"
                                 + "<span>" + item.proposeTime + "</span>"
@@ -357,7 +357,7 @@ var paginationeds = function () {
                                     i = li.length - 1;
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + xx + "</span>"
-                                        + "<span class='caption'>" + item.title + "</span>"
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                         + "<span>" + item.content + "</span>"
                                         + "<span>" + item.introducer + "</span>"
                                         + "<span>" + item.proposeTime + "</span>"
@@ -409,7 +409,7 @@ var paginationeds = function () {
                         if (xx <= page)
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"
-                                + "<span class='caption'>" + item.title + "</span>"
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                 + "<span>" + item.content + "</span>"
                                 + "<span>" + item.introducer + "</span>"
                                 + "<span>" + item.proposeTime + "</span>"
@@ -445,7 +445,7 @@ var paginationeds = function () {
                                     i = li.length - 1;
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + xx + "</span>"
-                                        + "<span class='caption'>" + item.title + "</span>"
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                         + "<span>" + item.content + "</span>"
                                         + "<span>" + item.introducer + "</span>"
                                         + "<span>" + item.proposeTime + "</span>"
@@ -483,7 +483,7 @@ var paginationeds = function () {
                             //i = li.length - 1;
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"
-                                + "<span class='caption'>" + item.title + "</span>"
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                 + "<span>" + item.content + "</span>"
                                 + "<span>" + item.introducer + "</span>"
                                 + "<span>" + item.proposeTime + "</span>"
@@ -632,7 +632,7 @@ $(document).ready(function () {
                                     if (arr_1[s[1]] === item.title) {
                                         con += "<li class='datas'>"
                                             + "<span class='number'>" + (indexs + 1) + "</span>"
-                                            + "<span class='caption'>" + item.title + "</span>"
+                                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                             + "<span>" + item.content + "</span>"
                                             + "<span>" + item.introducer + "</span>"
                                             + "<span>" + item.proposeTime + "</span>"
