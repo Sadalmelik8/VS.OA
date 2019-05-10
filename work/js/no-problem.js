@@ -760,7 +760,7 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 x = e.target.innerText;
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (x === '全部' && indexs == dataObj.length - 1) {
+                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
                         paginationed();
                     }
                     if (x == item.introducer) {
@@ -822,7 +822,7 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 x = e.target.innerText;
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (x === '全部' && indexs == dataObj.length - 1) {
+                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
                         paginationed();
                     }
                     if (x == item.executor) {
@@ -883,7 +883,7 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 x = e.target.innerText;
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (x === '全部' && indexs == dataObj.length - 1) {
+                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
                         paginationed();
                     }
                     if (x == item.acceptor) {
