@@ -50,11 +50,7 @@ $(document).ready(function () {
             async: true,
             dataType: "json", //json格式，后台返回的数据为json格式的。
             success: function (result) {
-                dataObj = result; //返回的result为json格式的数据
-                age = dataObj.ret.length;
-                $(document).ready(function () {
-                    paginationed();
-                })
+                dataObj = result; //返回的result为json格式的数据)
             }
         })
     }
