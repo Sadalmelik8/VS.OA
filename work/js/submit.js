@@ -1,12 +1,33 @@
 $(document).ready(function () {
+    //获取cookkie
+    function GetCookie(key) {
+        var aCookie = document.cookie.split("; ");
+        for (var i = 0; i < aCookie.length; i++) {
+            var aCrumb = aCookie[i].split("=");
+            if (key == aCrumb[0]) {
+                return unescape(aCrumb[1]);
+            }
+        }
+    }
     $("#submit").click(function () {
+        //获取fsession
         var aCookie = GetCookie('wytSession');
-        session = aCookie;
+        session = eval('(' + aCookie + ')');
+        if (session) {
+            if (session.fsession == "undefined") {
+                window.open('login.html', '_self');
+                return;
+            }
+        }
+        else {
+            window.open('login.html', '_self');
+            return;
+        }
         var fsession = session.fsession;
         var userName = session.User_NM;
         _template1 = buildJson();
         var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/WS/?" + s;
+        var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
         $.ajax({
@@ -32,12 +53,13 @@ $(document).ready(function () {
         });
     });
     function buildJson() {
-        let num = document.getElementsByClassName('title')[0].id;
+        let title = document.getElementsByClassName('title')[0].id;
         let particular = document.getElementById('icon').value;
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.num = num;
+        stdTemplate.title = title;
         stdTemplate.content = particular;
+        //stdTemplate.User_NM = userName;
         return stdTemplate;
     }
 });
