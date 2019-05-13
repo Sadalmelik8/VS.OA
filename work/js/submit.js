@@ -59,7 +59,7 @@ $(document).ready(function () {
         var stdTemplate = JSON.parse(std);
         stdTemplate.title = title;
         stdTemplate.content = particular;
-        //stdTemplate.User_NM = userName;
+        stdTemplate.pic = "";
         return stdTemplate;
     }
 });
