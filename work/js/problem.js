@@ -846,29 +846,34 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (item.executor == null && item.submittime == null) {
-                        item.executor = '&nbsp;';
-                        item.submittime = '&nbsp;';
-                        con += "<li class='datas'>"
-                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.introducer + "</span>"//提出人
-                            + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                            + "<span>" + item.executor + "</span>"//受理人
-                            + "<span>" + item.submittime + "</span>"//提交时间
-                            + "</li>";
-                        $("#ul").html(con); //把内容入到这个div中
+                    if (dataObj.ret.id = 0) {
+                        alert('该日期无问题记录');
                     }
                     else {
-                        con += "<li class='datas'>"
-                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.introducer + "</span>"//提出人
-                            + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                            + "<span>" + item.executor + "</span>"//受理人
-                            + "<span>" + item.submittime + "</span>"//提交时间
-                            + "</li>";
-                        $("#ul").html(con); //把内容入到这个div中
+                        if (item.executor == null && item.submittime == null) {
+                            item.executor = '&nbsp;';
+                            item.submittime = '&nbsp;';
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }
+                        else {
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }  
                     }
                 })
                 con = '';
