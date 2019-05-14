@@ -51,7 +51,7 @@ $(document).ready(function () {
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
-    setInterval(test, 1);
+    setInterval(test, 1000);
     function test() {
         $.ajax({
             type: "post", //请求的方式，也有get请求
