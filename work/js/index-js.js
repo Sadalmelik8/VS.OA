@@ -40,15 +40,20 @@ $(document).ready(function () {
     }
     var fsession = session.fsession;
     var userName = session.ORG_NM;
-    var s = ("svr=WS_000010" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = ("svr=WS_000009" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     setInterval(test(), 1000);
     function test() {
         $.ajax({
             type: "get", //请求的方式，也有get请求
-            url: URL,
+            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
             async: true,
+            contentType: "application/json",
+            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
             dataType: "json", //json格式，后台返回的数据为json格式的。
+            cache: false,
+            processData: false,
+            contentType: false,
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据)
             }
