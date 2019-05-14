@@ -528,7 +528,7 @@ var call = function () {
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.problemState = "0";
+        stdTemplate.problemstate = 0;
         return stdTemplate;
     }
 };
@@ -631,7 +631,7 @@ $(document).ready(function () {
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.problemState = "0";
+        stdTemplate.problemstate = 0;
         return stdTemplate;
     }
 });
@@ -732,7 +732,7 @@ $(document).ready(function () {
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.problemState = "0";
+            stdTemplate.problemstate = 0;
             return stdTemplate;
         }
     });
@@ -794,7 +794,7 @@ $(document).ready(function () {
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.problemState = "0";
+            stdTemplate.problemstate = 0;
             return stdTemplate;
         }
     });
@@ -855,7 +855,7 @@ $(document).ready(function () {
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.problemState = "0";
+            stdTemplate.problemstate = 0;
             return stdTemplate;
         }
     });

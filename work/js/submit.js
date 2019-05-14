@@ -40,7 +40,7 @@
             contentType: false,
             dataType: "json",//期待返回的数据类型
             success: function (msg) {
-                if (msg.status == 'ok') {
+                if (msg.ret.id == '1') {
                     alert('上传成功');
                 }
                 else {
