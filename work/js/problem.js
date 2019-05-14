@@ -83,7 +83,7 @@ var paginationed = function () {
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs < page) {
-                        if (item.executor == 'null' && item.submittime == 'null') {
+                        if (item.executor == null && item.submittime == null) {
                             item.executor = '';
                             item.submittime = '';
                             con += "<li class='datas'>"
@@ -124,7 +124,7 @@ var paginationed = function () {
                         $.each(dataObj.ret, function (indexs, item) {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
-                                if (item.executor == 'null' && item.submittime == 'null') {
+                                if (item.executor == null && item.submittime == null) {
                                     item.executor = '';
                                     item.submittime = '';
                                     con += "<li class='datas'>"
@@ -182,7 +182,7 @@ var paginationed = function () {
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs < page) {
-                        if (item.executor == 'null' && item.submittime == 'null') {
+                        if (item.executor == null && item.submittime == null) {
                             item.executor = '';
                             item.submittime = '';
                             con += "<li class='datas'>"
@@ -223,7 +223,7 @@ var paginationed = function () {
                         $.each(dataObj.ret, function (indexs, item) {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
-                                if (item.executor == 'null' && item.submittime == 'null') {
+                                if (item.executor == null && item.submittime == null) {
                                     item.executor = '';
                                     item.submittime = '';
                                     con += "<li class='datas'>"
@@ -282,7 +282,7 @@ var paginationed = function () {
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs >= page * (txt03 - 1) && indexs < page * txt03) {
                         //i = li.length - 1;
-                        if (item.executor == 'null' && item.submittime == 'null') {
+                        if (item.executor == null && item.submittime == null) {
                             item.executor = '';
                             item.submittime = '';
                             con += "<li class='datas'>"
@@ -374,7 +374,7 @@ var paginationeds = function () {
                         arr.push(indexs);
                         xx = arr.length;
                         if (arr.length <= page && (x == item.introducer || x == item.executor)) {
-                            if (item.executor == 'null' && item.submittime == 'null') {
+                            if (item.executor == null && item.submittime == null) {
                                 item.executor = '';
                                 item.submittime = '';
                                 con += "<li class='datas'>"
@@ -421,7 +421,7 @@ var paginationeds = function () {
                                 xx = arr.length;
                                 if (arr.length > page * (vid[1] - 1) && arr.length <= page * vid[1]) {
                                     i = li.length - 1;
-                                    if (item.executor == 'null' && item.submittime == 'null') {
+                                    if (item.executor == null && item.submittime == null) {
                                         item.executor = '';
                                         item.submittime = '';
                                         con += "<li class='datas'>"
@@ -484,7 +484,7 @@ var paginationeds = function () {
                         arr.push(indexs);
                         xx = arr.length;
                         if (xx <= page)
-                            if (item.executor == 'null' && item.submittime == 'null') {
+                            if (item.executor == null && item.submittime == null) {
                                 item.executor = '';
                                 item.submittime = '';
                                 con += "<li class='datas'>"
@@ -531,7 +531,7 @@ var paginationeds = function () {
                                 xx = arr.length;
                                 if (xx > page * (vid[1] - 1) && xx <= page * vid[1]) {
                                     i = li.length - 1;
-                                    if (item.executor == 'null' && item.submittime == 'null') {
+                                    if (item.executor == null && item.submittime == null) {
                                         item.executor = '';
                                         item.submittime = '';
                                         con += "<li class='datas'>"
@@ -580,7 +580,7 @@ var paginationeds = function () {
                         xx = arr.length;
                         if (arr.length > page * (txt03 - 1) && arr.length <= page * txt03) {
                             //i = li.length - 1;
-                            if (item.executor == 'null' && item.submittime == 'null') {
+                            if (item.executor == null && item.submittime == null) {
                                 item.executor = '';
                                 item.submittime = '';
                                 con += "<li class='datas'>"
@@ -740,7 +740,7 @@ $(document).ready(function () {
                                 let con = '';
                                 $.each(dataObj.ret, function (indexs, item) {
                                     if (arr_1[s[1]] === item.title) {
-                                        if (item.executor == 'null' && item.submittime == 'null') {
+                                        if (item.executor == null && item.submittime == null) {
                                             item.executor = '';
                                             item.submittime = '';
                                             con += "<li class='datas'>"
