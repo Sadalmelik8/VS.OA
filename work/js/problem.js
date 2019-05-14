@@ -825,6 +825,7 @@ $(document).ready(function () {
         }
         var fsession = session.fsession;
         var userName = session.User_NM;
+        var con = '';
         var proposetime = document.getElementById('data').value.substr(0, 4) + document.getElementById('data').value.substr(5, 2) + document.getElementById('data').value.substr(8, 2);
         _template1 = buildJson();
         var s = ("svr=WS_00005" + "&fsession=" + fsession + "&userName=" + userName);
@@ -870,6 +871,7 @@ $(document).ready(function () {
                         $("#ul").html(con); //把内容入到这个div中
                     }
                 })
+                con = '';
             }
         });
     })
