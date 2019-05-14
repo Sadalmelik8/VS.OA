@@ -23,8 +23,8 @@ $(document).ready(function () {
 let redirect = function () {
     let oltid = '';
     $(".caption").click(function (e) {
-        oltid = e.target.innerText;
-        location.href = "update.html?age=" + oltid;
+        oltid = e.target.id;
+        location.href = "update.html?num=" + oltid;
     });
 };
 
@@ -827,7 +827,7 @@ $(document).ready(function () {
         var userName = session.User_NM;
         var proposetime = document.getElementById('data').value.substr(0, 4) + document.getElementById('data').value.substr(5, 2) + document.getElementById('data').value.substr(8, 2);
         _template1 = buildJson();
-        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+        var s = ("svr=WS_00005" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
