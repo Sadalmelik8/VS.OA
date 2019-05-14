@@ -54,7 +54,7 @@ $(document).ready(function () {
     setInterval(test(), 1000);
     function test() {
         $.ajax({
-            type: "get", //请求的方式，也有get请求
+            type: "post", //请求的方式，也有get请求
             url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
             data: form,
             async: true,
