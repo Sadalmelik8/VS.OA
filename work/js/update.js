@@ -52,7 +52,7 @@ $(document).ready(function () {
         contentType: false,
         dataType: "json", //json格式，后台返回的数据为json格式的。
         success: function (result) {
-            dataObj = result; //返回的result为json格式的数据
+            var dataObj = result; //返回的result为json格式的数据
             title.value = dataObj.ret.title;
             details.value = dataObj.ret.content;
             present.value = dataObj.ret.executor;
