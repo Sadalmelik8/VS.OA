@@ -38,15 +38,25 @@ $(document).ready(function () {
         window.open('login.html', '_self');
         return;
     }
+    function buildJson() {
+        var std = JSON.stringify({});
+        var stdTemplate = JSON.parse(std);
+        stdTemplate.sts = 0;
+        return stdTemplate;
+    }
     var fsession = session.fsession;
     var userName = session.ORG_NM;
+    _template1 = buildJson();
     var s = ("svr=WS_000009" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
+    var form = new FormData();
+    form.append("data", (JSON.stringify(_template1)));
     setInterval(test(), 1000);
     function test() {
         $.ajax({
             type: "get", //请求的方式，也有get请求
             url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+            data: form,
             async: true,
             contentType: "application/json",
             data: form,//data是传给后台的字段，后台需要哪些就传入哪些
