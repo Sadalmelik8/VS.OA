@@ -1,4 +1,4 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
     //获取cookkie
     function GetCookie(key) {
         var aCookie = document.cookie.split("; ");
@@ -53,7 +53,7 @@ $(document).ready(function () {
         });
     });
     function buildJson() {
-        let title = document.getElementsByClassName('title')[0].id;
+        let title = document.getElementsByClassName('title')[0].value;
         let particular = document.getElementById('icon').value;
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
