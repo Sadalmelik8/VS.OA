@@ -84,13 +84,13 @@ var paginationed = function () {
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs < page) {
                         if (item.executor == null && item.submittime == null) {
-                            item.executor = '';
-                            item.submittime = '';
+                            item.executor = '&nbsp;';
+                            item.submittime = '&nbsp;';
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "</li>";
@@ -101,7 +101,7 @@ var paginationed = function () {
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "</li>";
@@ -125,13 +125,13 @@ var paginationed = function () {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
                                 if (item.executor == null && item.submittime == null) {
-                                    item.executor = '';
-                                    item.submittime = '';
+                                    item.executor = '&nbsp;';
+                                    item.submittime = '&nbsp;';
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                         + "<span>" + item.introducer + "</span>"//提出人
-                                        + "<span>" + item.proposetime + "</span>"//提出时间
+                                        + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span>" + item.submittime + "</span>"//提交时间
                                         + "</li>";
@@ -142,7 +142,7 @@ var paginationed = function () {
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                         + "<span>" + item.introducer + "</span>"//提出人
-                                        + "<span>" + item.proposetime + "</span>"//提出时间
+                                        + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span>" + item.submittime + "</span>"//提交时间
                                         + "</li>";
@@ -183,13 +183,13 @@ var paginationed = function () {
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs < page) {
                         if (item.executor == null && item.submittime == null) {
-                            item.executor = '';
-                            item.submittime = '';
+                            item.executor = '&nbsp;';
+                            item.submittime = '&nbsp;';
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "</li>";
@@ -200,7 +200,7 @@ var paginationed = function () {
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "</li>";
@@ -224,13 +224,13 @@ var paginationed = function () {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
                                 if (item.executor == null && item.submittime == null) {
-                                    item.executor = '';
-                                    item.submittime = '';
+                                    item.executor = '&nbsp;';
+                                    item.submittime = '&nbsp;';
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                         + "<span>" + item.introducer + "</span>"//提出人
-                                        + "<span>" + item.proposetime + "</span>"//提出时间
+                                        + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span>" + item.submittime + "</span>"//提交时间
                                         + "</li>";
@@ -241,7 +241,7 @@ var paginationed = function () {
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                         + "<span>" + item.introducer + "</span>"//提出人
-                                        + "<span>" + item.proposetime + "</span>"//提出时间
+                                        + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span>" + item.submittime + "</span>"//提交时间
                                         + "</li>";
@@ -283,13 +283,13 @@ var paginationed = function () {
                     if (indexs >= page * (txt03 - 1) && indexs < page * txt03) {
                         //i = li.length - 1;
                         if (item.executor == null && item.submittime == null) {
-                            item.executor = '';
-                            item.submittime = '';
+                            item.executor = '&nbsp;';
+                            item.submittime = '&nbsp;';
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "</li>";
@@ -300,7 +300,7 @@ var paginationed = function () {
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "</li>";
@@ -375,13 +375,13 @@ var paginationeds = function () {
                         xx = arr.length;
                         if (arr.length <= page && (x == item.introducer || x == item.executor)) {
                             if (item.executor == null && item.submittime == null) {
-                                item.executor = '';
-                                item.submittime = '';
+                                item.executor = '&nbsp;';
+                                item.submittime = '&nbsp;';
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + xx + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                     + "<span>" + item.introducer + "</span>"//提出人
-                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
                                     + "<span>" + item.submittime + "</span>"//提交时间
                                     + "</li>";
@@ -392,7 +392,7 @@ var paginationeds = function () {
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                     + "<span>" + item.introducer + "</span>"//提出人
-                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
                                     + "<span>" + item.submittime + "</span>"//提交时间
                                     + "</li>";
@@ -422,13 +422,13 @@ var paginationeds = function () {
                                 if (arr.length > page * (vid[1] - 1) && arr.length <= page * vid[1]) {
                                     i = li.length - 1;
                                     if (item.executor == null && item.submittime == null) {
-                                        item.executor = '';
-                                        item.submittime = '';
+                                        item.executor = '&nbsp;';
+                                        item.submittime = '&nbsp;';
                                         con += "<li class='datas'>"
                                             + "<span class='number'>" + xx + "</span>"//序号
                                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                             + "<span>" + item.introducer + "</span>"//提出人
-                                            + "<span>" + item.proposetime + "</span>"//提出时间
+                                            + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                             + "<span>" + item.executor + "</span>"//受理人
                                             + "<span>" + item.submittime + "</span>"//提交时间
                                             + "</li>";
@@ -439,7 +439,7 @@ var paginationeds = function () {
                                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                             + "<span>" + item.introducer + "</span>"//提出人
-                                            + "<span>" + item.proposetime + "</span>"//提出时间
+                                            + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                             + "<span>" + item.executor + "</span>"//受理人
                                             + "<span>" + item.submittime + "</span>"//提交时间
                                             + "</li>";
@@ -485,13 +485,13 @@ var paginationeds = function () {
                         xx = arr.length;
                         if (xx <= page)
                             if (item.executor == null && item.submittime == null) {
-                                item.executor = '';
-                                item.submittime = '';
+                                item.executor = '&nbsp;';
+                                item.submittime = '&nbsp;';
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + xx + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                     + "<span>" + item.introducer + "</span>"//提出人
-                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
                                     + "<span>" + item.submittime + "</span>"//提交时间
                                     + "</li>";
@@ -502,7 +502,7 @@ var paginationeds = function () {
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                     + "<span>" + item.introducer + "</span>"//提出人
-                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
                                     + "<span>" + item.submittime + "</span>"//提交时间
                                     + "</li>";
@@ -532,13 +532,13 @@ var paginationeds = function () {
                                 if (xx > page * (vid[1] - 1) && xx <= page * vid[1]) {
                                     i = li.length - 1;
                                     if (item.executor == null && item.submittime == null) {
-                                        item.executor = '';
-                                        item.submittime = '';
+                                        item.executor = '&nbsp;';
+                                        item.submittime = '&nbsp;';
                                         con += "<li class='datas'>"
                                             + "<span class='number'>" + xx + "</span>"//序号
                                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                             + "<span>" + item.introducer + "</span>"//提出人
-                                            + "<span>" + item.proposetime + "</span>"//提出时间
+                                            + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                             + "<span>" + item.executor + "</span>"//受理人
                                             + "<span>" + item.submittime + "</span>"//提交时间
                                             + "</li>";
@@ -549,7 +549,7 @@ var paginationeds = function () {
                                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                             + "<span>" + item.introducer + "</span>"//提出人
-                                            + "<span>" + item.proposetime + "</span>"//提出时间
+                                            + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                             + "<span>" + item.executor + "</span>"//受理人
                                             + "<span>" + item.submittime + "</span>"//提交时间
                                             + "</li>";
@@ -581,13 +581,13 @@ var paginationeds = function () {
                         if (arr.length > page * (txt03 - 1) && arr.length <= page * txt03) {
                             //i = li.length - 1;
                             if (item.executor == null && item.submittime == null) {
-                                item.executor = '';
-                                item.submittime = '';
+                                item.executor = '&nbsp;';
+                                item.submittime = '&nbsp;';
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + xx + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                     + "<span>" + item.introducer + "</span>"//提出人
-                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
                                     + "<span>" + item.submittime + "</span>"//提交时间
                                     + "</li>";
@@ -598,7 +598,7 @@ var paginationeds = function () {
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                     + "<span>" + item.introducer + "</span>"//提出人
-                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
                                     + "<span>" + item.submittime + "</span>"//提交时间
                                     + "</li>";
@@ -724,7 +724,7 @@ $(document).ready(function () {
                 input.onkeyup = function () {
                     remove();
                     var arr_1 = [];
-                    for (var index = 0; index < indexs; index++) {
+                    for (var index = 0; index <= indexs; index++) {
                         if (dataObj.ret[index].title.indexOf(this.value) > -1 && this.value.length > 0) {
                             arr_1.push(dataObj.ret[index].title);
                         }
@@ -741,13 +741,13 @@ $(document).ready(function () {
                                 $.each(dataObj.ret, function (indexs, item) {
                                     if (arr_1[s[1]] === item.title) {
                                         if (item.executor == null && item.submittime == null) {
-                                            item.executor = '';
-                                            item.submittime = '';
+                                            item.executor = '&nbsp;';
+                                            item.submittime = '&nbsp;';
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                                 + "<span>" + item.introducer + "</span>"//提出人
-                                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
                                                 + "<span>" + item.submittime + "</span>"//提交时间
                                                 + "</li>";
@@ -758,7 +758,7 @@ $(document).ready(function () {
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                                 + "<span>" + item.introducer + "</span>"//提出人
-                                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
                                                 + "<span>" + item.submittime + "</span>"//提交时间
                                                 + "</li>";
