@@ -8,6 +8,16 @@ let oltid = url.substr(url.indexOf("=") + 1);
 //        location.href = "problem-les.html?age=" + oltid;
 //    });
 //});
+//获取cookkie
+function GetCookie(key) {
+    var aCookie = document.cookie.split("; ");
+    for (var i = 0; i < aCookie.length; i++) {
+        var aCrumb = aCookie[i].split("=");
+        if (key == aCrumb[0]) {
+            return unescape(aCrumb[1]);
+        }
+    }
+}
 $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
