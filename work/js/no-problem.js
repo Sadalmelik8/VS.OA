@@ -568,7 +568,7 @@ var call = function () {
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.problemState = "1";
+        stdTemplate.problemstate = "1";
         return stdTemplate;
     }
 };
