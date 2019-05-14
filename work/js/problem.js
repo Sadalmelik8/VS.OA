@@ -846,7 +846,7 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (dataObj.ret.id = 0) {
+                    if (dataObj.ret.id == 0) {
                         alert('该日期无问题记录');
                     }
                     else {
