@@ -682,7 +682,7 @@ var call = function () {
         return stdTemplate;
     }
 };
-//搜索
+//模糊搜索
 $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
@@ -799,6 +799,80 @@ $(document).ready(function () {
         stdTemplate.problemstate = 0;
         return stdTemplate;
     }
+});
+//时间搜索
+$(document).ready(function () {
+    $('#search').click(function () {
+        function buildJson() {
+            var std = JSON.stringify({});
+            var stdTemplate = JSON.parse(std);
+            stdTemplate.proposetime = proposetime;
+            stdTemplate.problemstate = 0;
+            return stdTemplate;
+        }
+        //获取fsession
+        var aCookie = GetCookie('wytSession');
+        session = eval('(' + aCookie + ')');
+        if (session) {
+            if (session.fsession == "undefined") {
+                window.open('login.html', '_self');
+                return;
+            }
+        }
+        else {
+            window.open('login.html', '_self');
+            return;
+        }
+        var fsession = session.fsession;
+        var userName = session.User_NM;
+        var proposetime = document.getElementById('data').value.substr(0, 4) + document.getElementById('data').value.substr(5, 2) + document.getElementById('data').value.substr(8, 2);
+        _template1 = buildJson();
+        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+        var URL = "/webservice/?" + s;
+        var form = new FormData();
+        form.append("data", (JSON.stringify(_template1)));
+        $.ajax({
+            type: "post", //请求的方式，也有get请求
+            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+            contentType: "application/json",
+            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+            dataType: "json", //json格式，后台返回的数据为json格式的。
+            cache: false,
+            processData: false,
+            contentType: false,
+            beforeSend: LoadFunction, //加载执行方法
+            error: erryFunction,  //错误执行方法
+            success: function (result) {
+                dataObj = result; //返回的result为json格式的数据
+                $.each(dataObj.ret, function (indexs, item) {
+                    if (item.executor == null && item.submittime == null) {
+                        item.executor = '&nbsp;';
+                        item.submittime = '&nbsp;';
+                        con += "<li class='datas'>"
+                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                            + "<span>" + item.introducer + "</span>"//提出人
+                            + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                            + "<span>" + item.executor + "</span>"//受理人
+                            + "<span>" + item.submittime + "</span>"//提交时间
+                            + "</li>";
+                        $("#ul").html(con); //把内容入到这个div中
+                    }
+                    else {
+                        con += "<li class='datas'>"
+                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                            + "<span>" + item.introducer + "</span>"//提出人
+                            + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                            + "<span>" + item.executor + "</span>"//受理人
+                            + "<span>" + item.submittime + "</span>"//提交时间
+                            + "</li>";
+                        $("#ul").html(con); //把内容入到这个div中
+                    }
+                })
+            }
+        });
+    })
 });
 //筛选
 $(document).ready(function () {
