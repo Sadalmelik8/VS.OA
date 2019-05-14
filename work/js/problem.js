@@ -83,15 +83,30 @@ var paginationed = function () {
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs < page) {
-                        con += "<li class='datas'>"
-                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.introducer + "</span>"//提出人
-                            + "<span>" + item.proposetime + "</span>"//提出时间
-                            + "<span>" + item.executor + "</span>"//受理人
-                            + "<span>" + item.submittime + "</span>"//提交时间
-                            + "</li>";
-                        $("#ul").html(con); //把内容入到这个div中
+                        if (item.executor == 'null' && item.submittime == 'null') {
+                            item.executor = '';
+                            item.submittime = '';
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }
+                        else {
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }
                     }
                 });
                 redirect();
@@ -109,15 +124,30 @@ var paginationed = function () {
                         $.each(dataObj.ret, function (indexs, item) {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
-                                con += "<li class='datas'>"
-                                    + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                    + "<span>" + item.introducer + "</span>"//提出人
-                                    + "<span>" + item.proposetime + "</span>"//提出时间
-                                    + "<span>" + item.executor + "</span>"//受理人
-                                    + "<span>" + item.submittime + "</span>"//提交时间
-                                    + "</li>";
-                                $("#ul").html(con); //把内容入到这个div中
+                                if (item.executor == 'null' && item.submittime == 'null') {
+                                    item.executor = '';
+                                    item.submittime = '';
+                                    con += "<li class='datas'>"
+                                        + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span>" + item.introducer + "</span>"//提出人
+                                        + "<span>" + item.proposetime + "</span>"//提出时间
+                                        + "<span>" + item.executor + "</span>"//受理人
+                                        + "<span>" + item.submittime + "</span>"//提交时间
+                                        + "</li>";
+                                    $("#ul").html(con); //把内容入到这个div中
+                                }
+                                else {
+                                    con += "<li class='datas'>"
+                                        + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span>" + item.introducer + "</span>"//提出人
+                                        + "<span>" + item.proposetime + "</span>"//提出时间
+                                        + "<span>" + item.executor + "</span>"//受理人
+                                        + "<span>" + item.submittime + "</span>"//提交时间
+                                        + "</li>";
+                                    $("#ul").html(con); //把内容入到这个div中
+                                }
                                 li[vid[1] - 1].className = "active";
                                 actived();
                                 redirect();
@@ -152,15 +182,30 @@ var paginationed = function () {
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs < page) {
-                        con += "<li class='datas'>"
-                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.introducer + "</span>"//提出人
-                            + "<span>" + item.proposetime + "</span>"//提出时间
-                            + "<span>" + item.executor + "</span>"//受理人
-                            + "<span>" + item.submittime + "</span>"//提交时间
-                            + "</li>";
-                        $("#ul").html(con); //把内容入到这个div中
+                        if (item.executor == 'null' && item.submittime == 'null') {
+                            item.executor = '';
+                            item.submittime = '';
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }
+                        else {
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }
                     }
                 });
                 redirect();
@@ -178,15 +223,30 @@ var paginationed = function () {
                         $.each(dataObj.ret, function (indexs, item) {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
-                                con += "<li class='datas'>"
-                                    + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                    + "<span>" + item.introducer + "</span>"//提出人
-                                    + "<span>" + item.proposetime + "</span>"//提出时间
-                                    + "<span>" + item.executor + "</span>"//受理人
-                                    + "<span>" + item.submittime + "</span>"//提交时间
-                                    + "</li>";
-                                $("#ul").html(con); //把内容入到这个div中
+                                if (item.executor == 'null' && item.submittime == 'null') {
+                                    item.executor = '';
+                                    item.submittime = '';
+                                    con += "<li class='datas'>"
+                                        + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span>" + item.introducer + "</span>"//提出人
+                                        + "<span>" + item.proposetime + "</span>"//提出时间
+                                        + "<span>" + item.executor + "</span>"//受理人
+                                        + "<span>" + item.submittime + "</span>"//提交时间
+                                        + "</li>";
+                                    $("#ul").html(con); //把内容入到这个div中
+                                }
+                                else {
+                                    con += "<li class='datas'>"
+                                        + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span>" + item.introducer + "</span>"//提出人
+                                        + "<span>" + item.proposetime + "</span>"//提出时间
+                                        + "<span>" + item.executor + "</span>"//受理人
+                                        + "<span>" + item.submittime + "</span>"//提交时间
+                                        + "</li>";
+                                    $("#ul").html(con); //把内容入到这个div中
+                                }
                                 li[vid[1] - 1].className = "active";
                                 actived();
                                 redirect();
@@ -222,15 +282,30 @@ var paginationed = function () {
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs >= page * (txt03 - 1) && indexs < page * txt03) {
                         //i = li.length - 1;
-                        con += "<li class='datas'>"
-                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.introducer + "</span>"//提出人
-                            + "<span>" + item.proposetime + "</span>"//提出时间
-                            + "<span>" + item.executor + "</span>"//受理人
-                            + "<span>" + item.submittime + "</span>"//提交时间
-                            + "</li>";
-                        $("#ul").html(con); //把内容入到这个div中
+                        if (item.executor == 'null' && item.submittime == 'null') {
+                            item.executor = '';
+                            item.submittime = '';
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }
+                        else {
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }
                         redirect();
                         actived();
                     }
@@ -299,15 +374,30 @@ var paginationeds = function () {
                         arr.push(indexs);
                         xx = arr.length;
                         if (arr.length <= page && (x == item.introducer || x == item.executor)) {
-                            con += "<li class='datas'>"
-                                + "<span class='number'>" + xx + "</span>"//序号
-                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime + "</span>"//提交时间
-                                + "</li>";
-                            $("#ul").html(con); //把内容入到这个div中
+                            if (item.executor == 'null' && item.submittime == 'null') {
+                                item.executor = '';
+                                item.submittime = '';
+                                con += "<li class='datas'>"
+                                    + "<span class='number'>" + xx + "</span>"//序号
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span>" + item.introducer + "</span>"//提出人
+                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.executor + "</span>"//受理人
+                                    + "<span>" + item.submittime + "</span>"//提交时间
+                                    + "</li>";
+                                $("#ul").html(con); //把内容入到这个div中
+                            }
+                            else {
+                                con += "<li class='datas'>"
+                                    + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span>" + item.introducer + "</span>"//提出人
+                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.executor + "</span>"//受理人
+                                    + "<span>" + item.submittime + "</span>"//提交时间
+                                    + "</li>";
+                                $("#ul").html(con); //把内容入到这个div中
+                            }
                         }
                     }
                 });
@@ -331,15 +421,30 @@ var paginationeds = function () {
                                 xx = arr.length;
                                 if (arr.length > page * (vid[1] - 1) && arr.length <= page * vid[1]) {
                                     i = li.length - 1;
-                                    con += "<li class='datas'>"
-                                        + "<span class='number'>" + xx + "</span>"
-                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                        + "<span>" + item.introducer + "</span>"//提出人
-                                        + "<span>" + item.proposetime + "</span>"//提出时间
-                                        + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span>" + item.submittime + "</span>"//提交时间
-                                        + "</li>";
-                                    $("#ul").html(con); //把内容入到这个div中
+                                    if (item.executor == 'null' && item.submittime == 'null') {
+                                        item.executor = '';
+                                        item.submittime = '';
+                                        con += "<li class='datas'>"
+                                            + "<span class='number'>" + xx + "</span>"//序号
+                                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                            + "<span>" + item.introducer + "</span>"//提出人
+                                            + "<span>" + item.proposetime + "</span>"//提出时间
+                                            + "<span>" + item.executor + "</span>"//受理人
+                                            + "<span>" + item.submittime + "</span>"//提交时间
+                                            + "</li>";
+                                        $("#ul").html(con); //把内容入到这个div中
+                                    }
+                                    else {
+                                        con += "<li class='datas'>"
+                                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                            + "<span>" + item.introducer + "</span>"//提出人
+                                            + "<span>" + item.proposetime + "</span>"//提出时间
+                                            + "<span>" + item.executor + "</span>"//受理人
+                                            + "<span>" + item.submittime + "</span>"//提交时间
+                                            + "</li>";
+                                        $("#ul").html(con); //把内容入到这个div中
+                                    }
                                     li[vid[1] - 1].className = "active";
                                     actived();
                                     redirect();
@@ -379,15 +484,30 @@ var paginationeds = function () {
                         arr.push(indexs);
                         xx = arr.length;
                         if (xx <= page)
-                            con += "<li class='datas'>"
-                                + "<span class='number'>" + xx + "</span>"
-                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime + "</span>"//提交时间
-                                + "</li>";
-                        $("#ul").html(con); //把内容入到这个div中
+                            if (item.executor == 'null' && item.submittime == 'null') {
+                                item.executor = '';
+                                item.submittime = '';
+                                con += "<li class='datas'>"
+                                    + "<span class='number'>" + xx + "</span>"//序号
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span>" + item.introducer + "</span>"//提出人
+                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.executor + "</span>"//受理人
+                                    + "<span>" + item.submittime + "</span>"//提交时间
+                                    + "</li>";
+                                $("#ul").html(con); //把内容入到这个div中
+                            }
+                            else {
+                                con += "<li class='datas'>"
+                                    + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span>" + item.introducer + "</span>"//提出人
+                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.executor + "</span>"//受理人
+                                    + "<span>" + item.submittime + "</span>"//提交时间
+                                    + "</li>";
+                                $("#ul").html(con); //把内容入到这个div中
+                            }
                     }
                 });
                 // control();
@@ -411,15 +531,30 @@ var paginationeds = function () {
                                 xx = arr.length;
                                 if (xx > page * (vid[1] - 1) && xx <= page * vid[1]) {
                                     i = li.length - 1;
-                                    con += "<li class='datas'>"
-                                        + "<span class='number'>" + xx + "</span>"
-                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                        + "<span>" + item.introducer + "</span>"//提出人
-                                        + "<span>" + item.proposetime + "</span>"//提出时间
-                                        + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span>" + item.submittime + "</span>"//提交时间"
-                                        + "</li>";
-                                    $("#ul").html(con); //把内容入到这个div中
+                                    if (item.executor == 'null' && item.submittime == 'null') {
+                                        item.executor = '';
+                                        item.submittime = '';
+                                        con += "<li class='datas'>"
+                                            + "<span class='number'>" + xx + "</span>"//序号
+                                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                            + "<span>" + item.introducer + "</span>"//提出人
+                                            + "<span>" + item.proposetime + "</span>"//提出时间
+                                            + "<span>" + item.executor + "</span>"//受理人
+                                            + "<span>" + item.submittime + "</span>"//提交时间
+                                            + "</li>";
+                                        $("#ul").html(con); //把内容入到这个div中
+                                    }
+                                    else {
+                                        con += "<li class='datas'>"
+                                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                            + "<span>" + item.introducer + "</span>"//提出人
+                                            + "<span>" + item.proposetime + "</span>"//提出时间
+                                            + "<span>" + item.executor + "</span>"//受理人
+                                            + "<span>" + item.submittime + "</span>"//提交时间
+                                            + "</li>";
+                                        $("#ul").html(con); //把内容入到这个div中
+                                    }
                                     li[vid[1] - 1].className = "active";
                                     actived();
                                     redirect();
@@ -445,15 +580,30 @@ var paginationeds = function () {
                         xx = arr.length;
                         if (arr.length > page * (txt03 - 1) && arr.length <= page * txt03) {
                             //i = li.length - 1;
-                            con += "<li class='datas'>"
-                                + "<span class='number'>" + xx + "</span>"
-                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.introducer + "</span>"//提出人
-                                + "<span>" + item.proposetime + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime + "</span>"//提交时间
-                                + "</li>";
-                            $("#ul").html(con); //把内容入到这个div中
+                            if (item.executor == 'null' && item.submittime == 'null') {
+                                item.executor = '';
+                                item.submittime = '';
+                                con += "<li class='datas'>"
+                                    + "<span class='number'>" + xx + "</span>"//序号
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span>" + item.introducer + "</span>"//提出人
+                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.executor + "</span>"//受理人
+                                    + "<span>" + item.submittime + "</span>"//提交时间
+                                    + "</li>";
+                                $("#ul").html(con); //把内容入到这个div中
+                            }
+                            else {
+                                con += "<li class='datas'>"
+                                    + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                    + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span>" + item.introducer + "</span>"//提出人
+                                    + "<span>" + item.proposetime + "</span>"//提出时间
+                                    + "<span>" + item.executor + "</span>"//受理人
+                                    + "<span>" + item.submittime + "</span>"//提交时间
+                                    + "</li>";
+                                $("#ul").html(con); //把内容入到这个div中
+                            }
                             redirect();
                         }
                     }
@@ -590,16 +740,31 @@ $(document).ready(function () {
                                 let con = '';
                                 $.each(dataObj.ret, function (indexs, item) {
                                     if (arr_1[s[1]] === item.title) {
-                                        con += "<li class='datas'>"
-                                            + "<span class='number'>" + (indexs + 1) + "</span>"
-                                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                            + "<span>" + item.introducer + "</span>"//提出人
-                                            + "<span>" + item.proposetime + "</span>"//提出时间
-                                            + "<span>" + item.executor + "</span>"//受理人
-                                            + "<span>" + item.submittime + "</span>"//提交时间
-                                            + "</li>";
+                                        if (item.executor == 'null' && item.submittime == 'null') {
+                                            item.executor = '';
+                                            item.submittime = '';
+                                            con += "<li class='datas'>"
+                                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span>" + item.introducer + "</span>"//提出人
+                                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                                + "<span>" + item.executor + "</span>"//受理人
+                                                + "<span>" + item.submittime + "</span>"//提交时间
+                                                + "</li>";
+                                            $("#ul").html(con); //把内容入到这个div中
+                                        }
+                                        else {
+                                            con += "<li class='datas'>"
+                                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span>" + item.introducer + "</span>"//提出人
+                                                + "<span>" + item.proposetime + "</span>"//提出时间
+                                                + "<span>" + item.executor + "</span>"//受理人
+                                                + "<span>" + item.submittime + "</span>"//提交时间
+                                                + "</li>";
+                                            $("#ul").html(con); //把内容入到这个div中
+                                        }
                                     }
-                                    $("#ul").html(con);
                                     let _box = document.getElementById('box');
                                     _box.style.display = 'none'
                                 })
@@ -611,7 +776,7 @@ $(document).ready(function () {
                 //添加
                 function create(arr_1) {
                     ul.style.display = "block";
-                    for (var i = 0; i < 10; i++) {
+                    for (var i = 0; i < arr_1.length; i++) {
                         var li = document.createElement("li");
                         li.innerHTML = "<a href='#' id='a" + i + "'>" + arr_1[i] + "</a>";
                         ul.appendChild(li);

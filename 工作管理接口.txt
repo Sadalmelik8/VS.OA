@@ -1,7 +1,8 @@
 1.新增问题
 新增问题到问题库表（问题库表(T_ Problem)）
 服务号：WS_00002
-参数：{title:,content:,introducer:,proposetime:,pic:}--标题、内容、提出人、提出时间，上传图片
+参数：{title:,content:,pic:}--标题、内容、上传图片
+提出人为username，就是当前登录的人
 新增消息到消息提醒表（T_Message）
 参数：{title:}--标题
 操作：消息接收人（固定），proposetime，operation（新增），登录用户，0
@@ -29,7 +30,7 @@ ret={id:1}返回失败
 4.日期搜索
 获取提出时间的所有问题
 服务号：WS_0005
-参数：{time:,problemstate:0/1}-----time时间所有的未解决的问题
+参数：{time:,problemstate:0/1/2}-----time时间所有的未解决的问题
 返回：json,
 ret=ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（problemstate 0 时)
 ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间（problemstate 1或2 时)
