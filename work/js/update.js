@@ -35,6 +35,8 @@ $(document).ready(function () {
     var title = document.getElementsByClassName('title')[0];
     var details = document.getElementsByClassName('details')[0];
     var present = document.getElementsByClassName('present')[0];
+    var remarks = document.getElementsByClassName('title')[1];
+    var level = document.getElementsByClassName('bottom--middle__urgency')[0];
     var fsession = session.fsession;
     var userName = session.User_NM;
     _template1 = buildJson();
@@ -56,6 +58,8 @@ $(document).ready(function () {
             title.value = dataObj.ret[0].title;
             details.value = dataObj.ret[0].content;
             present.value = dataObj.ret[0].executor;
+            remarks.value = dataObj.ret[0].remarks;
+            level.value = dataObj.ret[0].level;
         }
     });
     function buildJson() {

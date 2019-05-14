@@ -877,6 +877,7 @@ $(document).ready(function () {
                     }
                 })
                 con = '';
+                redirect();
             }
         });
     })
