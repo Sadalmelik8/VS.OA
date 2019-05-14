@@ -53,9 +53,9 @@ $(document).ready(function () {
         dataType: "json", //json格式，后台返回的数据为json格式的。
         success: function (result) {
             var dataObj = result; //返回的result为json格式的数据
-            title.value = dataObj.ret.title;
-            details.value = dataObj.ret.content;
-            present.value = dataObj.ret.executor;
+            title.value = dataObj.ret[0].title;
+            details.value = dataObj.ret[0].content;
+            present.value = dataObj.ret[0].executor;
         }
     });
     function buildJson() {
