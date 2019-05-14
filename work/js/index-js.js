@@ -45,7 +45,7 @@ $(document).ready(function () {
         return stdTemplate;
     }
     var fsession = session.fsession;
-    var userName = session.ORG_NM;
+    var userName = session.User_NM;
     _template1 = buildJson();
     var s = ("svr=WS_000009" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
