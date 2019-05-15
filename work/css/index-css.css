@@ -172,12 +172,12 @@ table td {
     margin: 0;
     display: inline-block;
     width: 150px;
-    height: 28px;
+    height: 30px;
     font-size: 14px;
     color: #555;
     border-right: 1px solid #777;
     text-align: center;
-    line-height: 28px;
+    line-height: 30px;
 }
 .operation{
     padding: 0;
@@ -185,8 +185,8 @@ table td {
     display: inline-block;
     box-sizing: border-box;
     width: 249px;
-    height: 28px;
-    line-height: 28px;
+    height:30px;
+    line-height: 30px;
     font-size: 14px;
     color: #555;
     text-align: center;
@@ -239,8 +239,12 @@ table td {
     display: inline-block;
     width: 400px;
     height: 30px;
-    border-bottom: 1px solid #777;
+    /*border-bottom: 1px solid #777;*/
 }
 .icon:hover{
     background: #c7c7c7;
+}
+.icon>*{
+    border-bottom: 1px solid #777;
+    vertical-align: middle;
 }
