@@ -48,7 +48,7 @@ let redirect = function (fsession, userName) {
         //document.getElementsByTagName('iframe')[0].src = 'update.html';
         //document.getElementsByTagName('iframe')[0].id = oltid;
         //location.href = "update.html?num=" + oltid;
-        window.open('"update.html?num=' + oltid, 'iframe1')
+        window.open('update.html?num=' + oltid, 'iframe1')
     });
 };
 $(document).ready(function () {
