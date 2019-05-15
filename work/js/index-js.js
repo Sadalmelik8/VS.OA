@@ -8,14 +8,6 @@ function GetCookie(key) {
         }
     }
 }
-//点击标题跳转
-let redirect = function () {
-    let oltid = '';
-    $(".icon").click(function (e) {
-        oltid = e.target.id;
-        location.href = "update.html?num=" + oltid;
-    });
-};
 $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
@@ -36,7 +28,6 @@ $(document).ready(function () {
         stdTemplate.sts = 0;
         return stdTemplate;
     }
-    var mes = '';
     var fsession = session.fsession;
     var userName = session.User_NM;
     _template1 = buildJson();
@@ -59,8 +50,6 @@ $(document).ready(function () {
             contentType: false,
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据)
-                mes = dataObj.ret.length;
-                //document.getElementById('messge').innerHTML = '未读消息数' + mes;
             }
         })
     }
@@ -129,20 +118,17 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
                     con += "<div class='icon' id=" + item.num + ">"
-                        + "<span class='date'>" + item.f_timestamp + "</span>"
+                        + "<span class='date'>" + item.data + "</span>"
                         + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                         + "</div>";
                     $("#data").html(con)
                 })
-                redirect();
-                con = '';
             }
         });
     });
     let unread = document.getElementsByClassName("unread")[0];
     let read = document.getElementsByClassName("read")[0];
     $(".unread").click(function () {
-        var con = '';
         read.style.backgroundColor = '#c7c7c7';
         read.style.color = '#fff';
         unread.style.backgroundColor = '#fff';
@@ -173,18 +159,15 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
                     con += "<div class='icon' id=" + item.num + ">"
-                        + "<span class='date'>" + item.f_timestamp + "</span>"
+                        + "<span class='date'>" + item.data + "</span>"
                         + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                         + "</div>";
                     $("#data").html(con)
                 })
-                redirect();
-                con = '';
             }
         });
     });
     $(".read").click(function () {
-        var con = '';
         unread.style.backgroundColor = '#c7c7c7';
         unread.style.color = '#fff';
         read.style.backgroundColor = '#fff';
@@ -215,14 +198,16 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
                     con += "<div class='icon' id=" + item.num + ">"
-                        + "<span class='date'>" + item.f_timestamp + "</span>"
+                        + "<span class='date'>" + item.data + "</span>"
                         + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                         + "</div>";
                     $("#data").html(con)
                 })
-                redirect();
-                con = '';
             }
         });
     });
+    $(".icon").click(function (e) {
+        let num = e.target.id;
+        location.href = "update.html?num=" + num;
+    })
 });
