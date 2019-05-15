@@ -768,6 +768,7 @@ $(document).ready(function () {
                                     let _box = document.getElementById('box');
                                     _box.style.display = 'none'
                                 })
+                                redirect();
                             })
                         }
                     }
@@ -873,7 +874,7 @@ $(document).ready(function () {
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
-                        }  
+                        }
                     }
                 })
                 con = '';

@@ -9,11 +9,27 @@
 </head>
 <body>
     <!--导航栏-->
+    <ul id="drop" style=" display: none;">
+        <li class="news">
+            <span class="unread">未读消息</span>
+            <span class="read">已读消息</span>
+        </li>
+        <li id="data">
+            <div class="icon">
+                <span class="date">3.25|15:41</span>
+                <span class="operation">1666665116316163</span>
+            </div>
+        </li>
+        <!--<li class="data">-->
+            <!--<span class="date">3.25|15:41</span>-->
+            <!--<span class="operation">1666665116316163</span>-->
+        <!--</li>-->
+    </ul>
     <div class="top">
         <!--<img src="img/Logo.jpg" />-->
         <span>卫医通开发管理后台</span>
         <!--有消息则变色提醒-->
-        <a id="messge" href="">消息提醒</a>
+        <a id="messge">消息提醒</a>
         <!--根据登录uid获取当前用户信息-->
         <a href="">当前用户</a>
         <!--安全退出，清除cooking等文件-->
