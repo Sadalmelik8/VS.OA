@@ -38,8 +38,8 @@ ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,proble
 5.问题详情
 查看问题的详情
 服务号：WS_00006
-参数：{num:,sts:}-----查看问题的详情信息
-根据用户名，问题编号，消息状态确认消息是否已读
+参数：{num:}-----查看问题的详情信息
+根据登录用户，num修改消息提醒表里面的sts为已读
 返回：json,
 ret={problemstate:0/1,executor:,title:,content:,level:}--判断是否验收，受理人、标题、问题内容，问题紧急度
 ret={id:0}返回失败
