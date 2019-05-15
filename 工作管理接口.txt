@@ -45,8 +45,17 @@ ret={problemstate:0/1,executor:,title:,content:,level:}--判断是否验收，�
 ret={id:0}返回失败
 
 6.提交
-选择受理人和修改到问题库表
-操作，后台判断，该问题是否有受理人，或者受理人是否更改，如果受理人为空或者更改受理人，获取当前时间，则为分配任务，operation为分配，消息接收人为受理人。如果受理人不变，则是完成问题并提交，获取当前时间，operation为提交 sts默认0
+1. 该问题有受理人
+	1). 如果受理人不变
+		如果contents为空：T_Problem表修改备注；消息接收人(chen.jiong)，Operation为“提交”
+		如果contents有内容
+			如果用户为（chen.jiong）T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段）；消息接收人(受理人)，Operation为“追加”
+			如果用户不为（chen.jiong）T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注）；消息接收人(chen.jiong)，Operation为“追加”
+	2). 如果受理人改变
+		如果contents为空：T_Problem表修改受理人；operation为分配，消息接收人为受理人
+		如果contents有内容：T_Problem表修改受理人，增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段）；operation为分配，消息接收人为受理人
+2.该问题没有受理人
+	T_Problem表修改受理人，问题紧急度；operation为分配，消息接收人为受理人
 服务号：WS_00007
 参数：{executor:,num:,content:,contents:,remarks:,level:}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度
 新增消息到消息提醒表（T_Message）
