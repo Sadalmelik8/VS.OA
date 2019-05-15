@@ -19,7 +19,7 @@
 }
 
 .problem {
-    width: 100%;
+    width: 95%;
     margin: 40px auto;
     border: 1px solid #777;
     border-top: none;
@@ -101,11 +101,11 @@ li > * {
 }
 
 .title {
-    width: 40%;
+    width: 26.5%;
 }
 
 .caption{
-    width: 40%;
+    width: 26.5%;
     font-size: 15px;
     text-decoration: none;
     display: inline-block;
@@ -259,4 +259,6 @@ a{
     background: #d5d8db;
     color: white;
 }
-
+.time{
+    width: 12%;
+}
