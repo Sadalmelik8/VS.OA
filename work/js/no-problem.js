@@ -84,11 +84,11 @@ var paginationed = function () {
                             + "<span class='number'>" + (indexs + 1) + "</span>"
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                             + "<span>" + item.introducer + "</span>"
-                            + "<span>" + item.proposeTime + "</span>"
+                            + "<span class="+time+">" + item.proposeTime + "</span>"
                             + "<span>" + item.executor + "</span>"
-                            + "<span>" + item.submitTime + "</span>"
+                            + "<span class=" + time +">" + item.submitTime + "</span>"
                             + "<span>" + item.acceptor + "</span>"
-                            + "<span>" + item.inspectTime + "</span>"
+                            + "<span class=" + time +">" + item.inspectTime + "</span>"
                             + "<input type='submit' class='submit'>"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
@@ -113,11 +113,11 @@ var paginationed = function () {
                                     + "<span class='number'>" + (indexs + 1) + "</span>"
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                     + "<span>" + item.introducer + "</span>"
-                                    + "<span>" + item.proposeTime + "</span>"
+                                    + "<span class=" + time +">" + item.proposeTime + "</span>"
                                     + "<span>" + item.executor + "</span>"
-                                    + "<span>" + item.submitTime + "</span>"
+                                    + "<span class=" + time +">" + item.submitTime + "</span>"
                                     + "<span>" + item.acceptor + "</span>"
-                                    + "<span>" + item.inspectTime + "</span>"
+                                    + "<span class=" + time +">" + item.inspectTime + "</span>"
                                     + "<input type='submit' class='submit'>"
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
@@ -159,11 +159,11 @@ var paginationed = function () {
                             + "<span class='number'>" + (indexs + 1) + "</span>"
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                             + "<span>" + item.introducer + "</span>"
-                            + "<span>" + item.proposeTime + "</span>"
+                            + "<span class=" + time +">" + item.proposeTime + "</span>"
                             + "<span>" + item.executor + "</span>"
-                            + "<span>" + item.submitTime + "</span>"
+                            + "<span class=" + time +">" + item.submitTime + "</span>"
                             + "<span>" + item.acceptor + "</span>"
-                            + "<span>" + item.inspectTime + "</span>"
+                            + "<span class=" + time +">" + item.inspectTime + "</span>"
                             + "<input type='submit' class='submit'>"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
@@ -188,11 +188,11 @@ var paginationed = function () {
                                     + "<span class='number'>" + (indexs + 1) + "</span>"
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                                     + "<span>" + item.introducer + "</span>"
-                                    + "<span>" + item.proposeTime + "</span>"
+                                    + "<span class=" + time +">" + item.proposeTime + "</span>"
                                     + "<span>" + item.executor + "</span>"
-                                    + "<span>" + item.submitTime + "</span>"
+                                    + "<span class=" + time +">" + item.submitTime + "</span>"
                                     + "<span>" + item.acceptor + "</span>"
-                                    + "<span>" + item.inspectTime + "</span>"
+                                    + "<span class=" + time +">" + item.inspectTime + "</span>"
                                     + "<input type='submit' class='submit'>"
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
@@ -235,11 +235,11 @@ var paginationed = function () {
                             + "<span class='number'>" + (indexs + 1) + "</span>"
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
                             + "<span>" + item.introducer + "</span>"
-                            + "<span>" + item.proposeTime + "</span>"
+                            + "<span class=" + time +">" + item.proposeTime + "</span>"
                             + "<span>" + item.executor + "</span>"
-                            + "<span>" + item.submitTime + "</span>"
+                            + "<span class=" + time +">" + item.submitTime + "</span>"
                             + "<span>" + item.acceptor + "</span>"
-                            + "<span>" + item.inspectTime + "</span>"
+                            + "<span class=" + time +">" + item.inspectTime + "</span>"
                             + "<input type='submit' class='submit'>"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中

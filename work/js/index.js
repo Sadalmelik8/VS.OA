@@ -12,41 +12,41 @@ function GetCookie(key) {
 let redirect = function (fsession, userName) {
     let oltid = '';
     $(".icon").click(function (e) {
-        _template1 = buildJson();
-        var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/webservice/?" + s;
-        var form = new FormData();
-        form.append("data", (JSON.stringify(_template1)));
-        $.ajax({
-            type: "post", //请求的方式，也有get请求
-            url: URL, //请求地址
-            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            contentType: "application/json",
-            cache: false,
-            processData: false,
-            contentType: false,
-            success: function (result) {
-                dataObj = result; //返回的result为json格式的数据
-                $.each(dataObj.ret, function (index, item) {
-                    con += "<div class='icon' id=" + item.num + ">"
-                        + "<span class='date'>" + item.f_timestamp + "</span>"
-                        + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
-                        + "</div>";
-                    $("#data").html(con)
-                })
-                con = '';
-            }
-        });
-        function buildJson() {
-            var std = JSON.stringify({});
-            var stdTemplate = JSON.parse(std);
-            stdTemplate.num = oltid;
-            return stdTemplate;
-        }
+        //_template1 = buildJson();
+        //var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+        //var URL = "/webservice/?" + s;
+        //var form = new FormData();
+        //form.append("data", (JSON.stringify(_template1)));
+        //$.ajax({
+        //    type: "post", //请求的方式，也有get请求
+        //    url: URL, //请求地址
+        //    data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+        //    dataType: "json", //json格式，后台返回的数据为json格式的。
+        //    contentType: "application/json",
+        //    cache: false,
+        //    processData: false,
+        //    contentType: false,
+        //    success: function (result) {
+        //        dataObj = result; //返回的result为json格式的数据
+        //        $.each(dataObj.ret, function (index, item) {
+        //            con += "<div class='icon' id=" + item.num + ">"
+        //                + "<span class='date'>" + item.f_timestamp + "</span>"
+        //                + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
+        //                + "</div>";
+        //            $("#data").html(con)
+        //        })
+        //        con = '';
+        //    }
+        //});
+        //function buildJson() {
+        //    var std = JSON.stringify({});
+        //    var stdTemplate = JSON.parse(std);
+        //    stdTemplate.num = oltid;
+        //    return stdTemplate;
+        //}
         oltid = e.currentTarget.id;
         document.getElementsByTagName('iframe')[0].src = 'update.html';
-        location.href = "update.html?num=" + oltid;
+        //location.href = "update.html?num=" + oltid;
     });
 };
 $(document).ready(function () {
@@ -161,11 +161,16 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
-                    con += "<div class='icon' id=" + item.num + ">"
-                        + "<span class='date'>" + item.f_timestamp + "</span>"
-                        + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
-                        + "</div>";
-                    $("#data").html(con)
+                    if (dataObj.ret[0].id==0) {
+
+                    }
+                    else {
+                        con += "<div class='icon' id=" + item.num + ">"
+                            + "<span class='date'>" + item.f_timestamp + "</span>"
+                            + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
+                            + "</div>";
+                        $("#data").html(con)
+                    }                   
                 })
                 redirect(fsession, userName);
                 con = '';
@@ -205,11 +210,16 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
-                    con += "<div class='icon' id=" + item.num + ">"
-                        + "<span class='date'>" + item.f_timestamp + "</span>"
-                        + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
-                        + "</div>";
-                    $("#data").html(con)
+                    if (dataObj.ret[0].id == 0) {
+
+                    }
+                    else {
+                        con += "<div class='icon' id=" + item.num + ">"
+                            + "<span class='date'>" + item.f_timestamp + "</span>"
+                            + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
+                            + "</div>";
+                        $("#data").html(con)
+                    }   
                 })
                 redirect(fsession, userName);
                 con = '';
@@ -247,11 +257,16 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
-                    con += "<div class='icon' id=" + item.num + ">"
-                        + "<span class='date'>" + item.f_timestamp + "</span>"
-                        + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
-                        + "</div>";
-                    $("#data").html(con)
+                    if (dataObj.ret[0].id == 0) {
+
+                    }
+                    else {
+                        con += "<div class='icon' id=" + item.num + ">"
+                            + "<span class='date'>" + item.f_timestamp + "</span>"
+                            + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
+                            + "</div>";
+                        $("#data").html(con)
+                    }   
                 })
                 redirect(fsession, userName);
                 con = '';
