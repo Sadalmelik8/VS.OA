@@ -1,13 +1,14 @@
-﻿
+﻿*{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 body {
     border: none;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
-
-/*div {
-    float: left;
-}*/
 
 .left {
     height: 860px;
@@ -36,7 +37,6 @@ body {
 
 #messge {
     margin-left: 1400px;
-    cursor:pointer;
 }
 
 table tr td {
@@ -145,102 +145,11 @@ table tr td {
         border: none;
     }
 
-
-table td {
-    vertical-align: top
-}
+    table td {
+        vertical-align: top
+    }
 
 #hide {
-    width: 8px;
+    width: 30px;
     height: 30px;
-}
-
-#drop{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: absolute;
-    top: 68px;
-    left: 1505px;
-    height: 330px;
-    width: 400px;
-    border: 1px solid #777;
-    background: #e6e6e6;
-}
-.date{
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    width: 100px;
-    height: 28px;
-    font-size: 14px;
-    color: #555;
-    border-right: 1px solid #777;
-    text-align: center;
-    line-height: 28px;
-}
-.operation{
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 299px;
-    height: 28px;
-    line-height: 28px;
-    font-size: 14px;
-    color: #555;
-    text-align: center;
-}
-.news{
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    width: 400px;
-    height: 30px;
-   font-size: 0;
-    line-height: 30px;
-    border-bottom: 1px solid #777;
-    cursor:pointer;
-}
-.unread{
-    display: inline-block;
-    width: 199px;
-    text-align: center;
-    border-right: 1px solid #777;
-    color: #555;
-    font-size: 16px;
-    background: #fff;
-}
-.read{
-    display: inline-block;
-    width: 200px;
-    color: #555;
-    text-align: center;
-    font-size: 16px;
-    background-color: #c7c7c7;
-}
-#data{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    width: 400px;
-    height: 300px;
-    font-size: 0;
-    cursor:pointer;
-    margin-top: 30px;
-    overflow-y:auto;
-    overflow-x:hidden;
-}
-.icon{
-    display: inline-block;
-    width: 400px;
-    height: 30px;
-    border-bottom: 1px solid #777;
-}
-.icon:hover{
-    background: #c7c7c7;
 }
