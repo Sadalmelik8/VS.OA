@@ -79,7 +79,7 @@ var paginationed = function (userName) {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page && item.executor == userName) {
+                    if (indexs < page && item.introducer == userName) {
                         if (item.executor == null && item.submittime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
@@ -143,7 +143,7 @@ var paginationed = function (userName) {
                             }
                         }
                         $.each(dataObj.ret, function (indexs, item) {
-                            if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1] && item.executor == userName) {
+                            if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1] && item.introducer == userName) {
                                 i = li.length - 1;
                                 if (item.executor == null && item.submittime == null) {
                                     item.executor = '&nbsp;';
@@ -226,7 +226,7 @@ var paginationed = function (userName) {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page && item.executor == userName) {
+                    if (indexs < page && item.introducer == userName) {
                         if (item.executor == null && item.submittime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
@@ -290,7 +290,7 @@ var paginationed = function (userName) {
                             }
                         }
                         $.each(dataObj.ret, function (indexs, item) {
-                            if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1] && item.executor == userName) {
+                            if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1] && item.introducer == userName) {
                                 i = li.length - 1;
                                 if (item.executor == null && item.submittime == null) {
                                     item.executor = '&nbsp;';
@@ -373,7 +373,7 @@ var paginationed = function (userName) {
             var txt03 = document.getElementById("txt03").value;
             if (txt03 <= Math.ceil(age / page)) {
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs >= page * (txt03 - 1) && indexs < page * txt03 && item.executor == userName) {
+                    if (indexs >= page * (txt03 - 1) && indexs < page * txt03 && item.introducer == userName) {
                         //i = li.length - 1;
                         if (item.executor == null && item.submittime == null) {
                             item.executor = '&nbsp;';

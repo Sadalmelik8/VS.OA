@@ -46,6 +46,7 @@ let redirect = function (fsession, userName) {
         //}
         oltid = e.currentTarget.id;
         document.getElementsByTagName('iframe')[0].src = 'update.html';
+        document.getElementsByTagName('iframe')[0].id = oltid;
         //location.href = "update.html?num=" + oltid;
     });
 };

@@ -64,11 +64,21 @@ $(document).ready(function () {
         }
     });
     function buildJson() {
-        var std = JSON.stringify({});
-        var stdTemplate = JSON.parse(std);
-        stdTemplate.num = oltid;
-        stdTemplate.sts = 1;
-        return stdTemplate;
+        if (oltid == -1) {
+            oltid = document.getElementsByTagName('iframe')[0].id;
+            var std = JSON.stringify({});
+            var stdTemplate = JSON.parse(std);
+            stdTemplate.num = oltid;
+            stdTemplate.sts = 1;
+            return stdTemplate;
+        }
+        else {
+            var std = JSON.stringify({});
+            var stdTemplate = JSON.parse(std);
+            stdTemplate.num = oltid;
+            stdTemplate.sts = 1;
+            return stdTemplate;
+        }     
     }
     $('#present').click(function () {
         var fsession = session.fsession;
@@ -97,15 +107,30 @@ $(document).ready(function () {
             }
         });
         function buildJson() {
-            var std = JSON.stringify({});
-            var stdTemplate = JSON.parse(std);
-            stdTemplate.executor = present.value;
-            stdTemplate.num = oltid;
-            stdTemplate.content = details.value;
-            stdTemplate.contents = contents.value;
-            stdTemplate.remarks = remarks.value;
-            stdTemplate.level = level.value;
-            return stdTemplate;
+            if (oltid == -1) {
+                oltid = document.getElementsByTagName('iframe')[0].id;
+                var std = JSON.stringify({});
+                var stdTemplate = JSON.parse(std);
+                stdTemplate.executor = present.value;
+                stdTemplate.num = oltid;
+                stdTemplate.content = details.value;
+                stdTemplate.contents = contents.value;
+                stdTemplate.remarks = remarks.value;
+                stdTemplate.level = level.value;
+                return stdTemplate;
+            }
+            else {
+                var std = JSON.stringify({});
+                var stdTemplate = JSON.parse(std);
+                stdTemplate.executor = present.value;
+                stdTemplate.num = oltid;
+                stdTemplate.content = details.value;
+                stdTemplate.contents = contents.value;
+                stdTemplate.remarks = remarks.value;
+                stdTemplate.level = level.value;
+                return stdTemplate;
+            }
+           
         }
     })
 });
