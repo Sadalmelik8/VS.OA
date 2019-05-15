@@ -258,7 +258,7 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
                     if (dataObj.ret[0].id == 0) {
-
+                        con = '';
                     }
                     else {
                         con += "<div class='icon' id=" + item.num + ">"

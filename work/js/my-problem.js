@@ -44,7 +44,7 @@ var actived = function () {
     }
 };
 //页面内容
-var paginationed = function () {
+var paginationed = function (userName) {
     var page = 10,//每页显示条数
         con = "",
         pagination = "";
@@ -79,7 +79,7 @@ var paginationed = function () {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page) {
+                    if (indexs < page && item.executor == userName) {
                         if (item.executor == null && item.submittime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
@@ -143,7 +143,7 @@ var paginationed = function () {
                             }
                         }
                         $.each(dataObj.ret, function (indexs, item) {
-                            if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
+                            if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1] && item.executor == userName) {
                                 i = li.length - 1;
                                 if (item.executor == null && item.submittime == null) {
                                     item.executor = '&nbsp;';
@@ -226,7 +226,7 @@ var paginationed = function () {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page) {
+                    if (indexs < page && item.executor == userName) {
                         if (item.executor == null && item.submittime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
@@ -290,7 +290,7 @@ var paginationed = function () {
                             }
                         }
                         $.each(dataObj.ret, function (indexs, item) {
-                            if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
+                            if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1] && item.executor == userName) {
                                 i = li.length - 1;
                                 if (item.executor == null && item.submittime == null) {
                                     item.executor = '&nbsp;';
@@ -373,7 +373,7 @@ var paginationed = function () {
             var txt03 = document.getElementById("txt03").value;
             if (txt03 <= Math.ceil(age / page)) {
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs >= page * (txt03 - 1) && indexs < page * txt03) {
+                    if (indexs >= page * (txt03 - 1) && indexs < page * txt03 && item.executor == userName) {
                         //i = li.length - 1;
                         if (item.executor == null && item.submittime == null) {
                             item.executor = '&nbsp;';
@@ -908,7 +908,7 @@ var call = function () {
             dataObj = result; //返回的result为json格式的数据
             age = dataObj.ret.length;
             $(document).ready(function () {
-                paginationed(fsession);
+                paginationed(userName);
             })
         }
     });
