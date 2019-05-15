@@ -45,9 +45,10 @@ let redirect = function (fsession, userName) {
         //    return stdTemplate;
         //}
         oltid = e.currentTarget.id;
-        document.getElementsByTagName('iframe')[0].src = 'update.html';
-        document.getElementsByTagName('iframe')[0].id = oltid;
+        //document.getElementsByTagName('iframe')[0].src = 'update.html';
+        //document.getElementsByTagName('iframe')[0].id = oltid;
         //location.href = "update.html?num=" + oltid;
+        window.open('"update.html?num=' + oltid, 'iframe1')
     });
 };
 $(document).ready(function () {
@@ -162,7 +163,7 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
-                    if (dataObj.ret[0].id==0) {
+                    if (dataObj.ret[0].id == 0) {
 
                     }
                     else {
@@ -171,7 +172,7 @@ $(document).ready(function () {
                             + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                             + "</div>";
                         $("#data").html(con)
-                    }                   
+                    }
                 })
                 redirect(fsession, userName);
                 con = '';
@@ -220,7 +221,7 @@ $(document).ready(function () {
                             + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                             + "</div>";
                         $("#data").html(con)
-                    }   
+                    }
                 })
                 redirect(fsession, userName);
                 con = '';
@@ -268,7 +269,7 @@ $(document).ready(function () {
                             + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                             + "</div>";
                         $("#data").html(con)
-                    }   
+                    }
                 })
                 redirect(fsession, userName);
                 con = '';
