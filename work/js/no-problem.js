@@ -83,7 +83,6 @@ var paginationed = function () {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                            + "<span>" + item.content + "</span>"
                             + "<span>" + item.introducer + "</span>"
                             + "<span>" + item.proposeTime + "</span>"
                             + "<span>" + item.executor + "</span>"
@@ -113,7 +112,6 @@ var paginationed = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                                    + "<span>" + item.content + "</span>"
                                     + "<span>" + item.introducer + "</span>"
                                     + "<span>" + item.proposeTime + "</span>"
                                     + "<span>" + item.executor + "</span>"
@@ -160,7 +158,6 @@ var paginationed = function () {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                            + "<span>" + item.content + "</span>"
                             + "<span>" + item.introducer + "</span>"
                             + "<span>" + item.proposeTime + "</span>"
                             + "<span>" + item.executor + "</span>"
@@ -190,7 +187,6 @@ var paginationed = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                                    + "<span>" + item.content + "</span>"
                                     + "<span>" + item.introducer + "</span>"
                                     + "<span>" + item.proposeTime + "</span>"
                                     + "<span>" + item.executor + "</span>"
@@ -238,7 +234,6 @@ var paginationed = function () {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                            + "<span>" + item.content + "</span>"
                             + "<span>" + item.introducer + "</span>"
                             + "<span>" + item.proposeTime + "</span>"
                             + "<span>" + item.executor + "</span>"
@@ -319,7 +314,6 @@ var paginationeds = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                                + "<span>" + item.content + "</span>"
                                 + "<span>" + item.introducer + "</span>"
                                 + "<span>" + item.proposeTime + "</span>"
                                 + "<span>" + item.executor + "</span>"
@@ -355,7 +349,6 @@ var paginationeds = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + xx + "</span>"
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                                        + "<span>" + item.content + "</span>"
                                         + "<span>" + item.introducer + "</span>"
                                         + "<span>" + item.proposeTime + "</span>"
                                         + "<span>" + item.executor + "</span>"
@@ -407,7 +400,6 @@ var paginationeds = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                                + "<span>" + item.content + "</span>"
                                 + "<span>" + item.introducer + "</span>"
                                 + "<span>" + item.proposeTime + "</span>"
                                 + "<span>" + item.executor + "</span>"
@@ -443,7 +435,6 @@ var paginationeds = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + xx + "</span>"
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                                        + "<span>" + item.content + "</span>"
                                         + "<span>" + item.introducer + "</span>"
                                         + "<span>" + item.proposeTime + "</span>"
                                         + "<span>" + item.executor + "</span>"
@@ -481,7 +472,6 @@ var paginationeds = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"
-                                + "<span>" + item.content + "</span>"
                                 + "<span>" + item.introducer + "</span>"
                                 + "<span>" + item.proposeTime + "</span>"
                                 + "<span>" + item.executor + "</span>"
@@ -659,8 +649,9 @@ $(document).ready(function () {
                                         }
                                     }
                                     let _box = document.getElementById('box');
-                                    _box.style.display = 'none'
+                                    _box.style.display = 'none'                                  
                                 })
+                                redirect();
                             })
                         }
                     }
