@@ -1,73 +1,74 @@
-1.��������
-�������⵽��������������(T_ Problem)��
-����ţ�WS_00002
-������{title:,content:,pic:}--���⡢���ݡ��ϴ�ͼƬ
-�����Ϊusername�����ǵ�ǰ��¼����
-������Ϣ����Ϣ���ѱ���T_Message��
-������{title:}--����
-��������Ϣ�����ˣ��̶�����proposetime��operation������������¼�û���0
-���أ�json,
-ret={id:0}����ʧ��
+1.新增问题
+新增问题到问题库表（问题库表(T_ Problem)）
+服务号：WS_00002
+参数：{title:,content:,pic:}--标题、内容、上传图片
+提出人为username，就是当前登录的人
+新增消息到消息提醒表（T_Message）
+参数：{title:}--标题
+操作：消息接收人（固定），proposetime，operation（新增），登录用户，0
+返回：json,
+ret={id:0}返回失败
 
-2.����
-��ȡ�����������ơ������š�����ˡ����ʱ�䡢������
-����ţ�WS_00003
-������{problemstate:0/1/2,}-----�Ƿ�����   2Ϊ��ȡȫ������
-���أ�json,
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--�����š����⡢����ˡ����ʱ�䡢�ύʱ�䡢�����ˣ�problemstateΪ 0 ʱ)
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--�����š����⡢����ˡ����ʱ�䡢�ύʱ�䡢�����ˡ������ˡ��Ƿ����ա�����ʱ�䣨problemstate Ϊ 1��2 ʱ)
-ret={id:0}����ʧ��
+2.问题
+获取所有问题名称、问题编号、提出人、提出时间、受理人
+服务号：WS_00003
+参数：{problemstate:0/1/2,}-----是否验收   2为获取全部问题
+返回：json,根据提出时间倒序排列
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（problemstate为 0 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间（problemstate 为 1或2 时)
+ret={id:0}返回失败
 
-3.ģ������
-��ȡ����
-����ţ�WS_00004
-������{title:,problemstate:0/1}-----����title������
-���أ�json,
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--�����š����⡢����ˡ����ʱ�䡢�ύʱ�䡢�����ˣ�problemstate�� 0 ʱ)
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--�����š����⡢����ˡ����ʱ�䡢�ύʱ�䡢�����ˡ������ˡ��Ƿ����ա�����ʱ�䣨problemstate�� 1 ʱ)
-ret={id:0}����ʧ��
+3.模糊搜索
+获取标题
+服务号：WS_00004
+参数：{title:,problemstate:0/1}-----包含title的问题
+返回：json,
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（problemstate传 0 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间（problemstate传 1 时)
+ret={id:0}返回失败
 
-4.��������
-��ȡ���ʱ�����������
-����ţ�WS_0005
-������{time:,problemstate:0/1/2}-----timeʱ�����е�δ���������
-���أ�json,
-ret=ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--�����š����⡢����ˡ����ʱ�䡢�ύʱ�䡢�����ˣ�problemstate 0 ʱ)
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--�����š����⡢����ˡ����ʱ�䡢�ύʱ�䡢�����ˡ������ˡ��Ƿ����ա�����ʱ�䣨problemstate 1��2 ʱ)
+4.日期搜索
+获取提出时间的所有问题
+服务号：WS_0005
+参数：{proposetime:,problemstate:0/1/2}-----time时间所有的未解决的问题
+返回：json,根据提出时间倒序排列
+ret=ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（problemstate 0 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间（problemstate 1或2 时)
 
-5.��������
-�鿴���������
-����ţ�WS_00006
-������{num:,}-----�鿴�����������Ϣ
-���أ�json,
-ret={problemstate:0/1,executor:,title:,content:,level:}--�ж��Ƿ����գ������ˡ����⡢�������ݣ����������
-ret={id:0}����ʧ��
+5.问题详情
+查看问题的详情
+服务号：WS_00006
+参数：{num:,sts:}-----查看问题的详情信息
+根据用户名，问题编号，消息状态确认消息是否已读
+返回：json,
+ret={problemstate:0/1,executor:,title:,content:,level:}--判断是否验收，受理人、标题、问题内容，问题紧急度
+ret={id:0}返回失败
 
-6.�ύ
-ѡ�������˺��޸ĵ�������
-��������̨�жϣ��������Ƿ��������ˣ������������Ƿ���ģ����������Ϊ�ջ��߸��������ˣ���ȡ��ǰʱ�䣬��Ϊ��������operationΪ���䣬��Ϣ������Ϊ�����ˡ���������˲��䣬����������Ⲣ�ύ����ȡ��ǰʱ�䣬operationΪ�ύ stsĬ��0
-����ţ�WS_00007
-������{executor:,num:,content:,contents:,remarks:,level:}-----�����ˡ������š��������ݡ�׷���������⡢��ע�����������
-������Ϣ����Ϣ���ѱ���T_Message��
-������{title:}---����
-���أ�json,
-ret={id:0}����ʧ��
+6.提交
+选择受理人和修改到问题库表
+操作，后台判断，该问题是否有受理人，或者受理人是否更改，如果受理人为空或者更改受理人，获取当前时间，则为分配任务，operation为分配，消息接收人为受理人。如果受理人不变，则是完成问题并提交，获取当前时间，operation为提交 sts默认0
+服务号：WS_00007
+参数：{executor:,num:,content:,contents:,remarks:,level:}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度
+新增消息到消息提醒表（T_Message）
+参数：{title:}---标题
+返回：json,
+ret={id:0}返回失败
 
-7.����
-��������ŵ���ʷ������ύ����Ϣ���ѱ���T_Message��
-����ţ�WS_00008
-������{num:}-----�����ţ�����״̬Ϊ1��
-������Ϣ����Ϣ���ѱ���T_Message��
-��������ȡ��ǰʱ�䣬operationΪ���գ��������ѣ�һ��������Ϊ�������ˣ�һ��������Ϊ������ˣ�stsĬ��Ϊ0
-������{}
-���أ�json,
-ret={id:1}����ʧ��
+7.验收
+问题解决完放到历史问题和提交到消息提醒表（T_Message）
+服务号：WS_00008
+参数：{num:}-----问题编号（验收状态为1）
+新增消息到消息提醒表（T_Message）
+操作：获取当前时间，operation为验收，两条提醒，一条接收人为受理的人，一条接收人为提出的人，sts默认为0
+参数：{}
+返回：json,
+ret={id:1}返回失败
 
-8.��ѯ����Ϣ����
-����Ϣ���ѱ���T_Message����������
-����������sts��ֵ����δ�������Ѷ�����Ϣ��0��δ����1���Ѷ������ݷ���֮��stsΪ�Ѷ���sts=1��
-����ţ�WS_00009
-������{sts:}---״̬
-���أ�json,
-ret={title,username,date,operation} ---���⣬�����ˣ�����ʱ�䣬����
-ret={id:0}����ʧ��
+8.查询新消息提醒
+在消息提醒表（T_Message）查找数据
+操作：根据sts的值返回未读或者已读的消息，0是未读，1是已读，数据返回之后，sts为已读（sts=1）
+服务号：WS_00009
+参数：{sts:}---状态
+返回：json,根据提出时间倒序排列
+ret={title,username,date,operation} ---标题，操作人，操作时间，操作
+ret={id:0}返回失败

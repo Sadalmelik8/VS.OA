@@ -565,7 +565,7 @@ var call = function () {
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.problemstate = 1;
+        stdTemplate.problemstate = 2;
         return stdTemplate;
     }
 };
@@ -689,7 +689,7 @@ $(document).ready(function () {
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.problemstate = 1;
+        stdTemplate.problemstate = 2;
         return stdTemplate;
     }
 });
@@ -700,7 +700,7 @@ $(document).ready(function () {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
             stdTemplate.proposetime = proposetime;
-            stdTemplate.problemstate = 1;
+            stdTemplate.problemstate = 2;
             return stdTemplate;
         }
         //获取fsession
@@ -878,7 +878,7 @@ $(document).ready(function () {
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.problemstate = 1;
+            stdTemplate.problemstate = 2;
             return stdTemplate;
         }
     });
@@ -940,7 +940,7 @@ $(document).ready(function () {
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.problemstate = 1;
+            stdTemplate.problemstate = 2;
             return stdTemplate;
         }
     });
@@ -1001,7 +1001,7 @@ $(document).ready(function () {
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.problemstate = 1;
+            stdTemplate.problemstate = 2;
             return stdTemplate;
         }
     });

@@ -67,6 +67,7 @@ $(document).ready(function () {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
         stdTemplate.num = oltid;
+        stdTemplate.sts = 1;
         return stdTemplate;
     }
     $('#present').click(function () {
