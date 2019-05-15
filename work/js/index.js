@@ -260,6 +260,7 @@ $(document).ready(function () {
                 $.each(dataObj.ret, function (index, item) {
                     if (dataObj.ret[0].id == 0) {
                         con = '';
+                        $("#data").html(con)
                     }
                     else {
                         con += "<div class='icon' id=" + item.num + ">"

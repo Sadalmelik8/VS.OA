@@ -64,7 +64,7 @@ $(document).ready(function () {
         }
     });
     function buildJson() {
-        if (oltid == -1) {
+        if (oltid == '') {
             oltid = document.getElementsByTagName('iframe')[0].id;
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
@@ -107,7 +107,7 @@ $(document).ready(function () {
             }
         });
         function buildJson() {
-            if (oltid == -1) {
+            if (oltid == '') {
                 oltid = document.getElementsByTagName('iframe')[0].id;
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
