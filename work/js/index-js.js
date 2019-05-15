@@ -133,6 +133,19 @@ $(document).ready(function () {
         read.style.color = '#fff';
         unread.style.backgroundColor = '#fff';
         unread.style.color = '#555';
+        function buildJson() {
+            var std = JSON.stringify({});
+            var stdTemplate = JSON.parse(std);
+            stdTemplate.sts = 0;
+            return stdTemplate;
+        }
+        var fsession = session.fsession;
+        var userName = session.User_NM;
+        _template1 = buildJson();
+        var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+        var URL = "/webservice/?" + s;
+        var form = new FormData();
+        form.append("data", (JSON.stringify(_template1)));
         $.ajax({
             type: "post", //请求的方式，也有get请求
             url: URL, //请求地址
@@ -159,6 +172,19 @@ $(document).ready(function () {
         unread.style.color = '#fff';
         read.style.backgroundColor = '#fff';
         read.style.color = '#555';
+        function buildJson() {
+            var std = JSON.stringify({});
+            var stdTemplate = JSON.parse(std);
+            stdTemplate.sts = 1;
+            return stdTemplate;
+        }
+        var fsession = session.fsession;
+        var userName = session.User_NM;
+        _template1 = buildJson();
+        var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+        var URL = "/webservice/?" + s;
+        var form = new FormData();
+        form.append("data", (JSON.stringify(_template1)));
         $.ajax({
             type: "post", //请求的方式，也有get请求
             url: URL, //请求地址
