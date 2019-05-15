@@ -164,14 +164,15 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
                     if (dataObj.ret[0].id == 0) {
-
+                        con = '';
+                        $("#data").html(con);
                     }
                     else {
                         con += "<div class='icon' id=" + item.num + ">"
                             + "<span class='date'>" + item.f_timestamp + "</span>"
                             + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                             + "</div>";
-                        $("#data").html(con)
+                        $("#data").html(con);
                     }
                 })
                 redirect(fsession, userName);
@@ -213,14 +214,15 @@ $(document).ready(function () {
                 dataObj = result; //返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
                     if (dataObj.ret[0].id == 0) {
-
+                        con = '';
+                        $("#data").html(con);
                     }
                     else {
                         con += "<div class='icon' id=" + item.num + ">"
                             + "<span class='date'>" + item.f_timestamp + "</span>"
                             + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                             + "</div>";
-                        $("#data").html(con)
+                        $("#data").html(con);
                     }
                 })
                 redirect(fsession, userName);
@@ -261,14 +263,14 @@ $(document).ready(function () {
                 $.each(dataObj.ret, function (index, item) {
                     if (dataObj.ret[0].id == 0) {
                         con = '';
-                        $("#data").html(con)
+                        $("#data").html(con);
                     }
                     else {
                         con += "<div class='icon' id=" + item.num + ">"
                             + "<span class='date'>" + item.f_timestamp + "</span>"
                             + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                             + "</div>";
-                        $("#data").html(con)
+                        $("#data").html(con);
                     }
                 })
                 redirect(fsession, userName);
