@@ -127,7 +127,7 @@ $(document).ready(function () {
             dataType: "json", //json格式，后台返回的数据为json格式的。
             success: function (result) {
                 dataObj = result;
-                if (dataObj.ret[0].id == 0) {
+                if (dataObj.ret.id == 0) {
                     alert('失败');
                 } else {
                     alert('成功');
