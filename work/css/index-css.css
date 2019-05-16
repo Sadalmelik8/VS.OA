@@ -248,3 +248,14 @@ table td {
     border-bottom: 1px solid #777;
     vertical-align: middle;
 }
+.remind{
+    width: 18px;
+    height:18px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    background: red;
+    color: #fff;
+}
