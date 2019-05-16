@@ -79,7 +79,7 @@ $(document).ready(function () {
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
-    setInterval(test, 300000);
+    setInterval(test, 30000);
     function test() {
         $.ajax({
             type: "post", //请求的方式，也有get请求
@@ -294,24 +294,27 @@ $(document).ready(function () {
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
-    $.ajax({
-        type: "post", //请求的方式，也有get请求
-        url: URL, //请求地址
-        data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-        dataType: "json", //json格式，后台返回的数据为json格式的。
-        contentType: "application/json",
-        cache: false,
-        processData: false,
-        contentType: false,
-        success: function (result) {
-            dataObj = result; //返回的result为json格式的数据
-            if (dataObj.ret[0].id === 0) {
-                document.getElementsByClassName("remind")[0].style.display = 'none'
-            } else {
-                document.getElementsByClassName("remind")[0].style.display = 'inline-block';
-                remind = dataObj.ret.length;
-                document.getElementsByClassName("remind")[0].innerHTML = remind;
+    setInterval(test, 30000);
+    function test() {
+        $.ajax({
+            type: "post", //请求的方式，也有get请求
+            url: URL, //请求地址
+            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+            dataType: "json", //json格式，后台返回的数据为json格式的。
+            contentType: "application/json",
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (result) {
+                dataObj = result; //返回的result为json格式的数据
+                if (dataObj.ret[0].id === 0) {
+                    document.getElementsByClassName("remind")[0].style.display = 'none'
+                } else {
+                    document.getElementsByClassName("remind")[0].style.display = 'inline-block';
+                    remind = dataObj.ret.length;
+                    document.getElementsByClassName("remind")[0].innerHTML = remind;
+                }
             }
-        }
-    });
+        });
+    }
 });
