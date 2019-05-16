@@ -278,6 +278,10 @@ $(document).ready(function () {
             }
         });
     });
+    $("#shade").click(function () {
+        let drop = document.getElementById("drop");
+        drop.style.display = 'none'
+    })
 });
 $(document).ready(function () {
     function buildJson() {
