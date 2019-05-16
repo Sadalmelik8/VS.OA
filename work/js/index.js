@@ -295,7 +295,7 @@ $(document).ready(function () {
             if (dataObj.ret[0].id === 0) {
                 document.getElementsByClassName("remind")[0].style.display = 'none'
             } else {
-                document.getElementsByClassName("remind")[0].style.display = 'block';
+                document.getElementsByClassName("remind")[0].style.display = 'inline-block';
                 remind = dataObj.ret.length;
             }
         }
