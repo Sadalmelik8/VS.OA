@@ -180,9 +180,14 @@ $(document).ready(function () {
             }
         });
     });
+    $("#shade").click(function () {
+        let drop = document.getElementById("drop");
+        drop.style.display = 'none'
+    });
     let unread = document.getElementsByClassName("unread")[0];
     let read = document.getElementsByClassName("read")[0];
     $(".unread").click(function () {
+        event.stopPropagation();
         var con = '';
         read.style.backgroundColor = '#c7c7c7';
         read.style.color = '#fff';
@@ -231,6 +236,7 @@ $(document).ready(function () {
         });
     });
     $(".read").click(function () {
+        event.stopPropagation();
         var con = '';
         unread.style.backgroundColor = '#c7c7c7';
         unread.style.color = '#fff';
@@ -278,10 +284,6 @@ $(document).ready(function () {
             }
         });
     });
-    $("#shade").click(function () {
-        let drop = document.getElementById("drop");
-        drop.style.display = 'none'
-    })
 });
 $(document).ready(function () {
     function buildJson() {
