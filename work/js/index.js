@@ -286,7 +286,7 @@ $(document).ready(function () {
         stdTemplate.sts = 0;
         return stdTemplate;
     }
-    var remind = '';
+    let remind = '';
     var fsession = session.fsession;
     var userName = session.User_NM;
     _template1 = buildJson();
@@ -307,8 +307,7 @@ $(document).ready(function () {
             dataObj = result; //返回的result为json格式的数据
             if (dataObj.ret[0].id === 0) {
                 document.getElementsByClassName("remind")[0].style.display = 'none'
-            }
-            else {
+            } else {
                 document.getElementsByClassName("remind")[0].style.display = 'inline-block';
                 remind = dataObj.ret.length;
                 document.getElementsByClassName("remind")[0].innerHTML = remind;
