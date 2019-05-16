@@ -259,3 +259,8 @@ table td {
     background: red;
     color: #fff;
 }
+#shade{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
