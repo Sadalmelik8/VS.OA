@@ -280,13 +280,13 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {
-    let remind = document.getElementsByClassName("remind")[0].innerHTML;
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.sts = 1;
+        stdTemplate.sts = 0;
         return stdTemplate;
     }
+    var remind = '';
     var fsession = session.fsession;
     var userName = session.User_NM;
     _template1 = buildJson();
@@ -307,9 +307,11 @@ $(document).ready(function () {
             dataObj = result; //返回的result为json格式的数据
             if (dataObj.ret[0].id === 0) {
                 document.getElementsByClassName("remind")[0].style.display = 'none'
-            } else {
+            }
+            else {
                 document.getElementsByClassName("remind")[0].style.display = 'inline-block';
                 remind = dataObj.ret.length;
+                document.getElementsByClassName("remind")[0].innerHTML = remind;
             }
         }
     });

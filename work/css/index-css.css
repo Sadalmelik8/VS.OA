@@ -249,13 +249,13 @@ table td {
     vertical-align: middle;
 }
 .remind{
-    width: 18px;
-    height:18px;
+    width: 16px;
+    height:16px;
     border-radius: 50%;
     display: inline-block;
     text-align: center;
-    line-height: 18px;
-    font-size: 12px;
+    line-height: 16px;
+    font-size: 10px;
     background: red;
     color: #fff;
 }
