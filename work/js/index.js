@@ -99,7 +99,7 @@ $(document).ready(function () {
             }
         })
     }
-})
+});
 function hide() {
     var a = document.getElementById("hide");
     var div = document.getElementsByClassName("left")[0];
@@ -174,7 +174,7 @@ $(document).ready(function () {
                             + "</div>";
                         $("#data").html(con);
                     }
-                })
+                });
                 redirect(fsession, userName);
                 con = '';
             }
@@ -224,7 +224,7 @@ $(document).ready(function () {
                             + "</div>";
                         $("#data").html(con);
                     }
-                })
+                });
                 redirect(fsession, userName);
                 con = '';
             }
@@ -272,10 +272,32 @@ $(document).ready(function () {
                             + "</div>";
                         $("#data").html(con);
                     }
-                })
+                });
                 redirect(fsession, userName);
                 con = '';
             }
         });
+    });
+});
+$(document).ready(function () {
+   let remind = document.getElementsByClassName("remind")[0].innerHTML;
+    $.ajax({
+        type: "post", //请求的方式，也有get请求
+        url: URL, //请求地址
+        data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+        dataType: "json", //json格式，后台返回的数据为json格式的。
+        contentType: "application/json",
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (result) {
+            dataObj = result; //返回的result为json格式的数据
+            if (dataObj.ret[0].id === 0) {
+                document.getElementsByClassName("remind")[0].style.display = 'none'
+            } else {
+                document.getElementsByClassName("remind")[0].style.display = 'block';
+                remind = dataObj.ret.length;
+            }
+        }
     });
 });
