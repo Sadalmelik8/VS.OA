@@ -281,6 +281,17 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     let remind = document.getElementsByClassName("remind")[0].innerHTML;
+    function buildJson() {
+        var std = JSON.stringify({});
+        var stdTemplate = JSON.parse(std);
+        stdTemplate.sts = 1;
+        return stdTemplate;
+    }
+    var fsession = session.fsession;
+    var userName = session.User_NM;
+    _template1 = buildJson();
+    var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+    var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
     $.ajax({
