@@ -280,7 +280,9 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {
-   let remind = document.getElementsByClassName("remind")[0].innerHTML;
+    let remind = document.getElementsByClassName("remind")[0].innerHTML;
+    var form = new FormData();
+    form.append("data", (JSON.stringify(_template1)));
     $.ajax({
         type: "post", //请求的方式，也有get请求
         url: URL, //请求地址
