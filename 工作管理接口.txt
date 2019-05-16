@@ -57,7 +57,7 @@ ret={id:0}返回失败
 2.该问题没有受理人
 	T_Problem表修改受理人，问题紧急度；operation为分配，消息接收人为受理人
 服务号：WS_00007
-参数：{executor:,num:,content:,contents:,remarks:,level:}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度
+参数：{executor:,num:,contents:,remarks:,level:}-----受理人、问题编号、追加问题问题、备注、问题紧急度
 新增消息到消息提醒表（T_Message）
 参数：{title:}---标题
 返回：json,
