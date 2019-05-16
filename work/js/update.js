@@ -108,7 +108,7 @@ $(document).ready(function () {
             return stdTemplate;
         }
     })
-    $('#ProblemState').click(function () {
+    $('#problemState').click(function () {
         var fsession = session.fsession;
         var userName = session.User_NM;
         _template1 = buildJson();
