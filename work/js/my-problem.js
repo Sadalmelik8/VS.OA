@@ -245,7 +245,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        if (item.acceptor == null && item.inspecttime == null) {
+                        else if (item.acceptor == null && item.inspecttime == null) {
                             item.acceptor = '&nbsp;';
                             item.inspecttime = '&nbsp;';
                             con += "<li class='datas'>"
@@ -1150,228 +1150,228 @@ $(document).ready(function () {
         });
     })
 });
-//筛选
-$(document).ready(function () {
-    $(".present").click(function (e) {
-        // let a = document.getElementsByClassName('present');
-        let b = document.getElementsByClassName('b');
-        let introducer = document.getElementsByClassName('introducer');
-        let receiver = document.getElementsByClassName('receiver');
-        let acceptor = document.getElementsByClassName('acceptor');
-        let text = e.target.innerText;
-        for (var i = 0; i < 3; i++) {
-            if (text === '提出人') {
-                introducer[i].style.display = "block";
-                receiver[i].style.display = "none";
-                acceptor[i].style.display = "none";
+////筛选
+//$(document).ready(function () {
+//    $(".present").click(function (e) {
+//        // let a = document.getElementsByClassName('present');
+//        let b = document.getElementsByClassName('b');
+//        let introducer = document.getElementsByClassName('introducer');
+//        let receiver = document.getElementsByClassName('receiver');
+//        let acceptor = document.getElementsByClassName('acceptor');
+//        let text = e.target.innerText;
+//        for (var i = 0; i < 3; i++) {
+//            if (text === '提出人') {
+//                introducer[i].style.display = "block";
+//                receiver[i].style.display = "none";
+//                acceptor[i].style.display = "none";
 
-                // console.log(introducer[i]);
-                // console.log(i);
-            } else if (text === '受理人') {
-                receiver[i].style.display = "block";
-                introducer[i].style.display = "none";
-                acceptor[i].style.display = "none";
+//                // console.log(introducer[i]);
+//                // console.log(i);
+//            } else if (text === '受理人') {
+//                receiver[i].style.display = "block";
+//                introducer[i].style.display = "none";
+//                acceptor[i].style.display = "none";
 
-                // console.log(introducer[i]);
-                // console.log(i);
-            } else if (text === '验收人') {
-                introducer[i].style.display = "none";
-                receiver[i].style.display = "none";
-                acceptor[i].style.display = "block";
+//                // console.log(introducer[i]);
+//                // console.log(i);
+//            } else if (text === '验收人') {
+//                introducer[i].style.display = "none";
+//                receiver[i].style.display = "none";
+//                acceptor[i].style.display = "block";
 
-                // console.log(acceptor[i]);
-                // console.log(i);
-            } else if (introducer[i] || receiver[i] || acceptor[i].style.display === 'block') {
-                b[i].style.display = 'none';
-            }
-        }
-    })
-});
-$(document).ready(function () {
-    arr = [];
-    xx = "";
-    $(".introducer").click(function (e) {
-        var introducered = document.getElementById('introducer');
-        var b = introducered.getElementsByTagName('b');
-        for (var i = 0; i < b.length; i++) {
-            b[i].style.display = "none";
-        }
-        //获取fsession
-        var aCookie = GetCookie('wytSession');
-        session = eval('(' + aCookie + ')');
-        if (session) {
-            if (session.fsession == "undefined") {
-                window.open('login.html', '_self');
-                return;
-            }
-        }
-        else {
-            window.open('login.html', '_self');
-            return;
-        }
-        var fsession = session.fsession;
-        var userName = session.User_NM;
-        _template1 = buildJson();
-        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/webservice/?" + s;
-        var form = new FormData();
-        form.append("data", (JSON.stringify(_template1)));
-        $.ajax({
-            type: "post", //请求的方式，也有get请求
-            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-            contentType: "application/json",
-            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            cache: false,
-            processData: false,
-            contentType: false,
-            beforeSend: LoadFunction, //加载执行方法
-            error: erryFunction,  //错误执行方法
-            success: function (result) {
-                dataObj = result; //返回的result为json格式的数据
-                x = e.target.innerText;
-                $.each(dataObj.ret, function (indexs, item) {
-                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
-                        paginationed();
-                    }
-                    if (x == item.introducer) {
-                        arr.push(indexs);
-                        xx = arr.length;
-                    }
-                });
-                if (x != '全部') {
-                    paginationeds()
-                }
-            }
-        });
-        function buildJson() {
-            var std = JSON.stringify({});
-            var stdTemplate = JSON.parse(std);
-            stdTemplate.problemstate = 2;
-            return stdTemplate;
-        }
-    });
-    $(".receiver").click(function (e) {
+//                // console.log(acceptor[i]);
+//                // console.log(i);
+//            } else if (introducer[i] || receiver[i] || acceptor[i].style.display === 'block') {
+//                b[i].style.display = 'none';
+//            }
+//        }
+//    })
+//});
+//$(document).ready(function () {
+//    arr = [];
+//    xx = "";
+//    $(".introducer").click(function (e) {
+//        var introducered = document.getElementById('introducer');
+//        var b = introducered.getElementsByTagName('b');
+//        for (var i = 0; i < b.length; i++) {
+//            b[i].style.display = "none";
+//        }
+//        //获取fsession
+//        var aCookie = GetCookie('wytSession');
+//        session = eval('(' + aCookie + ')');
+//        if (session) {
+//            if (session.fsession == "undefined") {
+//                window.open('login.html', '_self');
+//                return;
+//            }
+//        }
+//        else {
+//            window.open('login.html', '_self');
+//            return;
+//        }
+//        var fsession = session.fsession;
+//        var userName = session.User_NM;
+//        _template1 = buildJson();
+//        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+//        var URL = "/webservice/?" + s;
+//        var form = new FormData();
+//        form.append("data", (JSON.stringify(_template1)));
+//        $.ajax({
+//            type: "post", //请求的方式，也有get请求
+//            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+//            contentType: "application/json",
+//            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+//            dataType: "json", //json格式，后台返回的数据为json格式的。
+//            cache: false,
+//            processData: false,
+//            contentType: false,
+//            beforeSend: LoadFunction, //加载执行方法
+//            error: erryFunction,  //错误执行方法
+//            success: function (result) {
+//                dataObj = result; //返回的result为json格式的数据
+//                x = e.target.innerText;
+//                $.each(dataObj.ret, function (indexs, item) {
+//                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
+//                        paginationed();
+//                    }
+//                    if (x == item.introducer) {
+//                        arr.push(indexs);
+//                        xx = arr.length;
+//                    }
+//                });
+//                if (x != '全部') {
+//                    paginationeds()
+//                }
+//            }
+//        });
+//        function buildJson() {
+//            var std = JSON.stringify({});
+//            var stdTemplate = JSON.parse(std);
+//            stdTemplate.problemstate = 2;
+//            return stdTemplate;
+//        }
+//    });
+//    $(".receiver").click(function (e) {
 
-        var receiver = document.getElementById('receiver');
-        var b = receiver.getElementsByTagName('b');
-        for (var i = 0; i < b.length; i++) {
-            b[i].style.display = "none";
-        }
-        //获取fsession
-        var aCookie = GetCookie('wytSession');
-        session = eval('(' + aCookie + ')');
-        if (session) {
-            if (session.fsession == "undefined") {
-                window.open('login.html', '_self');
-                return;
-            }
-        }
-        else {
-            window.open('login.html', '_self');
-            return;
-        }
-        var fsession = session.fsession;
-        var userName = session.User_NM;
-        _template1 = buildJson();
-        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/webservice/?" + s;
-        var form = new FormData();
-        form.append("data", (JSON.stringify(_template1)));
-        $.ajax({
-            type: "post", //请求的方式，也有get请求
-            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-            contentType: "application/json",
-            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            cache: false,
-            processData: false,
-            contentType: false,
-            beforeSend: LoadFunction, //加载执行方法
-            error: erryFunction,  //错误执行方法
-            success: function (result) {
-                dataObj = result; //返回的result为json格式的数据
-                x = e.target.innerText;
-                $.each(dataObj.ret, function (indexs, item) {
-                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
-                        paginationed();
-                    }
-                    if (x == item.executor) {
-                        arr.push(indexs);
-                        xx = arr.length;
-                    }
-                });
-                if (x != '全部') {
-                    paginationeds()
-                }
-            }
-        })
-        function buildJson() {
-            var std = JSON.stringify({});
-            var stdTemplate = JSON.parse(std);
-            stdTemplate.problemstate = 2;
-            return stdTemplate;
-        }
-    });
-    $(".acceptor").click(function (e) {
-        var acceptor = document.getElementById('acceptor');
-        var b = acceptor.getElementsByTagName('b');
-        for (var i = 0; i < b.length; i++) {
-            b[i].style.display = "none";
-        }
-        //获取fsession
-        var aCookie = GetCookie('wytSession');
-        session = eval('(' + aCookie + ')');
-        if (session) {
-            if (session.fsession == "undefined") {
-                window.open('login.html', '_self');
-                return;
-            }
-        }
-        else {
-            window.open('login.html', '_self');
-            return;
-        }
-        var fsession = session.fsession;
-        var userName = session.User_NM;
-        _template1 = buildJson();
-        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/webservice/?" + s;
-        var form = new FormData();
-        form.append("data", (JSON.stringify(_template1)));
-        $.ajax({
-            type: "post", //请求的方式，也有get请求
-            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-            contentType: "application/json",
-            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            cache: false,
-            processData: false,
-            contentType: false,
-            beforeSend: LoadFunction, //加载执行方法
-            error: erryFunction,  //错误执行方法
-            success: function (result) {
-                dataObj = result; //返回的result为json格式的数据
-                x = e.target.innerText;
-                $.each(dataObj.ret, function (indexs, item) {
-                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
-                        paginationed();
-                    }
-                    if (x == item.acceptor) {
-                        arr.push(indexs);
-                        xx = arr.length;
-                    }
-                });
-                if (x != '全部') {
-                    paginationeds()
-                }
-            }
-        });
-        function buildJson() {
-            var std = JSON.stringify({});
-            var stdTemplate = JSON.parse(std);
-            stdTemplate.problemstate = 2;
-            return stdTemplate;
-        }
-    });
-});
+//        var receiver = document.getElementById('receiver');
+//        var b = receiver.getElementsByTagName('b');
+//        for (var i = 0; i < b.length; i++) {
+//            b[i].style.display = "none";
+//        }
+//        //获取fsession
+//        var aCookie = GetCookie('wytSession');
+//        session = eval('(' + aCookie + ')');
+//        if (session) {
+//            if (session.fsession == "undefined") {
+//                window.open('login.html', '_self');
+//                return;
+//            }
+//        }
+//        else {
+//            window.open('login.html', '_self');
+//            return;
+//        }
+//        var fsession = session.fsession;
+//        var userName = session.User_NM;
+//        _template1 = buildJson();
+//        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+//        var URL = "/webservice/?" + s;
+//        var form = new FormData();
+//        form.append("data", (JSON.stringify(_template1)));
+//        $.ajax({
+//            type: "post", //请求的方式，也有get请求
+//            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+//            contentType: "application/json",
+//            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+//            dataType: "json", //json格式，后台返回的数据为json格式的。
+//            cache: false,
+//            processData: false,
+//            contentType: false,
+//            beforeSend: LoadFunction, //加载执行方法
+//            error: erryFunction,  //错误执行方法
+//            success: function (result) {
+//                dataObj = result; //返回的result为json格式的数据
+//                x = e.target.innerText;
+//                $.each(dataObj.ret, function (indexs, item) {
+//                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
+//                        paginationed();
+//                    }
+//                    if (x == item.executor) {
+//                        arr.push(indexs);
+//                        xx = arr.length;
+//                    }
+//                });
+//                if (x != '全部') {
+//                    paginationeds()
+//                }
+//            }
+//        })
+//        function buildJson() {
+//            var std = JSON.stringify({});
+//            var stdTemplate = JSON.parse(std);
+//            stdTemplate.problemstate = 2;
+//            return stdTemplate;
+//        }
+//    });
+//    $(".acceptor").click(function (e) {
+//        var acceptor = document.getElementById('acceptor');
+//        var b = acceptor.getElementsByTagName('b');
+//        for (var i = 0; i < b.length; i++) {
+//            b[i].style.display = "none";
+//        }
+//        //获取fsession
+//        var aCookie = GetCookie('wytSession');
+//        session = eval('(' + aCookie + ')');
+//        if (session) {
+//            if (session.fsession == "undefined") {
+//                window.open('login.html', '_self');
+//                return;
+//            }
+//        }
+//        else {
+//            window.open('login.html', '_self');
+//            return;
+//        }
+//        var fsession = session.fsession;
+//        var userName = session.User_NM;
+//        _template1 = buildJson();
+//        var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+//        var URL = "/webservice/?" + s;
+//        var form = new FormData();
+//        form.append("data", (JSON.stringify(_template1)));
+//        $.ajax({
+//            type: "post", //请求的方式，也有get请求
+//            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+//            contentType: "application/json",
+//            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+//            dataType: "json", //json格式，后台返回的数据为json格式的。
+//            cache: false,
+//            processData: false,
+//            contentType: false,
+//            beforeSend: LoadFunction, //加载执行方法
+//            error: erryFunction,  //错误执行方法
+//            success: function (result) {
+//                dataObj = result; //返回的result为json格式的数据
+//                x = e.target.innerText;
+//                $.each(dataObj.ret, function (indexs, item) {
+//                    if (x === '全部' && indexs == dataObj.ret.length - 1) {
+//                        paginationed();
+//                    }
+//                    if (x == item.acceptor) {
+//                        arr.push(indexs);
+//                        xx = arr.length;
+//                    }
+//                });
+//                if (x != '全部') {
+//                    paginationeds()
+//                }
+//            }
+//        });
+//        function buildJson() {
+//            var std = JSON.stringify({});
+//            var stdTemplate = JSON.parse(std);
+//            stdTemplate.problemstate = 2;
+//            return stdTemplate;
+//        }
+//    });
+//});
