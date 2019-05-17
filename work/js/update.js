@@ -61,10 +61,27 @@ $(document).ready(function () {
             present.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
             level.value = dataObj.ret[0].level;
-            con = "<li><span>" + dataObj.ret[0].proposetime + "</span>" + "<span>" + dataObj.ret[0].content; + "</span></li>";
+            con = "<li><div class='firstdate'>"
+                + dataObj.ret[0].proposetime.substr(0, 4)
+                + '/' + dataObj.ret[0].proposetime.substr(4, 2)
+                + '/' + dataObj.ret[0].proposetime.substr(4, 2)
+                + '/' + dataObj.ret[0].proposetime.substr(6, 2)
+                + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
+                + ':' + dataObj.ret[0].proposetime.substr(10, 2)
+                + ':' + dataObj.ret[0].proposetime.substr(12, 2)
+                + "</div>" + "<div class='firsticon'>"
+                + dataObj.ret[0].content; + "</div></li>";
             $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
-                cons += "<li><span>" + item.submittime + "</span>" + "<span>" + item.contents + "</span></li>";
+                cons += "<li><div class='seconddate'>"
+                    + item.submittime.substr(0, 4) + '/'
+                    + item.submittime.substr(4, 2) + '/'
+                    + item.submittime.substr(6, 2) + '&nbsp;'
+                    + item.submittime.substr(8, 2) + ':'
+                    + item.submittime.substr(10, 2) + ':'
+                    + item.submittime.substr(12, 2) + "</div>"
+                    + "<div class='secondicon'>"
+                    + item.contents + "</div></li>";
                 $("#detalis").html(cons); //把内容入到这个div中
             })
         }
