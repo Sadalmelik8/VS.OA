@@ -1193,10 +1193,7 @@ $(document).ready(function () {
             function buildJson() {
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
-                stdTemplate.problemstate = 2;
-                stdTemplate.introducer = userName;
-                stdTemplate.executor = '';
-                stdTemplate.acceptor = '';
+                stdTemplate.type = 1;
                 return stdTemplate;
             }
         }
@@ -1240,10 +1237,7 @@ $(document).ready(function () {
             function buildJson() {
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
-                stdTemplate.problemstate = 2;
-                stdTemplate.introducer = '';
-                stdTemplate.executor = userName;
-                stdTemplate.acceptor = '';
+                stdTemplate.type = 2;
                 return stdTemplate;
             }
         }
@@ -1287,10 +1281,7 @@ $(document).ready(function () {
             function buildJson() {
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
-                stdTemplate.problemstate = 2;
-                stdTemplate.introducer = '';
-                stdTemplate.executor = '';
-                stdTemplate.acceptor = userName;
+                stdTemplate.type = 3;
                 return stdTemplate;
             }
         }
