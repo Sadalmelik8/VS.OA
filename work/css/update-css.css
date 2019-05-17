@@ -118,15 +118,17 @@ textarea {
 
 }
 .firstdate{
+    display: inline-block;
     width: 230px;
     text-align: left;
     padding-left: 12px;
 }
 #detalis{
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 .seconddate{
+    display: inline-block;
     width: 230px;
     text-align: left;
     padding-left: 12px;
@@ -135,9 +137,11 @@ textarea {
     font-size: 15px;
 }
 .firsticon{
+    display: inline-block;
     white-space:nowrap;
 }
 .secondicon{
+    display: inline-block;
     white-space:nowrap;
 }
 .singular{
