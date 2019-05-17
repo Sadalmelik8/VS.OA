@@ -64,10 +64,6 @@ li {
 
 .textarea--left {
     position: relative;
-    top: -270px;
-}
-.textarea--icon{
-    position: relative;
     top: -370px;
 }
 textarea {
@@ -126,7 +122,7 @@ textarea {
     width: 30%;
 }
 #detalis{
-    overflow-y: scroll;
+    overflow: auto;
 }
 .seconddate{
     width: 30%;
@@ -136,22 +132,12 @@ textarea {
 }
 .firsticon{
     width: 70%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.firsticon:hover{
-    /*overflow: visible;*/
+    word-wrap: normal;
 }
 
 .secondicon{
     width: 70%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-.secondicon:hover{
-    /*overflow: visible;*/
+    word-wrap: normal;
 }
 .singular{
     background: #e3e3e3;
