@@ -1,12 +1,12 @@
-﻿function stopBubble(e) {
-    //如果提供了事件对象，则这是一个非IE浏览器
-    if ( e && e.stopPropagation )
-    //因此它支持W3C的stopPropagation()方法
-        e.stopPropagation();
-    else
-    //否则，我们需要使用IE的方式来取消事件冒泡
-        window.event.cancelBubble = true;
-}
+﻿// function stopBubble(e) {
+//     //如果提供了事件对象，则这是一个非IE浏览器
+//     if ( e && e.stopPropagation )
+//     //因此它支持W3C的stopPropagation()方法
+//         e.stopPropagation();
+//     else
+//     //否则，我们需要使用IE的方式来取消事件冒泡
+//         window.event.cancelBubble = true;
+// }
 //获取cookkie
 function GetCookie(key) {
     var aCookie = document.cookie.split("; ");
@@ -238,7 +238,7 @@ $(document).ready(function () {
                 con = '';
             }
         });
-        stopBubble(ev);//这样就不会再冒泡给父级了
+        // stopBubble(ev);//这样就不会再冒泡给父级了
     });
     $(".read").click(function (ev) {
         var con = '';
@@ -287,7 +287,7 @@ $(document).ready(function () {
                 con = '';
             }
         });
-        stopBubble(ev);//这样就不会再冒泡给父级了
+        // stopBubble(ev);//这样就不会再冒泡给父级了
     });
     $("#shade").click(function () {
         let drop = document.getElementById("drop");
