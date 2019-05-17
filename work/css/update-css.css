@@ -110,7 +110,7 @@ textarea {
 }
 .detail {
     display: inline-block;
-    width: 80%;
+    width: 100%;
     height: 400px;
     line-height: 1;
     color: #6D5A62;
@@ -119,12 +119,15 @@ textarea {
     background: #fff;
 
 }
-.firstdate .firsticon .seconddate .secondicon{
-    width: 100%;
+.firstdate.seconddate{
+    width: 30%;
 }
 #detalis{
     overflow-y: scroll;
 }
 .seconddate{
     background: #e3e3e3;
+}
+.detail--icon{
+    width: 70%;
 }
