@@ -21,7 +21,7 @@ ret={id:0}返回失败
 3.筛选关于我的问题
 获取关于我的问题名称、问题编号、提出人、提出时间、受理人、提交时间、验收人、验收时间
 服务号：WS_00004
-参数：{problemstate:2,introducer：，executor：，acceptor：}-----是否验收，提出人，受理人，验收人
+参数：{type:1/2/3}-----1是提出人，2是受理人，3是验收人
 返回：json,
 ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、验收时间（problemstate传 1 时)
 ret={id:0}返回失败
