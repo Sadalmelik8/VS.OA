@@ -130,6 +130,8 @@ $(document).ready(function () {
     $("#messge").click(function () {
         let con = '';
         let drop = document.getElementById('drop');
+        let shade = document.getElementById('shade');
+        shade.style.display = 'inline-block';
         if (drop.style.display === 'none') {
             drop.style.display = 'block'
         } else {
@@ -291,7 +293,10 @@ $(document).ready(function () {
     });
     $("#shade").click(function () {
         let drop = document.getElementById("drop");
-        drop.style.display = 'none'
+        let shade = document.getElementById('shade');
+        drop.style.display = 'none';
+        shade.style.display = 'none';
+
     });
 });
 $(document).ready(function () {
