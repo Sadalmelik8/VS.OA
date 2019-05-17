@@ -54,7 +54,7 @@ ret={id:0}返回失败
 		如果contents为空：T_Problem表修改受理人；operation为分配，消息接收人为受理人
 		如果contents有内容：T_Problem表修改受理人，增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段）；operation为分配，消息接收人为受理人
 2.该问题没有受理人
-	T_Problem表修改受理人，问题紧急度；operation为分配，消息接收人为受理人
+	T_Problem表修改受理人（必填），问题紧急度（必填）；operation为分配，消息接收人为受理人
 服务号：WS_00007
 参数：{executor:,num:,content:,contents:,remarks:,level:}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度
 新增消息到消息提醒表（T_Message）
