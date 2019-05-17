@@ -110,10 +110,10 @@ $(document).ready(function () {
             dataType: "json", //json格式，后台返回的数据为json格式的。
             success: function (result) {
                 var dataObj = result;
-                $.each(dataObj.ret, function (index, item) {
+                $.each(dataObj.ret.username, function (index, item) {
                     var option = document.createElement("option");
-                    $(option).val(item.username);
-                    $(option).text(item.username);
+                    $(option).val(item);
+                    $(option).text(item);
                     $('#presents').append(option);
                 })
             }
