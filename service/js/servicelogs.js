@@ -375,7 +375,6 @@ $(document).ready(function () {
 // 搜索
 $(document).ready(function () {
     $("#search").click(function () {
-        Fsession();
         var seek = document.getElementById("seek").value;
         var aCookie = GetCookie('wytSession');
         session = eval('(' + aCookie + ')');
