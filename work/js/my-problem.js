@@ -98,7 +98,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        if (item.acceptor == null && item.inspecttime == null) {
+                        else if (item.acceptor == null && item.inspecttime == null) {
                             item.acceptor = '&nbsp;';
                             item.inspecttime = '&nbsp;';
                             con += "<li class='datas'>"
@@ -107,7 +107,7 @@ var paginationed = function (userName) {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                 + "<input type='submit' class='submit'>"
@@ -121,7 +121,7 @@ var paginationed = function (userName) {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                 + "<input type='submit' class='submit'>"
@@ -163,7 +163,7 @@ var paginationed = function (userName) {
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
-                                if (item.acceptor == null && item.inspecttime == null) {
+                                else if (item.acceptor == null && item.inspecttime == null) {
                                     item.acceptor = '&nbsp;';
                                     item.inspecttime = '&nbsp;';
                                     con += "<li class='datas'>"
@@ -172,7 +172,7 @@ var paginationed = function (userName) {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                        + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                         + "<span>" + item.acceptor + "</span>"//验收人
                                         + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                         + "<input type='submit' class='submit'>"
@@ -186,7 +186,7 @@ var paginationed = function (userName) {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                        + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                         + "<span>" + item.acceptor + "</span>"//验收人
                                         + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                         + "<input type='submit' class='submit'>"
@@ -254,7 +254,7 @@ var paginationed = function (userName) {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                 + "<input type='submit' class='submit'>"
@@ -268,7 +268,7 @@ var paginationed = function (userName) {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                 + "<input type='submit' class='submit'>"
@@ -319,7 +319,7 @@ var paginationed = function (userName) {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                        + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                         + "<span>" + item.acceptor + "</span>"//验收人
                                         + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                         + "<input type='submit' class='submit'>"
@@ -333,7 +333,7 @@ var paginationed = function (userName) {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                        + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                         + "<span>" + item.acceptor + "</span>"//验收人
                                         + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                         + "<input type='submit' class='submit'>"
@@ -402,7 +402,7 @@ var paginationed = function (userName) {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                 + "<input type='submit' class='submit'>"
@@ -416,7 +416,7 @@ var paginationed = function (userName) {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                 + "<input type='submit' class='submit'>"
@@ -889,7 +889,7 @@ var call = function () {
     var fsession = session.fsession;
     var userName = session.User_NM;
     _template1 = buildJson();
-    var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = ("svr=WS_00004" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
@@ -908,14 +908,14 @@ var call = function () {
             dataObj = result; //返回的result为json格式的数据
             age = dataObj.ret.length;
             $(document).ready(function () {
-                paginationed(userName);
+                paginationed();
             })
         }
     });
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.problemstate = 2;
+        stdTemplate.type = 1;
         return stdTemplate;
     }
 };
@@ -937,7 +937,7 @@ $(document).ready(function () {
     var fsession = session.fsession;
     var userName = session.User_NM;
     _template1 = buildJson();
-    var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = ("svr=WS_00004" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
@@ -1040,7 +1040,7 @@ $(document).ready(function () {
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
-        stdTemplate.problemstate = 2;
+        stdTemplate.type = 0;
         return stdTemplate;
     }
 });
