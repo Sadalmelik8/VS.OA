@@ -91,10 +91,12 @@ $(document).ready(function () {
                 + ':' + dataObj.ret[0].proposetime.substr(10, 2)
                 + ':' + dataObj.ret[0].proposetime.substr(12, 2)
                 + "</div>" + "<div class='firsticon'>"
-                + dataObj.ret[0].content; + "</div></li>";
+                + dataObj.ret[0].content + "</div></li>";
             $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
-                if (index+1 % 2 == 0) {
+                console.log(index);
+                console.log(dataObj.ret[1].contents.length);
+                if (dataObj.ret[1].contents.length % 2 == 0) {
                     cons += "<li><div class='seconddate'>"
                         + item.submittime.substr(0, 4) + '/'
                         + item.submittime.substr(4, 2) + '/'
@@ -163,7 +165,7 @@ $(document).ready(function () {
             stdTemplate.level = level.value;
             return stdTemplate;
         }
-    })
+    });
     $('#problemState').click(function () {
         var fsession = session.fsession;
         var userName = session.User_NM;
