@@ -34,8 +34,7 @@ $(document).ready(function () {
     }
     var con = '';
     var title = document.getElementsByClassName('title')[0];
-    var details = document.getElementsByClassName('details')[0];
-    var contents = document.getElementsByClassName('contents')[0];
+    var detailed = document.getElementsByClassName('detailed')[0];
     var present = document.getElementsByClassName('present')[0];
     var remarks = document.getElementsByClassName('title')[1];
     var level = document.getElementsByClassName('bottom--middle__urgency')[0];
@@ -64,7 +63,7 @@ $(document).ready(function () {
             detailed.valve = dataObj.ret[0].proposetime + dataObj.ret[0].content;
             $.each(dataObj.ret, function (index, item) {
                 con += "<li><span>" + item.contents.submittime + "</span>" + "<span>" + item.contents.contents + "</span></li>";
-                $("#ul").html(con); //把内容入到这个div中
+                $("#detalis").html(con); //把内容入到这个div中
             })
         }
     });
