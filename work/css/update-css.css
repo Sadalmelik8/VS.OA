@@ -116,5 +116,6 @@ textarea {
     color: #6D5A62;
     text-align: left;
     padding-left: 12px;
-    overflow-x: scroll;
+    background: #fff;
+    overflow-y: scroll;
 }
