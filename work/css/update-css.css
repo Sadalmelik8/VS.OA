@@ -119,12 +119,12 @@ textarea {
     background: #fff;
 
 }
-.detail--icon>li>div{
+.firstdate .firsticon .seconddate .secondicon{
     width: 100%;
 }
 #detalis{
     overflow-y: scroll;
 }
 .seconddate{
-    background: #d6d6d6;
+    background: #e3e3e3;
 }
