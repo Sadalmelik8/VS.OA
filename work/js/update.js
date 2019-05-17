@@ -61,9 +61,9 @@ $(document).ready(function () {
             present.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
             level.value = dataObj.ret[0].level;
-            detailed.valve = dataObj.ret[0].value;
+            detailed.valve = dataObj.ret[0].proposetime + dataObj.ret[0].content;
             $.each(dataObj.ret, function (index, item) {
-                con += "<li>" + item.ret.contents + "</li>";
+                con += "<li><span>" + item.contents.submittime + "</span>" + "<span>" + item.contents.contents + "</span></li>";
                 $("#ul").html(con); //把内容入到这个div中
             })
         }
