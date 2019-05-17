@@ -7,11 +7,26 @@
 }
 
 .minute {
-    width: 75%;
+    width: 60%;
     margin: 50px auto;
     border: 1px solid #8f7c84;
     background: #E7E5E1;
 }
+
+li {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+    li > * {
+        display: inline-block;
+        font-size: 15px;
+        width: 15%;
+        color: #6D5A62;
+        text-align: center;
+    }
 
 .send {
     background: deepskyblue;
@@ -46,6 +61,7 @@
     width: 100%;
     height: 420px;
 }
+
 .textarea--left {
     position: relative;
     top: -370px;
@@ -98,50 +114,30 @@ textarea {
     line-height: 1;
     color: #6D5A62;
     text-align: left;
+    /*padding-left: 12px;*/
     background: #fff;
 
 }
 .firstdate{
-    display: inline-block;
     width: 230px;
-    text-align: left;
-    padding-left: 12px;
 }
 #detalis{
-    overflow-x: scroll;
-    overflow-y: scroll;
+    overflow: auto;
 }
 .seconddate{
-    display: inline-block;
     width: 230px;
-    text-align: left;
-    padding-left: 12px;
 }
-.detail--icon>li>*{
-    font-size: 15px;
+.detail--icon{
+    width: 100%;
 }
 .firsticon{
-    display: inline-block;
+    width: 70%;
     white-space:nowrap;
 }
 .secondicon{
-    display: inline-block;
+    width: 70%;
     white-space:nowrap;
 }
 .singular{
     background: #e3e3e3;
 }
-.update--li>*{
-    display: inline-block;
-    font-size: 15px;
-    width: 15%;
-    color: #6D5A62;
-    text-align: center;
-}
-.update--li{
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    font-size: 16px;
-}
-
