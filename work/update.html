@@ -10,15 +10,9 @@
 <body>
     <div class="minute">
         <ul>
-            <li class="send update--li">
+            <li class="send">
                 执行问题<span>
-                    <select class="present">
-                        <option value="1">受理人</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+                    <select class="present" id="presents"></select>
                 </span>
                 <input type="button" value="验收" class="btn" id="problemState" />
             </li>
@@ -33,15 +27,18 @@
                     <ul class="details detail--icon" id="detalis"></ul>
                 </div>
             </li>
-            <li class="textarea update--li">
-                <span class="textarea--icon">还存在问题</span>
+            <li class="textarea">
+                <span class="textarea--left">还存在问题</span>
                 <textarea class="contents"></textarea>
             </li>
-            <li class="update--li">
+            <li>
                 <span>备注</span>
                 <input type="text" class="title">
             </li>
-            <li class="update--li">
+            <li>
+                <a id="history">历史记录</a>
+            </li>
+            <li>
                 <span>上传附件</span>
                 <input type="file" multiple class="minute--bottom__middle">
                 <div class="bottom--middle">
