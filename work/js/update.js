@@ -94,7 +94,7 @@ $(document).ready(function () {
                 + dataObj.ret[0].content; + "</div></li>";
             $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
-                if (index+1 % 2 === 0) {
+                if (index+1 % 2 == 0) {
                     cons += "<li><div class='seconddate'>"
                         + item.submittime.substr(0, 4) + '/'
                         + item.submittime.substr(4, 2) + '/'
