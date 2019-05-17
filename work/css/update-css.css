@@ -14,13 +14,13 @@
 }
 
 li {
-    width: 100%;
+    /*width: 100%;*/
     height: 50px;
     line-height: 50px;
     font-size: 16px;
 }
 
-    li > * {
+    li > span {
         display: inline-block;
         font-size: 15px;
         width: 15%;
@@ -123,15 +123,16 @@ textarea {
     padding-left: 12px;
 }
 #detalis{
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 .seconddate{
     width: 230px;
     text-align: left;
     padding-left: 12px;
 }
-.detail--icon{
-    /*width: 100%;*/
+.detail--icon>li{
+
 }
 .firsticon{
     white-space:nowrap;
