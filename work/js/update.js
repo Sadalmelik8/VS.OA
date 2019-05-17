@@ -85,7 +85,6 @@ $(document).ready(function () {
             con = "<li><div class='firstdate'>"
                 + dataObj.ret[0].proposetime.substr(0, 4)
                 + '/' + dataObj.ret[0].proposetime.substr(4, 2)
-                + '/' + dataObj.ret[0].proposetime.substr(4, 2)
                 + '/' + dataObj.ret[0].proposetime.substr(6, 2)
                 + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
                 + ':' + dataObj.ret[0].proposetime.substr(10, 2)
@@ -94,7 +93,6 @@ $(document).ready(function () {
                 + dataObj.ret[0].content + "</div></li>";
             $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
-                console.log(index);
                 if (index % 2 == 1) {
                     cons += "<li><div class='seconddate'>"
                         + item.submittime.substr(0, 4) + '/'
