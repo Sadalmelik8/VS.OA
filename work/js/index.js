@@ -1,4 +1,13 @@
-﻿//获取cookkie
+﻿function stopBubble(e) {
+    //如果提供了事件对象，则这是一个非IE浏览器
+    if ( e && e.stopPropagation )
+    //因此它支持W3C的stopPropagation()方法
+        e.stopPropagation();
+    else
+    //否则，我们需要使用IE的方式来取消事件冒泡
+        window.event.cancelBubble = true;
+}
+//获取cookkie
 function GetCookie(key) {
     var aCookie = document.cookie.split("; ");
     for (var i = 0; i < aCookie.length; i++) {
@@ -182,8 +191,7 @@ $(document).ready(function () {
     });
     let unread = document.getElementsByClassName("unread")[0];
     let read = document.getElementsByClassName("read")[0];
-    $(".unread").click(function () {
-
+    $(".unread").click(function (ev) {
         var con = '';
         read.style.backgroundColor = '#c7c7c7';
         read.style.color = '#fff';
@@ -230,9 +238,9 @@ $(document).ready(function () {
                 con = '';
             }
         });
-        event.stopPropagation();
+        stopBubble(ev);//这样就不会再冒泡给父级了
     });
-    $(".read").click(function () {
+    $(".read").click(function (ev) {
         var con = '';
         unread.style.backgroundColor = '#c7c7c7';
         unread.style.color = '#fff';
@@ -279,7 +287,7 @@ $(document).ready(function () {
                 con = '';
             }
         });
-        event.stopPropagation();
+        stopBubble(ev);//这样就不会再冒泡给父级了
     });
     $("#shade").click(function () {
         let drop = document.getElementById("drop");
