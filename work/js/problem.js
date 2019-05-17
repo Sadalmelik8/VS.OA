@@ -92,7 +92,7 @@ var paginationed = function () {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + item.submittime + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
@@ -133,7 +133,7 @@ var paginationed = function () {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                        + "<span>" + item.submittime + "</span>"//提出时间
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
@@ -191,7 +191,7 @@ var paginationed = function () {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + item.submittime + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
@@ -232,7 +232,7 @@ var paginationed = function () {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                        + "<span>" + item.submittime + "</span>"//提出时间
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
@@ -291,7 +291,7 @@ var paginationed = function () {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + item.submittime + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }

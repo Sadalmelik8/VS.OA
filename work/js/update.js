@@ -59,6 +59,7 @@ $(document).ready(function () {
     var cons = '';
     var title = document.getElementsByClassName('title')[0];
     var present = document.getElementsByClassName('present')[0];
+    var contents = document.getElementsByClassName('contents')[0];
     var remarks = document.getElementsByClassName('title')[1];
     var level = document.getElementsByClassName('bottom--middle__urgency')[0];
     _template1 = buildJson();
