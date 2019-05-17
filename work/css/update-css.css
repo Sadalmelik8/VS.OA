@@ -122,7 +122,9 @@ textarea {
     width: 230px;
 }
 #detalis{
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 350px;
 }
 .seconddate{
     width: 230px;
@@ -140,4 +142,7 @@ textarea {
 }
 .singular{
     background: #e3e3e3;
+}
+.particulars{
+    top: -240px;
 }
