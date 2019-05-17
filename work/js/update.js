@@ -33,6 +33,7 @@ $(document).ready(function () {
         return;
     }
     var con = '';
+    var cons = '';
     var title = document.getElementsByClassName('title')[0];
     var detailed = document.getElementsByClassName('detailed')[0];
     var present = document.getElementsByClassName('present')[0];
@@ -60,10 +61,11 @@ $(document).ready(function () {
             present.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
             level.value = dataObj.ret[0].level;
-            detailed.innerHTML = dataObj.ret[0].proposetime + dataObj.ret[0].content;
+            con = "<li><span>" + dataObj.ret[0].proposetime + "</span>" + "<span>" + dataObj.ret[0].content; + "</span></li>";
+            $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
-                con += "<li><span>" + item.submittime + "</span>" + "<span>" + item.contents + "</span></li>";
-                $("#detalis").html(con); //把内容入到这个div中
+                cons += "<li><span>" + item.submittime + "</span>" + "<span>" + item.contents + "</span></li>";
+                $("#detalis").html(cons); //把内容入到这个div中
             })
         }
     });
