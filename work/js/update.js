@@ -32,15 +32,35 @@ $(document).ready(function () {
         window.open('login.html', '_self');
         return;
     }
+    var fsession = session.fsession;
+    var userName = session.User_NM;
+    var s = ("svr=WS_00010" + "&fsession=" + fsession + "&userName=" + userName);
+    var URL = "/webservice/?" + s;
+    $.ajax({
+        type: "post", //请求的方式，也有get请求
+        url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+        contentType: "application/json",
+        data: {},//data是传给后台的字段，后台需要哪些就传入哪些
+        cache: false,
+        processData: false,
+        contentType: false,
+        dataType: "json", //json格式，后台返回的数据为json格式的。
+        success: function (result) {
+            var dataObj = result;
+            $.each(dataObj.ret.username, function (index, item) {
+                var option = document.createElement("option");
+                $(option).val(item);
+                $(option).text(item);
+                $('#presents').append(option);
+            })
+        }
+    });
     var con = '';
     var cons = '';
     var title = document.getElementsByClassName('title')[0];
-    var detailed = document.getElementsByClassName('detailed')[0];
     var present = document.getElementsByClassName('present')[0];
     var remarks = document.getElementsByClassName('title')[1];
     var level = document.getElementsByClassName('bottom--middle__urgency')[0];
-    var fsession = session.fsession;
-    var userName = session.User_NM;
     _template1 = buildJson();
     var s = ("svr=WS_00006" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
@@ -93,32 +113,6 @@ $(document).ready(function () {
         stdTemplate.sts = 1;
         return stdTemplate;
     }
-    $('#presents').click(function () {
-        var fsession = session.fsession;
-        var userName = session.User_NM;
-        _template1 = buildJson();
-        var s = ("svr=WS_00010" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/webservice/?" + s;
-        $.ajax({
-            type: "post", //请求的方式，也有get请求
-            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-            contentType: "application/json",
-            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
-            cache: false,
-            processData: false,
-            contentType: false,
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            success: function (result) {
-                var dataObj = result;
-                $.each(dataObj.ret.username, function (index, item) {
-                    var option = document.createElement("option");
-                    $(option).val(item);
-                    $(option).text(item);
-                    $('#presents').append(option);
-                })
-            }
-        });
-    })
     $('#present').click(function () {
         var fsession = session.fsession;
         var userName = session.User_NM;
