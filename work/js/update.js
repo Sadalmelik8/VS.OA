@@ -94,16 +94,29 @@ $(document).ready(function () {
                 + dataObj.ret[0].content; + "</div></li>";
             $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
-                cons += "<li><div class='seconddate'>"
-                    + item.submittime.substr(0, 4) + '/'
-                    + item.submittime.substr(4, 2) + '/'
-                    + item.submittime.substr(6, 2) + '&nbsp;'
-                    + item.submittime.substr(8, 2) + ':'
-                    + item.submittime.substr(10, 2) + ':'
-                    + item.submittime.substr(12, 2) + "</div>"
-                    + "<div class='secondicon'>"
-                    + item.contents + "</div></li>";
-                $("#detalis").html(cons); //把内容入到这个div中
+                if (index+1 % 2 === 0) {
+                    cons += "<li><div class='seconddate'>"
+                        + item.submittime.substr(0, 4) + '/'
+                        + item.submittime.substr(4, 2) + '/'
+                        + item.submittime.substr(6, 2) + '&nbsp;'
+                        + item.submittime.substr(8, 2) + ':'
+                        + item.submittime.substr(10, 2) + ':'
+                        + item.submittime.substr(12, 2) + "</div>"
+                        + "<div class='secondicon'>"
+                        + item.contents + "</div></li>";
+                    $("#detalis").html(cons); //把内容入到这个div中
+                }else {
+                    cons += "<li class='singular'><div class='seconddate'>"
+                        + item.submittime.substr(0, 4) + '/'
+                        + item.submittime.substr(4, 2) + '/'
+                        + item.submittime.substr(6, 2) + '&nbsp;'
+                        + item.submittime.substr(8, 2) + ':'
+                        + item.submittime.substr(10, 2) + ':'
+                        + item.submittime.substr(12, 2) + "</div>"
+                        + "<div class='secondicon'>"
+                        + item.contents + "</div></li>";
+                    $("#detalis").html(cons); //把内容入到这个div中
+                }
             })
         }
     });
