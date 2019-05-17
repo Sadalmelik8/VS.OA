@@ -130,5 +130,12 @@ textarea {
     width: 30%;
 }
 .detail--icon{
-    width: 65%;
+    width: 100%;
+}
+.firsticon{
+    width: 70%;
+}
+.secondicon{
+    background: #e3e3e3;
+    width: 70%;
 }
