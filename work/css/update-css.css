@@ -64,9 +64,12 @@ li {
 
 .textarea--left {
     position: relative;
+    top: -270px;
+}
+.textarea--icon{
+    position: relative;
     top: -370px;
 }
-
 textarea {
     display: inline-block;
     width: 80%;
@@ -126,7 +129,6 @@ textarea {
     overflow-y: scroll;
 }
 .seconddate{
-    background: #e3e3e3;
     width: 30%;
 }
 .detail--icon{
@@ -136,6 +138,8 @@ textarea {
     width: 70%;
 }
 .secondicon{
-    background: #e3e3e3;
     width: 70%;
+}
+.singular{
+    background: #e3e3e3;
 }
