@@ -108,3 +108,13 @@ textarea {
 #history:hover{
     color: #3fbded;
 }
+.detail {
+    display: inline-block;
+    width: 80%;
+    height: 400px;
+    line-height: 1;
+    color: #6D5A62;
+    text-align: left;
+    padding-left: 12px;
+    overflow-x: scroll;
+}
