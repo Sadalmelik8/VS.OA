@@ -136,20 +136,22 @@ textarea {
 }
 .firsticon{
     width: 70%;
-    overflow:hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .firsticon:hover{
-    overflow: visible;
+    /*overflow: visible;*/
 }
 
 .secondicon{
     width: 70%;
-    overflow:hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .secondicon:hover{
-    overflow: visible;
+    /*overflow: visible;*/
 }
 .singular{
     background: #e3e3e3;
