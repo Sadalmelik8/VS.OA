@@ -144,7 +144,6 @@ $(document).ready(function () {
             var stdTemplate = JSON.parse(std);
             stdTemplate.executor = present.value;
             stdTemplate.num = oltid;
-            stdTemplate.content = details.value;
             stdTemplate.contents = contents.value;
             stdTemplate.remarks = remarks.value;
             stdTemplate.level = level.value;
