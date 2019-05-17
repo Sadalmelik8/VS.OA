@@ -64,7 +64,6 @@ $(document).ready(function () {
             con = "<li><div class='firstdate'>"
                 + dataObj.ret[0].proposetime.substr(0, 4)
                 + '/' + dataObj.ret[0].proposetime.substr(4, 2)
-                + '/' + dataObj.ret[0].proposetime.substr(4, 2)
                 + '/' + dataObj.ret[0].proposetime.substr(6, 2)
                 + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
                 + ':' + dataObj.ret[0].proposetime.substr(10, 2)
@@ -93,32 +92,6 @@ $(document).ready(function () {
         stdTemplate.sts = 1;
         return stdTemplate;
     }
-    $('#presents').click(function () {
-        var fsession = session.fsession;
-        var userName = session.User_NM;
-        _template1 = buildJson();
-        var s = ("svr=WS_00010" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/webservice/?" + s;
-        $.ajax({
-            type: "post", //请求的方式，也有get请求
-            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-            contentType: "application/json",
-            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
-            cache: false,
-            processData: false,
-            contentType: false,
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            success: function (result) {
-                var dataObj = result;
-                $.each(dataObj.ret, function (index, item) {
-                    var option = document.createElement("option");
-                    $(option).val(item.username);
-                    $(option).text(item.username);
-                    $('#presents').append(option);
-                })
-            }
-        });
-    })
     $('#present').click(function () {
         var fsession = session.fsession;
         var userName = session.User_NM;
