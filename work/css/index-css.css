@@ -165,7 +165,8 @@ table td {
     height: 330px;
     width: 400px;
     border: 1px solid #777;
-    background: #e6e6e6;
+    background: #f3f3f3;
+    display:inline-block;
 }
 .date{
     padding: 0;
@@ -218,10 +219,10 @@ table td {
 .read{
     display: inline-block;
     width: 200px;
-    color: #555;
+    color: #fff;
     text-align: center;
     font-size: 16px;
-    background-color: #c7c7c7;
+    background-color: #c9c9c9;
 }
 #data{
     padding: 0;
@@ -230,19 +231,19 @@ table td {
     width: 400px;
     height: 300px;
     font-size: 0;
-    cursor:pointer;
     margin-top: 30px;
     overflow-y:auto;
     overflow-x:hidden;
+    background-color: #fff;
 }
 .icon{
     display: inline-block;
     width: 400px;
     height: 30px;
-    /*border-bottom: 1px solid #777;*/
 }
 .icon:hover{
-    background: #c7c7c7;
+    background: #eeeeee;
+    cursor:pointer;
 }
 .icon>*{
     border-bottom: 1px solid #777;
@@ -260,7 +261,7 @@ table td {
     color: #fff;
 }
 #shade{
-    display: none;
+    display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
