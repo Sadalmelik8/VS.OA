@@ -261,7 +261,7 @@ table td {
     color: #fff;
 }
 #shade{
-    display: inline-block;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
