@@ -195,7 +195,7 @@ $(document).ready(function () {
     let read = document.getElementsByClassName("read")[0];
     $(".unread").click(function (ev) {
         var con = '';
-        read.style.backgroundColor = '#c7c7c7';
+        read.style.backgroundColor = '#c9c9c9';
         read.style.color = '#fff';
         unread.style.backgroundColor = '#fff';
         unread.style.color = '#555';
@@ -244,7 +244,7 @@ $(document).ready(function () {
     });
     $(".read").click(function (ev) {
         var con = '';
-        unread.style.backgroundColor = '#c7c7c7';
+        unread.style.backgroundColor = '#c9c9c9';
         unread.style.color = '#fff';
         read.style.backgroundColor = '#fff';
         read.style.color = '#555';

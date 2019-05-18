@@ -226,7 +226,7 @@ var paginationed = function (userName) {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page ) {
+                    if (indexs < page) {
                         if (item.executor == null && item.submittime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
@@ -1186,8 +1186,13 @@ $(document).ready(function () {
                 beforeSend: LoadFunction, //加载执行方法
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
-                    dataObj = result; //返回的result为json格式的数据
-                    paginationed();
+                    if (dataObj.ret[0].id == 0) {
+                        alert('无搜索结果');
+                    }
+                    else {
+                        dataObj = result; //返回的result为json格式的数据
+                        paginationed();
+                    }
                 }
             });
             function buildJson() {
@@ -1230,8 +1235,13 @@ $(document).ready(function () {
                 beforeSend: LoadFunction, //加载执行方法
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
-                    dataObj = result; //返回的result为json格式的数据
-                    paginationed();
+                    if (dataObj.ret[0].id == 0) {
+                        alert('无搜索结果');
+                    }
+                    else {
+                        dataObj = result; //返回的result为json格式的数据
+                        paginationed();
+                    }
                 }
             });
             function buildJson() {
@@ -1274,8 +1284,13 @@ $(document).ready(function () {
                 beforeSend: LoadFunction, //加载执行方法
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
-                    dataObj = result; //返回的result为json格式的数据
-                    paginationed();
+                    if (dataObj.ret[0].id == 0) {
+                        alert('无搜索结果');
+                    }
+                    else {
+                        dataObj = result; //返回的result为json格式的数据
+                        paginationed();
+                    }
                 }
             });
             function buildJson() {
