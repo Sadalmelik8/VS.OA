@@ -62,7 +62,7 @@ function getclick() {
         $("#btn").removeAttr("onclick");//取消点击事件
         tipO = window.setTimeout("getclick()", 60000);//60秒后给定点击事件
     }
-document.ready(function () {
+$(document).ready(function () {
     $('#dl').click(function () {
         //获取fsession
         var aCookie = GetCookie('wytSession');
