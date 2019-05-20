@@ -20,10 +20,10 @@ var tipO;
 function start() {
     if (nn > 0) {
         var vv = nn;
-        $("#btn").attr("value", vv + '(s)后重新获取验证码'); //更改按钮上的文字
+        $("#btn").attr("value", vv + '(s)后重新获取'); //更改按钮上的文字
         nn--;
     } else {
-        $("#btn").attr("value", " 请重新获取验证码 "); //更改按钮上的文字
+        $("#btn").attr("value", " 请重新获取验证码"); //更改按钮上的文字
         window.clearInterval(tipId); //清除循环事件
     }
 }
