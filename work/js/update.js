@@ -75,9 +75,10 @@ $(document).ready(function () {
             title.value = dataObj.ret[0].title;
             present.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
-            if(dataObj.ret[0].level == null){
+
+            if (dataObj.ret[0].level == null) {
                 level.value = 1;
-            }else {
+            } else {
                 level.value = dataObj.ret[0].level;
             }
             con = "<li><div class='firstdate'>"
@@ -87,8 +88,11 @@ $(document).ready(function () {
                 + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
                 + ':' + dataObj.ret[0].proposetime.substr(10, 2)
                 + ':' + dataObj.ret[0].proposetime.substr(12, 2)
+                + '&nbsp;' + dataObj.ret[0].introducer
                 + "</div>" + "<div class='firsticon'>"
-                + dataObj.ret[0].content + "</div></li>";
+                + dataObj.ret[0].content
+                + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + "/>"
+                + "</div></li>";
             $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
                 if (index % 2 == 1) {
@@ -102,7 +106,7 @@ $(document).ready(function () {
                         + "<div class='secondicon'>"
                         + item.contents + "</div></li>";
                     $("#detalis").html(cons); //把内容入到这个div中
-                }else {
+                } else {
                     cons += "<li class='singular'><div class='seconddate'>"
                         + item.submittime.substr(0, 4) + '/'
                         + item.submittime.substr(4, 2) + '/'
@@ -131,26 +135,7 @@ $(document).ready(function () {
         var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
-        form.append("data", (JSON.stringify(_template1)));
-        $.ajax({
-            type: "post", //请求的方式，也有get请求
-            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-            contentType: "application/json",
-            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-            cache: false,
-            processData: false,
-            contentType: false,
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            success: function (result) {
-                dataObj = result;
-                if (dataObj.ret.id == 0) {
-                    alert('失败');
-                } else {
-                    alert('成功');
-                }
-            }
-        });
-        function buildJson() {
+        function buildJson(data) {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
             stdTemplate.executor = present.value;
@@ -158,7 +143,29 @@ $(document).ready(function () {
             stdTemplate.contents = contents.value;
             stdTemplate.remarks = remarks.value;
             stdTemplate.level = level.value;
-            return stdTemplate;
+            stdTemplate.pic = data;
+            form.append("data", (JSON.stringify(stdTemplate)));
+            $.ajax({
+                type: 'post',
+                url: URL,
+                contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
+                data: form,
+                cache: false,
+                processData: false,
+                contentType: false,
+                dataType: "json",//期待返回的数据类型
+                success: function (msg) {
+                    if (msg.ret[0].id == '0') {
+                        alert('上传失败');
+                    }
+                    else {
+                        alert('上传成功');
+                    }
+                },
+                error: function () {
+                    alert("请求失败");
+                }
+            });
         }
     });
     $('#problemState').click(function () {
