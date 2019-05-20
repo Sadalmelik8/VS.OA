@@ -46,6 +46,7 @@ $(document).ready(function () {
                 $(option).val(item);
                 $(option).text(item);
                 $('#presents').append(option);
+                $("#presents option[value='1']").attr("selected", "selected");
             })
         }
     });
@@ -81,39 +82,19 @@ $(document).ready(function () {
             } else {
                 level.value = dataObj.ret[0].level;
             }
-            if (dataObj.ret[0].pic.split("!@#$%^&*").length != -1 && dataObj.ret[0].pic.split("!@#$%^&*").length > 2) {
-                for (var i = 0; i < dataObj.ret[0].pic.split("!@#$%^&*").length - 1; i++) {
-                    pics += "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[i] + ">";
-
-                }
-                con = "<li><div class='firstdate'>"
-                    + dataObj.ret[0].proposetime.substr(0, 4)
-                    + '/' + dataObj.ret[0].proposetime.substr(4, 2)
-                    + '/' + dataObj.ret[0].proposetime.substr(6, 2)
-                    + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
-                    + ':' + dataObj.ret[0].proposetime.substr(10, 2)
-                    + ':' + dataObj.ret[0].proposetime.substr(12, 2)
-                    + '&nbsp;' + dataObj.ret[0].introducer
-                    + "</div>" + "<div class='firsticon'>"
-                    + dataObj.ret[0].content
-                    + pics + "</div></li>";
-                $('#detailed').html(con);
-            }
-            else {
-                con = "<li><div class='firstdate'>"
-                    + dataObj.ret[0].proposetime.substr(0, 4)
-                    + '/' + dataObj.ret[0].proposetime.substr(4, 2)
-                    + '/' + dataObj.ret[0].proposetime.substr(6, 2)
-                    + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
-                    + ':' + dataObj.ret[0].proposetime.substr(10, 2)
-                    + ':' + dataObj.ret[0].proposetime.substr(12, 2)
-                    + '&nbsp;' + dataObj.ret[0].introducer
-                    + "</div>" + "<div class='firsticon'>"
-                    + dataObj.ret[0].content
-                    + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
-                    + "</div></li>";
-                $('#detailed').html(con);
-            }
+            con = "<li><div class='firstdate'>"
+                + dataObj.ret[0].proposetime.substr(0, 4)
+                + '/' + dataObj.ret[0].proposetime.substr(4, 2)
+                + '/' + dataObj.ret[0].proposetime.substr(6, 2)
+                + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
+                + ':' + dataObj.ret[0].proposetime.substr(10, 2)
+                + ':' + dataObj.ret[0].proposetime.substr(12, 2)
+                + '&nbsp;' + dataObj.ret[0].introducer
+                + "</div>" + "<div class='firsticon'>"
+                + dataObj.ret[0].content
+                + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                + "</div></li>";
+            $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
                 if (index % 2 == 1) {
                     cons += "<li><div class='seconddate'>"
@@ -126,9 +107,8 @@ $(document).ready(function () {
                         + '&nbsp;' + item.executor
                         + "</div>" + "<div class='secondicon'>"
                         + item.contents
-                        + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                        + "<br/>" + "<img src=" + item.pic.split("!@#$%^&*")[0] + ">"
                         + "</div></li>";
-                    + "</div></li>";
                     $("#detalis").html(cons); //把内容入到这个div中
                 } else {
                     cons += "<li class='singular'><div class='seconddate'>"
@@ -141,7 +121,7 @@ $(document).ready(function () {
                         + '&nbsp;' + item.executor
                         + "</div>" + "<div class='secondicon'>"
                         + item.contents
-                        + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                        + "<br/>" + "<img src=" + item.pic.split("!@#$%^&*")[0] + ">"
                         + "</div></li>";
                     $("#detalis").html(cons); //把内容入到这个div中
                 }
@@ -156,9 +136,17 @@ $(document).ready(function () {
         return stdTemplate;
     }
     $('#present').click(function () {
+        for (var i = 0; i < $("#file")[0].files.length; i++) {
+            var reader = new FileReader();
+            reader.readAsDataURL($("#file")[0].files[i]);
+            reader.onload = function (e) {
+                var data = '';
+                data += e.target.result + '!@#$%^&*';
+                buildJson(data);
+            }
+        }
         var fsession = session.fsession;
         var userName = session.User_NM;
-        _template1 = buildJson();
         var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();

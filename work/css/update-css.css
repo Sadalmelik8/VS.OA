@@ -104,9 +104,6 @@ textarea {
     width: 10%;
     margin-left: 5%;
 }
-#history:hover{
-    color: #3fbded;
-}
 .detail {
     display: inline-block;
     width: 80%;
