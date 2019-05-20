@@ -25,15 +25,6 @@
         }
         var fsession = session.fsession;
         var userName = session.User_NM;
-        for (var i = 0; i < $("#file")[0].files.length; i++) {
-            var reader = new FileReader();
-            reader.readAsDataURL($("#file")[0].files[i]);
-            reader.onload = function (e) {
-                var data = '';
-                data += e.target.result + '!@#$%^&*';
-                buildJson(data);
-            }
-        }
         var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
@@ -61,14 +52,25 @@
             }
         });
     });
-    function buildJson(data) {
+    function buildJson() {
         let title = document.getElementsByClassName('title')[0].value;
         let particular = document.getElementById('icon').value;
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
         stdTemplate.title = title;
         stdTemplate.content = particular;
-        stdTemplate.pic = data;
+        stdTemplate.pic = file();
         return stdTemplate;
+    }
+    function file() {
+        for (var i = 0; i < $("#file")[0].files.length; i++) {
+            var reader = new FileReader();
+            reader.readAsDataURL($("#file")[0].files[i]);
+            reader.onload = function (e) {
+                var data = '';
+                data += e.target.result + '!@#$%^&*';
+                return data;
+            }
+        }
     }
 });
