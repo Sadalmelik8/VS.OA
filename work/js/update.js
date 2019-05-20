@@ -97,25 +97,32 @@ $(document).ready(function () {
             $.each(dataObj.ret[1].contents, function (index, item) {
                 if (index % 2 == 1) {
                     cons += "<li><div class='seconddate'>"
-                        + item.submittime.substr(0, 4) + '/'
-                        + item.submittime.substr(4, 2) + '/'
-                        + item.submittime.substr(6, 2) + '&nbsp;'
-                        + item.submittime.substr(8, 2) + ':'
-                        + item.submittime.substr(10, 2) + ':'
-                        + item.submittime.substr(12, 2) + "</div>"
-                        + "<div class='secondicon'>"
-                        + item.contents + "</div></li>";
+                        + item.submittime.substr(0, 4)
+                        + '/' + item.submittime.substr(4, 2)
+                        + '/' + item.submittime.substr(6, 2)
+                        + '&nbsp;' + item.submittime.substr(8, 2)
+                        + ':'+ item.submittime.substr(10, 2)
+                        + ':' + item.submittime.substr(12, 2)
+                        + '&nbsp;' + item.executor
+                        + "</div>"+ "<div class='secondicon'>"
+                        + item.contents
+                        + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                        + "</div></li>";
+                        + "</div></li>";
                     $("#detalis").html(cons); //把内容入到这个div中
                 } else {
                     cons += "<li class='singular'><div class='seconddate'>"
-                        + item.submittime.substr(0, 4) + '/'
-                        + item.submittime.substr(4, 2) + '/'
-                        + item.submittime.substr(6, 2) + '&nbsp;'
-                        + item.submittime.substr(8, 2) + ':'
-                        + item.submittime.substr(10, 2) + ':'
-                        + item.submittime.substr(12, 2) + "</div>"
-                        + "<div class='secondicon'>"
-                        + item.contents + "</div></li>";
+                        + item.submittime.substr(0, 4)
+                        + '/' + item.submittime.substr(4, 2)
+                        + '/' + item.submittime.substr(6, 2)
+                        + '&nbsp;' + item.submittime.substr(8, 2)
+                        + ':' + item.submittime.substr(10, 2)
+                        + ':' + item.submittime.substr(12, 2)
+                        + '&nbsp;' + item.executor
+                        + "</div>" + "<div class='secondicon'>"
+                        + item.contents
+                        + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                        + "</div></li>";
                     $("#detalis").html(cons); //把内容入到这个div中
                 }
             })
