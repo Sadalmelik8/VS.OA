@@ -25,7 +25,6 @@
         }
         var fsession = session.fsession;
         var userName = session.User_NM;
-        _template1 = buildJson();
         for (var i = 0; i < $("#file")[0].files.length; i++) {
             var reader = new FileReader();
             reader.readAsDataURL($("#file")[0].files[i]);
@@ -38,6 +37,7 @@
         var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
+        _template1 = buildJson();
         form.append("data", (JSON.stringify(_template1)));
         $.ajax({
             type: 'post',
@@ -49,7 +49,7 @@
             contentType: false,
             dataType: "json",//期待返回的数据类型
             success: function (msg) {
-                if (msg.ret.id == '1') {
+                if (msg.ret[0].id == '1') {
                     alert('上传成功');
                 }
                 else {
