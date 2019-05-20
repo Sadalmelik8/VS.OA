@@ -33,6 +33,7 @@ function getclick() {
 }
     var tohtml = "";
     function show() {
+        console.log(1);
         var rnd = Math.floor(Math.random() * 100000);
         var username = document.getElementById('nm').value;
         var s = "svr=WS_00001&rnd=" + rnd + "&mobile=" + username;
