@@ -75,7 +75,7 @@ $(document).ready(function () {
             title.value = dataObj.ret[0].title;
             present.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
-            if(dataObj.ret[0].level == ''){
+            if(dataObj.ret[0].level == null){
                 level.value = 1;
             }else {
                 level.value = dataObj.ret[0].level;
