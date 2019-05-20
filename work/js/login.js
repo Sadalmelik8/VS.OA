@@ -13,10 +13,26 @@ function GetCookie(key) {
         }
     }
 }
-
-$(document).ready(function () {
+//
+var nn = 0;
+var tipId;
+var tipO;
+function start() {
+    if (nn > 0) {
+        var vv = nn;
+        $("#btn").attr("value", vv); //更改按钮上的文字
+        nn--;
+    } else {
+        $("#btn").attr("value", " 请重新获取验证码 "); //更改按钮上的文字
+        window.clearInterval(tipId); //清除循环事件
+    }
+}
+function getclick() {
+    $("#btn").attr("onclick", "show()"); //给定点击事件
+    window.clearTimeout(tipO);//取消定时事件
+}
     var tohtml = "";
-    $('#session').click(function () {
+    function show() {
         var rnd = Math.floor(Math.random() * 100000);
         var username = document.getElementById('nm').value;
         var s = "svr=WS_00001&rnd=" + rnd + "&mobile=" + username;
@@ -34,12 +50,19 @@ $(document).ready(function () {
                 try {
                     if (msg.status == "ok") {
                         document.cookie = 'wytSession=' + msg.ret.fsession;
+                        document.getElementById('pw').innerText = msg.ret[0].smscode;
+
                     }
+                } catch (e) {
                 }
-                catch (e) { }
             }
-        })
-    })
+        });
+        nn = 60;
+        tipId = window.setInterval("start()", 1000); //每隔1秒调用一次start()方法
+        $("#btn").removeAttr("onclick");//取消点击事件
+        tipO = window.setTimeout("getclick()", 60000);//60秒后给定点击事件
+    }
+document.ready(function () {
     $('#dl').click(function () {
         //获取fsession
         var aCookie = GetCookie('wytSession');
@@ -72,6 +95,7 @@ $(document).ready(function () {
                 catch (e) { }
             }
         })
-    })
-})
+    });
+});
+
 
