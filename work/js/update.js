@@ -1,13 +1,7 @@
 // 获取从上个页面传过来的服务名称
 let url = window.location.search; //获取url中"?"符后的字串
 let oltid = url.substr(url.indexOf("=") + 1);
-//$(document).ready(function () {
-//    // let oltid = '';
-//    $("#history").click(function () {
-//        // oltid = e.target.innerText;
-//        location.href = "problem-les.html?age=" + oltid;
-//    });
-//});
+
 //获取cookkie
 function GetCookie(key) {
     var aCookie = document.cookie.split("; ");
@@ -81,7 +75,11 @@ $(document).ready(function () {
             title.value = dataObj.ret[0].title;
             present.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
-            level.value = dataObj.ret[0].level;
+            if(dataObj.ret[0].level == ''){
+                level.value = 1;
+            }else {
+                level.value = dataObj.ret[0].level;
+            }
             con = "<li><div class='firstdate'>"
                 + dataObj.ret[0].proposetime.substr(0, 4)
                 + '/' + dataObj.ret[0].proposetime.substr(4, 2)
