@@ -50,8 +50,7 @@ function getclick() {
                 try {
                     if (msg.status == "ok") {
                         document.cookie = 'wytSession=' + msg.ret.fsession;
-                        document.getElementById('pw').innerText = msg.ret.smscode;
-                        console.log(document.getElementById('pw').innerText);
+                        document.getElementById('pw').value = msg.ret.smscode;
                     }
                 } catch (e) {
                 }
