@@ -91,7 +91,7 @@ $(document).ready(function () {
                 + '&nbsp;' + dataObj.ret[0].introducer
                 + "</div>" + "<div class='firsticon'>"
                 + dataObj.ret[0].content
-                + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + "/>"
+                + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
                 + "</div></li>";
             $('#detailed').html(con);
             $.each(dataObj.ret[1].contents, function (index, item) {
