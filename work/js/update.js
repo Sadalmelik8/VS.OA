@@ -90,7 +90,8 @@ $(document).ready(function () {
                 + ':' + dataObj.ret[0].proposetime.substr(10, 2)
                 + ':' + dataObj.ret[0].proposetime.substr(12, 2)
                 + '&nbsp;' + dataObj.ret[0].introducer
-                + "</div>" + "<div class='firsticon'>"
+                + "</div>"
+                + "<div class='firsticon'>"
                 + dataObj.ret[0].content
                 + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
                 + "</div></li>";
