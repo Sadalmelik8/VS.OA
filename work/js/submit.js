@@ -23,13 +23,13 @@
             window.open('login.html', '_self');
             return;
         }
+        _template1 = buildJson();
         var fsession = session.fsession;
         var userName = session.User_NM;
         var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
-        _template1 = buildJson();
         $.ajax({
             type: 'post',
             url: URL,
