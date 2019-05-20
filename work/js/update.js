@@ -50,6 +50,7 @@ $(document).ready(function () {
         }
     });
     var con = '';
+    var pics = '';
     var cons = '';
     var title = document.getElementsByClassName('title')[0];
     var present = document.getElementsByClassName('present')[0];
@@ -75,25 +76,44 @@ $(document).ready(function () {
             title.value = dataObj.ret[0].title;
             present.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
-
             if (dataObj.ret[0].level == null) {
                 level.value = 1;
             } else {
                 level.value = dataObj.ret[0].level;
             }
-            con = "<li><div class='firstdate'>"
-                + dataObj.ret[0].proposetime.substr(0, 4)
-                + '/' + dataObj.ret[0].proposetime.substr(4, 2)
-                + '/' + dataObj.ret[0].proposetime.substr(6, 2)
-                + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
-                + ':' + dataObj.ret[0].proposetime.substr(10, 2)
-                + ':' + dataObj.ret[0].proposetime.substr(12, 2)
-                + '&nbsp;' + dataObj.ret[0].introducer
-                + "</div>" + "<div class='firsticon'>"
-                + dataObj.ret[0].content
-                + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
-                + "</div></li>";
-            $('#detailed').html(con);
+            if (dataObj.ret[0].pic.split("!@#$%^&*").length != -1 && dataObj.ret[0].pic.split("!@#$%^&*").length > 2) {
+                for (var i = 0; i < dataObj.ret[0].pic.split("!@#$%^&*").length - 1; i++) {
+                    pics += "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[i] + ">";
+
+                }
+                con = "<li><div class='firstdate'>"
+                    + dataObj.ret[0].proposetime.substr(0, 4)
+                    + '/' + dataObj.ret[0].proposetime.substr(4, 2)
+                    + '/' + dataObj.ret[0].proposetime.substr(6, 2)
+                    + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
+                    + ':' + dataObj.ret[0].proposetime.substr(10, 2)
+                    + ':' + dataObj.ret[0].proposetime.substr(12, 2)
+                    + '&nbsp;' + dataObj.ret[0].introducer
+                    + "</div>" + "<div class='firsticon'>"
+                    + dataObj.ret[0].content
+                    + pics + "</div></li>";
+                $('#detailed').html(con);
+            }
+            else {
+                con = "<li><div class='firstdate'>"
+                    + dataObj.ret[0].proposetime.substr(0, 4)
+                    + '/' + dataObj.ret[0].proposetime.substr(4, 2)
+                    + '/' + dataObj.ret[0].proposetime.substr(6, 2)
+                    + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
+                    + ':' + dataObj.ret[0].proposetime.substr(10, 2)
+                    + ':' + dataObj.ret[0].proposetime.substr(12, 2)
+                    + '&nbsp;' + dataObj.ret[0].introducer
+                    + "</div>" + "<div class='firsticon'>"
+                    + dataObj.ret[0].content
+                    + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                    + "</div></li>";
+                $('#detailed').html(con);
+            }
             $.each(dataObj.ret[1].contents, function (index, item) {
                 if (index % 2 == 1) {
                     cons += "<li><div class='seconddate'>"
@@ -101,14 +121,14 @@ $(document).ready(function () {
                         + '/' + item.submittime.substr(4, 2)
                         + '/' + item.submittime.substr(6, 2)
                         + '&nbsp;' + item.submittime.substr(8, 2)
-                        + ':'+ item.submittime.substr(10, 2)
+                        + ':' + item.submittime.substr(10, 2)
                         + ':' + item.submittime.substr(12, 2)
                         + '&nbsp;' + item.executor
-                        + "</div>"+ "<div class='secondicon'>"
+                        + "</div>" + "<div class='secondicon'>"
                         + item.contents
                         + "<br/>" + "<img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
                         + "</div></li>";
-                        + "</div></li>";
+                    + "</div></li>";
                     $("#detalis").html(cons); //把内容入到这个div中
                 } else {
                     cons += "<li class='singular'><div class='seconddate'>"
