@@ -28,8 +28,8 @@
         var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
-        _template1 = buildJson();
         form.append("data", (JSON.stringify(_template1)));
+        _template1 = buildJson();
         $.ajax({
             type: 'post',
             url: URL,
