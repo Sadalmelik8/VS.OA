@@ -13,7 +13,6 @@ function GetCookie(key) {
         }
     }
 }
-//
 
 $(document).ready(function () {
     var tohtml = "";
