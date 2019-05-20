@@ -20,7 +20,7 @@ var tipO;
 function start() {
     if (nn > 0) {
         var vv = nn;
-        $("#btn").attr("value", vv); //更改按钮上的文字
+        $("#btn").attr("value", vv + '(s)后重新获取验证码'); //更改按钮上的文字
         nn--;
     } else {
         $("#btn").attr("value", " 请重新获取验证码 "); //更改按钮上的文字
@@ -33,7 +33,6 @@ function getclick() {
 }
     var tohtml = "";
     function show() {
-        console.log(1);
         var rnd = Math.floor(Math.random() * 100000);
         var username = document.getElementById('nm').value;
         var s = "svr=WS_00001&rnd=" + rnd + "&mobile=" + username;
@@ -51,8 +50,8 @@ function getclick() {
                 try {
                     if (msg.status == "ok") {
                         document.cookie = 'wytSession=' + msg.ret.fsession;
-                        document.getElementById('pw').innerText = msg.ret[0].smscode;
-
+                        document.getElementById('pw').innerText = msg.ret.smscode;
+                        console.log(document.getElementById('pw').innerText);
                     }
                 } catch (e) {
                 }
