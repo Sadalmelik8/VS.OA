@@ -94,7 +94,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        if (item.acceptor == null && item.inspecttime == null) {
+                        if (item.executor != null && item.submittime != null && item.acceptor == null && item.inspecttime == null) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -153,7 +153,7 @@ var paginationed = function (userName) {
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
-                                if (item.acceptor == null && item.inspecttime == null) {
+                                if (item.executor != null && item.submittime != null && item.acceptor == null && item.inspecttime == null) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -229,7 +229,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        if (item.acceptor == null && item.inspecttime == null) {
+                        if (item.executor != null && item.submittime != null &&item.acceptor == null && item.inspecttime == null) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -288,7 +288,7 @@ var paginationed = function (userName) {
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
-                                if (item.acceptor == null && item.inspecttime == null) {
+                                if (item.executor != null && item.submittime != null && item.acceptor == null && item.inspecttime == null) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -365,7 +365,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        if (item.acceptor == null && item.inspecttime == null) {
+                        if (item.executor != null && item.submittime != null && item.acceptor == null && item.inspecttime == null) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
