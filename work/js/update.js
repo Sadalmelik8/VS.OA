@@ -97,7 +97,7 @@ $(document).ready(function () {
                 + "<div class='firstpic'><img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
                 + "</div></div>";
             $('#detailed').html(con);
-            if (dataObj.ret[1].contents != undefined) {
+            if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
                     + item.proposetime.substr(0, 4)
                         + '/' + item.proposetime.substr(4, 2)
