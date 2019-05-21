@@ -42,9 +42,11 @@
             let particular = document.getElementById('icon').value;
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
+            var level = document.getElementsByClassName('level')[0];
             stdTemplate.title = title;
             stdTemplate.content = particular;
             stdTemplate.pic = data;
+            stdTemplate.level = level.value;
             form.append("data", (JSON.stringify(stdTemplate)));
             $.ajax({
                 type: 'post',
