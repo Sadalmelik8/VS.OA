@@ -3,7 +3,7 @@
 2. 新增问题(done)
 新增问题到问题库表（问题库表(T_ Problem)）
 服务号：WS_00002
-参数：{title:,content:,pic:}--标题、内容、上传图片
+参数：{title:,content:,pic:,level}--标题、内容、上传图片、问题紧急度
 提出人为username，就是当前登录的人
 新增消息到消息提醒表（T_Message）
 参数：{title:}--标题
