@@ -46,7 +46,6 @@ $(document).ready(function () {
                 $(option).val(item);
                 $(option).text(item);
                 $('#presents').append(option);
-                $("#presents option[value='1']").attr("selected", "selected");
             })
         }
     });
