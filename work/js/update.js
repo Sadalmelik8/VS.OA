@@ -80,7 +80,9 @@ $(document).ready(function () {
             } else {
                 level.value = dataObj.ret[0].level;
             }
-            con = "<div class='firstdate'><span>"
+            con =
+                "<li class='detailed--icon'>"
+                + "<div class='firstdate'><span>"
                 + dataObj.ret[0].proposetime.substr(0, 4)
                 + '/' + dataObj.ret[0].proposetime.substr(4, 2)
                 + '/' + dataObj.ret[0].proposetime.substr(6, 2)
@@ -93,12 +95,14 @@ $(document).ready(function () {
                 + "<div class='firsticon'><span>"
                 + dataObj.ret[0].content
                 + "</span>"
-                + "<div class='firstpic'><img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
-                + "</div></div>";
+            + "<div class='firstpic'><img class='pics' src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                + "</div></div>"
+                + "</li>";
             $('#detailed').html(con);
             if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
-                    cons += "<div class='firstdate'><span>"
+                    cons += "<li class='detailed--icon' >"
+                        + "<div class='firstdate'><span>"
                         + item.submittime.substr(0, 4)
                         + '/' + item.submittime.substr(4, 2)
                         + '/' + item.submittime.substr(6, 2)
@@ -111,8 +115,9 @@ $(document).ready(function () {
                         + "<div class='firsticon'><span>"
                         + item.contents
                         + "</span>"
-                        + "<div class='firstpic'><img src=" + item.pic.split("!@#$%^&*")[0] + ">"
-                        + "</div></div>";
+                        + "<div class='firstpic'><img class='pics' src=" + item.pic.split("!@#$%^&*")[0] + ">"
+                        + "</div></div>"
+                        + "</li>";
                     $("#detalis").html(cons); //把内容入到这个div中
                 })
             }
