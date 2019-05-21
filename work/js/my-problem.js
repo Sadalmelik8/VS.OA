@@ -80,7 +80,7 @@ var paginationed = function (userName) {
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs < page) {
-                        if (item.executor == null && item.submittime == null) {
+                        if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
                             item.acceptor = '&nbsp;';
@@ -98,7 +98,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        else if (item.acceptor == null && item.inspecttime == null) {
+                        if (item.acceptor == null && item.inspecttime == null) {
                             item.acceptor = '&nbsp;';
                             item.inspecttime = '&nbsp;';
                             con += "<li class='datas'>"
@@ -114,7 +114,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        else {
+                        if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;' && item.acceptor != null && item.inspecttime != null && item.acceptor != '&nbsp;' && item.inspecttime != '&nbsp;') {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -145,7 +145,7 @@ var paginationed = function (userName) {
                         $.each(dataObj.ret, function (indexs, item) {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
-                                if (item.executor == null && item.submittime == null) {
+                                if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                                     item.executor = '&nbsp;';
                                     item.submittime = '&nbsp;';
                                     item.acceptor = '&nbsp;';
@@ -163,7 +163,7 @@ var paginationed = function (userName) {
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
-                                else if (item.acceptor == null && item.inspecttime == null) {
+                                if (item.acceptor == null && item.inspecttime == null) {
                                     item.acceptor = '&nbsp;';
                                     item.inspecttime = '&nbsp;';
                                     con += "<li class='datas'>"
@@ -179,7 +179,7 @@ var paginationed = function (userName) {
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
-                                else {
+                                if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;' && item.acceptor != null && item.inspecttime != null && item.acceptor != '&nbsp;' && item.inspecttime != '&nbsp;') {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -227,7 +227,7 @@ var paginationed = function (userName) {
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs < page) {
-                        if (item.executor == null && item.submittime == null) {
+                        if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
                             item.acceptor = '&nbsp;';
@@ -245,7 +245,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        else if (item.acceptor == null && item.inspecttime == null) {
+                        if (item.acceptor == null && item.inspecttime == null) {
                             item.acceptor = '&nbsp;';
                             item.inspecttime = '&nbsp;';
                             con += "<li class='datas'>"
@@ -261,7 +261,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        else {
+                        if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;' && item.acceptor != null && item.inspecttime != null && item.acceptor != '&nbsp;' && item.inspecttime != '&nbsp;') {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -292,7 +292,7 @@ var paginationed = function (userName) {
                         $.each(dataObj.ret, function (indexs, item) {
                             if (indexs >= page * (vid[1] - 1) && indexs < page * vid[1]) {
                                 i = li.length - 1;
-                                if (item.executor == null && item.submittime == null) {
+                                if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                                     item.executor = '&nbsp;';
                                     item.submittime = '&nbsp;';
                                     item.acceptor = '&nbsp;';
@@ -326,7 +326,7 @@ var paginationed = function (userName) {
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
-                                else {
+                                if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;' && item.acceptor != null && item.inspecttime != null && item.acceptor != '&nbsp;' && item.inspecttime != '&nbsp;') {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -375,7 +375,7 @@ var paginationed = function (userName) {
                 $.each(dataObj.ret, function (indexs, item) {
                     if (indexs >= page * (txt03 - 1) && indexs < page * txt03) {
                         //i = li.length - 1;
-                        if (item.executor == null && item.submittime == null) {
+                        if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
                             item.acceptor = '&nbsp;';
@@ -409,7 +409,7 @@ var paginationed = function (userName) {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        else {
+                        if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;' && item.acceptor != null && item.inspecttime != null && item.acceptor != '&nbsp;' && item.inspecttime != '&nbsp;') {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -977,9 +977,11 @@ $(document).ready(function () {
                                 let con = '';
                                 $.each(dataObj.ret, function (indexs, item) {
                                     if (arr_1[s[1]] === item.title) {
-                                        if (item.executor == null && item.submittime == null) {
+                                        if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                                             item.executor = '&nbsp;';
                                             item.submittime = '&nbsp;';
+                                            item.acceptor = '&nbsp;';
+                                            item.inspecttime = '&nbsp;';
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -993,14 +995,30 @@ $(document).ready(function () {
                                                 + "</li>";
                                             $("#ul").html(con); //把内容入到这个div中
                                         }
-                                        else {
+                                        if (item.acceptor == null && item.inspecttime == null) {
+                                            item.acceptor = '&nbsp;';
+                                            item.inspecttime = '&nbsp;';
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
-                                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
+                                                + "<span>" + item.acceptor + "</span>"//验收人
+                                                + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
+                                                + "<input type='submit' class='submit'>"
+                                                + "</li>";
+                                            $("#ul").html(con); //把内容入到这个div中
+                                        }
+                                        if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;' && item.acceptor != null && item.inspecttime != null && item.acceptor != '&nbsp;' && item.inspecttime != '&nbsp;') {
+                                            con += "<li class='datas'>"
+                                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span>" + item.introducer + "</span>"//提出人
+                                                + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                                                + "<span>" + item.executor + "</span>"//受理人
+                                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                                 + "<span>" + item.acceptor + "</span>"//验收人
                                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                                 + "<input type='submit' class='submit'>"
@@ -1094,7 +1112,7 @@ $(document).ready(function () {
                         alert('该日期无问题记录');
                     }
                     else {
-                        if (item.executor == null && item.submittime == null) {
+                        if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                             item.executor = '&nbsp;';
                             item.submittime = '&nbsp;';
                             item.acceptor = '&nbsp;';
@@ -1121,21 +1139,21 @@ $(document).ready(function () {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                 + "<input type='submit' class='submit'>"
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        else {
+                        if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;' && item.acceptor != null && item.inspecttime != null && item.acceptor != '&nbsp;' && item.inspecttime != '&nbsp;') {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime + "</span>"//提交时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime + "</span>"//验收时间
                                 + "<input type='submit' class='submit'>"

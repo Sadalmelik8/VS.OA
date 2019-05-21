@@ -51,7 +51,6 @@ $(document).ready(function () {
         }
     });
     var con = '';
-    var pics = '';
     var cons = '';
     var title = document.getElementsByClassName('title')[0];
     var present = document.getElementsByClassName('present')[0];
@@ -98,23 +97,28 @@ $(document).ready(function () {
                 + "<div class='firstpic'><img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
                 + "</div></div>";
             $('#detailed').html(con);
-            $.each(dataObj.ret[1].contents, function (index, item) {
-                + dataObj.ret[0].proposetime.substr(0, 4)
-                    + '/' + dataObj.ret[0].proposetime.substr(4, 2)
-                    + '/' + dataObj.ret[0].proposetime.substr(6, 2)
-                    + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
-                    + ':' + dataObj.ret[0].proposetime.substr(10, 2)
-                    + ':' + dataObj.ret[0].proposetime.substr(12, 2)
-                    + "</span>"
-                    + "<span>" + dataObj.ret[0].introducer + "</span>"
-                    + "</div>"
-                    + "<div class='firsticon'><span>"
-                    + dataObj.ret[0].content
-                    + "</span>"
-                    + "<div class='firstpic'><img src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
-                    + "</div></div>";
-                $("#detalis").html(cons); //把内容入到这个div中
-            })
+            if (dataObj.ret[1].contents != undefined) {
+                $.each(dataObj.ret[1].contents, function (index, item) {
+                    + item.proposetime.substr(0, 4)
+                        + '/' + item.proposetime.substr(4, 2)
+                        + '/' + item.proposetime.substr(6, 2)
+                        + '&nbsp;' + item.proposetime.substr(8, 2)
+                        + ':' + item.proposetime.substr(10, 2)
+                        + ':' + item.proposetime.substr(12, 2)
+                        + "</span>"
+                        + "<span>" + item.introducer + "</span>"
+                        + "</div>"
+                        + "<div class='firsticon'><span>"
+                        + item.contents
+                        + "</span>"
+                        + "<div class='firstpic'><img src=" + item.pic.split("!@#$%^&*")[0] + ">"
+                        + "</div></div>";
+                    $("#detalis").html(cons); //把内容入到这个div中
+                })
+            }
+            else {
+
+            }
         }
     });
     function buildJson() {
