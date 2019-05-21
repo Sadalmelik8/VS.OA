@@ -163,7 +163,7 @@ $(document).ready(function () {
                 contentType: false,
                 dataType: "json",//期待返回的数据类型
                 success: function (msg) {
-                    if (msg.ret[0].id == '0') {
+                    if (msg.ret.id == '0') {
                         alert('上传失败');
                     }
                     else {
