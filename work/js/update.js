@@ -95,7 +95,7 @@ $(document).ready(function () {
                 + "<div class='firsticon'><span>"
                 + dataObj.ret[0].content
                 + "</span>"
-            + "<div class='firstpic'><img class='pics' src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                + "<div class='firstpic'><img class='pics' id=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + "src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
                 + "</div></div>"
                 + "</li>";
             $('#detailed').html(con);
@@ -115,7 +115,7 @@ $(document).ready(function () {
                         + "<div class='firsticon'><span>"
                         + item.contents
                         + "</span>"
-                        + "<div class='firstpic'><img class='pics' src=" + item.pic.split("!@#$%^&*")[0] + ">"
+                        + "<div class='firstpic'><img class='pics' id=" + item.pic.split("!@#$%^&*")[0] + "src=" + item.pic.split("!@#$%^&*")[0] + ">"
                         + "</div></div>"
                         + "</li>";
                     $("#detalis").html(cons); //把内容入到这个div中
