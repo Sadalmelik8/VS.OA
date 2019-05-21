@@ -64,5 +64,19 @@ textarea {
 }
 
 .minute--bottom__middle {
-    width: 64.666666%;
+    width: 30%;
+    border: 1px solid #999;
+}
+.level--text{
+    width: 12%;
+    text-align: right;
+    margin-left: 11.5%;
+}
+.level{
+    width: 7%;
+    padding-left: 2.3%;
+    margin-right: 7%;
+}
+#submit{
+    width: 11%;
 }
