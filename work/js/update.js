@@ -106,7 +106,7 @@ $(document).ready(function () {
                         + ':' + item.submittime.substr(10, 2)
                         + ':' + item.submittime.substr(12, 2)
                         + "</span>"
-                        + "<span>" + item.executor + "</span>"
+                        + "<span>" + item.submitter + "</span>"
                         + "</div>"
                         + "<div class='firsticon'><span>"
                         + item.contents
@@ -152,7 +152,7 @@ $(document).ready(function () {
         function buildJson(data) {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.executor = present.value;
+            stdTemplate.executor = presents.value;
             stdTemplate.num = oltid;
             stdTemplate.contents = contents.value;
             stdTemplate.remarks = remarks.value;
