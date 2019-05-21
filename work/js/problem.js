@@ -96,7 +96,9 @@ var paginationed = function () {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        else {
+                        if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;') {
+
+                       
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -137,7 +139,9 @@ var paginationed = function () {
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
-                                else {
+                                if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;') {
+
+                             
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -195,7 +199,9 @@ var paginationed = function () {
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
-                        else {
+                        if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;') {
+
+                        
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -236,7 +242,7 @@ var paginationed = function () {
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
-                                else {
+                                if (item.executor != null && item.submittime != null && item.executor != '&nbsp;' && item.submittime != '&nbsp;') {                                
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
