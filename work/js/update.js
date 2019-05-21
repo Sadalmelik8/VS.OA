@@ -99,14 +99,14 @@ $(document).ready(function () {
             $('#detailed').html(con);
             if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
-                    + item.proposetime.substr(0, 4)
-                        + '/' + item.proposetime.substr(4, 2)
-                        + '/' + item.proposetime.substr(6, 2)
-                        + '&nbsp;' + item.proposetime.substr(8, 2)
-                        + ':' + item.proposetime.substr(10, 2)
-                        + ':' + item.proposetime.substr(12, 2)
+                    + item.submittime.substr(0, 4)
+                        + '/' + item.submittime.substr(4, 2)
+                        + '/' + item.submittime.substr(6, 2)
+                        + '&nbsp;' + item.submittime.substr(8, 2)
+                        + ':' + item.submittime.substr(10, 2)
+                        + ':' + item.submittime.substr(12, 2)
                         + "</span>"
-                        + "<span>" + item.introducer + "</span>"
+                        + "<span>" + item.executor + "</span>"
                         + "</div>"
                         + "<div class='firsticon'><span>"
                         + item.contents
@@ -129,14 +129,20 @@ $(document).ready(function () {
         return stdTemplate;
     }
     $('#present').click(function () {
-        for (var i = 0; i < $("#file")[0].files.length; i++) {
-            var reader = new FileReader();
-            reader.readAsDataURL($("#file")[0].files[i]);
-            reader.onload = function (e) {
-                var data = '';
-                data += e.target.result + '!@#$%^&*';
-                buildJson(data);
+        if ($("#file")[0].files.length>0) {
+            for (var i = 0; i < $("#file")[0].files.length; i++) {
+                var reader = new FileReader();
+                reader.readAsDataURL($("#file")[0].files[i]);
+                reader.onload = function (e) {
+                    var data = '';
+                    data += e.target.result + '!@#$%^&*';
+                    buildJson(data);
+                }
             }
+        }
+        else {
+            var data = '';
+            buildJson(data);
         }
         var fsession = session.fsession;
         var userName = session.User_NM;
