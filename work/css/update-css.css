@@ -122,7 +122,7 @@ textarea {
 }
 .firstdate{
     display: inline-block;
-    width: 17%;
+    width: 20%;
     height: 100%;
     border-right: 1px solid #777;
     vertical-align: top;
@@ -139,7 +139,7 @@ textarea {
 }
 .firsticon{
     display: inline-block;
-    width: 83%;
+    width: 80%;
     font-size: 15px;
     vertical-align: top;
     text-align: left;
@@ -161,6 +161,7 @@ textarea {
 .singular{
     background: #f0f0f0;
 }
+
 .particulars{
     top: -240px;
 }
