@@ -102,6 +102,8 @@ textarea {
 }
 #present{
     width: 10%;
+    height: 30px;
+    line-height: 30px;
     margin-left: 5%;
 }
 .detail {
