@@ -52,7 +52,7 @@ $(document).ready(function () {
     var con = '';
     var cons = '';
     var title = document.getElementsByClassName('title')[0];
-    var present = document.getElementsByClassName('present')[0];
+    var presents = document.getElementsByClassName('present')[0];
     var contents = document.getElementsByClassName('contents')[0];
     var remarks = document.getElementsByClassName('title')[1];
     var level = document.getElementsByClassName('bottom--middle__urgency')[0];
@@ -73,7 +73,7 @@ $(document).ready(function () {
         success: function (result) {
             var dataObj = result; //返回的result为json格式的数据
             title.value = dataObj.ret[0].title;
-            present.value = dataObj.ret[0].executor;
+            presents.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
             if (dataObj.ret[0].level == null) {
                 level.value = 1;
