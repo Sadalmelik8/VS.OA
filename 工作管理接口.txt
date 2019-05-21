@@ -20,7 +20,7 @@ ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题
 ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间（problemstate 为 1或2 时)
 ret={id:0}返回失败
 
-4. 筛选关于我的问题
+4. 筛选关于我的问题(done)
 获取关于我的问题名称、问题编号、提出人、提出时间、受理人、提交时间、验收人、验收时间
 服务号：WS_00004
 参数：{type:1/2/3}-----1是提出人，2是受理人，3是验收人
@@ -45,7 +45,7 @@ ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,proble
 当ver=0时
 ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,pic:,level:}--验收状态，提出人，标题，内容，备注，提出时间，图片，问题紧急度
 当 ver != 0 时
-ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,pic:,level:,contents:[contents:,executgor:,pic:,submittime:]}--验收状态，提出人，标题，内容，备注，提出时间，图片，问题紧急度，追加问题
+ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,pic:,level:,contents:[contents:,executor:,pic:,submittime:,submitter]}--验收状态，提出人，标题，内容，备注，提出时间，图片，问题紧急度，追加问题:[追加问题、受理人、图片、提交时间、提交人]
 ret={id:0}返回失败
 
 7. 提交(done)
@@ -53,11 +53,11 @@ ret={id:0}返回失败
 	1). 如果受理人不变
 		如果contents为空：T_Problem表修改备注；消息接收人(chen.jiong)，Operation为“提交”
 		如果contents有内容
-			如果用户为（chen.jiong）T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic）；消息接收人(受理人)，Operation为“追加”
-			如果用户不为（chen.jiong）T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注）；消息接收人(chen.jiong)，Operation为“追加”
+			如果用户为（chen.jiong）T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；消息接收人(受理人)，Operation为“追加”
+			如果用户不为（chen.jiong）T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，提交人）；消息接收人(chen.jiong)，Operation为“追加”
 	2). 如果受理人改变
 		如果contents为空：T_Problem表修改受理人；operation为分配，消息接收人为受理人
-		如果contents有内容：T_Problem表修改受理人，增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic）；operation为分配，消息接收人为受理人
+		如果contents有内容：T_Problem表修改受理人，增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；operation为分配，消息接收人为受理人
 2.该问题没有受理人
 	T_Problem表修改受理人（必填），问题紧急度（必填）；operation为分配，消息接收人为受理人
 服务号：WS_00007
