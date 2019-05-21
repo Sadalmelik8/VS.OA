@@ -260,9 +260,7 @@ var paginationed = function () {
                     } else {
                         alert('输入框不能为空');
                         return false;
-
                     }
-
                 });
                 con = "";
             } else {

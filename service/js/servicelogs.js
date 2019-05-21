@@ -139,11 +139,11 @@ var paginationed = function () {
                                     + "</li>";
                                 $("#ul1").html(con); //把内容入到这个div中
                                 li[vid[1] - 1].className = "active";
-                                control();
-                                activeds();
-                                redirect();
                             }
                         });
+                        control();
+                        activeds();
+                        redirect();
                         con = "";
                     }
                     //收起
@@ -206,11 +206,11 @@ var paginationed = function () {
                                     + "</li>";
                                 $("#ul1").html(con); //把内容入到这个div中
                                 li[vid[1] - 1].className = "active";
-                                activeds();
-                                redirect();
-                                control();
                             }
                         });
+                        activeds();
+                        redirect();
+                        control();
                         con = "";
                     }
                 })
@@ -233,8 +233,6 @@ var paginationed = function () {
                             + "<button></button>" + "<hr/>"
                             + "</li>";
                         $("#ul1").html(con); //把内容入到这个div中
-                        control();
-                        redirect();
                     }
                     var ul = document.getElementById("pagination");
                     var li = ul.getElementsByTagName("li");
@@ -249,10 +247,10 @@ var paginationed = function () {
                     } else {
                         alert('输入框不能为空');
                         return false;
-
                     }
-
                 });
+                control();
+                redirect();
                 con = "";
             } else {
                 alert("超出范围");
