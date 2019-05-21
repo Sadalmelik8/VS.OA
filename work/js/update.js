@@ -220,4 +220,14 @@ $(document).ready(function () {
             return stdTemplate;
         }
     })
+    $("#big").click(function () {
+        let big = document.getElementById('big');
+        big.src = '';
+        big.style.display = 'none';
+    });
+    $(".pics").click(function (e) {
+        let big = document.getElementById('big');
+        big.src = e.target.id;
+        big.style.display = 'inline-block';
+    })
 });
