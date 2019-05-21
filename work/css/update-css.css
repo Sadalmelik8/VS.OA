@@ -172,3 +172,16 @@ textarea {
 .particulars{
     top: -240px;
 }
+#big{
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.firstpic>img{
+    width: 250px;
+    height: 150px;
+}
