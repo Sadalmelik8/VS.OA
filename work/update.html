@@ -8,49 +8,67 @@
     <script src="js/update.js"></script>
 </head>
 <body>
-    <div class="minute">
-        <ul>
-            <li class="send">
-                执行问题<span>
+<div class="minute">
+    <ul>
+        <li class="send">
+            执行问题<span>
                     <select class="present" id="presents">
                         <option value="1">选择受理人</option>
                     </select>
                 </span>
-                <input type="button" value="验收" class="btn" id="problemState" />
-            </li>
-            <li>
-                <span>问题标题</span>
-                <input readonly="readonly" type="text" class="title">
-            </li>
-            <li class="textarea">
-                <span class="textarea--left">问题详情</span>
-                <div class="detail">
-                    <ul class="detailed detail--icon" id="detailed"></ul>
-                    <ul class="details detail--icon" id="detalis"></ul>
-                </div>
-            </li>
-            <li class="textarea">
-                <span class="textarea--left">还存在问题</span>
-                <textarea class="contents"></textarea>
-            </li>
-            <li>
-                <span>备注</span>
-                <input type="text" class="title">
-            </li>
-            <li>
-                <span>上传附件</span>
-                <input type="file" class="minute--bottom__middle" id="flie">
-                <div class="bottom--middle">
-                    <span id="title">问题紧急度:</span>
-                    <select class="bottom--middle__urgency">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
-                <input type="submit" id="present">
-            </li>
-        </ul>
-    </div>
+            <input type="button" value="验收" class="btn" id="problemState" />
+        </li>
+        <li>
+            <span>问题标题</span>
+            <input readonly="readonly" type="text" class="title">
+        </li>
+        <li class="textarea">
+            <span class="textarea--left">问题详情</span>
+            <div class="detail">
+                <ul id="detailed">
+                    <li class="detailed--icon">
+                        <div class="firstdate">                            
+                        </div>
+                        <div class="firsticon">                            
+                            <div class="firstpic">                                
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul id="detalis">
+                    <li class="detailed--icon">
+                        <div class="firstdate">
+                        </div>
+                        <div class="firsticon">                           
+                            <div class="firstpic">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="textarea">
+            <span class="textarea--left">还存在问题</span>
+            <textarea class="contents"></textarea>
+        </li>
+        <li>
+            <span>备注</span>
+            <input type="text" class="title">
+        </li>
+        <li>
+            <span>上传附件</span>
+            <input type="file" multiple class="minute--bottom__middle" id="file">
+            <div class="bottom--middle">
+                <span id="title">问题紧急度:</span>
+                <select class="bottom--middle__urgency">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <input type="submit" id="present">
+        </li>
+    </ul>
+</div>
 </body>
 </html>
