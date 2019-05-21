@@ -98,7 +98,8 @@ $(document).ready(function () {
             $('#detailed').html(con);
             if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
-                    + item.submittime.substr(0, 4)
+                    cons += "<div class='firstdate'><span>"
+                        + item.submittime.substr(0, 4)
                         + '/' + item.submittime.substr(4, 2)
                         + '/' + item.submittime.substr(6, 2)
                         + '&nbsp;' + item.submittime.substr(8, 2)
@@ -128,7 +129,7 @@ $(document).ready(function () {
         return stdTemplate;
     }
     $('#present').click(function () {
-        if ($("#file")[0].files.length>0) {
+        if ($("#file")[0].files.length > 0) {
             for (var i = 0; i < $("#file")[0].files.length; i++) {
                 var reader = new FileReader();
                 reader.readAsDataURL($("#file")[0].files[i]);
