@@ -128,7 +128,7 @@ $(document).ready(function () {
                     $("#detalis").html(cons); //把内容入到这个div中                    
                 })
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
-                    if (document.getElementsByClassName('pics')[i].src == '') {
+                    if (document.getElementsByClassName('pics')[i].style.src == '') {
                         document.getElementsByClassName('pics')[i].style.display = 'none';
                     }
                 }
