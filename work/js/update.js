@@ -237,9 +237,11 @@ $(document).ready(function () {
         big.style.display = 'none';
     });
     $(".pics").click(function (e) {
-        let big = document.getElementById('big');
-        big.src = e.target.src;
-        big.style.display = 'inline-block';
+        var minute = document.getElementsByClassName('minute')[0];
+        var img = document.createElement("img");
+        img.id = 'big';
+        img.style.src = e.target.src;
+        minute.appendChild(img);
     })
 })
 
