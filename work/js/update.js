@@ -138,18 +138,19 @@ $(document).ready(function () {
                     }
                 }
             }
-            $("body").click(function () {
-                let big = document.getElementById('big');
-                big.src = '';
-                big.style.display = 'none';
-            });
             $(".pics").click(function (e) {
                 var minute = document.getElementsByClassName('minute')[0];
                 var img = document.createElement("img");
                 img.id = 'big';
                 img.src = e.target.src;
                 minute.appendChild(img);
+                $("big").click(function () {
+                    var big = document.getElementById('big');
+                    big.src = '';
+                    big.style.display = 'none';
+                });
             })
+
         }
     });
     function buildJson() {

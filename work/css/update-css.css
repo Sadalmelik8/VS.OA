@@ -173,7 +173,6 @@ textarea {
     top: -240px;
 }
 #big{
-    display: inline-block;
     position: fixed;
     top: 0;
     bottom: 0;
