@@ -52,12 +52,10 @@ ret={id:0}返回失败
 1. 该问题有受理人
 	1). 如果受理人不变
 		如果contents为空：T_Problem表修改备注；消息接收人(chen.jiong)，Operation为“提交”
-		如果contents有内容
-			如果用户为（chen.jiong）T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；消息接收人(受理人)，Operation为“追加”
-			如果用户不为（chen.jiong）T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，提交人）；消息接收人(chen.jiong)，Operation为“追加”
+		如果contents有内容：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；消息接收人(提出人)，Operation为“追加”
 	2). 如果受理人改变
 		如果contents为空：T_Problem表修改受理人；operation为分配，消息接收人为受理人
-		如果contents有内容：T_Problem表修改受理人，增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；operation为分配，消息接收人为受理人
+		如果contents有内容：T_Problem表修改受理人，增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；operation为分配，消息接收人为受理人和提出人
 2.该问题没有受理人
 	T_Problem表修改受理人（必填），问题紧急度（必填）；operation为分配，消息接收人为受理人
 服务号：WS_00007
@@ -72,7 +70,7 @@ ret={id:0}返回失败
 服务号：WS_00008
 参数：{num:}-----问题编号（验收状态为1）
 新增消息到消息提醒表（T_Message）
-操作：获取当前时间，operation为验收，两条提醒，一条接收人为受理的人，一条接收人为提出的人，sts默认为0
+操作：获取当前时间，operation为验收，sts默认为0，验收人只能为问题新增人，消息接收人为所有追加过问题的人+陈工
 参数：{}
 返回：json,
 ret={id:1}返回失败
@@ -93,4 +91,13 @@ ret={id:0}返回失败
 参数：{}
 返回：json,
 ret={username}---返回所有的用户名
+ret={id:0}返回失败
+
+11.添加知识点
+新增知识到知识库表(T_ knowledge)
+服务号：WS_00011
+操作：把参数保存到数据库，自动获取当前时间
+参数：{title:,content:,remarks}--标题、内容、备注
+提出人为introducer，就是当前登录的人
+返回：json,
 ret={id:0}返回失败
