@@ -138,6 +138,18 @@ $(document).ready(function () {
                     }
                 }
             }
+            $("#big").click(function () {
+                let big = document.getElementById('big');
+                big.src = '';
+                big.style.display = 'none';
+            });
+            $(".pics").click(function (e) {
+                var minute = document.getElementsByClassName('minute')[0];
+                var img = document.createElement("img");
+                img.id = 'big';
+                img.src = e.target.src;
+                minute.appendChild(img);
+            })
         }
     });
     function buildJson() {
@@ -233,18 +245,6 @@ $(document).ready(function () {
             stdTemplate.num = oltid;
             return stdTemplate;
         }
-    })
-    $("#big").click(function () {
-        let big = document.getElementById('big');
-        big.src = '';
-        big.style.display = 'none';
-    });
-    $(".pics").click(function (e) {
-        var minute = document.getElementsByClassName('minute')[0];
-        var img = document.createElement("img");
-        img.id = 'big';
-        img.src = e.target.src;
-        minute.appendChild(img);
     })
 });
 
