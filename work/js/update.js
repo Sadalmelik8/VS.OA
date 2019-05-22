@@ -96,7 +96,7 @@ $(document).ready(function () {
                 + dataObj.ret[0].content
                 + "</span>"
                 + "<div class='firstpic'>"
-                + "<img class='pics' id=" + dataObj.ret[0].pic.split('!@#$%^&*')[0] + "src=" + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                + "<img class='pics' id=" + dataObj.ret[0].pic.split('!@#$%^&*')[0] + 'src=' + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
                 + "</div>"
                 + "</div>"
                 + "</li>";
@@ -118,7 +118,7 @@ $(document).ready(function () {
                         + item.contents
                         + "</span>"
                         + "<div class='firstpic'>"
-                        + "<img class='pics' id=" + item.pic.split('!@#$%^&*')[0] + "src=" + item.pic.split("!@#$%^&*")[0] + ">"
+                        + "<img class='pics' id=" + item.pic.split('!@#$%^&*')[0] + 'src=' + item.pic.split("!@#$%^&*")[0] + ">"
                         + "</div>"
                         + "</div>"
                         + "</li>";
