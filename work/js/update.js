@@ -144,7 +144,7 @@ $(document).ready(function () {
                 img.id = 'big';
                 img.src = e.target.src;
                 minute.appendChild(img);
-                $("big").click(function () {
+                $("#big").click(function () {
                     var big = document.getElementById('big');
                     big.src = '';
                     big.style.display = 'none';
