@@ -1,10 +1,6 @@
 // 获取从上个页面传过来的服务名称
 let url = window.location.search; //获取url中"?"符后的字串
 let oltid = url.substr(url.indexOf("=") + 1);
-var img = document.createElement("img");
-document.getElementsByClassName('minute')[0].appendChild(img);
-img.id = 'big';
-img.style.display = 'none';
 //获取cookkie
 function GetCookie(key) {
     var aCookie = document.cookie.split("; ");
@@ -142,6 +138,7 @@ $(document).ready(function () {
                 }
             }
             $(".pics").click(function (e) {
+                var img = document.getElementById("big");
                 img.style.display = 'block';
                 img.src = e.target.src;
             })
