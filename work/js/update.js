@@ -96,7 +96,7 @@ $(document).ready(function () {
                 + dataObj.ret[0].content
                 + "</span>"
                 + "<div class='firstpic'>"
-                + "<img class='pics' id=" + dataObj.ret[0].pic.split('!@#$%^&*')[0] + 'src=' + dataObj.ret[0].pic.split("!@#$%^&*")[0] + ">"
+                + "<img class='pics' src=" + dataObj.ret[0].pic.split('!@#$%^&*')[0] + ">"
                 + "</div>"
                 + "</div>"
                 + "</li>";
@@ -118,7 +118,7 @@ $(document).ready(function () {
                         + item.contents
                         + "</span>"
                         + "<div class='firstpic'>"
-                        + "<img class='pics' id=" + item.pic.split('!@#$%^&*')[0] + 'src=' + item.pic.split("!@#$%^&*")[0] + ">"
+                        + "<img class='pics' src=" + item.pic.split('!@#$%^&*')[0] + ">"
                         + "</div>"
                         + "</div>"
                         + "</li>";
@@ -231,7 +231,7 @@ $(document).ready(function () {
     });
     $(".pics").click(function (e) {
         let big = document.getElementById('big');
-        big.src = e.target.id;
+        big.src = e.target.src;
         big.style.display = 'inline-block';
     })
 });
