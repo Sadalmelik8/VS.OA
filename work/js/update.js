@@ -5,6 +5,7 @@ var minute = document.getElementsByClassName('minute')[0];
 var img = document.createElement("img");
 img.id = 'big';
 img.style.display = 'none';
+minute.appendChild(img);
 
 //获取cookkie
 function GetCookie(key) {
@@ -145,7 +146,6 @@ $(document).ready(function () {
             $(".pics").click(function (e) {
                 img.style.display = 'block';
                 img.src = e.target.src;
-                minute.appendChild(img);
             })
 
         }
