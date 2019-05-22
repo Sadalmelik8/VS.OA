@@ -1172,8 +1172,8 @@ $(document).ready(function () {
                 beforeSend: LoadFunction, //加载执行方法
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
-                    dataObj.ret = result;
-                    if (dataObj.ret.id == 0) {
+                    dataObj = result;
+                    if (dataObj.ret[0].id == 0) {
                         alert('无搜索结果');
                     }
                     else {
@@ -1222,8 +1222,8 @@ $(document).ready(function () {
                 beforeSend: LoadFunction, //加载执行方法
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
-                    dataObj.ret = result;
-                    if (dataObj.ret.id == 0) {
+                    dataObj = result;
+                    if (dataObj.ret[0].id == 0) {
                         alert('无搜索结果');
                     }
                     else {
@@ -1272,8 +1272,8 @@ $(document).ready(function () {
                 beforeSend: LoadFunction, //加载执行方法
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
-                    dataObj.ret = result;
-                    if (dataObj.ret.id == 0) {
+                    dataObj = result;
+                    if (dataObj.ret[0].id == 0) {
                         alert('无搜索结果');
                     }
                     else {
