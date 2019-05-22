@@ -127,7 +127,7 @@ $(document).ready(function () {
                         + "</li>";
                     $("#detalis").html(cons); //把内容入到这个div中
                     if (item.pic.split('!@#$%^&*')[0] == '') {
-                        document.getElementsByClassName('pics')[index].style.display = 'none';
+                        document.getElementsByClassName('pics')[index+1].style.display = 'none';
                     }
                 })
             }
