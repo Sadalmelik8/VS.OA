@@ -125,11 +125,13 @@ $(document).ready(function () {
                         + "</div>"
                         + "</div>"
                         + "</li>";
-                    $("#detalis").html(cons); //把内容入到这个div中
-                    if (item.pic.split('!@#$%^&*')[0] == '') {
-                        document.getElementsByClassName('pics')[index + 1].style.display = 'none';
-                    }
+                    $("#detalis").html(cons); //把内容入到这个div中                    
                 })
+                for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
+                    if (document.getElementsByClassName('pics')[i].src == '') {
+                        document.getElementsByClassName('pics')[i].style.display = 'none';
+                    }
+                }
             }
         }
     });
