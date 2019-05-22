@@ -101,6 +101,9 @@ $(document).ready(function () {
                 + "</div>"
                 + "</li>";
             $('#detailed').html(con);
+            if (dataObj.ret[0].pic.split('!@#$%^&*')[0] == '') {
+                document.getElementsByClassName('pics')[0].style.display = 'none';
+            }
             if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
                     cons += "<li class='detailed--icon' >"
@@ -123,10 +126,10 @@ $(document).ready(function () {
                         + "</div>"
                         + "</li>";
                     $("#detalis").html(cons); //把内容入到这个div中
+                    if (item.pic.split('!@#$%^&*')[0] == '') {
+                        document.getElementsByClassName('pics')[index].style.display = 'none';
+                    }
                 })
-            }
-            else {
-
             }
         }
     });

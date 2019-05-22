@@ -23,20 +23,26 @@
             window.open('login.html', '_self');
             return;
         }
-        for (var i = 0; i < $("#file")[0].files.length; i++) {
-            var reader = new FileReader();
-            reader.readAsDataURL($("#file")[0].files[i]);
-            reader.onload = function (e) {
-                var data = '';
-                data += e.target.result + '!@#$%^&*';
-                buildJson(data);
-            }
-        }
         var fsession = session.fsession;
         var userName = session.User_NM;
         var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
+        if ($("#file")[0].files.length > 0) {
+            for (var i = 0; i < $("#file")[0].files.length; i++) {
+                var reader = new FileReader();
+                reader.readAsDataURL($("#file")[0].files[i]);
+                reader.onload = function (e) {
+                    var data = '';
+                    data += e.target.result + '!@#$%^&*';
+                    buildJson(data);
+                }
+            }
+        }
+        else {
+            var data = '';
+            buildJson(data);
+        }
         function buildJson(data) {
             let title = document.getElementsByClassName('title')[0].value;
             let particular = document.getElementById('icon').value;
