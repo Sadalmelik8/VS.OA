@@ -138,7 +138,7 @@ $(document).ready(function () {
                     }
                 }
             }
-            $("#big").click(function () {
+            $("body").click(function () {
                 let big = document.getElementById('big');
                 big.src = '';
                 big.style.display = 'none';
