@@ -230,13 +230,16 @@ $(document).ready(function () {
         }
     })
 });
-$("#big").click(function () {
-    let big = document.getElementById('big');
-    big.src = '';
-    big.style.display = 'none';
-});
-$(".pics").click(function (e) {
-    let big = document.getElementById('big');
-    big.src = e.target.src;
-    big.style.display = 'inline-block';
+$(document).ready(function () {
+    $("#big").click(function () {
+        let big = document.getElementById('big');
+        big.src = '';
+        big.style.display = 'none';
+    });
+    $(".pics").click(function (e) {
+        let big = document.getElementById('big');
+        big.src = e.target.src;
+        big.style.display = 'inline-block';
+    })
 })
+
