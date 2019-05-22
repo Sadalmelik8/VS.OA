@@ -1173,7 +1173,7 @@ $(document).ready(function () {
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
                     dataObj.ret = result;
-                    if (dataObj.ret[0].id == 0) {
+                    if (dataObj.ret.id == 0) {
                         alert('无搜索结果');
                     }
                     else {
@@ -1223,7 +1223,7 @@ $(document).ready(function () {
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
                     dataObj.ret = result;
-                    if (dataObj.ret[0].id == 0) {
+                    if (dataObj.ret.id == 0) {
                         alert('无搜索结果');
                     }
                     else {
@@ -1273,7 +1273,7 @@ $(document).ready(function () {
                 error: erryFunction,  //错误执行方法
                 success: function (result) {
                     dataObj.ret = result;
-                    if (dataObj.ret[0].id == 0) {
+                    if (dataObj.ret.id == 0) {
                         alert('无搜索结果');
                     }
                     else {
