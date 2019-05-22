@@ -1,12 +1,10 @@
 // 获取从上个页面传过来的服务名称
 let url = window.location.search; //获取url中"?"符后的字串
 let oltid = url.substr(url.indexOf("=") + 1);
-var minute = document.getElementsByClassName('minute')[0];
 var img = document.createElement("img");
+document.getElementsByClassName('minute')[0].appendChild(img);
 img.id = 'big';
 img.style.display = 'none';
-minute.appendChild(img);
-
 //获取cookkie
 function GetCookie(key) {
     var aCookie = document.cookie.split("; ");
@@ -244,11 +242,12 @@ $(document).ready(function () {
             return stdTemplate;
         }
     })
+    $("#big").click(function () {
+        var big = document.getElementById('big');
+        big.src = '';
+        big.style.display = 'none';
+    });
 });
-$("#big").click(function () {
-    var big = document.getElementById('big');
-    big.src = '';
-    big.style.display = 'none';
-});
+
 
 
