@@ -128,7 +128,12 @@ $(document).ready(function () {
                     $("#detalis").html(cons); //把内容入到这个div中                    
                 })
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
-                    if (document.getElementsByClassName('pics')[i].style.src == '') {
+                    //后期修改
+                    //后期修改
+                    //后期修改
+                    //后期修改
+                    //后期修改
+                    if (document.getElementsByClassName('pics')[i].src == ('http://192.168.5.58:29999/update.html?num=' + oltid)) {
                         document.getElementsByClassName('pics')[i].style.display = 'none';
                     }
                 }
@@ -229,8 +234,6 @@ $(document).ready(function () {
             return stdTemplate;
         }
     })
-});
-$(document).ready(function () {
     $("#big").click(function () {
         let big = document.getElementById('big');
         big.src = '';
@@ -240,8 +243,9 @@ $(document).ready(function () {
         var minute = document.getElementsByClassName('minute')[0];
         var img = document.createElement("img");
         img.id = 'big';
-        img.style.src = e.target.src;
+        img.src = e.target.src;
         minute.appendChild(img);
     })
-})
+});
+
 
