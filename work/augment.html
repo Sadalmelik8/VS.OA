@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新增知识点</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/repository.js"></script>
+    <link href="css/repository.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="augment">
+        <ul>
+            <li class="send">添加知识点</li>
+            <li>
+                <span>知识点</span>
+                <input type="text" class="title">
+            </li>
+            <li class="textarea">
+                <span class="textarea--left">知识点详情</span>
+                <textarea></textarea>
+            </li>
+            <li>
+                <span>上传附件</span>
+                <input type="file" multiple class="augment--bottom__middle">
+                <input type="submit" id="submit">
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
