@@ -1,10 +1,10 @@
 ﻿function stopBubble(e) {
     //如果提供了事件对象，则这是一个非IE浏览器
-    if (e && e.stopPropagation)
-        //因此它支持W3C的stopPropagation()方法
+    if ( e && e.stopPropagation )
+    //因此它支持W3C的stopPropagation()方法
         e.stopPropagation();
     else
-        //否则，我们需要使用IE的方式来取消事件冒泡
+    //否则，我们需要使用IE的方式来取消事件冒泡
         window.event.cancelBubble = true;
 }
 //获取cookkie
@@ -21,42 +21,7 @@ function GetCookie(key) {
 let redirect = function (fsession, userName) {
     let oltid = '';
     $(".icon").click(function (e) {
-        //_template1 = buildJson();
-        //var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
-        //var URL = "/webservice/?" + s;
-        //var form = new FormData();
-        //form.append("data", (JSON.stringify(_template1)));
-        //$.ajax({
-        //    type: "post", //请求的方式，也有get请求
-        //    url: URL, //请求地址
-        //    data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-        //    dataType: "json", //json格式，后台返回的数据为json格式的。
-        //    contentType: "application/json",
-        //    cache: false,
-        //    processData: false,
-        //    contentType: false,
-        //    success: function (result) {
-        //        dataObj = result; //返回的result为json格式的数据
-        //        $.each(dataObj.ret, function (index, item) {
-        //            con += "<div class='icon' id=" + item.num + ">"
-        //                + "<span class='date'>" + item.f_timestamp + "</span>"
-        //                + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
-        //                + "</div>";
-        //            $("#data").html(con)
-        //        })
-        //        con = '';
-        //    }
-        //});
-        //function buildJson() {
-        //    var std = JSON.stringify({});
-        //    var stdTemplate = JSON.parse(std);
-        //    stdTemplate.num = oltid;
-        //    return stdTemplate;
-        //}
         oltid = e.currentTarget.id;
-        //document.getElementsByTagName('iframe')[0].src = 'update.html';
-        //document.getElementsByTagName('iframe')[0].id = oltid;
-        //location.href = "update.html?num=" + oltid;
         window.open('update.html?num=' + oltid, 'iframe1')
     });
 };
@@ -83,7 +48,6 @@ $(document).ready(function () {
     var mes = '';
     var fsession = session.fsession;
     var userName = session.User_NM;
-    document.getElementById('user').innerHTML = userName;
     _template1 = buildJson();
     var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
@@ -181,7 +145,7 @@ $(document).ready(function () {
                     }
                     else {
                         con += "<div class='icon' id=" + item.num + ">"
-                            + "<span class='date'>" + item.f_timestamp + "</span>"
+                            + "<span>" + item.f_timestamp.substr(0, 4) + '/' + item.f_timestamp.substr(4, 2) + '/' + item.f_timestamp.substr(6, 2) + '&nbsp;' + item.f_timestamp.substr(8, 2) + ':' + item.f_timestamp.substr(10, 2) + ':' + item.f_timestamp.substr(12, 2) + "</span>"//提出时间
                             + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                             + "</div>";
                         $("#data").html(con);
@@ -339,14 +303,3 @@ $(document).ready(function () {
         });
     }
 });
-//安全退出
-$(document).ready(function () {
-    $('#reset').click(function () {
-        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
-        if (keys) {
-            for (var i = keys.length; i--;)
-                document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
-        }
-        window.open('login.html', '_self');
-    })
-})
