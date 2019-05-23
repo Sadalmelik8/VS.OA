@@ -244,7 +244,7 @@ $(document).ready(function () {
                     }
                     else {
                         con += "<div class='icon' id=" + item.num + ">"
-                            + "<span class='date'>" + item.f_timestamp + "</span>"
+                            + "<span class='date'>" + item.f_timestamp.substr(0, 4) + '/' + item.f_timestamp.substr(4, 2) + '/' + item.f_timestamp.substr(6, 2) + '&nbsp;' + item.f_timestamp.substr(8, 2) + ':' + item.f_timestamp.substr(10, 2) + ':' + item.f_timestamp.substr(12, 2) + "</span>"
                             + "<span class='operation'>" + item.username + item.operation + item.title + "</span>"
                             + "</div>";
                         $("#data").html(con);
