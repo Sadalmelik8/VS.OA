@@ -347,5 +347,6 @@ $(document).ready(function () {
             for (var i = keys.length; i--;)
                 document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
         }
+        window.open('login.html', '_self');
     })
 })
