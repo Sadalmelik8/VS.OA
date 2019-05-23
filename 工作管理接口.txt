@@ -113,3 +113,10 @@ ret={id:0}返回失败
 返回：json,根据提出时间倒序排列
 ret={num:,title:,content:,remarks:,introducer:,submittime:}---编号、名称、内容、备注、提出人、提交时间
 ret={id:0}返回失败
+
+13.提交到知识库
+把问题提交到知识库
+服务号：WS_00013
+参数：{num}---编号
+返回：json,
+ret={id:0}返回失败
