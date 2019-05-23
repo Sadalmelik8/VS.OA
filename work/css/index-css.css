@@ -269,3 +269,6 @@ table td {
     height: 920px;
     background: transparent;
 }
+#reset{
+    cursor:pointer;
+}
