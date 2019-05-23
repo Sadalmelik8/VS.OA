@@ -53,13 +53,16 @@ ret={id:0}返回失败
 	1). 如果受理人不变
 		如果contents为空：T_Problem表修改备注；消息接收人(chen.jiong)，Operation为“提交”
 		如果contents有内容：
-			如果当前用户为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；消息接收人(受理人)，Operation为“追加”
-			如果当前用户不为提出人：ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；T_Problem表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为追加，消息接收人为受理人。
+			如果当前用户为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；T_Message表增加一条记录：Operation为“追加”，消息接收人为受理人
+			如果当前用户不为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“追加”，消息接收人为受理人。
 	2). 如果受理人改变
-		如果contents为空：T_Problem表修改受理人；增加两条记录 ：1.operation为分配，消息接收人为受理人。2.operation为“取消分配”消息接收人为前受理人。
-		如果contents有内容：T_Problem表修改受理人，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；增加三条记录：1.operation为分配，消息接收人为受理人。2.operation为取消分配，消息接收人为前受理人。3.operation为追加，消息接收人为提出人。
+		如果contents为空：T_Problem表修改受理人；T_Message表增加两条记录 ：1.operation为分配，消息接收人为受理人。2.operation为“取消分配”消息接收人为前受理人。
+		如果contents有内容：T_Problem表修改受理人，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；T_Message表增加三条记录：1.operation为分配，消息接收人为受理人。2.operation为取消分配，消息接收人为前受理人。3.operation为追加，消息接收人为提出人。
 2.该问题没有受理人
-	T_Problem表修改受理人（必填），问题紧急度（必填）；operation为分配，消息接收人为受理人
+	如果contents为空：T_Problem表修改受理人（必填），问题紧急度（必填）；T_Message表增加一条记录：operation为分配，消息接收人为受理人
+	如果contents有内容：
+		如果当前用户为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；T_Message表增加一条记录：Operation为“分配”，消息接收人为受理人
+		如果当前用户不为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，备注，level字段，pic，提交人）；T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“分配”，消息接收人为受理人。
 服务号：WS_00007
 参数：{executor:,num:,content:,contents:,remarks:,level:}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度
 新增消息到消息提醒表（T_Message）
@@ -95,11 +98,18 @@ ret={id:0}返回失败
 ret={username}---返回所有的用户名
 ret={id:0}返回失败
 
-11.添加知识点
-新增知识到知识库表(T_ knowledge)
+11.新增知识点
+新增知识点到问题库表（问题库表(T_ Problem)）
 服务号：WS_00011
-操作：把参数保存到数据库，自动获取当前时间
-参数：{title:,content:,remarks}--标题、内容、备注
-提出人为introducer，就是当前登录的人
+参数：{title:,content:,pic:}---标题、内容、上传图片，后台获取提交的时间
+提出人为username，就是当前登录的
 返回：json,
+ret={id:0}返回失败
+
+12.知识库总览
+获取所有知识点名称、知识点编号、提出人、提出时间、备注
+服务号：WS_00012
+参数：{}
+返回：json,根据提出时间倒序排列
+ret={num:,title:,content:,remarks:,introducer:,submittime:}---编号、名称、内容、备注、提出人、提交时间
 ret={id:0}返回失败
