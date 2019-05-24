@@ -24,7 +24,7 @@ let redirect = function () {
     let oltid = '';
     $(".caption").click(function (e) {
         oltid = e.target.id;
-        location.href = "update.html?num=" + oltid;
+        location.href = "update-re.html?num=" + oltid;
     });
 };
 //加载执行方法
