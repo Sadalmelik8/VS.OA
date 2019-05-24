@@ -64,7 +64,9 @@ textarea {
 }
 
 .augment--bottom__middle {
-    width: 64.666666%;
+    width: 24.666666%;
+    border: 1px solid #777;
+    margin-right: 45%;
 }
 #submit{
     width: 10%;
