@@ -56,7 +56,7 @@ $(document).ready(function () {
     var remarks = document.getElementsByClassName('title')[1];
     // var level = document.getElementsByClassName('bottom--middle__urgency')[0];
     _template1 = buildJson();
-    var s = ("svr=WS_00013" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = ("svr=WS_00006" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
