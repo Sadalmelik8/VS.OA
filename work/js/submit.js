@@ -49,32 +49,35 @@
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
             var level = document.getElementsByClassName('level')[0];
-            stdTemplate.title = title;
-            stdTemplate.content = particular;
-            stdTemplate.pic = data;
-            stdTemplate.level = level.value;
-            form.append("data", (JSON.stringify(stdTemplate)));
-            $.ajax({
-                type: 'post',
-                url: URL,
-                contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
-                data: form,
-                cache: false,
-                processData: false,
-                contentType: false,
-                dataType: "json",//期待返回的数据类型
-                success: function (msg) {
-                    if (msg.ret.id == '1') {
-                        alert('上传成功');
+            if (title !== '' && particular !== '') {
+                stdTemplate.title = title;
+                stdTemplate.content = particular;
+                stdTemplate.pic = data;
+                stdTemplate.level = level.value;
+                form.append("data", (JSON.stringify(stdTemplate)));
+                $.ajax({
+                    type: 'post',
+                    url: URL,
+                    contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
+                    data: form,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json",//期待返回的数据类型
+                    success: function (msg) {
+                        if (msg.ret.id == '1') {
+                            alert('上传成功');
+                        } else {
+                            alert('上传失败');
+                        }
+                    },
+                    error: function () {
+                        alert("请求失败");
                     }
-                    else {
-                        alert('上传失败');
-                    }
-                },
-                error: function () {
-                    alert("请求失败");
-                }
-            });
+                });
+            } else {
+                alert("标题和内容不能为空")
+            }
         }
     });
 });
