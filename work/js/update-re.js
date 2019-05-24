@@ -74,11 +74,6 @@ $(document).ready(function () {
             title.value = dataObj.ret[0].title;
             // presents.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
-            if (dataObj.ret[0].level == null) {
-                level.value = 1;
-            } else {
-                level.value = dataObj.ret[0].level;
-            }
             con =
                 "<li class='detailed--icon'>"
                 + "<div class='firstdate'><span>"
