@@ -97,10 +97,10 @@
         var fsession = session.fsession;
         var userName = session.User_NM;
         var form = new FormData();
-        $("#select").each(function () {
-            if ($("#select")[0].files.length > 0) {
-                var file = $("#select")[0].files[0];
-                var id = $("#select")[0].files[0].name;
+        $("#submit").each(function () {
+            if ($("#submit")[0].files.length > 0) {
+                var file = $("#submit")[0].files[0];
+                var id = $("#submit")[0].files[0].name;
                 _template1 = buildJson(file, id);
                 form.append("data", (JSON.stringify(_template1)));
             }
