@@ -999,7 +999,7 @@ $(document).ready(function () {
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('submit')[k]){
-                console.log(e.target.parentNode.children[0].innerText);
+                console.log(e.target.parentNode.children[0].id);
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
@@ -1028,7 +1028,7 @@ $(document).ready(function () {
                 function buildJson() {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
-                    stdTemplate.num = e.target.parentNode.children[0].innerText.id;
+                    stdTemplate.num = e.target.parentNode.children[0].id;
                     return stdTemplate;
                 }
             }
