@@ -99,7 +99,7 @@
         var form = new FormData();
         $("#submit").each(function () {
             if ($("#file")[0].files.length > 0) {
-                var file = $("#file")[0].files;
+                var file = $("#file")[0].files[0];
                 form.append("data", file);
             }
         });
