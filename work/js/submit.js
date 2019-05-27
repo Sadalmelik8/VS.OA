@@ -99,10 +99,9 @@
         var form = new FormData();
         $("#submit").each(function () {
             if ($("#file")[0].files.length > 0) {
-                var file = $("#file")[0].files[0];
-                var id = $("#file")[0].files[0].name;
+                var file = $("#file")[0];
                 _template1 = buildJson(file, id);
-                form.append("data", (JSON.stringify(_template1)));
+                form.append("data", file);
             }
         });
         var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
