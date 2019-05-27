@@ -98,9 +98,9 @@
         var userName = session.User_NM;
         var form = new FormData();
         $("#submit").each(function () {
-            if ($("#submit")[0].files.length > 0) {
-                var file = $("#submit")[0].files[0];
-                var id = $("#submit")[0].files[0].name;
+            if ($("#file")[0].files.length > 0) {
+                var file = $("#file")[0].files[0];
+                var id = $("#file")[0].files[0].name;
                 _template1 = buildJson(file, id);
                 form.append("data", (JSON.stringify(_template1)));
             }
