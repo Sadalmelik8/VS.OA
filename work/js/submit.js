@@ -99,8 +99,7 @@
         var form = new FormData();
         $("#submit").each(function () {
             if ($("#file")[0].files.length > 0) {
-                var file = $("#file")[0];
-                _template1 = buildJson(file, id);
+                var file = $("#file")[0].files;
                 form.append("data", file);
             }
         });
