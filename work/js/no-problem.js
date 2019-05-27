@@ -1028,7 +1028,7 @@ $(document).ready(function () {
                 function buildJson() {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
-                    stdTemplate.num = e.target.parentNode.children[0].innerText;
+                    stdTemplate.title = e.target.parentNode.children[0].innerText;
                     return stdTemplate;
                 }
             }
