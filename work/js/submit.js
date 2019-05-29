@@ -100,7 +100,7 @@
         $("#submit").each(function () {
             if ($("#file")[0].files.length > 0) {
                 var file = $("#file")[0].files[0];
-                form.append("data", file);
+                buildJson(file);
             }
         });
         var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
@@ -117,11 +117,16 @@
                 alert(msg.ret);
             }
         });
-        function buildJson(file, id) {
+        function buildJson(file) {
+            var title = document.getElementsByClassName('title')[0].value;
+            var particular = document.getElementById('icon').value;
+            var level = document.getElementsByClassName('level')[0];
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.file = file;
-            stdTemplate.id = id;
+            stdTemplate.file = file;//图片
+            stdTemplate.title = title;//标题
+            stdTemplate.content = particular;//内容
+            stdTemplate.level = level;//紧急度
             return stdTemplate;
         }
     });
