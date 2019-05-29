@@ -101,6 +101,7 @@
             if ($("#file")[0].files.length > 0) {
                 var file = $("#file")[0].files[0];
                 buildJson(file);
+                form.append("data", (JSON.stringify(stdTemplate)));
             }
         });
         var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
@@ -127,7 +128,7 @@
             stdTemplate.title = title;//标题
             stdTemplate.content = particular;//内容
             stdTemplate.level = level;//紧急度
-            form.append("data", (JSON.stringify(stdTemplate)));
+            return stdTemplate;
         }
     });
 });
