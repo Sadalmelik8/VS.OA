@@ -128,12 +128,12 @@
             stdTemplate.title = title;//标题
             stdTemplate.content = particular;//内容
             stdTemplate.level = level;//紧急度
-            if (form.data) {
-                form.append("files",file);
+            if (form.get("data") != null) {
+                form.append("files", file);
             }
             else {
                 form.append("data", (JSON.stringify(stdTemplate)));
-                form.append("files",file);
+                form.append("files", file);
             }
         }
     });
