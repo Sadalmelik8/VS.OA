@@ -8,6 +8,7 @@ function GetCookie(key) {
         }
     }
 }
+
 window.onload = function () {
     call()
 };
@@ -27,13 +28,16 @@ let redirect = function () {
         location.href = "update.html?num=" + oltid;
     });
 };
+
 //加载执行方法
 function LoadFunction() {
 }
+
 //执行错误方法
 function erryFunction() {
     alert('error')
 }
+
 //分页效果
 var actived = function () {
     var pagination = document.getElementById("pagination");
@@ -47,6 +51,7 @@ var actived = function () {
 var paginationed = function () {
     var page = 10,//每页显示条数
         con = "",
+        cons = '',
         pagination = "";
     //页数
     for (var i = 1; i <= Math.ceil(age / page) + 1; i++) {
@@ -89,11 +94,16 @@ var paginationed = function () {
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                             + "<span>" + item.acceptor + "</span>"//验收人
                             + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                            + "<input type='submit' class='submit'>"
+                            + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
                             + "</li>";
-                        $("#ul").html(con); //把内容入到这个div中
+                        $("#ul").html(con + cons); //把内容入到这个div中
                     }
                 });
+                if ($('input').className == "knowledge1") {
+                    $('input').className = "a";
+                } else {
+                    $('input').className = "submit";
+                }
                 redirect();
                 con = "";
                 //点击显示第几页
@@ -118,7 +128,7 @@ var paginationed = function () {
                                     + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                     + "<span>" + item.acceptor + "</span>"//验收人
                                     + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                                    + "<input type='submit' class='submit'>"
+                                    + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
                                 li[vid[1] - 1].className = "active";
@@ -126,6 +136,11 @@ var paginationed = function () {
                                 redirect();
                             }
                         });
+                        if ($('input').className == "knowledge1") {
+                            $('input').className = "a";
+                        } else {
+                            $('input').className = "submit";
+                        }
                         con = "";
                     }
                     //收起
@@ -164,11 +179,16 @@ var paginationed = function () {
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                             + "<span>" + item.acceptor + "</span>"//验收人
                             + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                            + "<input type='submit' class='submit'>"
+                            + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
                     }
                 });
+                if ($('input').className == "knowledge1") {
+                    $('input').className = "a";
+                } else {
+                    $('input').className = "submit";
+                }
                 redirect();
                 con = "";
                 //点击显示第几页
@@ -193,7 +213,7 @@ var paginationed = function () {
                                     + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                     + "<span>" + item.acceptor + "</span>"//验收人
                                     + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                                    + "<input type='submit' class='submit'>"
+                                    + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
                                 li[vid[1] - 1].className = "active";
@@ -201,6 +221,11 @@ var paginationed = function () {
                                 redirect();
                             }
                         });
+                        if ($('input').className == "knowledge1") {
+                            $('input').className = "a";
+                        } else {
+                            $('input').className = "submit";
+                        }
                         con = "";
                     }
                     //收起
@@ -240,7 +265,7 @@ var paginationed = function () {
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                             + "<span>" + item.acceptor + "</span>"//验收人
                             + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                            + "<input type='submit' class='submit'>"
+                            + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
                         redirect();
@@ -262,6 +287,11 @@ var paginationed = function () {
                         return false;
                     }
                 });
+                if ($('input').className == "knowledge1") {
+                    $('input').className = "a";
+                } else {
+                    $('input').className = "submit";
+                }
                 con = "";
             } else {
                 alert("超出范围");
@@ -519,8 +549,7 @@ var call = function () {
             window.open('login.html', '_self');
             return;
         }
-    }
-    else {
+    } else {
         window.open('login.html', '_self');
         return;
     }
@@ -550,6 +579,7 @@ var call = function () {
             })
         }
     });
+
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
@@ -567,8 +597,7 @@ $(document).ready(function () {
             window.open('login.html', '_self');
             return;
         }
-    }
-    else {
+    } else {
         window.open('login.html', '_self');
         return;
     }
@@ -615,22 +644,44 @@ $(document).ready(function () {
                                 let con = '';
                                 $.each(dataObj.ret, function (indexs, item) {
                                     if (arr_1[s[1]] === item.title) {
-                                        con += "<li class='datas'>"
-                                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                            + "<span>" + item.introducer + "</span>"//提出人
-                                            + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                            + "<span>" + item.executor + "</span>"//受理人
-                                            + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                            + "<span>" + item.acceptor + "</span>"//验收人
-                                            + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                                            + "<input type='submit' class='submit'>"
-                                            + "</li>";
-                                        $("#ul").html(con); //把内容入到这个div中
+                                        if (item.executor == null && item.submittime == null) {
+                                            item.executor = '&nbsp;';
+                                            item.submittime = '&nbsp;';
+                                            con += "<li class='datas'>"
+                                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span>" + item.introducer + "</span>"//提出人
+                                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                                                + "<span>" + item.executor + "</span>"//受理人
+                                                + "<span>" + item.submittime + "</span>"//提交时间
+                                                + "<span>" + item.acceptor + "</span>"//验收人
+                                                + "<span>" + item.inspecttime + "</span>"//验收时间
+                                                + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
+                                                + "</li>";
+                                            $("#ul").html(con); //把内容入到这个div中
+                                        } else {
+                                            con += "<li class='datas'>"
+                                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span>" + item.introducer + "</span>"//提出人
+                                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                                                + "<span>" + item.executor + "</span>"//受理人
+                                                + "<span>" + item.submittime + "</span>"//提交时间
+                                                + "<span>" + item.acceptor + "</span>"//验收人
+                                                + "<span>" + item.inspecttime + "</span>"//验收时间
+                                                + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
+                                                + "</li>";
+                                            $("#ul").html(con); //把内容入到这个div中
+                                        }
                                     }
                                     let _box = document.getElementById('box');
                                     _box.style.display = 'none'
-                                })
+                                });
+                                if ($('input').className == "knowledge1") {
+                                    $('input').className = "a";
+                                } else {
+                                    $('input').className = "submit";
+                                }
                                 redirect();
                             })
                         }
@@ -657,6 +708,7 @@ $(document).ready(function () {
             })
         }
     });
+
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
@@ -674,6 +726,7 @@ $(document).ready(function () {
             stdTemplate.problemstate = 1;
             return stdTemplate;
         }
+
         //获取fsession
         var aCookie = GetCookie('wytSession');
         session = eval('(' + aCookie + ')');
@@ -682,8 +735,7 @@ $(document).ready(function () {
                 window.open('login.html', '_self');
                 return;
             }
-        }
-        else {
+        } else {
             window.open('login.html', '_self');
             return;
         }
@@ -712,22 +764,43 @@ $(document).ready(function () {
                 $.each(dataObj.ret, function (indexs, item) {
                     if (item.id == 0) {
                         alert('该日期无问题记录');
+                    } else {
+                        if (item.executor == null && item.submittime == null) {
+                            item.executor = '&nbsp;';
+                            item.submittime = '&nbsp;';
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "<span>" + item.acceptor + "</span>"//验收人
+                                + "<span>" + item.inspecttime + "</span>"//验收时间
+                                + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        } else {
+                            con += "<li class='datas'>"
+                                + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + item.submittime + "</span>"//提交时间
+                                + "<span>" + item.acceptor + "</span>"//验收人
+                                + "<span>" + item.inspecttime + "</span>"//验收时间
+                                + "<input type='submit' class=" + "knowledge"+item.knowledge + "/>"
+                                + "</li>";
+                            $("#ul").html(con); //把内容入到这个div中
+                        }
                     }
-                    else {
-                        con += "<li class='datas'>"
-                            + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                            + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.introducer + "</span>"//提出人
-                            + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                            + "<span>" + item.executor + "</span>"//受理人
-                            + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                            + "<span>" + item.acceptor + "</span>"//验收人
-                            + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                            + "<input type='submit' class='submit'>"
-                            + "</li>";
-                        $("#ul").html(con); //把内容入到这个div中
-                    }
-                })
+                });
+                if ($('input').className == "knowledge1") {
+                    $('input').className = "a";
+                } else {
+                    $('input').className = "submit";
+                }
                 con = '';
                 redirect();
             }
@@ -788,8 +861,7 @@ $(document).ready(function () {
                 window.open('login.html', '_self');
                 return;
             }
-        }
-        else {
+        } else {
             window.open('login.html', '_self');
             return;
         }
@@ -828,6 +900,7 @@ $(document).ready(function () {
                 }
             }
         });
+
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
@@ -850,8 +923,7 @@ $(document).ready(function () {
                 window.open('login.html', '_self');
                 return;
             }
-        }
-        else {
+        } else {
             window.open('login.html', '_self');
             return;
         }
@@ -890,6 +962,7 @@ $(document).ready(function () {
                 }
             }
         });
+
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
@@ -911,8 +984,7 @@ $(document).ready(function () {
                 window.open('login.html', '_self');
                 return;
             }
-        }
-        else {
+        } else {
             window.open('login.html', '_self');
             return;
         }
@@ -951,6 +1023,7 @@ $(document).ready(function () {
                 }
             }
         });
+
         function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
@@ -960,7 +1033,7 @@ $(document).ready(function () {
     });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
-            if (e.target === document.getElementsByClassName('submit')[k]){
+            if (e.target === document.getElementsByClassName('submit')[k]) {
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
@@ -992,6 +1065,7 @@ $(document).ready(function () {
                         }
                     }
                 });
+
                 function buildJson() {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
