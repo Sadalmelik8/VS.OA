@@ -129,11 +129,11 @@
             stdTemplate.content = particular;//内容
             stdTemplate.level = level;//紧急度
             if (form.data!='') {
-                form.append(file);
+                form.append("files",file);
             }
             else {
                 form.append("data", (JSON.stringify(stdTemplate)));
-                form.append(file);
+                form.append("files",file);
             }
         }
     });
