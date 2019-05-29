@@ -994,16 +994,12 @@ $(document).ready(function () {
             return stdTemplate;
         }
     });
-    $("submit").click(function (e) {
-        document.getElementsByClassName('submit')
-    });
-});
-$(document).ready(function () {
     $(".submit").click(function (e) {
         e.target.value = '已提交';
         e.target.className = 'a';
         e.target.style.background = '#666';
         e.target.style.color = '#fff';
+        console.log(1);
     });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
@@ -1045,4 +1041,3 @@ $(document).ready(function () {
         })
     })
 });
-
