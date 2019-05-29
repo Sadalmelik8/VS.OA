@@ -128,7 +128,7 @@
             stdTemplate.title = title;//标题
             stdTemplate.content = particular;//内容
             stdTemplate.level = level;//紧急度
-            if (form.data!='') {
+            if (form.data) {
                 form.append("files",file);
             }
             else {
