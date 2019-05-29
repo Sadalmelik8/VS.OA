@@ -1032,7 +1032,7 @@ $(document).ready(function () {
                 function buildJson() {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
-                    stdTemplate.num = e.target.parentNode.children[0].id;
+                    stdTemplate.num = e.target.parentNode.children[1].id;
                     return stdTemplate;
                 }
             }
