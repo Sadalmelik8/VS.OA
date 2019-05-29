@@ -186,12 +186,6 @@ b:hover{
 .li>span{
     vertical-align: top;
 }
-
-.submit{
-    width: 5.5%;
-    margin-left: 1%;
-    background: #40c2f2;
-}
 #box{
     display: inline-block;
     margin: 20px 25%;
@@ -254,3 +248,15 @@ a{
 .time{
     width: 12%;
 }
+.knowledge0{
+    width: 5.5%;
+    margin-left: 1%;
+    background: #40c2f2;
+}
+.knowledge1{
+    width: 5.5%;
+    margin-left: 1%;
+    background: #acacac;
+    color: #fff;
+}
+
