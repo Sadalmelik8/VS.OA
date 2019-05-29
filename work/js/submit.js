@@ -123,7 +123,7 @@
             var level = document.getElementsByClassName('level')[0];
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.file = file;//图片
+            stdTemplate.files = file;//图片
             stdTemplate.title = title;//标题
             stdTemplate.content = particular;//内容
             stdTemplate.level = level;//紧急度
