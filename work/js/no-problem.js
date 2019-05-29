@@ -99,11 +99,11 @@ var paginationed = function () {
                         $("#ul").html(con + cons); //把内容入到这个div中
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 redirect();
                 con = "";
                 //点击显示第几页
@@ -136,11 +136,11 @@ var paginationed = function () {
                                 redirect();
                             }
                         });
-                        if ($('input').className == "knowledge1") {
-                            $('input').className = "a";
-                        } else {
-                            $('input').className = "submit";
-                        }
+                        // if ($('input').className == "knowledge1") {
+                        //     $('input').className = "a";
+                        // } else {
+                        //     $('input').className = "submit";
+                        // }
                         con = "";
                     }
                     //收起
@@ -184,11 +184,11 @@ var paginationed = function () {
                         $("#ul").html(con); //把内容入到这个div中
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 redirect();
                 con = "";
                 //点击显示第几页
@@ -221,11 +221,11 @@ var paginationed = function () {
                                 redirect();
                             }
                         });
-                        if ($('input').className == "knowledge1") {
-                            $('input').className = "a";
-                        } else {
-                            $('input').className = "submit";
-                        }
+                        // if ($('input').className == "knowledge1") {
+                        //     $('input').className = "a";
+                        // } else {
+                        //     $('input').className = "submit";
+                        // }
                         con = "";
                     }
                     //收起
@@ -287,11 +287,11 @@ var paginationed = function () {
                         return false;
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 con = "";
             } else {
                 alert("超出范围");
@@ -677,11 +677,11 @@ $(document).ready(function () {
                                     let _box = document.getElementById('box');
                                     _box.style.display = 'none'
                                 });
-                                if ($('input').className == "knowledge1") {
-                                    $('input').className = "a";
-                                } else {
-                                    $('input').className = "submit";
-                                }
+                                // if ($('input').className == "knowledge1") {
+                                //     $('input').className = "a";
+                                // } else {
+                                //     $('input').className = "submit";
+                                // }
                                 redirect();
                             })
                         }
@@ -796,11 +796,11 @@ $(document).ready(function () {
                         }
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 con = '';
                 redirect();
             }
@@ -1033,7 +1033,7 @@ $(document).ready(function () {
     });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
-            if (e.target === document.getElementsByClassName('submit')[k]) {
+            if (e.target === document.getElementsByClassName('knowledge0')[k]) {
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
@@ -1055,12 +1055,12 @@ $(document).ready(function () {
                         if (dataObj.ret.id == 0) {
                             alert('失败');
                         } else {
-                            e.target.value = '已提交';
-                            e.target.className = 'a';
-                            e.target.style.background = '#9f9f9f';
-                            e.target.style.color = '#fff';
-                            e.target.style.marginLeft = '1%';
-                            e.target.style.width = "5.5%";
+                            // e.target.value = '已提交';
+                            // e.target.className = 'a';
+                            // e.target.style.background = '#9f9f9f';
+                            // e.target.style.color = '#fff';
+                            // e.target.style.marginLeft = '1%';
+                            // e.target.style.width = "5.5%";
                             alert('成功');
                         }
                     }

@@ -124,11 +124,11 @@ var paginationed = function (userName) {
                         }
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 redirect();
                 con = "";
                 //点击显示第几页
@@ -189,11 +189,11 @@ var paginationed = function (userName) {
                                 li[vid[1] - 1].className = "active";
                             }
                         });
-                        if ($('input').className == "knowledge1") {
-                            $('input').className = "a";
-                        } else {
-                            $('input').className = "submit";
-                        }
+                        // if ($('input').className == "knowledge1") {
+                        //     $('input').className = "a";
+                        // } else {
+                        //     $('input').className = "submit";
+                        // }
                         con = "";
                         actived();
                         redirect();
@@ -269,11 +269,11 @@ var paginationed = function (userName) {
                         }
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 redirect();
                 con = "";
                 //点击显示第几页
@@ -334,11 +334,11 @@ var paginationed = function (userName) {
                                 li[vid[1] - 1].className = "active";
                             }
                         });
-                        if ($('input').className == "knowledge1") {
-                            $('input').className = "a";
-                        } else {
-                            $('input').className = "submit";
-                        }
+                        // if ($('input').className == "knowledge1") {
+                        //     $('input').className = "a";
+                        // } else {
+                        //     $('input').className = "submit";
+                        // }
                         con = "";
                         actived();
                         redirect();
@@ -430,11 +430,11 @@ var paginationed = function (userName) {
                         return false;
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 con = "";
                 redirect();
                 actived();
@@ -535,11 +535,11 @@ var paginationeds = function (userName) {
                         }
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 redirect();
                 con = "";
                 arr = [];
@@ -613,11 +613,11 @@ var paginationeds = function (userName) {
                                 }
                             }
                         });
-                        if ($('input').className == "knowledge1") {
-                            $('input').className = "a";
-                        } else {
-                            $('input').className = "submit";
-                        }
+                        // if ($('input').className == "knowledge1") {
+                        //     $('input').className = "a";
+                        // } else {
+                        //     $('input').className = "submit";
+                        // }
                         con = "";
                         arr = [];
                     }
@@ -701,11 +701,11 @@ var paginationeds = function (userName) {
                         }
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 // control();
                 redirect();
                 actived();
@@ -782,11 +782,11 @@ var paginationeds = function (userName) {
                                 }
                             }
                         });
-                        if ($('input').className == "knowledge1") {
-                            $('input').className = "a";
-                        } else {
-                            $('input').className = "submit";
-                        }
+                        // if ($('input').className == "knowledge1") {
+                        //     $('input').className = "a";
+                        // } else {
+                        //     $('input').className = "submit";
+                        // }
                         con = "";
                         arr = [];
                     }
@@ -873,11 +873,11 @@ var paginationeds = function (userName) {
                     }
 
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 con = "";
                 arr = [];
             } else {
@@ -1046,11 +1046,11 @@ $(document).ready(function () {
                                     let _box = document.getElementById('box');
                                     _box.style.display = 'none'
                                 });
-                                if ($('input').className == "knowledge1") {
-                                    $('input').className = "a";
-                                } else {
-                                    $('input').className = "submit";
-                                }
+                                // if ($('input').className == "knowledge1") {
+                                //     $('input').className = "a";
+                                // } else {
+                                //     $('input').className = "submit";
+                                // }
                                 redirect();
                             })
                         }
@@ -1109,12 +1109,8 @@ $(document).ready(function () {
                         if (dataObj.ret.id == 0) {
                             alert('失败');
                         } else {
-                            e.target.value = '已提交';
-                            e.target.className = 'a';
-                            e.target.style.background = '#9f9f9f';
-                            e.target.style.color = '#fff';
-                            e.target.style.marginLeft = '1%';
-                            e.target.style.width = "5.5%";
+                            // e.target.value = '已提交';
+                            // e.target.className = 'a';
                             alert('成功');
                         }
                     }
@@ -1230,11 +1226,11 @@ $(document).ready(function () {
                         }
                     }
                 });
-                if ($('input').className == "knowledge1") {
-                    $('input').className = "a";
-                } else {
-                    $('input').className = "submit";
-                }
+                // if ($('input').className == "knowledge1") {
+                //     $('input').className = "a";
+                // } else {
+                //     $('input').className = "submit";
+                // }
                 con = '';
                 redirect();
             }
