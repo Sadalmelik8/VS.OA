@@ -120,7 +120,7 @@
         function buildJson(file) {
             var title = document.getElementsByClassName('title')[0].value;
             var particular = document.getElementById('icon').value;
-            var level = document.getElementsByClassName('level')[0];
+            var level = document.getElementsByClassName('level')[0].value;
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
             stdTemplate.files = file;//图片
