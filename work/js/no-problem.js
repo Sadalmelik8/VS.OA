@@ -999,12 +999,11 @@ $(document).ready(function () {
         e.target.className = 'a';
         e.target.style.background = '#666';
         e.target.style.color = '#fff';
-        console.log(1);
     });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('submit')[k]){
-                console.log(e.target.parentNode.children[0].id);
+                console.log(e.target.parentNode.children[1].id);
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
