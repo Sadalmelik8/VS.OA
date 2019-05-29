@@ -1020,8 +1020,9 @@ $(document).ready(function () {
                         } else {
                             e.target.value = '已提交';
                             e.target.className = 'a';
-                            e.target.style.background = '#666';
+                            e.target.style.background = '#9f9f9f';
                             e.target.style.color = '#fff';
+                            e.target.style.marginLeft = '1%';
                             alert('成功');
                         }
                     }
