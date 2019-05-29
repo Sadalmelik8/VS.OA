@@ -1060,6 +1060,7 @@ $(document).ready(function () {
                             e.target.style.background = '#9f9f9f';
                             e.target.style.color = '#fff';
                             e.target.style.marginLeft = '1%';
+                            e.target.style.width = "5.5%";
                             alert('成功');
                         }
                     }
