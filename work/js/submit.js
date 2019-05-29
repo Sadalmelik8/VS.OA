@@ -97,7 +97,7 @@
         var fsession = session.fsession;
         var userName = session.User_NM;
         var form = new FormData();
-        $("#submit").each(function () {
+        $("#file").each(function () {
             if ($("#file")[0].files.length > 0) {
                 var file = $("#file")[0].files[0];
                 buildJson(file);
@@ -127,7 +127,7 @@
             stdTemplate.title = title;//标题
             stdTemplate.content = particular;//内容
             stdTemplate.level = level;//紧急度
-            form.append("data", (JSON.stringify(stdTemplate)));
+            form.append("data", stdTemplate);
         }
     });
 });
