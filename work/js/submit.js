@@ -99,11 +99,11 @@
         var form = new FormData();
         $("#file").each(function () {
             if ($("#file")[0].files.length > 0) {
-                var file;
+                var arr = [];
                 for (var i = 0; i < $("#file")[0].files.length; i++) {
-                    file += $("#file")[0].files[i];
+                    arr.push($("#file")[0].files[i]);
                 }
-                buildJson(file);
+                buildJson(arr);
             }
         });
         var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
@@ -120,7 +120,7 @@
                 alert(msg.ret);
             }
         });
-        function buildJson(file) {
+        function buildJson(arr) {
             var title = document.getElementsByClassName('title')[0].value;
             var particular = document.getElementById('icon').value;
             var level = document.getElementsByClassName('level')[0].value;
@@ -130,7 +130,7 @@
             stdTemplate.content = particular;//内容
             stdTemplate.level = level;//紧急度
             form.append("data", (JSON.stringify(stdTemplate)));
-            form.append("files", file);
+            form.append("files", arr);
         }
     });
 });
