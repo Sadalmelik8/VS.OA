@@ -99,7 +99,7 @@
         var form = new FormData();
         $("#file").each(function () {
             if ($("#file")[0].files.length > 0) {
-                var file = $("#file")[0].files[0];
+                var file = $("#file")[0].files;
                 buildJson(file);
             }
         });
