@@ -1030,6 +1030,50 @@ $(document).ready(function () {
         return stdTemplate;
     }
 });
+$(document).ready(function () {
+    document.getElementById('ul').addEventListener('click', function (e) {
+        this.childNodes.forEach(function (v, k) {
+            if (e.target === document.getElementsByClassName('submit')[k]){
+                var fsession = session.fsession;
+                var userName = session.User_NM;
+                _template1 = buildJson();
+                var s = ("svr=WS_00013" + "&fsession=" + fsession + "&userName=" + userName);
+                var URL = "/webservice/?" + s;
+                var form = new FormData();
+                form.append("data", (JSON.stringify(_template1)));
+                $.ajax({
+                    type: "post", //请求的方式，也有get请求
+                    url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+                    contentType: "application/json",
+                    data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json", //json格式，后台返回的数据为json格式的。
+                    success: function (result) {
+                        dataObj = result;
+                        if (dataObj.ret.id == 0) {
+                            alert('失败');
+                        } else {
+                            e.target.value = '已提交';
+                            e.target.className = 'a';
+                            e.target.style.background = '#666';
+                            e.target.style.color = '#fff';
+                            alert('成功');
+                        }
+                    }
+                });
+                function buildJson() {
+                    var std = JSON.stringify({});
+                    var stdTemplate = JSON.parse(std);
+                    stdTemplate.num = e.target.parentNode.children[1].id;
+                    return stdTemplate;
+                }
+            }
+
+        })
+    })
+});
 //时间搜索
 $(document).ready(function () {
     $('#search').click(function () {
@@ -1290,7 +1334,7 @@ $(document).ready(function () {
             }
         }
     })
-})
+});
 //$(document).ready(function () {
 //    $(".present").click(function (e) {
 //        // let a = document.getElementsByClassName('present');

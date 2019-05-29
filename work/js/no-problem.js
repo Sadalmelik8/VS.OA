@@ -994,16 +994,9 @@ $(document).ready(function () {
             return stdTemplate;
         }
     });
-    $(".submit").click(function (e) {
-        e.target.value = '已提交';
-        e.target.className = 'a';
-        e.target.style.background = '#666';
-        e.target.style.color = '#fff';
-    });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('submit')[k]){
-                console.log(e.target.parentNode.children[1].id);
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
@@ -1025,6 +1018,10 @@ $(document).ready(function () {
                         if (dataObj.ret.id == 0) {
                             alert('失败');
                         } else {
+                            e.target.value = '已提交';
+                            e.target.className = 'a';
+                            e.target.style.background = '#666';
+                            e.target.style.color = '#fff';
                             alert('成功');
                         }
                     }
