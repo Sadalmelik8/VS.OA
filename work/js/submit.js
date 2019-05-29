@@ -96,31 +96,18 @@
         }
         var fsession = session.fsession;
         var userName = session.User_NM;
+        var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
+        var URL = "/webservice/?" + s;
         var form = new FormData();
         $("#file").each(function () {
             if ($("#file")[0].files.length > 0) {
-                var arr = [];
                 for (var i = 0; i < $("#file")[0].files.length; i++) {
-                    arr.push($("#file")[0].files[i]);
+                    var file = $("#file")[0].files[i];
+                    buildJson(file);
                 }
-                buildJson(arr);
             }
-        });
-        var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/webservice/?" + s;
-        $.ajax({
-            type: "POST",
-            url: URL,
-            data: form,
-            dataType: "json",
-            cache: false,
-            processData: false,
-            contentType: false,
-            success: function (msg) {
-                alert(msg.ret);
-            }
-        });
-        function buildJson(arr) {
+        });       
+        function buildJson(file) {
             var title = document.getElementsByClassName('title')[0].value;
             var particular = document.getElementById('icon').value;
             var level = document.getElementsByClassName('level')[0].value;
@@ -130,7 +117,19 @@
             stdTemplate.content = particular;//内容
             stdTemplate.level = level;//紧急度
             form.append("data", (JSON.stringify(stdTemplate)));
-            form.append("files", arr);
+            form.append("files", file);
+            $.ajax({
+                type: "POST",
+                url: URL,
+                data: form,
+                dataType: "json",
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (msg) {
+                    alert(msg.ret);
+                }
+            });
         }
     });
 });
