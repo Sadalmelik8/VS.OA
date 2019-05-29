@@ -106,7 +106,19 @@
                     buildJson(file);
                 }
             }
-        });       
+        });
+        $.ajax({
+            type: "POST",
+            url: URL,
+            data: form,
+            dataType: "json",
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (msg) {
+                alert(msg.ret);
+            }
+        });
         function buildJson(file) {
             var title = document.getElementsByClassName('title')[0].value;
             var particular = document.getElementById('icon').value;
@@ -118,18 +130,6 @@
             stdTemplate.level = level;//紧急度
             form.append("data", (JSON.stringify(stdTemplate)));
             form.append("files", file);
-            $.ajax({
-                type: "POST",
-                url: URL,
-                data: form,
-                dataType: "json",
-                cache: false,
-                processData: false,
-                contentType: false,
-                success: function (msg) {
-                    alert(msg.ret);
-                }
-            });
         }
     });
 });
