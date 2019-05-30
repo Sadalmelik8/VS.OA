@@ -204,7 +204,7 @@ $(document).ready(function () {
                     code = item.content;
                     arr.push(indexs);
                     con += "<li>"
-                        + "<span class='log--icon__time' id='item.nm'>" + item.m + "</span>"
+                        + "<span class='log--icon__time' id=" + item.nm + ">" + item.m + "</span>"
                         + "</li>";
                     $("#ul").html(con);
                     $("span").click(function () {
