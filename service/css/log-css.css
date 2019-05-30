@@ -86,6 +86,7 @@ li > span{
     text-align: center;
     line-height: 40px;
     cursor: pointer;
+    width: 100%;
 }
 .log--icon__icon{
     display: inline-block;
