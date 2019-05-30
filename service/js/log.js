@@ -151,7 +151,7 @@ $(document).ready(function () {
             var con = '';
             $.each(dataObj.ret.ls, function (indexs, item) {
                 arr.push(indexs);
-                document.getElementById('code').innerText = item.content;
+                document.getElementById('code').innerText = dataObj.ret.content;
                 con += "<li>"
                     + "<span class='log--icon__time' id=" + item.nm + ">" + item.m + "</span>"
                     + "</li>";
