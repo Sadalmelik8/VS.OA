@@ -153,58 +153,102 @@ $(document).ready(function () {
         return stdTemplate;
     }
     $('#present').click(function () {
+        //var fsession = session.fsession;
+        //var userName = session.User_NM;
+        //var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
+        //var URL = "/webservice/?" + s;
+        //var form = new FormData();
+        //if ($("#file")[0].files.length > 0) {
+        //    for (var i = 0; i < $("#file")[0].files.length; i++) {
+        //        var reader = new FileReader();
+        //        reader.readAsDataURL($("#file")[0].files[i]);
+        //        reader.onload = function (e) {
+        //            var data = '';
+        //            data += e.target.result + '!@#$%^&*';
+        //            buildJson(data);
+        //        }
+        //    }
+        //}
+        //else {
+        //    var data = '';
+        //    buildJson(data);
+        //}
+        //function buildJson(data) {
+        //    var std = JSON.stringify({});
+        //    var stdTemplate = JSON.parse(std);
+        //    stdTemplate.executor = presents.value;
+        //    stdTemplate.num = oltid;
+        //    stdTemplate.contents = contents.value;
+        //    stdTemplate.remarks = remarks.value;
+        //    stdTemplate.level = level.value;
+        //    stdTemplate.pic = data;
+        //    form.append("data", (JSON.stringify(stdTemplate)));
+        //    $.ajax({
+        //        type: 'post',
+        //        url: URL,
+        //        contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
+        //        data: form,
+        //        cache: false,
+        //        processData: false,
+        //        contentType: false,
+        //        dataType: "json",//期待返回的数据类型
+        //        success: function (msg) {
+        //            if (msg.ret.id == '0') {
+        //                alert('上传失败');
+        //            }
+        //            else {
+        //                alert('上传成功');
+        //            }
+        //        },
+        //        error: function () {
+        //            alert("请求失败");
+        //        }
+        //    });
+        //}
+
         var fsession = session.fsession;
         var userName = session.User_NM;
         var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
-        if ($("#file")[0].files.length > 0) {
-            for (var i = 0; i < $("#file")[0].files.length; i++) {
-                var reader = new FileReader();
-                reader.readAsDataURL($("#file")[0].files[i]);
-                reader.onload = function (e) {
-                    var data = '';
-                    data += e.target.result + '!@#$%^&*';
-                    buildJson(data);
+        $("#file").each(function () {
+            if ($("#file")[0].files.length > 0) {
+                for (var i = 0; i < $("#file")[0].files.length; i++) {
+                    var file = $("#file")[0].files[i];
+                    buildJson(file);
                 }
             }
-        }
-        else {
-            var data = '';
-            buildJson(data);
-        }
-        function buildJson(data) {
+        });
+        $.ajax({
+            type: "POST",
+            url: URL,
+            data: form,
+            dataType: "json",
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (msg) {
+                alert(msg.ret);
+            }
+        });
+        function buildJson(file) {
+            var level = document.getElementsByClassName('level')[0].value;
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
-            stdTemplate.executor = presents.value;
-            stdTemplate.num = oltid;
-            stdTemplate.contents = contents.value;
-            stdTemplate.remarks = remarks.value;
-            stdTemplate.level = level.value;
-            stdTemplate.pic = data;
-            form.append("data", (JSON.stringify(stdTemplate)));
-            $.ajax({
-                type: 'post',
-                url: URL,
-                contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
-                data: form,
-                cache: false,
-                processData: false,
-                contentType: false,
-                dataType: "json",//期待返回的数据类型
-                success: function (msg) {
-                    if (msg.ret.id == '0') {
-                        alert('上传失败');
-                    }
-                    else {
-                        alert('上传成功');
-                    }
-                },
-                error: function () {
-                    alert("请求失败");
-                }
-            });
+            stdTemplate.executor = presents.value;//受理人
+            stdTemplate.num = oltid;//num
+            stdTemplate.contents = contents.value;//追加内容
+            stdTemplate.remarks = remarks.value;//备注
+            stdTemplate.level = level.value;//紧急度
+            if (form.get("data") != null) {
+                form.append("files", file);
+            }
+            else {
+                form.append("data", (JSON.stringify(stdTemplate)));
+                form.append("files", file);
+            }
         }
+
     });
     $('#problemState').click(function () {
         var fsession = session.fsession;

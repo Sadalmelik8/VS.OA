@@ -96,14 +96,25 @@
         }
         var fsession = session.fsession;
         var userName = session.User_NM;
-        var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
+        var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         $("#file").each(function () {
             if ($("#file")[0].files.length > 0) {
                 for (var i = 0; i < $("#file")[0].files.length; i++) {
-                    var file = $("#file")[0].files[i];
-                    buildJson(file);
+                    if ($("#file")[0].files[i].type == "image/jpeg") {
+                        var reader = new FileReader();
+                        reader.readAsDataURL($("#file")[0].files[i]);
+                        reader.onload = function (e) {
+                            var file = '';
+                            file += e.target.result + '!@#$%^&*';
+                            buildJson(file);
+                        }
+                    }
+                    else {
+                        var file = $("#file")[0].files[i];
+                        buildJson(file);
+                    }
                 }
             }
         });
