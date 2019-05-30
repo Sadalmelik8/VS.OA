@@ -43,9 +43,9 @@ ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,proble
 根据登录用户，num修改消息提醒表里面的sts为已读
 返回：json,
 当ver=0时
-ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,pic:,level:}--验收状态，提出人，标题，内容，备注，提出时间，图片，问题紧急度
+ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度
 当 ver != 0 时
-ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,pic:,level:,contents:[contents:,executor:,pic:,submittime:,submitter]}--验收状态，提出人，标题，内容，备注，提出时间，图片，问题紧急度，追加问题:[追加问题、受理人、图片、提交时间、提交人]
+ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,contents:[contents:,executor:,files:,submittime:,submitter]}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度，追加问题:[追加问题、受理人、图片、提交时间、提交人]
 ret={id:0}返回失败
 
 7. 提交(done)
@@ -56,20 +56,19 @@ ret={id:0}返回失败
 			1). 如果受理人不变
 				如果contents为空：T_Problem表修改ver0的备注，level。
 				如果contents有内容：
-					如果当前用户为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，pic，提交人）修改ver0的备注，level；T_Message表增加一条记录：Operation为“追加”，消息接收人为受理人
-					如果当前用户不为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，pic，提交人）修改ver0的备注，level；T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“追加”，消息接收人为受理人。
+					如果当前用户为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人）修改ver0的备注，level；T_Message表增加一条记录：Operation为“追加”，消息接收人为受理人
+					如果当前用户不为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人）修改ver0的备注，level；T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“追加”，消息接收人为受理人。
 			2). 如果受理人改变
 				如果contents为空：T_Problem表修改受理人，修改ver0的备注，level；T_Message表增加两条记录 ：1.operation为分配，消息接收人为受理人。2.operation为“取消分配”消息接收人为前受理人。
-				如果contents有内容：T_Problem表修改受理人，ver加1（增加记录只要num，ver，contents，提交时间，pic，提交人）修改ver0的备注，level；T_Message表增加三条记录：1.operation为分配，消息接收人为受理人。2.operation为取消分配，消息接收人为前受理人。3.operation为追加，消息接收人为提出人。
+				如果contents有内容：T_Problem表修改受理人，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人）修改ver0的备注，level；T_Message表增加三条记录：1.operation为分配，消息接收人为受理人。2.operation为取消分配，消息接收人为前受理人。3.operation为追加，消息接收人为提出人。
 		2.该问题没有受理人
 			如果contents为空：T_Problem表修改受理人（必填），问题紧急度（必填），修改ver0的备注，level；T_Message表增加一条记录：operation为分配，消息接收人为受理人
 			如果contents有内容：
-				如果当前用户为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，pic，提交人）修改ver0的备注，level；T_Message表增加一条记录：Operation为“分配”，消息接收人为受理人
-				如果当前用户不为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，pic，提交人）修改ver0的备注，level；T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“分配”，消息接收人为受理人。
+				如果当前用户为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人）修改ver0的备注，level；T_Message表增加一条记录：Operation为“分配”，消息接收人为受理人
+				如果当前用户不为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人）修改ver0的备注，level；T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“分配”，消息接收人为受理人。
 服务号：WS_00007
-参数：{executor:,num:,content:,contents:,remarks:,level:}-----受理人、问题编号、问题内容、追加问题问题、备注、问题紧急度
+参数：{executor:,num:,contents:,remarks:,level:,files:}-----受理人、问题编号、追加问题问题、备注、问题紧急度,文件
 新增消息到消息提醒表（T_Message）
-参数：{title:，pic:}---标题
 返回：json,
 ret={id:0}返回失败
 
@@ -104,9 +103,9 @@ ret={id:0}返回失败
 11.新增知识点
 新增知识点到问题库表（问题库表(T_ Problem)）
 服务号：WS_00011
-参数：{title:,content:,pic:}---标题、内容、上传图片
+参数：{title:,content:,files:}---标题、内容、文件
 操作：后台获取提交的时间，knowledge状态改为1
-保存：编号，名称，内容，图片，提出人，提交时间
+保存：编号，名称，内容，文件，提出人，提交时间
 提出人为username，就是当前登录的
 后台
 返回：json,
@@ -123,7 +122,7 @@ ret={id:0}返回失败
 
 13.提交到知识库
 把已解决的问题提交到知识库
-保存：编号，名称，内容，备注，提出人，图片，提交时间
+保存：编号，名称，内容，备注，提出人，文件，提交时间
 操作：ProblemState状态是否验收：
 	如果未验收：ret={id:0}返回失败
 	如果已验收：knowledge改为1
