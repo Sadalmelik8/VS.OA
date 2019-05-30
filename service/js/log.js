@@ -198,8 +198,8 @@ $(document).ready(function () {
             success: function (result) {
                 var dataObj = result;
                 var con = '';
+                document.getElementById('code').innerText = dataObj.ret.content;
                 $.each(dataObj.ret.ls, function (indexs, item) {
-                    document.getElementById('code').innerText = item.content;
                     arr.push(indexs);
                     con += "<li>"
                         + "<span class='log--icon__time' id=" + item.nm + ">" + item.m + "</span>"
