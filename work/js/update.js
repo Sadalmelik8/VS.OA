@@ -101,11 +101,11 @@ $(document).ready(function () {
                 + "</div>"
                 + "</div>"
                 + "</li>";
-            for (var i = 0; i < dataObj.ret[0].files.pic.length; i++) {
-                cond += "<img class='pics' src=" + dataObj.ret[0].files.pic[i].dir + "/>";
+            for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').pic.length; i++) {
+                cond += "<img class='pics' src=" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
             }
-            for (var i = 0; i < dataObj.ret[0].files.nopic.length; i++) {
-                cond += "<a  href=" + dataObj.ret[0].files.nopic[i].dir + ">" + dataObj.ret[0].files.nopic[i].fn + "</a>";
+            for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').nopic.length; i++) {
+                cond += "<a  href=" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
             }
             $('#detailed').html(con);
             $('.firstpic')[0].html(cond);
@@ -133,11 +133,11 @@ $(document).ready(function () {
                         + "</div>"
                         + "</div>"
                         + "</li>";
-                    for (var i = 0; i < item.files.pic.length; i++) {
-                        coned += "<img class='pics' src=" + item.files.pic[i].dir + "/>";
+                    for (var i = 0; i < eval('(' + item.files + ')').pic.length; i++) {
+                        coned += "<img class='pics' src=" + eval('(' + item.files + ')').pic[i].dir + "/>";
                     }
-                    for (var i = 0; i < item.files.nopic.length; i++) {
-                        coned += "<a  href=" + item.files.nopic[i].dir + ">" + item.files.nopic[i].fn + "</a>";
+                    for (var i = 0; i < eval('(' + item.files + ')').nopic.length; i++) {
+                        coned += "<a  href=" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
                     }
                     $("#detalis").html(cons); //把内容入到这个div中  
                     $('.firstpic')[index + 1].html(coned);
