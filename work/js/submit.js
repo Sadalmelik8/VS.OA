@@ -99,7 +99,6 @@
         var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
-        $("#file").each(function () {
             if ($("#file")[0].files.length > 0) {
                 for (var i = 0; i < $("#file")[0].files.length; i++) {
                     if ($("#file")[0].files[i].type == "image/jpeg") {
@@ -117,7 +116,6 @@
                     }
                 }
             }
-        });
         $.ajax({
             type: "POST",
             url: URL,
