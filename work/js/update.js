@@ -208,7 +208,7 @@ $(document).ready(function () {
 
         var fsession = session.fsession;
         var userName = session.User_NM;
-        var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
+        var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         $("#file").each(function () {
