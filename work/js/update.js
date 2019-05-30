@@ -232,7 +232,6 @@ $(document).ready(function () {
             }
         });
         function buildJson(file) {
-            var level = document.getElementsByClassName('level')[0].value;
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
             stdTemplate.executor = presents.value;//受理人
