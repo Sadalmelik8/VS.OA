@@ -103,8 +103,9 @@ li > span{
 #code{
     display: inline-block;
     width: 39.9%;
-    font-size: 15px;
+    font-size: 16px;
     padding-left: 12px;
     overflow-y:scroll;
     height: 650px;
+    resize: none;
 }
