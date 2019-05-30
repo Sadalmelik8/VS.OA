@@ -49,6 +49,8 @@ $(document).ready(function () {
         }
     });
     var con = '';
+    var cond = '';
+    var coned = '';
     var cons = '';
     var title = document.getElementsByClassName('title')[0];
     var presents = document.getElementsByClassName('present')[0];
@@ -95,14 +97,21 @@ $(document).ready(function () {
                 + dataObj.ret[0].content
                 + "</span>"
                 + "<div class='firstpic'>"
-                + "<img class='pics' src=" + dataObj.ret[0].pic.split('!@#$%^&*')[0] + ">"
+                //+ "<img class='pics' src=" + dataObj.ret[0].pic.split('!@#$%^&*')[0] + ">"
                 + "</div>"
                 + "</div>"
                 + "</li>";
-            $('#detailed').html(con);
-            if (dataObj.ret[0].pic.split('!@#$%^&*')[0] == '') {
-                document.getElementsByClassName('pics')[0].style.display = 'none';
+            for (var i = 0; i < dataObj.ret[0].files.pic.length; i++) {
+                cond += "<img class='pics' src=" + dataObj.ret[0].files.pic[i].dir + "/>";
             }
+            for (var i = 0; i < dataObj.ret[0].files.nopic.length; i++) {
+                cond += "<a  href=" + dataObj.ret[0].files.nopic[i].dir + ">" + dataObj.ret[0].files.nopic[i].fn + "</a>";
+            }
+            $('#detailed').html(con);
+            $('.firstpic')[0].html(cond);
+            //if (dataObj.ret[0].pic.split('!@#$%^&*')[0] == '') {
+            //    document.getElementsByClassName('pics')[0].style.display = 'none';
+            //}
             if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
                     cons += "<li class='detailed--icon' >"
@@ -120,11 +129,18 @@ $(document).ready(function () {
                         + item.contents
                         + "</span>"
                         + "<div class='firstpic'>"
-                        + "<img class='pics' src=" + item.pic.split('!@#$%^&*')[0] + ">"
+                        //+ "<img class='pics' src=" + item.pic.split('!@#$%^&*')[0] + ">"
                         + "</div>"
                         + "</div>"
                         + "</li>";
-                    $("#detalis").html(cons); //把内容入到这个div中                    
+                    for (var i = 0; i < item.files.pic.length; i++) {
+                        coned += "<img class='pics' src=" + item.files.pic[i].dir + "/>";
+                    }
+                    for (var i = 0; i < item.files.nopic.length; i++) {
+                        coned += "<a  href=" + item.files.nopic[i].dir + ">" + item.files.nopic[i].fn + "</a>";
+                    }
+                    $("#detalis").html(cons); //把内容入到这个div中  
+                    $('.firstpic')[index + 1].html(coned);
                 })
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
                     //后期修改
