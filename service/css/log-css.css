@@ -98,7 +98,7 @@ li > span{
     border: none;
     border-left: 1px solid #888;
     overflow-y:scroll;
-    resize: vertical;
+    resize: none;
 }
 #code{
     display: inline-block;
