@@ -149,15 +149,16 @@ $(document).ready(function () {
         success: function (result) {
             var dataObj = result;
             var con = '';
+            let code = document.getElementById('code').innerText;
             $.each(dataObj.ret.ls, function (indexs, item) {
                 arr.push(indexs);
+                code = item.content;
                 con += "<li>"
-                    + "<span class='log--icon__time' id='time" + indexs + "'>" + item.m + "</span>"
-                    + "<span class='log--icon__name' id='name" + indexs + "'>" + item.nm + "</span> "
+                    + "<span class='log--icon__time' id='item.nm'>" + item.m + "</span>"
                     + "</li>";
                 $("#ul").html(con);
                 $("span").click(function () {
-                    log(this.innerText);
+                    log(this.id);
                 });
             });
         }
@@ -198,15 +199,16 @@ $(document).ready(function () {
             success: function (result) {
                 var dataObj = result;
                 var con = '';
+                let code = document.getElementById('code').innerText;
                 $.each(dataObj.ret.ls, function (indexs, item) {
+                    code = item.content;
                     arr.push(indexs);
                     con += "<li>"
-                        + "<span class='log--icon__time' id='time" + indexs + "'>" + item.m + "</span>"
-                        + "<span class='log--icon__name' id='name" + indexs + "'>" + item.nm + "</span> "
+                        + "<span class='log--icon__time' id='item.nm'>" + item.m + "</span>"
                         + "</li>";
                     $("#ul").html(con);
                     $("span").click(function () {
-                        logs(this.innerText);
+                        logs(this.id);
                     });
                 });
             }
