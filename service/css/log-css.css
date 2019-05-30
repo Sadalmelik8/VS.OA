@@ -58,12 +58,12 @@
     width: 10%;
 }
 .log--title__middle{
-    width: 30%;
+    width: 40%;
     border-left: 1px solid #888;
     border-right: 1px solid #888;
 }
 .log--title__right{
-    width: 60%;
+    width: 50%;
 }
 .log--icon{
     width: 100%;
@@ -90,7 +90,7 @@ li > span{
 }
 .log--icon__icon{
     display: inline-block;
-    width: 60%;
+    width: 50%;
     height: 650px;
     font-size: 16px;
     vertical-align: top;
@@ -102,7 +102,7 @@ li > span{
 }
 #code{
     display: inline-block;
-    width: 29.9%;
+    width: 39.9%;
     font-size: 15px;
     padding-left: 12px;
     overflow-y:scroll;
