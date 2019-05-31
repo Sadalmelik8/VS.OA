@@ -140,7 +140,7 @@ $(document).ready(function () {
                         coned += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
                     }
                     $("#detalis").html(cons); //把内容入到这个div中  
-                    $('.firstpic')[index + 1].html(coned);
+                    document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
                 })
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
                     //后期修改
