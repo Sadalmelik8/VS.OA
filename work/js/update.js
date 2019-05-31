@@ -108,7 +108,7 @@ $(document).ready(function () {
                 cond += "<a  href=" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
             }
             $('#detailed').html(con);
-            $('.firstpic')[0].html(cond);
+            $('.firstpic').html(cond);
             //if (dataObj.ret[0].pic.split('!@#$%^&*')[0] == '') {
             //    document.getElementsByClassName('pics')[0].style.display = 'none';
             //}
