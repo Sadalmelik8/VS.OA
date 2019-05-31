@@ -97,7 +97,8 @@ $(document).ready(function () {
                 + dataObj.ret[0].content
                 + "</span>"
                 + "<div class='firstpic'>"
-                //+ "<img class='pics' src=" + dataObj.ret[0].pic.split('!@#$%^&*')[0] + ">"
+                + "</div>"
+                + "<div class='firstfile'>"
                 + "</div>"
                 + "</div>"
                 + "</li>";
@@ -108,7 +109,7 @@ $(document).ready(function () {
                 cond += "<a href=download/" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
             }
             $('#detailed').html(con);
-            $('.firstpic').html(cond);
+            $('.firstfile').html(cond);
             //if (dataObj.ret[0].pic.split('!@#$%^&*')[0] == '') {
             //    document.getElementsByClassName('pics')[0].style.display = 'none';
             //}
@@ -129,7 +130,8 @@ $(document).ready(function () {
                         + item.contents
                         + "</span>"
                         + "<div class='firstpic'>"
-                        //+ "<img class='pics' src=" + item.pic.split('!@#$%^&*')[0] + ">"
+                        + "</div>"
+                        + "<div class='firstfile'>"
                         + "</div>"
                         + "</div>"
                         + "</li>";
@@ -140,7 +142,7 @@ $(document).ready(function () {
                         coned += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
                     }
                     $("#detalis").html(cons); //把内容入到这个div中
-                    document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
+                    document.getElementsByClassName('firstfile')[index + 1].innerHTML = coned;
                 });
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
                     //后期修改
