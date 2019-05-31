@@ -102,10 +102,10 @@ $(document).ready(function () {
                 + "</div>"
                 + "</li>";
             for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').pic.length; i++) {
-                cond += "<img class='pics' src='donwload/" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
+                cond += "<img class='pics' src=donwload/" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
             }
             for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').nopic.length; i++) {
-                cond += "<a  href='donwload/" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
+                cond += "<a href=donwload/" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
             }
             $('#detailed').html(con);
             $('.firstpic').html(cond);
