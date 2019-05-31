@@ -102,10 +102,10 @@ $(document).ready(function () {
                 + "</div>"
                 + "</li>";
             for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').pic.length; i++) {
-                cond += "<img class='pics' src=" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
+                cond += "<img class='pics' src='donwload/'" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
             }
             for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').nopic.length; i++) {
-                cond += "<a  href=" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
+                cond += "<a  href='donwload/'" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
             }
             $('#detailed').html(con);
             $('.firstpic').html(cond);
@@ -134,10 +134,10 @@ $(document).ready(function () {
                         + "</div>"
                         + "</li>";
                     for (var i = 0; i < eval('(' + item.files + ')').pic.length; i++) {
-                        coned += "<img class='pics' src=" + eval('(' + item.files + ')').pic[i].dir + "/>";
+                        coned += "<img class='pics' src='donwload/'" + eval('(' + item.files + ')').pic[i].dir + "/>";
                     }
                     for (var i = 0; i < eval('(' + item.files + ')').nopic.length; i++) {
-                        coned += "<a  href=" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
+                        coned += "<a  href='donwload/'" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
                     }
                     $("#detalis").html(cons); //把内容入到这个div中  
                     $('.firstpic')[index + 1].html(coned);
