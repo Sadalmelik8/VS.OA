@@ -141,7 +141,7 @@ $(document).ready(function () {
                     }
                     $("#detalis").html(cons); //把内容入到这个div中
                     document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
-                })
+                });
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
                     //后期修改
                     //后期修改
@@ -304,14 +304,12 @@ $(document).ready(function () {
         let _big = document.getElementsByClassName('big')[0];
         _big.style.display = 'none';
         big.src = '';
-        big.style.display = 'none';
     });
     $("#delete").click(function () {
         var big = document.getElementById('big');
         let _big = document.getElementsByClassName('big')[0];
         _big.style.display = 'none';
         big.src = '';
-        big.style.display = 'none';
     })
 });
 
