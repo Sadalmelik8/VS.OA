@@ -155,7 +155,8 @@ $(document).ready(function () {
             }
             $(".pics").click(function (e) {
                 var img = document.getElementById("big");
-                img.style.display = 'block';
+                let big = document.getElementsByClassName("big")[0];
+                big.style.display = "inline-block";
                 img.src = e.target.src;
             })
 
@@ -297,12 +298,21 @@ $(document).ready(function () {
             stdTemplate.num = oltid;
             return stdTemplate;
         }
-    })
+    });
     $("#big").click(function () {
         var big = document.getElementById('big');
+        let _big = document.getElementsByClassName('big')[0];
+        _big.style.display = 'none';
         big.src = '';
         big.style.display = 'none';
     });
+    $("#delete").click(function () {
+        var big = document.getElementById('big');
+        let _big = document.getElementsByClassName('big')[0];
+        _big.style.display = 'none';
+        big.src = '';
+        big.style.display = 'none';
+    })
 });
 
 
