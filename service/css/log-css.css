@@ -72,7 +72,7 @@ ul{
     width: 10.05%;
     display: inline-block;
     height: 650px;
-    overflow-y:scroll;
+    overflow-y:auto;
     border-right: 1px solid #888;
 }
 li{
@@ -97,7 +97,7 @@ li > span{
     padding-left: 12px;
     border: none;
     border-left: 1px solid #888;
-    overflow-y:scroll;
+    overflow-y:auto;
     resize: none;
 }
 #code{
@@ -105,7 +105,7 @@ li > span{
     width: 39.9%;
     font-size: 16px;
     padding-left: 12px;
-    overflow-y:scroll;
+    overflow-y:auto;
     height: 650px;
     resize: none;
 }
