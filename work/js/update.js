@@ -102,10 +102,10 @@ $(document).ready(function () {
                 + "</div>"
                 + "</li>";
             for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').pic.length; i++) {
-                cond += "<img class='pics' src=download/" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
+                cond += "<img class='pics' src='donwload/" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
             }
             for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').nopic.length; i++) {
-                cond += "<a href=download/" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
+                cond += "<a  href='donwload/" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
             }
             $('#detailed').html(con);
             $('.firstpic').html(cond);
@@ -134,14 +134,14 @@ $(document).ready(function () {
                         + "</div>"
                         + "</li>";
                     for (var i = 0; i < eval('(' + item.files + ')').pic.length; i++) {
-                        coned += "<img class='pics' src=download/" + eval('(' + item.files + ')').pic[i].dir + "/>";
+                        coned += "<img class='pics' src='donwload/'" + eval('(' + item.files + ')').pic[i].dir + "/>";
                     }
                     for (var i = 0; i < eval('(' + item.files + ')').nopic.length; i++) {
-                        coned += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
+                        coned += "<a  href='donwload/'" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
                     }
-                    $("#detalis").html(cons); //把内容入到这个div中  
-                    document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
-                })
+                    $("#detalis").html(cons); //把内容入到这个div中
+                    $('.firstpic')[index + 1].html(coned);
+                });
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
                     //后期修改
                     //后期修改
@@ -154,8 +154,9 @@ $(document).ready(function () {
                 }
             }
             $(".pics").click(function (e) {
+                let big = document.getElementsByClassName('big')[0];
                 var img = document.getElementById("big");
-                img.style.display = 'block';
+                big.style.display = "inline-block";
                 img.src = e.target.src;
             })
 
@@ -169,62 +170,9 @@ $(document).ready(function () {
         return stdTemplate;
     }
     $('#present').click(function () {
-        //var fsession = session.fsession;
-        //var userName = session.User_NM;
-        //var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
-        //var URL = "/webservice/?" + s;
-        //var form = new FormData();
-        //if ($("#file")[0].files.length > 0) {
-        //    for (var i = 0; i < $("#file")[0].files.length; i++) {
-        //        var reader = new FileReader();
-        //        reader.readAsDataURL($("#file")[0].files[i]);
-        //        reader.onload = function (e) {
-        //            var data = '';
-        //            data += e.target.result + '!@#$%^&*';
-        //            buildJson(data);
-        //        }
-        //    }
-        //}
-        //else {
-        //    var data = '';
-        //    buildJson(data);
-        //}
-        //function buildJson(data) {
-        //    var std = JSON.stringify({});
-        //    var stdTemplate = JSON.parse(std);
-        //    stdTemplate.executor = presents.value;
-        //    stdTemplate.num = oltid;
-        //    stdTemplate.contents = contents.value;
-        //    stdTemplate.remarks = remarks.value;
-        //    stdTemplate.level = level.value;
-        //    stdTemplate.pic = data;
-        //    form.append("data", (JSON.stringify(stdTemplate)));
-        //    $.ajax({
-        //        type: 'post',
-        //        url: URL,
-        //        contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
-        //        data: form,
-        //        cache: false,
-        //        processData: false,
-        //        contentType: false,
-        //        dataType: "json",//期待返回的数据类型
-        //        success: function (msg) {
-        //            if (msg.ret.id == '0') {
-        //                alert('上传失败');
-        //            }
-        //            else {
-        //                alert('上传成功');
-        //            }
-        //        },
-        //        error: function () {
-        //            alert("请求失败");
-        //        }
-        //    });
-        //}
-
         var fsession = session.fsession;
         var userName = session.User_NM;
-        var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
+        var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         $("#file").each(function () {
@@ -297,12 +245,21 @@ $(document).ready(function () {
             stdTemplate.num = oltid;
             return stdTemplate;
         }
-    })
+    });
     $("#big").click(function () {
         var big = document.getElementById('big');
+        let _big = document.getElementsByClassName('big')[0];
+        _big.style.display = 'none';
         big.src = '';
         big.style.display = 'none';
     });
+    $("#delete").click(function () {
+        var big = document.getElementById('big');
+        let _big = document.getElementsByClassName('big')[0];
+        _big.style.display = 'none';
+        big.src = '';
+        big.style.display = 'none';
+    })
 });
 
 
