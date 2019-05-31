@@ -154,9 +154,9 @@ $(document).ready(function () {
                 }
             }
             $(".pics").click(function (e) {
-                let big = document.getElementsByClassName('big');
+                let _big = document.getElementsByClassName('big')[0];
                 var img = document.getElementById("big");
-                big[0].style.display = "inline-block";
+                _big.style.display = "inline-block";
                 img.src = e.target.src;
             })
 
