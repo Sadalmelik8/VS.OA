@@ -51,7 +51,9 @@ $(document).ready(function () {
     var con = '';
     var cond = '';
     var coned = '';
+    var conds = '';
     var cons = '';
+    var coneds = '';
     var title = document.getElementsByClassName('title')[0];
     var presents = document.getElementsByClassName('present')[0];
     var contents = document.getElementsByClassName('contents')[0];
@@ -106,10 +108,11 @@ $(document).ready(function () {
                 cond += "<img class='pics' src=download/" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
             }
             for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').nopic.length; i++) {
-                cond += "<a href=download/" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
+                conds += "<a href=download/" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
             }
             $('#detailed').html(con);
-            $('.firstfile').html(cond);
+            $('.firstpic').html(cond);
+            $('.firstfile').html(conds);
             //if (dataObj.ret[0].pic.split('!@#$%^&*')[0] == '') {
             //    document.getElementsByClassName('pics')[0].style.display = 'none';
             //}
@@ -139,10 +142,11 @@ $(document).ready(function () {
                         coned += "<img class='pics' src=download/" + eval('(' + item.files + ')').pic[i].dir + "/>";
                     }
                     for (var i = 0; i < eval('(' + item.files + ')').nopic.length; i++) {
-                        coned += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
+                        coneds += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
                     }
                     $("#detalis").html(cons); //把内容入到这个div中
-                    document.getElementsByClassName('firstfile')[index + 1].innerHTML = coned;
+                    document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
+                    document.getElementsByClassName('firstfile')[index + 1].innerHTML = coneds;
                 });
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
                     //后期修改
