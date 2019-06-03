@@ -267,6 +267,7 @@ a{
     margin-left: 1%;
     background: #40c2f2;
     color: #fff;
+    cursor: pointer;
 }
 .knowledge0{
     width: 5.5%;
@@ -274,5 +275,6 @@ a{
     background: #acacac;
     color: #fff;
     cursor:no-drop;
+    border: none;
 }
 
