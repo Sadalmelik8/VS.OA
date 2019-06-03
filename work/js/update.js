@@ -255,7 +255,14 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             success: function (msg) {
-                alert(msg.ret);
+                if (msg.ret.id == '1') {
+                    alert('上传成功');
+                } else {
+                    alert('上传失败');
+                }
+            },
+            error: function () {
+                alert("请求失败");
             }
         });
         function buildJson(file) {
