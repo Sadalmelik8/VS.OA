@@ -241,6 +241,10 @@ $(document).ready(function () {
                     buildJson(file);
                 }
             }
+            else {
+                var file = '';
+                buildJson(file);
+            }
         });
         $.ajax({
             type: "POST",
