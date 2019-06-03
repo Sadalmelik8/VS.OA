@@ -107,7 +107,7 @@
                 }
             }
             else {
-                var file = {};
+                var file = "";
                 buildJson(file);
             }
         });
