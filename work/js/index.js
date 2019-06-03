@@ -1,10 +1,10 @@
 ﻿function stopBubble(e) {
     //如果提供了事件对象，则这是一个非IE浏览器
-    if ( e && e.stopPropagation )
-    //因此它支持W3C的stopPropagation()方法
+    if (e && e.stopPropagation)
+        //因此它支持W3C的stopPropagation()方法
         e.stopPropagation();
     else
-    //否则，我们需要使用IE的方式来取消事件冒泡
+        //否则，我们需要使用IE的方式来取消事件冒泡
         window.event.cancelBubble = true;
 }
 //获取cookkie
@@ -39,6 +39,7 @@ $(document).ready(function () {
         window.open('login.html', '_self');
         return;
     }
+    document.getElementById('user').innerText = session.User_NM;
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
@@ -303,3 +304,11 @@ $(document).ready(function () {
         });
     }
 });
+function clearAllCookie() {
+    var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+    if (keys) {
+        for (var i = keys.length; i--;)
+            document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+    }
+    window.open('login.html', '_self');
+}
