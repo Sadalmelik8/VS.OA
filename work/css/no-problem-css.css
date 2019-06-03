@@ -273,5 +273,6 @@ a{
     margin-left: 1%;
     background: #acacac;
     color: #fff;
+    cursor:no-drop;
 }
 
