@@ -5,7 +5,7 @@
     <title>提交问题</title>
     <link href="css/update-css.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="js/update.js"></script>
+    <!--<script src="js/update.js"></script>-->
 </head>
 <body>
     <div class="minute">
@@ -13,7 +13,7 @@
         <ul>
             <li class="send">
                 提交问题<span>
-                    <select class="present" id="presents"></select>
+                    <select class="present" id="presents" title="请选择受理人"></select>
                 </span>
                 <input type="button" value="验收" class="btn" id="problemState" />
             </li>
@@ -39,6 +39,7 @@
             <li>
                 <span>上传附件</span>
                 <input type="file" multiple class="minute--bottom__middle" id="file">
+                <span class="file--title">（可同时选择多个文件）</span>
                 <div class="bottom--middle">
                     <span id="title">问题紧急度:</span>
                     <select class="bottom--middle__urgency">
