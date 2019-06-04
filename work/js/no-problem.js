@@ -1055,12 +1055,8 @@ $(document).ready(function () {
                         if (dataObj.ret.id == 0) {
                             alert('失败');
                         } else {
-                            // e.target.value = '已提交';
-                            // e.target.className = 'a';
-                            // e.target.style.background = '#9f9f9f';
-                            // e.target.style.color = '#fff';
-                            // e.target.style.marginLeft = '1%';
-                            // e.target.style.width = "5.5%";
+                            e.target.value = '已提交';
+                            e.target.className = 'knowledge1';
                             alert('成功');
                         }
                     }
