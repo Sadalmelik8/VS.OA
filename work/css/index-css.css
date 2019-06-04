@@ -278,6 +278,7 @@ table td {
 }
 #user{
     cursor:pointer;
+    font-size: 18px;
 }
 #user:hover{
     font-size: 20px;
