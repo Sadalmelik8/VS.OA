@@ -251,7 +251,7 @@ table td {
 }
 .remind{
     position: absolute;
-    right: 227px;
+    right: 0;
     top: 20px;
     width: 12px;
     height:12px;
