@@ -67,7 +67,7 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             contentType: false,
-            success: function (result) {
+            success: function (result) {                                                                                                                                                                                          
                 dataObj = result; //返回的result为json格式的数据)
                 //mes = dataObj.ret.length;
                 //document.getElementById('messge').innerHTML = '未读消息数' + mes;
