@@ -35,6 +35,7 @@ body {
     }
 
 #messge {
+    font-size: 18px;
     margin-left: 1400px;
     cursor:pointer;
 }
@@ -280,6 +281,9 @@ table td {
 }
 #user:hover{
     font-size: 20px;
+}
+#exit{
+    font-size: 18px;
 }
 #exit:hover{
     font-size: 20px;
