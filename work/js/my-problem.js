@@ -1087,7 +1087,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
-            if (e.target === document.getElementsByClassName('knowledge0')[k]){
+            if (e.target === document.getElementsByClassName('submit')[k]){
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
@@ -1109,8 +1109,8 @@ $(document).ready(function () {
                         if (dataObj.ret.id == 0) {
                             alert('失败');
                         } else {
-                            e.target.value = '已提交';
-                            e.target.className = 'knowledge1';
+                            // e.target.value = '已提交';
+                            // e.target.className = 'a';
                             alert('成功');
                         }
                     }

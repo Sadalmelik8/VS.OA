@@ -1031,12 +1031,9 @@ $(document).ready(function () {
             return stdTemplate;
         }
     });
-});
-$(document).ready(function () {
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('knowledge0')[k]) {
-                console.log(1);
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
