@@ -250,13 +250,16 @@ table td {
     vertical-align: middle;
 }
 .remind{
-    width: 16px;
-    height:16px;
+    position: absolute;
+    right: 227px;
+    top: 20px;
+    width: 12px;
+    height:12px;
     border-radius: 50%;
     display: inline-block;
     text-align: center;
-    line-height: 16px;
-    font-size: 10px;
+    line-height: 12px;
+    font-size: 6px;
     background: red;
     color: #fff;
 }
