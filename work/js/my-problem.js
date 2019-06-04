@@ -1109,8 +1109,8 @@ $(document).ready(function () {
                         if (dataObj.ret.id == 0) {
                             alert('失败');
                         } else {
-                            // e.target.value = '已提交';
-                            // e.target.className = 'a';
+                            e.target.value = '已提交';
+                            e.target.className = 'knowledge1';
                             alert('成功');
                         }
                     }
