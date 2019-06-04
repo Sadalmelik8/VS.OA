@@ -283,4 +283,5 @@ table td {
 }
 #exit:hover{
     font-size: 20px;
+    cursor:pointer;
 }
