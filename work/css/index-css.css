@@ -278,3 +278,9 @@ table td {
 #user{
     cursor:pointer;
 }
+#user:hover{
+    font-size: 20px;
+}
+#exit:hover{
+    font-size: 20px;
+}
