@@ -83,13 +83,15 @@ textarea {
 }
 
 .minute--bottom__middle {
-    width: 30.5%;
+    width: 15.5%;
     border: 1px solid #999;
     height: 27px;
     line-height: 27px;
     box-sizing: border-box;
 }
-
+.file--title{
+    text-align: left;
+}
 .bottom--middle {
     width: 33.5%;
     display: inline-block;
