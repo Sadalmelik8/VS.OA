@@ -64,12 +64,10 @@ li {
 }
 
 .textarea--left {
-    position: relative;
-    top: -570px;
+    vertical-align: top;
 }
 .textarea--two--left{
-    position: relative;
-    top: -170px;
+    vertical-align: top;
 }
 textarea {
     display: inline-block;
@@ -130,6 +128,7 @@ textarea {
     text-align: left;
     background: #fff;
     overflow-y: auto;
+    vertical-align: top;
 }
 
 .detailed--icon {
@@ -251,6 +250,7 @@ a{
     resize: none;
     text-align: left;
     padding-left: 12px;
+    vertical-align: top;
 }
 #problemState{
     width: 90px;
