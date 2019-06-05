@@ -271,3 +271,6 @@ a{
 #detalis{
     margin-top: 10px;
 }
+#detalis{
+    border-bottom: 1px solid #888;
+}
