@@ -139,6 +139,7 @@ textarea {
     background: #E7E5E1;
 }
 .detailed--icon {
+    background: #fff;
     width: 100%;
     border-bottom: 1px solid #888;
     margin-bottom: 10px;
