@@ -28,10 +28,12 @@ li {
     }
 
 .send {
+    height: 60px;
     background: deepskyblue;
     padding-left: 20px;
     font-size: 20px;
     color: white;
+    line-height: 60px;
 }
 
 .present {
@@ -253,7 +255,7 @@ a{
 }
 #problemState{
     width: 90px;
-    margin-left: 64%;
+    margin-left: 81.5%;
 }
 .select{
     width: 230px;
