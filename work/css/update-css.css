@@ -174,9 +174,8 @@ textarea {
 
 .firstpic {
     display: inline-block;
-    text-align: center;
+    text-align: left;
     width: 100%;
-    overflow-x: auto;
 }
 
 .singular {
