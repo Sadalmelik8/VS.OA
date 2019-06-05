@@ -130,12 +130,14 @@ textarea {
     line-height: 1;
     color: #6D5A62;
     text-align: left;
-    background: #E7E5E1;
     overflow-y: auto;
     vertical-align: top;
     border: 1px solid #888;
+    background: #fff;
 }
-
+#detailed{
+    background: #E7E5E1;
+}
 .detailed--icon {
     width: 100%;
     border-bottom: 1px solid #888;
