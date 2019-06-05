@@ -155,7 +155,6 @@ $(document).ready(function () {
                     for (var i = 0; i < eval('(' + item.files + ')').nopic.length; i++) {
                         coneds += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
                     }
-                    $("#detalis").html(cons); //把内容入到这个div中
                     document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
                     coned = '';
                     document.getElementsByClassName('firstfile')[index + 1].innerHTML = coneds;
