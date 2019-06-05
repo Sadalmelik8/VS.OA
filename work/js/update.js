@@ -118,7 +118,7 @@ $(document).ready(function () {
             //}
             if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
-                    cons += "<li class='detailed--icon' >"
+                    cons += "<li class='detailed-icon' >"
                         + "<div class='firstdate'><span>"
                         + item.submittime.substr(0, 4)
                         + '/' + item.submittime.substr(4, 2)
