@@ -148,7 +148,9 @@ $(document).ready(function () {
                     }
                     $("#detalis").html(cons); //把内容入到这个div中
                     document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
+                    coned = '';
                     document.getElementsByClassName('firstfile')[index + 1].innerHTML = coneds;
+                    coneds = '';
                 });
                 for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
                     //后期修改
