@@ -134,14 +134,17 @@ textarea {
     overflow-y: auto;
     vertical-align: top;
     border: 1px solid #888;
-    border-bottom: none;
 }
 
 .detailed--icon {
     width: 100%;
     border-bottom: 1px solid #888;
+    margin-bottom: 10px;
 }
-
+.detailed-icon{
+    width: 100%;
+    border-top: 1px solid #888;
+}
 .firstdate {
     display: inline-block;
     width: 10%;
@@ -264,4 +267,7 @@ a{
 .select{
     width: 180px;
     margin-left: 2%;
+}
+#detalis{
+    margin-top: 10px;
 }
