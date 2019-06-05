@@ -151,7 +151,7 @@ $(document).ready(function () {
             var con = '';
             $.each(dataObj.ret.ls, function (indexs, item) {
                 arr.push(indexs);
-                document.getElementById('code').innerText = dataObj.ret.content;
+                document.getElementById('code').value = dataObj.ret.content;
                 con += "<li>"
                     + "<span class='log--icon__time' id=" + item.nm + ">" + item.m + "</span>"
                     + "</li>";
@@ -198,7 +198,7 @@ $(document).ready(function () {
             success: function (result) {
                 var dataObj = result;
                 var con = '';
-                document.getElementById('code').innerText = dataObj.ret.content;
+                document.getElementById('code').value = dataObj.ret.content;
                 $.each(dataObj.ret.ls, function (indexs, item) {
                     arr.push(indexs);
                     con += "<li>"
