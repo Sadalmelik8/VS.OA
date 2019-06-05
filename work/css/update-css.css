@@ -35,10 +35,9 @@ li {
 }
 
 .present {
-    width: 100px;
+    width: 90px;
     height: 30px;
     font-size: 15px;
-    margin-left: 75px;
 }
 
 .btn {
@@ -91,8 +90,10 @@ textarea {
     text-align: left;
 }
 .bottom--middle {
-    width: 33.5%;
+    width: 15%;
     display: inline-block;
+    text-align: left;
+    margin-left: 2%;
 }
 
     .bottom--middle > span {
@@ -113,10 +114,10 @@ textarea {
 }
 
 #present {
-    width: 10%;
+    width: 9%;
     height: 30px;
     line-height: 30px;
-    margin-left: 6%;
+    margin-left: 1%;
 }
 
 .detail {
@@ -254,4 +255,8 @@ a{
 #problemState{
     width: 90px;
     margin-left: 64%;
+}
+.select{
+    width: 230px;
+    margin-left: 5%;
 }
