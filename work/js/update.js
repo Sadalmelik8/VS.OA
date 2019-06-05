@@ -147,6 +147,15 @@ $(document).ready(function () {
                         coneds += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
                     }
                     $("#detalis").html(cons); //把内容入到这个div中
+                });
+                $.each(dataObj.ret[1].contents, function (index, item) {
+                    for (var i = 0; i < eval('(' + item.files + ')').pic.length; i++) {
+                        coned += "<img class='pics' src=download/" + eval('(' + item.files + ')').pic[i].dir + "/>";
+                    }
+                    for (var i = 0; i < eval('(' + item.files + ')').nopic.length; i++) {
+                        coneds += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
+                    }
+                    $("#detalis").html(cons); //把内容入到这个div中
                     document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
                     coned = '';
                     document.getElementsByClassName('firstfile')[index + 1].innerHTML = coneds;
