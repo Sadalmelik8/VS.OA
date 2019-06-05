@@ -31,17 +31,35 @@ $(document).ready(function () {
         //保存
         $("#bottom").click(function () {
             //如果有数据为空
-            if (package.value === '' ||
-                module.value === '' ||
-                service.value === '' ||
-                state.value === '' ||
-                log.value === '' ||
-                explain.value === '' ||
-                ago.value === '' ||
-                later.value === '' ||
-                whether.value === '' ||
-                code.value === '') {
-                alert("请把信息填完整");
+            if (package.value === '') {
+                alert("请把Package填完整");
+            }
+            if (module.value === '') {
+                alert("请把Module填完整");
+            }
+            if (service.value === '') {
+                alert("请把Service填完整");
+            }
+            if (state.value === '') {
+                alert("请把服务状态填完整");
+            }
+            if (log.value === '') {
+                alert("请把日志填完整");
+            }
+            if (explain.value === '') {
+                alert("请把服务说明填完整");
+            }
+            if (ago.value === '') {
+                alert("请把前处理填完整");
+            }
+            if (later.value === '') {
+                alert("请把后处理填完整");
+            }
+            if (whether.value === '') {
+                alert("请把是否允许浏览器访问填完整");
+            }
+            if (code.value === '') {
+                alert("请把服务代码填完整");
             }
             //没有数据为空，则上传
             else {
@@ -115,17 +133,35 @@ $(document).ready(function () {
         //更新
         $("#bottom").click(function () {
             //如果有数据为空
-            if (package.value === '' ||
-                module.value === '' ||
-                service.value === '' ||
-                state.value === '' ||
-                log.value === '' ||
-                explain.value === '' ||
-                ago.value === '' ||
-                later.value === '' ||
-                whether.value === '' ||
-                code.value === '') {
-                alert("请把信息填完整");
+            if (package.value === '') {
+                alert("请把Package填完整");
+            }
+            if (module.value === '') {
+                alert("请把Module填完整");
+            }
+            if (service.value === '') {
+                alert("请把Service填完整");
+            }
+            if (state.value === '') {
+                alert("请把服务状态填完整");
+            }
+            if (log.value === '') {
+                alert("请把日志填完整");
+            }
+            if (explain.value === '') {
+                alert("请把服务说明填完整");
+            }
+            if (ago.value === '') {
+                alert("请把前处理填完整");
+            }
+            if (later.value === '') {
+                alert("请把后处理填完整");
+            }
+            if (whether.value === '') {
+                alert("请把是否允许浏览器访问填完整");
+            }
+            if (code.value === '') {
+                alert("请把服务代码填完整");
             }
             //没有数据为空，则上传
             else {
