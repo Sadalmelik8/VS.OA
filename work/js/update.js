@@ -90,9 +90,9 @@ $(document).ready(function () {
                 + '/' + dataObj.ret[0].proposetime.substr(4, 2)
                 + '/' + dataObj.ret[0].proposetime.substr(6, 2)
                 + "</span>"
-                + "<span>" +  dataObj.ret[0].proposetime.substr(8, 2)
-                 + ':' + dataObj.ret[0].proposetime.substr(10, 2)
-                 + ':' + dataObj.ret[0].proposetime.substr(12, 2) + "</span>"
+                + "<span>" + dataObj.ret[0].proposetime.substr(8, 2)
+                + ':' + dataObj.ret[0].proposetime.substr(10, 2)
+                + ':' + dataObj.ret[0].proposetime.substr(12, 2) + "</span>"
                 + "<span>" + dataObj.ret[0].introducer + "</span>"
                 + "</div>"
                 + "<div class='firsticon'><span>"
@@ -154,7 +154,7 @@ $(document).ready(function () {
                     document.getElementsByClassName('firstfile')[index + 1].innerHTML = coneds;
                     coneds = '';
                 });
-                for (var i = 0; i < document.getElementsByClassName('pics').length i++) {
+                for (var i = 0; i < document.getElementsByClassName('pics').length; i++) {
                     //后期修改
                     //后期修改
                     //后期修改
