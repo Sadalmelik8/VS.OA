@@ -23,7 +23,7 @@ body {
 
     .top span {
         color: white;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 65px;
         margin-left: 30px;
     }
@@ -123,15 +123,15 @@ table tr td {
         }
     /*不同层级的菜单字体大小不同*/
     .tree .folderOne {
-        font-size: 18px;
-    }
-
-    .tree .folderTwo {
         font-size: 16px;
     }
 
-    .tree .folderThree {
+    .tree .folderTwo {
         font-size: 14px;
+    }
+
+    .tree .folderThree {
+        font-size: 12px;
     }
 
 
