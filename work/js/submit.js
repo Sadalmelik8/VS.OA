@@ -88,6 +88,7 @@
             console.log(_title);
             console.log(_icon.innerText);
             console.log(_icon.innerHTML);
+            console.log(_icon.value);
             alert('标题或者内容为空');
         } else {
             var aCookie = GetCookie('wytSession');
