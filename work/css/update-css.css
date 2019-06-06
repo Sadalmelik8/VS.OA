@@ -142,6 +142,7 @@ textarea {
 }
 .detailed-icon{
     width: 100%;
+    border-bottom: 1px solid #888;
 }
 .firstdate {
     display: inline-block;
@@ -265,7 +266,4 @@ a{
 .select{
     width: 180px;
     margin-left: 2%;
-}
-#detalis{
-    border-bottom: 1px solid #888;
 }
