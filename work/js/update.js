@@ -154,7 +154,7 @@ $(document).ready(function () {
                     document.getElementsByClassName('firstfile')[index + 1].innerHTML = coneds;
                     coneds = '';
                 });
-                for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
+                for (var i = 0; i < dataObj.ret[1].contents.length; i++) {
                     //后期修改
                     //后期修改
                     //后期修改

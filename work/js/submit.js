@@ -99,6 +99,32 @@
         var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
+        //document.addEventListener('paste', function (event) {
+        //    var items = (event.clipboardData || window.clipboardData).items;
+        //    var file = null;
+        //    var num = '';
+        //    if (items && items.length) {
+        //        // 搜索剪切板items
+        //        for (var i = 0; i < items.length; i++) {
+        //            if (items[i].type.indexOf('image') !== -1) {
+        //                file = items[i].getAsFile();
+        //                break;
+        //            }
+        //        }
+        //        console.log(file);
+        //        num = items.length;
+        //    }
+        //    if (!file) {
+        //        return;
+        //    }
+        //    // 此时file就是我们的剪切板中的图片对象
+        //    // 如果需要预览，可以执行下面代码
+        //    var reader = new FileReader()
+        //    reader.onload = function (event) {
+        //        preview.innerHTML = '<img src="' + event.target.result + '" class="upload-image">';
+        //    }
+        //    reader.readAsDataURL(file);
+        //});
         $("#file").each(function () {
             if ($("#file")[0].files.length > 0) {
                 for (var i = 0; i < $("#file")[0].files.length; i++) {
