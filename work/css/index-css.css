@@ -23,7 +23,7 @@ body {
 
     .top span {
         color: white;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 65px;
         margin-left: 30px;
     }
@@ -35,7 +35,7 @@ body {
     }
 
 #messge {
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 1400px;
     cursor:pointer;
 }
@@ -123,7 +123,7 @@ table tr td {
         }
     /*不同层级的菜单字体大小不同*/
     .tree .folderOne {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .tree .folderTwo {
@@ -278,15 +278,15 @@ table td {
 }
 #user{
     cursor:pointer;
-    font-size: 18px;
+    font-size: 15px;
 }
 #user:hover{
-    font-size: 20px;
+    font-size: 16px;
 }
 #exit{
-    font-size: 18px;
+    font-size: 15px;
 }
 #exit:hover{
-    font-size: 20px;
+    font-size: 16px;
     cursor:pointer;
 }
