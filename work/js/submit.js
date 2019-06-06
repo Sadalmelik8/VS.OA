@@ -83,8 +83,11 @@
     $("#submit").click(function () {
         //获取fsession
         let _title = document.getElementsByClassName('title')[0].value;
-        let _icon = document.getElementById('icon').innerText;
-        if (_icon === '' || _title === ''){
+        let _icon = document.getElementById('icon');
+        if (_icon.innerText === '' || _title === ''){
+            console.log(_title);
+            console.log(_icon.innerText);
+            console.log(_icon.innerHTML);
             alert('标题或者内容为空');
         } else {
             var aCookie = GetCookie('wytSession');
