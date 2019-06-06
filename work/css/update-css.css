@@ -138,10 +138,10 @@ textarea {
 
 .detailed--icon {
     width: 100%;
+    border-bottom: 1px solid #888;
 }
 .detailed-icon{
     width: 100%;
-    border-bottom: 1px solid #888;
 }
 .firstdate {
     display: inline-block;
