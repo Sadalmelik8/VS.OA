@@ -118,6 +118,8 @@ li > * {
     text-overflow: ellipsis;
     vertical-align: top;
     cursor: pointer;
+    text-align: left;
+    padding-left: 12px;
 }
 
 .present {
