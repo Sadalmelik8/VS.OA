@@ -324,7 +324,7 @@ $(document).ready(function () {
             success: function (msg) {
                 if (msg.ret.id == '1') {
                     alert('上传成功');
-                    window.open('index.html', 'iframe1')
+                    window.open('index.html');
                 } else {
                     alert('上传失败');
                 }
