@@ -126,7 +126,7 @@
                 if (event.keyCode == 8) {
                     e.target.src = "http://192.168.5.58:29999/submit.html";
                     e.target.style.display = "none";
-                    //e.target = '';
+                    return;
                 }
             })
         })
@@ -160,7 +160,7 @@
                 var img = document.getElementsByClassName('imgs')[i].src;
                 if (img != "http://192.168.5.58:29999/submit.html") {
                     var file = '';
-                    buildJson(file,img);
+                    buildJson(file, img);
                 }
             }
             $("#file").each(function () {
@@ -168,13 +168,13 @@
                     for (var i = 0; i < $("#file")[0].files.length; i++) {
                         var file = $("#file")[0].files[i];
                         var img = '';
-                        buildJson(file,img);
+                        buildJson(file, img);
                     }
                 }
                 else {
                     var file = "";
                     var img = '';
-                    buildJson(file,img);
+                    buildJson(file, img);
                 }
             });
             $.ajax({
@@ -206,13 +206,29 @@
                 stdTemplate.content = particular;//内容
                 stdTemplate.level = level;//紧急度                
                 if (form.get("data") != null) {
-                    form.append("files", file);
-                    form.append("imgs", img);
+                    if (file == "") {
+                        form.append("pic", img);
+                    }
+                    if (img == "") {
+                        form.append("files", file);
+                    }
+                    if (file != "" && img != "") {
+                        form.append("pic", img);
+                        form.append("files", file);
+                    }
                 }
                 else {
                     form.append("data", (JSON.stringify(stdTemplate)));
-                    form.append("files", file);
-                    form.append("imgs", img);
+                    if (file == "") {
+                        form.append("pic", img);
+                    }
+                    if (img == "") {
+                        form.append("files", file);
+                    }
+                    if (file != "" && img != "") {
+                        form.append("pic", img);
+                        form.append("files", file);
+                    }
                 }
             }
         }
