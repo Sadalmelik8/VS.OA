@@ -82,12 +82,12 @@
     //});
     document.addEventListener('paste', function (event) {
         var items = (event.clipboardData || window.clipboardData).items;
-        var file = null;
+        var filed = null;
         if (items && items.length) {
             // 搜索剪切板items
             for (var i = 0; i < items.length; i++) {
                 if (items[i].type.indexOf('image') !== -1) {
-                    file = items[i].getAsFile();
+                    filed = items[i].getAsFile();
                     break;
                 }
             }
@@ -96,7 +96,7 @@
             alert("当前浏览器不支持");
             return;
         }
-        if (!file) {
+        if (!filed) {
             alert("粘贴内容非图片");
             return;
         }
@@ -118,7 +118,7 @@
                 }
             }
         }
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(filed);
     });
     $(document).ready(function () {
         $('.imgs').click(function (e) {
@@ -126,7 +126,7 @@
                 if (event.keyCode == 8) {
                     e.target.src = "http://192.168.5.58:29999/submit.html";
                     e.target.style.display = "none";
-                    e.target = '';
+                    //e.target = '';
                 }
             })
         })
@@ -158,7 +158,7 @@
             var form = new FormData();
             for (var i = 0; i < 6; i++) {
                 var img = document.getElementsByClassName('imgs')[i].src;
-                if (img.src != "http://192.168.5.58:29999/submit.html") {
+                if (img != "http://192.168.5.58:29999/submit.html") {
                     buildJson(img);
                 }
             }
