@@ -294,7 +294,7 @@ $(document).ready(function () {
         var form = new FormData();
         for (var i = 0; i < 6; i++) {
             var img = document.getElementsByClassName('imgs')[i].src;
-            if (img != "http://192.168.5.58:29999/update.html" + oltid) {
+            if (img != "http://192.168.5.58:29999/update.html?num=" + oltid) {
                 var file = '';
                 buildJson(file, img);
             }
