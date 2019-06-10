@@ -114,6 +114,7 @@
                 if (img.src == "http://192.168.5.58:29999/submit.html") {
                     img.src = event.target.result;
                     img.style.display = "inline-block";
+                    document.getElementsByClassName('copy')[0].style.display = 'none';
                     return;
                 }
             }

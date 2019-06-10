@@ -45,6 +45,7 @@ document.addEventListener('paste', function (event) {
             if (img.src == "http://192.168.5.58:29999/update.html?num=" + oltid) {
                 img.src = event.target.result;
                 img.style.display = "inline-block";
+                document.getElementsByClassName('copy')[0].style.display = 'none';
                 return;
             }
         }
