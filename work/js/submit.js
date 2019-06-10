@@ -159,19 +159,22 @@
             for (var i = 0; i < 6; i++) {
                 var img = document.getElementsByClassName('imgs')[i].src;
                 if (img != "http://192.168.5.58:29999/submit.html") {
-                    buildJson(img);
+                    var file = '';
+                    buildJson(file,img);
                 }
             }
             $("#file").each(function () {
                 if ($("#file")[0].files.length > 0) {
                     for (var i = 0; i < $("#file")[0].files.length; i++) {
                         var file = $("#file")[0].files[i];
-                        buildJson(file);
+                        var img = '';
+                        buildJson(file,img);
                     }
                 }
                 else {
                     var file = "";
-                    buildJson(file);
+                    var img = '';
+                    buildJson(file,img);
                 }
             });
             $.ajax({
