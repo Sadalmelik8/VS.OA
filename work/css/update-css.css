@@ -270,7 +270,7 @@ a{
 #pic{
     width: 80%;
     height: 400px;
-    margin-left: 149px;
+    margin-left: 169px;
     background: #fff;
     border: 1px solid #a7a7a7;
     padding-left: 12px;
@@ -289,4 +289,14 @@ a{
     height: 180px;
     border: 1px solid #a7a7a7;
     margin-right: 5px;
+}
+.copy{
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    display: inline-block;
+    margin: 160px 0 0 340px;
+    color: #d6d6d6;
 }

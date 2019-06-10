@@ -103,3 +103,13 @@ textarea {
     border: 1px solid #a7a7a7;
     margin-right: 5px;
 }
+.copy{
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    display: inline-block;
+    margin: 160px 0 0 300px;
+    color: #d6d6d6;
+}
