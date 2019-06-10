@@ -11,6 +11,58 @@ function GetCookie(key) {
         }
     }
 }
+document.addEventListener('paste', function (event) {
+    var items = (event.clipboardData || window.clipboardData).items;
+    var filed = null;
+    if (items && items.length) {
+        // 搜索剪切板items
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf('image') !== -1) {
+                filed = items[i].getAsFile();
+                break;
+            }
+        }
+    }
+    else {
+        alert("当前浏览器不支持");
+        return;
+    }
+    if (!filed) {
+        alert("粘贴内容非图片");
+        return;
+    }
+    // 此时file就是我们的剪切板中的图片对象
+    // 如果需要预览，可以执行下面代码
+    var reader = new FileReader()
+    reader.onload = function (event) {
+        for (var i = 0; i < 6; i++) {
+            var img = document.getElementsByClassName('imgs')[i];
+            //后期修改
+            //后期修改
+            //后期修改
+            //后期修改
+            //后期修改
+            if (img.src == "http://192.168.5.58:29999/update.html" + oltid) {
+                img.src = event.target.result;
+                img.style.display = "inline-block";
+                return;
+            }
+        }
+    }
+    reader.readAsDataURL(filed);
+});
+$(document).ready(function () {
+    $('.imgs').click(function (e) {
+        $('body').keydown(function (event) {
+            if (event.keyCode == 8) {
+                e.target.src = "http://192.168.5.58:29999/update.html" + oltid;
+                e.target.style.display = "none";
+                return;
+            }
+        })
+        return;
+    })
+})
 $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
@@ -240,16 +292,25 @@ $(document).ready(function () {
         var s = ("svr=WS_00007" + "&fsession=" + fsession + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
+        for (var i = 0; i < 6; i++) {
+            var img = document.getElementsByClassName('imgs')[i].src;
+            if (img != "http://192.168.5.58:29999/update.html" + oltid) {
+                var file = '';
+                buildJson(file, img);
+            }
+        }
         $("#file").each(function () {
             if ($("#file")[0].files.length > 0) {
                 for (var i = 0; i < $("#file")[0].files.length; i++) {
                     var file = $("#file")[0].files[i];
-                    buildJson(file);
+                    var img = '';
+                    buildJson(file, img);
                 }
             }
             else {
                 var file = "";
-                buildJson(file);
+                var img = '';
+                buildJson(file, img);
             }
         });
         $.ajax({
@@ -280,14 +341,31 @@ $(document).ready(function () {
             stdTemplate.remarks = remarks.value;//备注
             stdTemplate.level = level.value;//紧急度
             if (form.get("data") != null) {
-                form.append("files", file);
+                if (file == "") {
+                    form.append("pic", img);
+                }
+                if (img == "") {
+                    form.append("files", file);
+                }
+                if (file != "" && img != "") {
+                    form.append("pic", img);
+                    form.append("files", file);
+                }
             }
             else {
                 form.append("data", (JSON.stringify(stdTemplate)));
-                form.append("files", file);
+                if (file == "") {
+                    form.append("pic", img);
+                }
+                if (img == "") {
+                    form.append("files", file);
+                }
+                if (file != "" && img != "") {
+                    form.append("pic", img);
+                    form.append("files", file);
+                }
             }
         }
-
     });
     $('#problemState').click(function () {
         var fsession = session.fsession;

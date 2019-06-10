@@ -129,6 +129,7 @@
                     return;
                 }
             })
+            return;
         })
     })
     $("#submit").click(function () {
