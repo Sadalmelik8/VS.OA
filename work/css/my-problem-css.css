@@ -96,7 +96,7 @@ li > * {
     text-align: center;
     border-right: 1px solid #777;
     font-size: 15px;
-    width: 7.5%;
+    width: 6%;
     color: #666;
     /*line-height: 50px;*/
 }
@@ -264,5 +264,13 @@ a{
     cursor:no-drop;
     border: none;
 }
-
-
+.delete{
+    width: 7.5%;
+    border-right: none;
+}
+.deletes{
+    width: 5.5%;
+    margin-left: 1%;
+    background: #40c2f2;
+    cursor: pointer;
+}
