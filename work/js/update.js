@@ -42,7 +42,7 @@ document.addEventListener('paste', function (event) {
             //后期修改
             //后期修改
             //后期修改
-            if (img.src == "http://192.168.5.58:29999/update.html" + oltid) {
+            if (img.src == "http://192.168.5.58:29999/update.html?num=" + oltid) {
                 img.src = event.target.result;
                 img.style.display = "inline-block";
                 return;
@@ -55,7 +55,7 @@ $(document).ready(function () {
     $('.imgs').click(function (e) {
         $('body').keydown(function (event) {
             if (event.keyCode == 8) {
-                e.target.src = "http://192.168.5.58:29999/update.html" + oltid;
+                e.target.src = "http://192.168.5.58:29999/update.html?num=" + oltid;
                 e.target.style.display = "none";
                 return;
             }
