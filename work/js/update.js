@@ -333,7 +333,7 @@ $(document).ready(function () {
                 alert("请求失败");
             }
         });
-        function buildJson(file,img) {
+        function buildJson(file, img) {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
             stdTemplate.executor = presents.value;//受理人
@@ -342,10 +342,10 @@ $(document).ready(function () {
             stdTemplate.remarks = remarks.value;//备注
             stdTemplate.level = level.value;//紧急度
             if (form.get("data") != null) {
-                if (file == "") {
+                if (file == "" && img != "") {
                     form.append("pic", img);
                 }
-                if (img == "") {
+                if (img == "" && file != "") {
                     form.append("files", file);
                 }
                 if (file != "" && img != "") {
@@ -355,10 +355,10 @@ $(document).ready(function () {
             }
             else {
                 form.append("data", (JSON.stringify(stdTemplate)));
-                if (file == "") {
+                if (file == "" && img != "") {
                     form.append("pic", img);
                 }
-                if (img == "") {
+                if (img == "" && file != "") {
                     form.append("files", file);
                 }
                 if (file != "" && img != "") {
