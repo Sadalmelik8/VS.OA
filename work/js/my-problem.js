@@ -1444,7 +1444,7 @@ $(document).ready(function () {
     })
 });
 // 删除
-$(document).ready(function () {
+
     let _popup = document.getElementsByClassName('popup')[0];
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
@@ -1525,5 +1525,5 @@ $(document).ready(function () {
     $("#cancel").click(function () {
         _popup.style.display = 'none';
     });
-});
+
 
