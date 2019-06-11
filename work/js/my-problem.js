@@ -1451,6 +1451,7 @@ $(document).ready(function () {
         if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
             _popup.style.display = 'inline-block';
             $('#delete').click(function () {
+                _popup.style.display = 'none';
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
@@ -1507,7 +1508,6 @@ $(document).ready(function () {
                         }
                     }
                 });
-                _popup.style.display = 'none';
             });
             $("#cancel").click(function () {
                 _popup.style.display = 'none';
