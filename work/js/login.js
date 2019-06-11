@@ -31,36 +31,42 @@ function getclick() {
     $("#btn").attr("onclick", "show()"); //给定点击事件
     window.clearTimeout(tipO);//取消定时事件
 }
-    var tohtml = "";
-    function show() {
-        var rnd = Math.floor(Math.random() * 100000);
-        var username = document.getElementById('nm').value;
-        var s = "svr=WS_00001&rnd=" + rnd + "&mobile=" + username;
-        var URL = "/webservice/?" + s;
-        $.ajax({
-            type: 'get',
-            url: URL,
-            contentType: "application/json",
-            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            cache: false,
-            processData: false,
-            contentType: false,
-            success: function (msg) {
-                try {
-                    if (msg.status == "ok") {
-                        document.cookie = 'wytSession=' + msg.ret.fsession;
-                        //document.getElementById('pw').value = msg.ret.smscode;
+var tohtml = "";
+function show() {
+    var rnd = Math.floor(Math.random() * 100000);
+    var username = document.getElementById('nm').value;
+    var s = "svr=WS_00001&rnd=" + rnd + "&mobile=" + username;
+    var URL = "/webservice/?" + s;
+    $.ajax({
+        type: 'get',
+        url: URL,
+        contentType: "application/json",
+        data: {},//data是传给后台的字段，后台需要哪些就传入哪些
+        dataType: "json", //json格式，后台返回的数据为json格式的。
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function (msg) {
+            try {
+                if (msg.status == "ok") {
+                    if (msg.after) {
+                        alert(msg.after);
                     }
-                } catch (e) {
+                    else {
+                        document.cookie = 'wytSession=' + msg.ret.fsession;
+                    }
+                    //document.getElementById('pw').value = msg.ret.smscode;
                 }
             }
-        });
-        nn = 60;
-        tipId = window.setInterval("start()", 1000); //每隔1秒调用一次start()方法
-        $("#btn").removeAttr("onclick");//取消点击事件
-        tipO = window.setTimeout("getclick()", 60000);//60秒后给定点击事件
-    }
+            catch (e) {
+            }
+        }
+    });
+    nn = 60;
+    tipId = window.setInterval("start()", 1000); //每隔1秒调用一次start()方法
+    $("#btn").removeAttr("onclick");//取消点击事件
+    tipO = window.setTimeout("getclick()", 60000);//60秒后给定点击事件
+}
 $(document).ready(function () {
     $('#dl').click(function () {
         //获取fsession
@@ -82,7 +88,7 @@ $(document).ready(function () {
                 try {
                     if (msg.status == "ok") {
                         var aCookie = '{\'User_NM\':\'' + msg.ret.username;
-                        aCookie += '\',\'fsession\':\'' + msg.ret.session+"/'";
+                        aCookie += '\',\'fsession\':\'' + msg.ret.session + "/'";
                         aCookie += '}';
                         var expdate = new Date();
                         expdate.setTime(expdate.getTime() + (86400 * 1000 * 1));
