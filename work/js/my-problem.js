@@ -1473,7 +1473,7 @@ $(document).ready(function () {
                                 alert('只能删除自己提出的问题');
                             }
                             else if (dataObj.ret.id == 2) {
-                                
+                                console.log(1);
                             } else if (dataObj.ret.id == 1){
                                 var fsession = session.fsession;
                                 var userName = session.User_NM;
