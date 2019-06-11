@@ -127,6 +127,7 @@
                 if (event.keyCode == 8) {
                     e.target.src = "http://192.168.5.58:29999/submit.html";
                     e.target.style.display = "none";
+                    e.target = "";
                     return;
                 }
             })
