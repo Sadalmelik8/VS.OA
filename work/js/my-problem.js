@@ -79,7 +79,7 @@ var paginationed = function (userName) {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page) {
+                    if (indexs < page && item.length > 0) {
                         if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
@@ -224,7 +224,7 @@ var paginationed = function (userName) {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page) {
+                    if (indexs < page && item.length > 0) {
                         if (item.executor == null && item.submittime == null && item.acceptor == null && item.inspecttime == null) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
