@@ -148,9 +148,9 @@ $(document).ready(function () {
         },
         success: function (result) {
             var dataObj = result;
+            document.getElementById('code').value = dataObj.ret.content;
             var con = '';
             $.each(dataObj.ret.ls, function (indexs, item) {
-                document.getElementById('code').value = dataObj.ret.content;
                 arr.push(indexs);
                 con += "<li>"
                     + "<span class='log--icon__time' id=" + item.nm + ">" + item.m + "</span>"
