@@ -14,7 +14,7 @@ $(document).ready(function () {
         var aCookie = GetCookie('wytSession');
         session = eval('(' + aCookie + ')');
         if (session) {
-            if (session.fsession == "undefined") {
+            if (session.fsession == "undefined" || session.User_NM == "undefined") {
                 window.open('login.html', '_self');
                 return;
             }
