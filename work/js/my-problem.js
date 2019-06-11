@@ -467,7 +467,7 @@ var paginationed = function (userName) {
         })
     });
     let sub = document.getElementsByClassName("deletes--delete")[0];
-    $(".deletes--delete").click(function (e) {
+    sub.click(function () {
         let id = e.target.parentNode.parentNode.childNodes[1].id;
         let _popup = document.getElementsByClassName("pipup")[0];
         _popup.style.display = 'inline-block';
