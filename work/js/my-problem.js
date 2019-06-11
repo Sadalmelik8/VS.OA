@@ -1444,12 +1444,12 @@ $(document).ready(function () {
     })
 });
 // 删除
+let _popup = document.getElementsByClassName('popup')[0];
+$("#cancel").click(function () {
+    _popup.style.display = 'none';
+});
 $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
-    $("#cancel").click(function () {
-        _popup.style.display = 'none';
-        return 1;
-    });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
@@ -1477,7 +1477,7 @@ $(document).ready(function () {
                                 alert('只能删除自己提出的问题');
                             }
                             else if (dataObj.ret.id == 2) {
-                                alert('wentibucuozai ');
+                                alert('wentibucuozai');
                             } else if (dataObj.ret.id == 1){
                                 var fsession = session.fsession;
                                 var userName = session.User_NM;
