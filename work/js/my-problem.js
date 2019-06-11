@@ -1440,7 +1440,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     document.getElementById('ul').addEventListener('click', function (e) {
     this.childNodes.forEach(function (v, k) {
-        if (e.target === document.getElementsByClassName('deletes')[k]) {
+        if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
             var fsession = session.fsession;
             var userName = session.User_NM;
             _template1 = buildJson();
