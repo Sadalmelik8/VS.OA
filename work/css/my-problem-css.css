@@ -279,14 +279,14 @@ a{
 }
 .deletes--delete{
     display: inline-block;
-    width: 65%;
+    width: 60%;
     height: 25px;
     background: #de0000;
     font-size: 12px;
     line-height: 25px;
     text-align: center;
     margin-top: 8px;
-    margin-left: 13%;
+    margin-left: 12.5%;
     color: white;
 }
 .deletes--delete:hover{
