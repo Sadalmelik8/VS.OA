@@ -222,10 +222,10 @@
                 }
                 else {
                     form.append("data", (JSON.stringify(stdTemplate)));
-                    if (file == "") {
+                    if (file == "" && img != "") {
                         form.append("pic", img);
                     }
-                    if (img == "") {
+                    if (img == "" && file != "") {
                         form.append("files", file);
                     }
                     if (file != "" && img != "") {
