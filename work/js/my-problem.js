@@ -1516,6 +1516,7 @@ $(document).ready(function () {
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
                 stdTemplate.num = e.target.parentNode.children[1].id;
+                console.log(e.target.parentNode.children[1].id);
                 return stdTemplate;
             }
         }
