@@ -1445,66 +1445,72 @@ $(document).ready(function () {
 });
 // 删除
 $(document).ready(function () {
+    let _popup = document.getElementsByClassName('popup')[0];
     document.getElementById('ul').addEventListener('click', function (e) {
     this.childNodes.forEach(function (v, k) {
         if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
-            var fsession = session.fsession;
-            var userName = session.User_NM;
-            _template1 = buildJson();
-            var s = ("svr=WS_00014" + "&fsession=" + fsession + "&userName=" + userName);
-            var URL = "/webservice/?" + s;
-            var form = new FormData();
-            form.append("data", (JSON.stringify(_template1)));
-            $.ajax({
-                type: "post", //请求的方式，也有get请求
-                url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-                contentType: "application/json",
-                data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-                cache: false,
-                processData: false,
-                contentType: false,
-                dataType: "json", //json格式，后台返回的数据为json格式的。
-                success: function (result) {
-                    dataObj = result;
-                    if (dataObj.ret.id == 0) {
-                        alert('只能删除自己提出的问题');
-                    } else if (dataObj.ret.id == 1){
-                        var fsession = session.fsession;
-                        var userName = session.User_NM;
-                        _template1 = buildJson();
-                        var s = ("svr=WS_00004" + "&fsession=" + fsession + "&userName=" + userName);
-                        var URL = "/webservice/?" + s;
-                        var form = new FormData();
-                        form.append("data", (JSON.stringify(_template1)));
-                        $.ajax({
-                            type: "post", //请求的方式，也有get请求
-                            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-                            contentType: "application/json",
-                            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-                            cache: false,
-                            processData: false,
-                            contentType: false,
-                            dataType: "json", //json格式，后台返回的数据为json格式的。
-                            beforeSend: LoadFunction, //加载执行方法
-                            error: erryFunction,  //错误执行方法
-                            success: function (result) {
-                                dataObj = result; //返回的result为json格式的数据
-                                age = dataObj.ret.length;
-                                $(document).ready(function () {
-                                    paginationed();
-                                })
+            _popup.style.display = 'inline-block';
+            if ($('#delete').click()){
+                _popup.style.display = 'none'
+                var fsession = session.fsession;
+                var userName = session.User_NM;
+                _template1 = buildJson();
+                var s = ("svr=WS_00014" + "&fsession=" + fsession + "&userName=" + userName);
+                var URL = "/webservice/?" + s;
+                var form = new FormData();
+                form.append("data", (JSON.stringify(_template1)));
+                $.ajax({
+                    type: "post", //请求的方式，也有get请求
+                    url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+                    contentType: "application/json",
+                    data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    dataType: "json", //json格式，后台返回的数据为json格式的。
+                    success: function (result) {
+                        dataObj = result;
+                        if (dataObj.ret.id == 0) {
+                            alert('只能删除自己提出的问题');
+                        } else if (dataObj.ret.id == 1){
+                            var fsession = session.fsession;
+                            var userName = session.User_NM;
+                            _template1 = buildJson();
+                            var s = ("svr=WS_00004" + "&fsession=" + fsession + "&userName=" + userName);
+                            var URL = "/webservice/?" + s;
+                            var form = new FormData();
+                            form.append("data", (JSON.stringify(_template1)));
+                            $.ajax({
+                                type: "post", //请求的方式，也有get请求
+                                url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+                                contentType: "application/json",
+                                data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+                                cache: false,
+                                processData: false,
+                                contentType: false,
+                                dataType: "json", //json格式，后台返回的数据为json格式的。
+                                beforeSend: LoadFunction, //加载执行方法
+                                error: erryFunction,  //错误执行方法
+                                success: function (result) {
+                                    dataObj = result; //返回的result为json格式的数据
+                                    age = dataObj.ret.length;
+                                    $(document).ready(function () {
+                                        paginationed();
+                                    })
+                                }
+                            });
+                            function buildJson() {
+                                var std = JSON.stringify({});
+                                var stdTemplate = JSON.parse(std);
+                                stdTemplate.type = 1;
+                                return stdTemplate;
                             }
-                        });
-                        function buildJson() {
-                            var std = JSON.stringify({});
-                            var stdTemplate = JSON.parse(std);
-                            stdTemplate.type = 1;
-                            return stdTemplate;
                         }
                     }
-                }
-            });
-
+                });
+            }else {
+                _popup.style.display = 'none';
+            }
             function buildJson() {
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
