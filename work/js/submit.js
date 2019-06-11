@@ -209,10 +209,10 @@
                 stdTemplate.content = particular;//内容
                 stdTemplate.level = level;//紧急度                
                 if (form.get("data") != null) {
-                    if (file == "") {
+                    if (file == "" && img != "") {
                         form.append("pic", img);
                     }
-                    if (img == "") {
+                    if (img == "" && file != "") {
                         form.append("files", file);
                     }
                     if (file != "" && img != "") {
