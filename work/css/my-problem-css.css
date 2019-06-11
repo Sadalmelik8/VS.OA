@@ -252,13 +252,13 @@ a{
 }
 .knowledge0{
     width: 4.5%;
-    margin-left: 1%;
+    margin-left: .8%;
     background: #40c2f2;
     cursor: pointer;
 }
 .knowledge1{
     width: 4.5%;
-    margin-left: 1%;
+    margin-left: .8%;
     background: #acacac;
     color: #fff;
     cursor:no-drop;
@@ -271,14 +271,15 @@ a{
 }
 .deletes{
     display: inline-block;
-    width: 7.5%;
-    margin-left: 1%;
+    width: 7.56%;
+    margin-left: .4%;
     cursor: pointer;
     border-left: 1px solid #999;
+    border-right: none;
 }
 .deletes--delete{
     display: inline-block;
-    width: 80%;
+    width: 70%;
     height: 30px;
     background: #de0000;
     font-size: 15px;
@@ -286,4 +287,5 @@ a{
     text-align: center;
     margin-top: 10px;
     margin-left: 10%;
+    color: white;
 }
