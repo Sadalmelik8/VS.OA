@@ -1515,7 +1515,7 @@ $(document).ready(function () {
             function buildJson() {
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
-                stdTemplate.num = e.target.parentNode.children[1].id;
+                stdTemplate.num = e.target.parentNode.parentNode.children[1].id;
                 console.log(e.target.parentNode.parentNode.children[1].id);
                 return stdTemplate;
             }
