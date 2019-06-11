@@ -1444,10 +1444,6 @@ $(document).ready(function () {
     })
 });
 // 删除
-let _popup = document.getElementsByClassName('popup')[0];
-$("#cancel").click(function () {
-    _popup.style.display = 'none';
-});
 $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
     document.getElementById('ul').addEventListener('click', function (e) {
@@ -1519,12 +1515,15 @@ $(document).ready(function () {
                 function buildJson() {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
-                    stdTemplate.num = e.target.parentNode.parentNode.children[1].id;
+                    stdTemplate.num = e.target.parentNode.parentNode.children[1].id[0];
                     return stdTemplate;
                 }
             }
 
         })
+    });
+    $("#cancel").click(function () {
+        _popup.style.display = 'none';
     });
 });
 
