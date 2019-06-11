@@ -1450,6 +1450,9 @@ $(document).ready(function () {
     this.childNodes.forEach(function (v, k) {
         if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
             _popup.style.display = 'inline-block';
+            $("#cancel").click(function () {
+                _popup.style.display = 'none';
+            });
             $('#delete').click(function () {
                 var fsession = session.fsession;
                 var userName = session.User_NM;
@@ -1507,9 +1510,6 @@ $(document).ready(function () {
                         }
                     }
                 });
-                _popup.style.display = 'none';
-            });
-            $("#cancel").click(function () {
                 _popup.style.display = 'none';
             });
             function buildJson() {
