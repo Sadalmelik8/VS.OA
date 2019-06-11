@@ -280,13 +280,13 @@ a{
 .deletes--delete{
     display: inline-block;
     width: 70%;
-    height: 30px;
+    height: 25px;
     background: #de0000;
     font-size: 12px;
-    line-height: 30px;
+    line-height: 25px;
     text-align: center;
     margin-top: 10px;
-    margin-left: 10%;
+    margin-left: 12%;
     color: white;
 }
 .popup{
