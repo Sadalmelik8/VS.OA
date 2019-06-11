@@ -84,7 +84,7 @@ var paginationed = function () {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page && dataObj.ret.length > 0) {
+                    if (indexs < page && dataObj.ret.length > 0 && dataObj.ret[0].id != 0) {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -94,7 +94,7 @@ var paginationed = function () {
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                             + "<span>" + item.acceptor + "</span>"//验收人
                             + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                            + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                            + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                             + "</li>";
                         $("#ul").html(con + cons); //把内容入到这个div中
                     }
@@ -128,7 +128,7 @@ var paginationed = function () {
                                     + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                     + "<span>" + item.acceptor + "</span>"//验收人
                                     + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                                    + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                    + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
                                 li[vid[1] - 1].className = "active";
@@ -169,7 +169,7 @@ var paginationed = function () {
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, item) {
-                    if (indexs < page && dataObj.ret.length > 0) {
+                    if (indexs < page && dataObj.ret.length > 0 && dataObj.ret[0].id != 0) {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
@@ -179,7 +179,7 @@ var paginationed = function () {
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                             + "<span>" + item.acceptor + "</span>"//验收人
                             + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                            + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                            + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
                     }
@@ -213,7 +213,7 @@ var paginationed = function () {
                                     + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                                     + "<span>" + item.acceptor + "</span>"//验收人
                                     + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                                    + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                    + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
                                 li[vid[1] - 1].className = "active";
@@ -265,7 +265,7 @@ var paginationed = function () {
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
                             + "<span>" + item.acceptor + "</span>"//验收人
                             + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
-                            + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                            + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
                         redirect();
@@ -656,7 +656,7 @@ $(document).ready(function () {
                                                 + "<span>" + item.submittime + "</span>"//提交时间
                                                 + "<span>" + item.acceptor + "</span>"//验收人
                                                 + "<span>" + item.inspecttime + "</span>"//验收时间
-                                                + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                                + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                                 + "</li>";
                                             $("#ul").html(con); //把内容入到这个div中
                                         } else {
@@ -669,7 +669,7 @@ $(document).ready(function () {
                                                 + "<span>" + item.submittime + "</span>"//提交时间
                                                 + "<span>" + item.acceptor + "</span>"//验收人
                                                 + "<span>" + item.inspecttime + "</span>"//验收时间
-                                                + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                                + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                                 + "</li>";
                                             $("#ul").html(con); //把内容入到这个div中
                                         }
@@ -777,7 +777,7 @@ $(document).ready(function () {
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span>" + item.inspecttime + "</span>"//验收时间
-                                + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         } else {
@@ -790,7 +790,7 @@ $(document).ready(function () {
                                 + "<span>" + item.submittime + "</span>"//提交时间
                                 + "<span>" + item.acceptor + "</span>"//验收人
                                 + "<span>" + item.inspecttime + "</span>"//验收时间
-                                + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
