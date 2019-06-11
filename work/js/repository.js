@@ -680,7 +680,14 @@ var call = function () {
     var aCookie = GetCookie('wytSession');
     session = eval('(' + aCookie + ')');
     if (session) {
-        if (session.fsession == "undefined" || session.User_NM == "") {
+        if (session.fsession == "undefined") {
+            window.open('login.html', '_self');
+            return;
+        }
+        if (session.User_NM) {
+
+        }
+        else {
             window.open('login.html', '_self');
             return;
         }
