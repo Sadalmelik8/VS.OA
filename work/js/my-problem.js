@@ -1446,6 +1446,9 @@ $(document).ready(function () {
 // 删除
 $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
+    $("#cancel").click(function () {
+        _popup.style.display = 'none';
+    });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
@@ -1473,7 +1476,7 @@ $(document).ready(function () {
                                 alert('只能删除自己提出的问题');
                             }
                             else if (dataObj.ret.id == 2) {
-                                console.log(1);
+                                alert("sgfsd")
                             } else if (dataObj.ret.id == 1){
                                 var fsession = session.fsession;
                                 var userName = session.User_NM;
@@ -1521,9 +1524,6 @@ $(document).ready(function () {
             }
 
         })
-    });
-    $("#cancel").click(function () {
-        _popup.style.display = 'none';
     });
 });
 
