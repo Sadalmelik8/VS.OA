@@ -251,26 +251,39 @@ a{
     width: 12%;
 }
 .knowledge0{
-    width: 5.5%;
+    width: 4.5%;
     margin-left: 1%;
     background: #40c2f2;
     cursor: pointer;
 }
 .knowledge1{
-    width: 5.5%;
+    width: 4.5%;
     margin-left: 1%;
     background: #acacac;
     color: #fff;
     cursor:no-drop;
     border: none;
 }
+
 .delete{
     width: 7.5%;
     border-right: none;
 }
 .deletes{
-    width: 5.5%;
+    display: inline-block;
+    width: 7.5%;
     margin-left: 1%;
-    background: #40c2f2;
     cursor: pointer;
+    border-left: 1px solid #999;
+}
+.deletes--delete{
+    display: inline-block;
+    width: 80%;
+    height: 30px;
+    background: #de0000;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10%;
 }
