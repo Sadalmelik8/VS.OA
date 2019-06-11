@@ -1450,8 +1450,7 @@ $(document).ready(function () {
     this.childNodes.forEach(function (v, k) {
         if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
             _popup.style.display = 'inline-block';
-            if ($('#delete').click()){
-                _popup.style.display = 'none'
+            $('#delete').click(function () {
                 var fsession = session.fsession;
                 var userName = session.User_NM;
                 _template1 = buildJson();
@@ -1508,9 +1507,11 @@ $(document).ready(function () {
                         }
                     }
                 });
-            }else {
                 _popup.style.display = 'none';
-            }
+            });
+            $("#cancel").click(function () {
+                _popup.style.display = 'none';
+            });
             function buildJson() {
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
