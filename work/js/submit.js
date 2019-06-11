@@ -219,6 +219,12 @@
                         form.append("pic", img);
                         form.append("files", file);
                     }
+                    if (form.get("files") == null) {
+                        form.append("files", file);
+                    }
+                    if ((form.get("pic") == null)) {
+                        form.append("pic", img);
+                    }
                 }
                 else {
                     form.append("data", (JSON.stringify(stdTemplate)));
