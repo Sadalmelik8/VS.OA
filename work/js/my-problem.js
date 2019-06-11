@@ -1475,7 +1475,7 @@ $(document).ready(function () {
                         } else if (dataObj.ret.id == 1){
                             var fsession = session.fsession;
                             var userName = session.User_NM;
-                            _template1 = buildJson();
+                            _template1 = buildJsons();
                             var s = ("svr=WS_00004" + "&fsession=" + fsession + "&userName=" + userName);
                             var URL = "/webservice/?" + s;
                             var form = new FormData();
@@ -1499,7 +1499,7 @@ $(document).ready(function () {
                                     })
                                 }
                             });
-                            function buildJson() {
+                            function buildJsons() {
                                 var std = JSON.stringify({});
                                 var stdTemplate = JSON.parse(std);
                                 stdTemplate.type = 1;
