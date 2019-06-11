@@ -1473,8 +1473,11 @@ $(document).ready(function () {
                         dataType: "json", //json格式，后台返回的数据为json格式的。
                         success: function (result) {
                             dataObj = result;
-                            if (dataObj.ret.id == 0) {
+                            if (dataObj.ret.id == 0){
                                 alert('只能删除自己提出的问题');
+                            }
+                            else if (dataObj.ret.id == 2) {
+                                alert('wentibucuozai ');
                             } else if (dataObj.ret.id == 1){
                                 var fsession = session.fsession;
                                 var userName = session.User_NM;
