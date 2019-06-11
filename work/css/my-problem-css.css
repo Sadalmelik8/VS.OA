@@ -279,15 +279,18 @@ a{
 }
 .deletes--delete{
     display: inline-block;
-    width: 70%;
+    width: 65%;
     height: 25px;
     background: #de0000;
     font-size: 12px;
     line-height: 25px;
     text-align: center;
-    margin-top: 10px;
-    margin-left: 12%;
+    margin-top: 8px;
+    margin-left: 13%;
     color: white;
+}
+.deletes--delete:hover{
+    background: #c80000;
 }
 .popup{
     width: 100%;
