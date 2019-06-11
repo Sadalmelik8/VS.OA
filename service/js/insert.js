@@ -92,7 +92,7 @@ $(document).ready(function () {
                     contentType: false,
                     dataType: "json",//期待返回的数据类型
                     success: function (msg) {
-                        if (msg..ret.id == 1) {
+                        if (msg.ret.id == 1) {
                             alert('新增成功');
                         }
                         else {
