@@ -1528,7 +1528,7 @@ $(document).ready(function () {
 //     });
 // });
 $(document).ready(function () {
-    $(".deletes--delete").click(function (e) {
+    $(".deletes--delete")[0].click(function (e) {
         let id = e.target.parentNode.parentNode.childNodes[1].id;
         let _popup = document.getElementsByClassName("pipup")[0];
         _popup.style.display = 'inline-block';
