@@ -466,6 +466,83 @@ var paginationed = function (userName) {
             }
         })
     });
+    let sub = document.getElementsByClassName("deletes--delete")[0];
+    $(".deletes--delete").click(function (e) {
+        let id = e.target.parentNode.parentNode.childNodes[1].id;
+        let _popup = document.getElementsByClassName("pipup")[0];
+        _popup.style.display = 'inline-block';
+        $("#cancel").click(function () {
+            _popup.style.display = 'none';
+        });
+        $('#delete').click(function () {
+            var fsession = session.fsession;
+            var userName = session.User_NM;
+            _template1 = buildJson();
+            var s = ("svr=WS_00014" + "&fsession=" + fsession + "&userName=" + userName);
+            var URL = "/webservice/?" + s;
+            var form = new FormData();
+            form.append("data", (JSON.stringify(_template1)));
+            $.ajax({
+                type: "post", //请求的方式，也有get请求
+                url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+                contentType: "application/json",
+                data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+                cache: false,
+                processData: false,
+                contentType: false,
+                dataType: "json", //json格式，后台返回的数据为json格式的。
+                success: function (result) {
+                    dataObj = result;
+                    if (dataObj.ret.id == 0){
+                        alert('只能删除自己提出的问题');
+                    }
+                    else if (dataObj.ret.id == 2) {
+                        alert("1");
+                    } else if (dataObj.ret.id == 1){
+                        var fsession = session.fsession;
+                        var userName = session.User_NM;
+                        _template1 = buildJsons();
+                        var s = ("svr=WS_00004" + "&fsession=" + fsession + "&userName=" + userName);
+                        var URL = "/webservice/?" + s;
+                        var form = new FormData();
+                        form.append("data", (JSON.stringify(_template1)));
+                        $.ajax({
+                            type: "post", //请求的方式，也有get请求
+                            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+                            contentType: "application/json",
+                            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+                            cache: false,
+                            processData: false,
+                            contentType: false,
+                            dataType: "json", //json格式，后台返回的数据为json格式的。
+                            beforeSend: LoadFunction, //加载执行方法
+                            error: erryFunction,  //错误执行方法
+                            success: function (result) {
+                                dataObj = result; //返回的result为json格式的数据
+                                age = dataObj.ret.length;
+                                $(document).ready(function () {
+                                    paginationed();
+                                })
+                            }
+                        });
+                        function buildJsons() {
+                            var std = JSON.stringify({});
+                            var stdTemplate = JSON.parse(std);
+                            stdTemplate.type = 1;
+                            return stdTemplate;
+                        }
+                    }
+                }
+            });
+            _popup.style.display = 'none';
+        });
+        function buildJson() {
+            var std = JSON.stringify({});
+            var stdTemplate = JSON.parse(std);
+            stdTemplate.num = id;
+            return stdTemplate;
+        }
+    });
 };
 //页面内容
 var paginationeds = function (userName) {
@@ -1527,82 +1604,5 @@ $(document).ready(function () {
 //         })
 //     });
 // });
-let sub = document.getElementsByClassName("deletes--delete")[0];
-$(".deletes--delete").click(function (e) {
-    let id = e.target.parentNode.parentNode.childNodes[1].id;
-    let _popup = document.getElementsByClassName("pipup")[0];
-    _popup.style.display = 'inline-block';
-    $("#cancel").click(function () {
-        _popup.style.display = 'none';
-    });
-    $('#delete').click(function () {
-        var fsession = session.fsession;
-        var userName = session.User_NM;
-        _template1 = buildJson();
-        var s = ("svr=WS_00014" + "&fsession=" + fsession + "&userName=" + userName);
-        var URL = "/webservice/?" + s;
-        var form = new FormData();
-        form.append("data", (JSON.stringify(_template1)));
-        $.ajax({
-            type: "post", //请求的方式，也有get请求
-            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-            contentType: "application/json",
-            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-            cache: false,
-            processData: false,
-            contentType: false,
-            dataType: "json", //json格式，后台返回的数据为json格式的。
-            success: function (result) {
-                dataObj = result;
-                if (dataObj.ret.id == 0){
-                    alert('只能删除自己提出的问题');
-                }
-                else if (dataObj.ret.id == 2) {
-                    alert("1");
-                } else if (dataObj.ret.id == 1){
-                    var fsession = session.fsession;
-                    var userName = session.User_NM;
-                    _template1 = buildJsons();
-                    var s = ("svr=WS_00004" + "&fsession=" + fsession + "&userName=" + userName);
-                    var URL = "/webservice/?" + s;
-                    var form = new FormData();
-                    form.append("data", (JSON.stringify(_template1)));
-                    $.ajax({
-                        type: "post", //请求的方式，也有get请求
-                        url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-                        contentType: "application/json",
-                        data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-                        cache: false,
-                        processData: false,
-                        contentType: false,
-                        dataType: "json", //json格式，后台返回的数据为json格式的。
-                        beforeSend: LoadFunction, //加载执行方法
-                        error: erryFunction,  //错误执行方法
-                        success: function (result) {
-                            dataObj = result; //返回的result为json格式的数据
-                            age = dataObj.ret.length;
-                            $(document).ready(function () {
-                                paginationed();
-                            })
-                        }
-                    });
-                    function buildJsons() {
-                        var std = JSON.stringify({});
-                        var stdTemplate = JSON.parse(std);
-                        stdTemplate.type = 1;
-                        return stdTemplate;
-                    }
-                }
-            }
-        });
-        _popup.style.display = 'none';
-    });
-    function buildJson() {
-        var std = JSON.stringify({});
-        var stdTemplate = JSON.parse(std);
-        stdTemplate.num = id;
-        return stdTemplate;
-    }
-});
 
 
