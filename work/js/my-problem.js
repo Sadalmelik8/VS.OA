@@ -1448,6 +1448,7 @@ $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
     $("#cancel").click(function () {
         _popup.style.display = 'none';
+        return 1;
     });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
