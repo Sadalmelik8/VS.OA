@@ -1450,9 +1450,15 @@ $(document).ready(function () {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
                 _popup.style.display = 'inline-block';
-                $("#cancel").click(function () {
-                    _popup.style.display = 'none';
-                });
+                // $("#cancel").click(function () {
+                //     _popup.style.display = 'none';
+                // });
+                var cancel=document.getElementById("cancel");/*实名函数*/
+                    var handle1=function() {
+                        _popup.style.display = 'none';
+                        cancel.removeEventListener("click",handle1,false);
+                         };
+                    cancel.addEventListener('click',handle1,false);
                 $('#delete').click(function () {
                     var fsession = session.fsession;
                     var userName = session.User_NM;
@@ -1476,7 +1482,7 @@ $(document).ready(function () {
                                 alert('只能删除自己提出的问题');
                             }
                             else if (dataObj.ret.id == 2) {
-                                console.log(1);
+                                alert('123');
                             } else if (dataObj.ret.id == 1){
                                 var fsession = session.fsession;
                                 var userName = session.User_NM;
