@@ -198,6 +198,9 @@ table td {
     font-size: 14px;
     color: #555;
     text-align: center;
+    text-overflow : ellipsis;
+    overflow:hidden;
+    white-space:nowrap
 }
 .news{
     display: inline-block;
