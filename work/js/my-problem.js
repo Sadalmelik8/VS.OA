@@ -1446,13 +1446,13 @@ $(document).ready(function () {
 // 删除
 $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
-    $("#cancel").click(function () {
-        _popup.style.display = 'none';
-    });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
                 _popup.style.display = 'inline-block';
+                $("#cancel").click(function () {
+                    _popup.style.display = 'none';
+                });
                 $('#delete').click(function () {
                     var fsession = session.fsession;
                     var userName = session.User_NM;
@@ -1476,7 +1476,7 @@ $(document).ready(function () {
                                 alert('只能删除自己提出的问题');
                             }
                             else if (dataObj.ret.id == 2) {
-                                alert("sgfsd")
+                                console.log(1);
                             } else if (dataObj.ret.id == 1){
                                 var fsession = session.fsession;
                                 var userName = session.User_NM;
@@ -1518,7 +1518,7 @@ $(document).ready(function () {
                 function buildJson() {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
-                    stdTemplate.num = e.target.parentNode.parentNode.children[1].id[0];
+                    stdTemplate.num = e.target.parentNode.parentNode.children[1].id;
                     return stdTemplate;
                 }
             }
