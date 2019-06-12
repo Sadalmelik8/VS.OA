@@ -1603,5 +1603,3 @@ $(document).ready(function () {
         })
     });
 });
-
-
