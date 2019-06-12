@@ -111,7 +111,7 @@
                 //后期修改
                 //后期修改
                 //后期修改
-                if (img.src == "http://120.77.213.248:39997/submit.html") {
+                if (img.src == "http://127.0.0.1/submit.html") {
                     img.src = event.target.result;
                     img.style.display = "inline-block";
                     document.getElementsByClassName('copy')[0].style.display = 'none';
@@ -125,7 +125,7 @@
         $('.imgs').click(function (e) {
             $('body').keydown(function (event) {
                 if (event.keyCode == 8) {
-                    e.target.src = "http://120.77.213.248:39997/submit.html";
+                    e.target.src = "http://127.0.0.1/submit.html";
                     if (e.target) {
                         e.target.style.display = "none";
                         e.target = "";
@@ -170,7 +170,7 @@
             var form = new FormData();
             for (var i = 0; i < 6; i++) {
                 var img = document.getElementsByClassName('imgs')[i].src;
-                if (img != "http://120.77.213.248:39997/submit.html") {
+                if (img != "http://127.0.0.1/submit.html") {
                     var file = '';
                     buildJson(file, img);
                 }
