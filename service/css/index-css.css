@@ -152,9 +152,9 @@ table td {
     vertical-align: top
 }
 
-/*.td {
-    background-color: #3da7cf;
-}*/
+.td {
+    width: 3%;
+}
 
 /*#hide {
     text-decoration: none;
