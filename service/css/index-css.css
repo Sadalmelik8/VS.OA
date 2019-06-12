@@ -11,7 +11,7 @@ body {
 
 .left {
     height: 860px;
-    width: 200px;
+    width: 100%;
     background-color: rgba(45, 159, 203, 0.92);
 }
 
@@ -25,17 +25,17 @@ body {
         color: white;
         font-size: 20px;
         line-height: 65px;
-        margin-left: 30px;
+        margin-left: 2%;
     }
 
     .top a {
         color: white;
         line-height: 65px;
-        margin-left: 20px;
+        margin-left: 1.5%;
     }
 
 #messge {
-    margin-left: 72%;
+    margin-left: 69%;
 }
 
 table tr td {
@@ -168,4 +168,7 @@ table td {
 #hide {
     width: 8px;
     height: 30px;
+}
+.icon{
+    width: 80%;
 }
