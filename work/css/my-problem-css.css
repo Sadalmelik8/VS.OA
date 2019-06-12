@@ -329,10 +329,10 @@ a{
     text-align: center;
     font-size: 12px;
     color: #fff;
-    background: #1AAD19;
+    background: #4285F4;
 }
 #delete:hover{
-    background: #1a9519;
+    background: #437aea;
 }
 #cancel{
     display: inline-block;
