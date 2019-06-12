@@ -111,7 +111,7 @@
                 //后期修改
                 //后期修改
                 //后期修改
-                if (img.src == "http://127.0.0.1/submit.html") {
+                if (img.src == document.location.href) {
                     img.src = event.target.result;
                     img.style.display = "inline-block";
                     document.getElementsByClassName('copy')[0].style.display = 'none';
@@ -125,7 +125,7 @@
         $('.imgs').click(function (e) {
             $('body').keydown(function (event) {
                 if (event.keyCode == 8) {
-                    e.target.src = "http://127.0.0.1/submit.html";
+                    e.target.src = document.location.href;
                     if (e.target) {
                         e.target.style.display = "none";
                         e.target = "";
@@ -170,7 +170,7 @@
             var form = new FormData();
             for (var i = 0; i < 6; i++) {
                 var img = document.getElementsByClassName('imgs')[i].src;
-                if (img != "http://127.0.0.1/submit.html") {
+                if (img != document.location.href) {
                     var file = '';
                     buildJson(file, img);
                 }

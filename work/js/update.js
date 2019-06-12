@@ -42,7 +42,7 @@ document.addEventListener('paste', function (event) {
             //后期修改
             //后期修改
             //后期修改
-            if (img.src == "http://120.77.213.248:39997/update.html?num=" + oltid) {
+            if (img.src == document.location.href) {
                 img.src = event.target.result;
                 img.style.display = "inline-block";
                 document.getElementsByClassName('copy')[0].style.display = 'none';
@@ -56,7 +56,7 @@ $(document).ready(function () {
     $('.imgs').click(function (e) {
         $('body').keydown(function (event) {
             if (event.keyCode == 8) {
-                e.target.src = "http://120.77.213.248:39997/update.html?num=" + oltid;
+                e.target.src = document.location.href;
                 if (e.target) {
                     e.target.style.display = "none";
                     e.target = "";
@@ -223,7 +223,7 @@ $(document).ready(function () {
                     //后期修改
                     //后期修改
                     //后期修改
-                    if (document.getElementsByClassName('pics')[i].src == ('http://120.77.213.248:39997/update.html?num=' + oltid)) {
+                    if (document.getElementsByClassName('pics')[i].src == document.location.href) {
                         document.getElementsByClassName('pics')[i].style.display = 'none';
                     }
                 }
@@ -305,7 +305,7 @@ $(document).ready(function () {
         var form = new FormData();
         for (var i = 0; i < 6; i++) {
             var img = document.getElementsByClassName('imgs')[i].src;
-            if (img != 'http://120.77.213.248:39997/update.html?num=' + oltid) {
+            if (img != document.location.href) {
                 var file = '';
                 buildJson(file, img);
             }
