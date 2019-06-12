@@ -7,22 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>知识库总览</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="js/repository.js"></script>
+    <!--<script src="js/repository.js"></script>-->
     <link href="css/repository.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="popup">
+        <div class="popup--icon">
+            <div class="popup--icon--title">是否删除该知识点，该操作不可恢复！</div>
+            <span id="cancel">取消</span>
+            <span id="delete">确定</span>
+        </div>
+    </div>
     <div class="repository">
         <ul>
             <li class="repository--top">
                 <span class="repository--top__left">知识库</span>
                 <input type="text" placeholder="标题关键字" class="keyword" id="keyword">
-                <span class="repository--top__right">日期: <input type="date" class="data" id="data"><button>搜索</button></span>
+                <span class="repository--top__right">日期: <input type="date" class="data" id="data"><button id="search">搜索</button></span>
             </li>
             <li class="li">
                 <span class="number">序号</span>
                 <span class="title">标题</span>
                 <span >提出人</span>
                 <span>提出时间</span>
+                <span>是否删除</span>
             </li>
         </ul>
         <ul id="ul">
