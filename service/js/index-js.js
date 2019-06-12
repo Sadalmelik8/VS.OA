@@ -50,11 +50,12 @@ function hide() {
     if (a.src == window.location.origin + "/img/left.png") {
         a.src = window.location.origin + "/img/right.png";
         div.style.display = "none";
-        iframe.style.width = "1870px";
+        iframe.style.width = "100%";
     }
     else {
         a.src = window.location.origin + "/img/left.png";
         div.style.display = "block";
-        iframe.style.width = "1628px";
-    }    
+        iframe.style.width = "100%";
+    }
+
 }
