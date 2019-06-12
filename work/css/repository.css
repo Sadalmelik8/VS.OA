@@ -265,17 +265,18 @@ a{
     display: inline-block;
     cursor: pointer;
     border-right: none;
+    border-left: none;
 }
 .deletes--delete{
     display: inline-block;
-    width: 50%;
+    width: 40%;
     height: 25px;
     background: #de0000;
     font-size: 14px;
     line-height: 25px;
     text-align: center;
     margin-top: 8px;
-    margin-left: 15.5%;
+    margin-left: 30%;
     color: white;
 }
 .deletes--delete:hover{
