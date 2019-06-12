@@ -1520,7 +1520,7 @@ $(document).ready(function () {
         }
     })
 });
-删除
+//删除
 $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
     document.getElementById('ul').addEventListener('click', function (e) {
