@@ -627,16 +627,16 @@ var call = function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
     session = eval('(' + aCookie + ')');
-    if (session) {
-        if (session.fsession == "undefined" && session.User_NM == "undefined") {
-            window.open('login.html', '_self');
-            return;
-        }
-    }
-    else {
-        window.open('login.html', '_self');
-        return;
-    }
+    //if (session) {
+    //    if (session.fsession == "undefined" && session.User_NM == "undefined") {
+    //        window.open('login.html', '_self');
+    //        return;
+    //    }
+    //}
+    //else {
+    //    window.open('login.html', '_self');
+    //    return;
+    //}
     var fsession = session.fsession;
     var userName = session.User_NM;
     _template1 = buildJson();
