@@ -319,3 +319,19 @@ function clearAllCookie() {
     }
     window.open('login.html', '_self');
 }
+function hide() {
+    var a = document.getElementById("hide");
+    var div = document.getElementsByClassName("left")[0];
+    var iframe = document.getElementsByClassName("center")[0];
+    if (a.src == window.location.origin + "img/left.png") {
+        a.src = window.location.origin + "img/right.png";
+        div.style.display = "none";
+        iframe.style.width = "1870px";
+    }
+    else {
+        a.src = window.location.origin + "img/left.png";
+        div.style.display = "block";
+        iframe.style.width = "1628px";
+    }
+
+}
