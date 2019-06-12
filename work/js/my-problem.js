@@ -257,7 +257,7 @@ var paginationed = function (userName) {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//验收人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
                                 + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
@@ -328,7 +328,7 @@ var paginationed = function (userName) {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                        + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + '&nbsp;' + "</span>"//验收人
                                         + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
                                         + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
@@ -413,7 +413,7 @@ var paginationed = function (userName) {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//验收人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
@@ -1143,7 +1143,7 @@ $(document).ready(function () {
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
-                                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + '&nbsp;' + "</span>"//验收人
                                                 + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
                                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
@@ -1329,7 +1329,7 @@ $(document).ready(function () {
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//验收人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
