@@ -637,10 +637,10 @@ var call = function () {
     //    window.open('login.html', '_self');
     //    return;
     //}
-    var fsession = session.fsession;
-    var userName = session.User_NM;
+    //var fsession = session.fsession;
+    //var userName = session.User_NM;
     _template1 = buildJson();
-    var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = "svr=WS_00003";
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
@@ -692,10 +692,10 @@ $(document).ready(function () {
     //    window.open('login.html', '_self');
     //    return;
     //}
-    var fsession = session.fsession;
-    var userName = session.User_NM;
+    //var fsession = session.fsession;
+    //var userName = session.User_NM;
     _template1 = buildJson();
-    var s = ("svr=WS_00003" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = "svr=WS_00003";
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
