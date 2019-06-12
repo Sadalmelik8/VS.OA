@@ -261,14 +261,8 @@ a{
 #cancel:hover{
     background: #ededed;
 }
-.delete{
-    width: 7.5%;
-    border-right: none;
-}
 .deletes{
     display: inline-block;
-    width: 7.36%;
-    margin-left: .6%;
     cursor: pointer;
     border-left: 1px solid #999;
     border-right: none;
@@ -278,7 +272,7 @@ a{
     width: 60%;
     height: 25px;
     background: #de0000;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 25px;
     text-align: center;
     margin-top: 8px;
