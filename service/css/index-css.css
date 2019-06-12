@@ -37,6 +37,9 @@ body {
 #messge {
     margin-left: 69%;
 }
+table{
+    width: 100%;
+}
 
 table tr td {
 }
