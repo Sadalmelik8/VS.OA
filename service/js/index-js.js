@@ -56,6 +56,5 @@ function hide() {
         a.src = window.location.origin + "/img/left.png";
         div.style.display = "block";
         iframe.style.width = "1628px";
-    }
-
+    }    
 }
