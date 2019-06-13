@@ -11,7 +11,7 @@ body {
 
 .left {
     height: 860px;
-    width: 100%;
+    width: 15vw;
     background-color: rgba(45, 159, 203, 0.92);
 }
 
@@ -176,5 +176,5 @@ table td {
     width: 80%;
 }
 .firsttd{
-    width: 15%;
+    width: 15vw;
 }
