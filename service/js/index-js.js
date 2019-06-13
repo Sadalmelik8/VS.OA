@@ -73,6 +73,7 @@ function hide() {
     else {
         a.src = window.location.origin + "/img/left.png";
         div.style.display = "block";
+        div.style.width = "115%";
         iframe.style.width = "100%";
         td.style.display = 'block';
     }
