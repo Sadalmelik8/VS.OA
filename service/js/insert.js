@@ -197,6 +197,9 @@ $(document).ready(function () {
                         if (msg.ret.id == 1) {
                             alert('更新成功');
                         }
+                        if (msg.ret.id == 2) {
+
+                        }
                         else {
                             alert('更新失败');
                         }
