@@ -198,7 +198,7 @@ $(document).ready(function () {
                             alert('更新成功');
                         }
                         if (msg.ret.id == 2) {
-
+                            alert('已存在该服务！');
                         }
                         else {
                             alert('更新失败');
