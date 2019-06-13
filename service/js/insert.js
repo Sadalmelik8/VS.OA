@@ -95,6 +95,9 @@ $(document).ready(function () {
                         if (msg.ret.id == 1) {
                             alert('新增成功');
                         }
+                        if (msg.ret.id == 2) {
+                            alert('已存在该服务！');
+                        }
                         else {
                             alert('新增失败');
                         }
@@ -196,9 +199,6 @@ $(document).ready(function () {
                     success: function (msg) {
                         if (msg.ret.id == 1) {
                             alert('更新成功');
-                        }
-                        if (msg.ret.id == 2) {
-                            alert('已存在该服务！');
                         }
                         else {
                             alert('更新失败');
