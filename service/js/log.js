@@ -148,18 +148,19 @@ $(document).ready(function () {
         },
         success: function (result) {
             var dataObj = result;
-            document.getElementById('code').value = dataObj.ret.content;
             var con = '';
+            document.getElementById('code').value = dataObj.ret.content;
             $.each(dataObj.ret.ls, function (indexs, item) {
-                arr.push(indexs);
+                arr.push(item);
+            });
+            for (var i = arr.length - 1; i >= 0; i--) {
                 con += "<li>"
-                    + "<span class='log--icon__time' id=" + item.nm + ">" + item.m + "</span>"
+                    + "<span class='log--icon__time' id=" + arr[i].nm + ">" + arr[i].m + "</span>"
                     + "</li>";
-                $("#ul").html(con);
-
-                $("span").click(function () {
-                    log(this.id);
-                });
+            }
+            $("#ul").html(con);
+            $("span").click(function () {
+                logs(this.id);
             });
         }
     });
