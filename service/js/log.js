@@ -9,45 +9,45 @@ function GetCookie(key) {
     }
 }
 //点击获取日志详情
-function log(datas) {
-    var nms = datas;
-    var time = document.getElementById('data').value;
-    var year = Math.ceil(time.substr(0, 4));
-    var month = Math.ceil(time.substr(5, 2));
-    var day = Math.ceil(time.substr(8, 2));
-    _template1 = buildJson(nms);
-    var s = ("svr=webadmin_00004" + "&fsession=" + fsession);
-    var URL = "/webadmin/?" + s;
-    var form = new FormData();
-    form.append("data", (JSON.stringify(_template1)));
-    //日志详情
-    $.ajax({
-        type: "post", //请求的方式，也有get请求
-        url: URL, //请求地址，后台提供的,这里我在本地自己建立了个json的文件做例子
-        data: form,//data是传给后台的字段，后台需要哪些就传入哪些
-        dataType: "json", //json格式，后台返回的数据为json格式的。
-        cache: false,
-        processData: false,
-        contentType: false,
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert(XMLHttpRequest.status);
-        },
-        success: function (result) {
-            var icon = document.getElementById('icon');
-            var dataObj = result;//返回的result为json格式的数据
-            icon.value = dataObj.ret.content;
-        }
-    });
-    function buildJson(nms) {
-        var std = JSON.stringify({});
-        var stdTemplate = JSON.parse(std);
-        stdTemplate.y = year.toString();
-        stdTemplate.m = month.toString();
-        stdTemplate.d = day.toString();
-        stdTemplate.log = nms;
-        return stdTemplate;
-    }
-}
+//function log(datas) {
+//    var nms = datas;
+//    var time = document.getElementById('data').value;
+//    var year = Math.ceil(time.substr(0, 4));
+//    var month = Math.ceil(time.substr(5, 2));
+//    var day = Math.ceil(time.substr(8, 2));
+//    _template1 = buildJson(nms);
+//    var s = ("svr=webadmin_00004" + "&fsession=" + fsession);
+//    var URL = "/webadmin/?" + s;
+//    var form = new FormData();
+//    form.append("data", (JSON.stringify(_template1)));
+//    //日志详情
+//    $.ajax({
+//        type: "post", //请求的方式，也有get请求
+//        url: URL, //请求地址，后台提供的,这里我在本地自己建立了个json的文件做例子
+//        data: form,//data是传给后台的字段，后台需要哪些就传入哪些
+//        dataType: "json", //json格式，后台返回的数据为json格式的。
+//        cache: false,
+//        processData: false,
+//        contentType: false,
+//        error: function (XMLHttpRequest, textStatus, errorThrown) {
+//            alert(XMLHttpRequest.status);
+//        },
+//        success: function (result) {
+//            var icon = document.getElementById('icon');
+//            var dataObj = result;//返回的result为json格式的数据
+//            icon.value = dataObj.ret.content;
+//        }
+//    });
+//    function buildJson(nms) {
+//        var std = JSON.stringify({});
+//        var stdTemplate = JSON.parse(std);
+//        stdTemplate.y = year.toString();
+//        stdTemplate.m = month.toString();
+//        stdTemplate.d = day.toString();
+//        stdTemplate.log = nms;
+//        return stdTemplate;
+//    }
+//}
 
 function logs(datas) {
     var nms = datas;
@@ -184,6 +184,7 @@ $(document).ready(function () {
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
         var arr = [];
+        var arrs = [];
         //搜索某一天的日志
         $.ajax({
             type: "post", //请求的方式，也有get请求
@@ -201,14 +202,16 @@ $(document).ready(function () {
                 var con = '';
                 document.getElementById('code').value = dataObj.ret.content;
                 $.each(dataObj.ret.ls, function (indexs, item) {
-                    arr.push(indexs);
+                    arr.push(item);
+                });
+                for (var i = arr.length - 1; i >= 0; i--) {
                     con += "<li>"
-                        + "<span class='log--icon__time' id=" + item.nm + ">" + item.m + "</span>"
+                        + "<span class='log--icon__time' id=" + arr[i].nm + ">" + arr[i].m + "</span>"
                         + "</li>";
-                    $("#ul").html(con);
-                    $("span").click(function () {
-                        logs(this.id);
-                    });
+                }
+                $("#ul").html(con);
+                $("span").click(function () {
+                    logs(this.id);
                 });
             }
         });
