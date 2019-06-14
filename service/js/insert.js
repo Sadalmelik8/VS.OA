@@ -33,33 +33,52 @@ $(document).ready(function () {
             //如果有数据为空
             if (package.value === '') {
                 alert("请把Package填完整");
+                document.getElementById("package").style.border = "1px solid red ";
+                return;
             }
             if (module.value === '') {
                 alert("请把Module填完整");
+                document.getElementById("module").style.border = "1px solid red ";
+                return;
             }
             if (service.value === '') {
                 alert("请把Service填完整");
+                document.getElementById("service").style.border = "1px solid red ";
+                return;
             }
             if (state.value === '') {
                 alert("请把服务状态填完整");
+                document.getElementById("state").style.border = "1px solid red ";
+                return;
             }
             if (log.value === '') {
                 alert("请把日志填完整");
+                document.getElementById("log").style.border = "1px solid red ";
+                return;
             }
             if (explain.value === '') {
                 alert("请把服务说明填完整");
+                document.getElementById("explain").style.border = "1px solid red ";
+                return;
             }
             if (ago.value === '') {
                 alert("请把前处理填完整");
+                document.getElementById("ago").style.border = "1px solid red ";
+                return;
             }
             if (later.value === '') {
                 alert("请把后处理填完整");
+                document.getElementById("later").style.border = "1px solid red ";
+                return;
             }
             if (whether.value === '') {
                 alert("请把是否允许浏览器访问填完整");
+                document.getElementById("whether").style.border = "1px solid red ";
+                return;
             }
             if (code.value === '') {
                 alert("请把服务代码填完整");
+                document.getElementById("code").style.border = "1px solid red ";
             }
             //没有数据为空，则上传
             else {
