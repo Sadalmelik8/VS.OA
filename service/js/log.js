@@ -148,6 +148,9 @@ $(document).ready(function () {
         },
         success: function (result) {
             var dataObj = result;
+            if (dataObj.ret.ls = '') {
+                alert('当天没有服务日志');
+            }
             var con = '';
             document.getElementById('code').value = dataObj.ret.content;
             $.each(dataObj.ret.ls, function (indexs, item) {
@@ -200,6 +203,9 @@ $(document).ready(function () {
             },
             success: function (result) {
                 var dataObj = result;
+                if (dataObj.ret.ls = '') {
+                    alert('当天没有服务日志');
+                }
                 var con = '';
                 document.getElementById('code').value = dataObj.ret.content;
                 $.each(dataObj.ret.ls, function (indexs, item) {
