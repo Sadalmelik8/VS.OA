@@ -65,18 +65,18 @@ textarea {
 }
 
 .minute--bottom__middle {
-    width: 30%;
+    width: 25%;
     border: 1px solid #999;
 }
 .level--text{
-    width: 12%;
+    width: 10%;
     text-align: right;
-    margin-left: 11.5%;
+    margin-left: 1.5%;
 }
 .level{
     width: 7%;
     padding-left: 2.3%;
-    margin-right: 7%;
+    margin-right: 2.5%;
 }
 #submit{
     width: 11%;
@@ -113,4 +113,76 @@ textarea {
     display: inline-block;
     margin: 160px 0 0 300px;
     color: #d6d6d6;
+}
+.category{
+    display: none;
+    width: 302px;
+    height: 202px;
+    position: absolute;
+    /*background: #3fbded;*/
+    border: 1px solid #888;
+    background: #e9e9e9;
+    top: 17.5%    ;
+    left: 39%;
+    box-sizing: border-box;
+}
+.system{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    box-sizing: border-box;
+}
+.system:hover{
+    background: #dadada;
+    cursor: pointer
+}
+#cancel{
+    background: #b10000;
+    color: white;
+}
+#cancel:hover{
+    background: #830000;
+    color: #FFF;
+}
+.subclass{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    box-sizing: border-box;
+}
+.subclass:hover{
+    background: #dadada;
+    cursor: pointer
+}
+#return{
+    background: #b10000;
+    color: white;
+    position: absolute;
+    top: 160px;
+    left: 200px;
+}
+#return:hover{
+    background: #830000;
+    color: #FFF;
+}
+.select{
+    width: 20%;
+}
+.present {
+    width: 50%;
+    height: 25px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.select{
+    width: 180px;
+    margin-left: 2%;
 }
