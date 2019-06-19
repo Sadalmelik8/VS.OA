@@ -1,154 +1,168 @@
-1. å‘æŒ‡å®šå·ç å‘é€éªŒè¯ç çŸ­ä¿¡
+1. ÏòÖ¸¶¨ºÅÂë·¢ËÍÑéÖ¤Âë¶ÌÐÅ
 
-2. æ–°å¢žé—®é¢˜(done)
-æ–°å¢žé—®é¢˜åˆ°é—®é¢˜åº“è¡¨ï¼ˆé—®é¢˜åº“è¡¨(T_ Problem)ï¼‰
-æœåŠ¡å·ï¼šWS_00017
-å‚æ•°ï¼š{title:,content:,pic:,level:,files:,}--æ ‡é¢˜ã€å†…å®¹ã€ä¸Šä¼ å›¾ç‰‡ã€é—®é¢˜ç´§æ€¥åº¦
-æå‡ºäººä¸ºusernameï¼Œå°±æ˜¯å½“å‰ç™»å½•çš„äºº
-æ–°å¢žæ¶ˆæ¯åˆ°æ¶ˆæ¯æé†’è¡¨ï¼ˆT_Messageï¼‰
-å‚æ•°ï¼š{title:}--æ ‡é¢˜
-æ“ä½œï¼šæ¶ˆæ¯æŽ¥æ”¶äººï¼ˆå›ºå®šï¼‰ï¼Œproposetimeï¼Œoperationï¼ˆæ–°å¢žï¼‰ï¼Œç™»å½•ç”¨æˆ·ï¼Œ0
-è¿”å›žï¼šjson,
-ret={id:0}è¿”å›žå¤±è´¥
+2.»ñÈ¡ËùÓÐÀà±ð
+·þÎñºÅ£ºWS_00002
+²ÎÊý£º{}
+·µ»Ø£ºjson
+ret={id:0}·µ»ØÊ§°Ü
 
-3. é—®é¢˜(done)
-èŽ·å–æ‰€æœ‰é—®é¢˜åç§°ã€é—®é¢˜ç¼–å·ã€æå‡ºäººã€æå‡ºæ—¶é—´ã€å—ç†äºº
-æœåŠ¡å·ï¼šWS_00003
-å‚æ•°ï¼š{problemstate:0/1/2,}-----æ˜¯å¦éªŒæ”¶   2ä¸ºèŽ·å–å…¨éƒ¨é—®é¢˜
-è¿”å›žï¼šjson,æ ¹æ®æå‡ºæ—¶é—´å€’åºæŽ’åˆ—
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--é—®é¢˜ç¼–å·ã€æ ‡é¢˜ã€æå‡ºäººã€æå‡ºæ—¶é—´ã€æäº¤æ—¶é—´ã€å—ç†äººï¼ˆproblemstateä¸º 0 æ—¶)
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge}--é—®é¢˜ç¼–å·ã€æ ‡é¢˜ã€æå‡ºäººã€æå‡ºæ—¶é—´ã€æäº¤æ—¶é—´ã€å—ç†äººã€éªŒæ”¶äººã€æ˜¯å¦éªŒæ”¶ã€éªŒæ”¶æ—¶é—´ã€æ˜¯å¦æäº¤åˆ°çŸ¥è¯†åº“ï¼ˆproblemstate ä¸º 1æˆ–2 æ—¶)
-ret={id:0}è¿”å›žå¤±è´¥
+3. ÎÊÌâ(done)
+»ñÈ¡ËùÓÐÎÊÌâÃû³Æ¡¢ÎÊÌâ±àºÅ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢ÊÜÀíÈË
+·þÎñºÅ£ºWS_00003
+²ÎÊý£º{problemstate:0/1/2,}-----ÊÇ·ñÑéÊÕ   2Îª»ñÈ¡È«²¿ÎÊÌâ
+·µ»Ø£ºjson,¸ù¾ÝÌá³öÊ±¼äµ¹ÐòÅÅÁÐ
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--ÎÊÌâ±àºÅ¡¢±êÌâ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢Ìá½»Ê±¼ä¡¢ÊÜÀíÈË£¨problemstateÎª 0 Ê±)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge}--ÎÊÌâ±àºÅ¡¢±êÌâ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢Ìá½»Ê±¼ä¡¢ÊÜÀíÈË¡¢ÑéÊÕÈË¡¢ÊÇ·ñÑéÊÕ¡¢ÑéÊÕÊ±¼ä¡¢ÊÇ·ñÌá½»µ½ÖªÊ¶¿â£¨problemstate Îª 1»ò2 Ê±)
+ret={id:0}·µ»ØÊ§°Ü
 
-4. ç­›é€‰å…³äºŽæˆ‘çš„é—®é¢˜(done)
-èŽ·å–å…³äºŽæˆ‘çš„é—®é¢˜åç§°ã€é—®é¢˜ç¼–å·ã€æå‡ºäººã€æå‡ºæ—¶é—´ã€å—ç†äººã€æäº¤æ—¶é—´ã€éªŒæ”¶äººã€éªŒæ”¶æ—¶é—´
-æœåŠ¡å·ï¼šWS_00004
-å‚æ•°ï¼š{type:1/2/3}-----1æ˜¯æå‡ºäººï¼Œ2æ˜¯å—ç†äººï¼Œ3æ˜¯éªŒæ”¶äºº
-è¿”å›žï¼šjson,
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,inspecttime:,knowledge:}--é—®é¢˜ç¼–å·ã€æ ‡é¢˜ã€æå‡ºäººã€æå‡ºæ—¶é—´ã€æäº¤æ—¶é—´ã€å—ç†äººã€éªŒæ”¶äººã€éªŒæ”¶æ—¶é—´ã€æ˜¯å¦æäº¤åˆ°çŸ¥è¯†åº“ï¼ˆproblemstateä¼  1 æ—¶)
-ret={id:0}è¿”å›žå¤±è´¥
+4. É¸Ñ¡¹ØÓÚÎÒµÄÎÊÌâ(done)
+»ñÈ¡¹ØÓÚÎÒµÄÎÊÌâÃû³Æ¡¢ÎÊÌâ±àºÅ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢ÊÜÀíÈË¡¢Ìá½»Ê±¼ä¡¢ÑéÊÕÈË¡¢ÑéÊÕÊ±¼ä
+·þÎñºÅ£ºWS_00004
+²ÎÊý£º{type:1/2/3}-----1ÊÇÌá³öÈË£¬2ÊÇÊÜÀíÈË£¬3ÊÇÑéÊÕÈË
+·µ»Ø£ºjson,
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,inspecttime:,knowledge:}--ÎÊÌâ±àºÅ¡¢±êÌâ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢Ìá½»Ê±¼ä¡¢ÊÜÀíÈË¡¢ÑéÊÕÈË¡¢ÑéÊÕÊ±¼ä¡¢ÊÇ·ñÌá½»µ½ÖªÊ¶¿â£¨problemstate´« 1 Ê±)
+ret={id:0}·µ»ØÊ§°Ü
 
-5. æ—¥æœŸæœç´¢(done)
-èŽ·å–æå‡ºæ—¥æœŸçš„æ‰€æœ‰é—®é¢˜
-æœåŠ¡å·ï¼šWS_00005
-å‚æ•°ï¼š{proposetime:,problemstate:0/1/2}
-è¿”å›žï¼šjson,æ ¹æ®æå‡ºæ—¶é—´å€’åºæŽ’åˆ—
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--é—®é¢˜ç¼–å·ã€æ ‡é¢˜ã€æå‡ºäººã€æå‡ºæ—¶é—´ã€æäº¤æ—¶é—´ã€å—ç†äººï¼ˆproblemstate 0 æ—¶)
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge:}--é—®é¢˜ç¼–å·ã€æ ‡é¢˜ã€æå‡ºäººã€æå‡ºæ—¶é—´ã€æäº¤æ—¶é—´ã€å—ç†äººã€éªŒæ”¶äººã€æ˜¯å¦éªŒæ”¶ã€éªŒæ”¶æ—¶é—´ã€æ˜¯å¦æäº¤åˆ°çŸ¥è¯†åº“ï¼ˆproblemstate 1æˆ–2 æ—¶)
+5. ÈÕÆÚËÑË÷(done)
+»ñÈ¡Ìá³öÈÕÆÚµÄËùÓÐÎÊÌâ
+·þÎñºÅ£ºWS_00005
+²ÎÊý£º{proposetime:,problemstate:0/1/2}
+·µ»Ø£ºjson,¸ù¾ÝÌá³öÊ±¼äµ¹ÐòÅÅÁÐ
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--ÎÊÌâ±àºÅ¡¢±êÌâ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢Ìá½»Ê±¼ä¡¢ÊÜÀíÈË£¨problemstate 0 Ê±)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge:}--ÎÊÌâ±àºÅ¡¢±êÌâ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢Ìá½»Ê±¼ä¡¢ÊÜÀíÈË¡¢ÑéÊÕÈË¡¢ÊÇ·ñÑéÊÕ¡¢ÑéÊÕÊ±¼ä¡¢ÊÇ·ñÌá½»µ½ÖªÊ¶¿â£¨problemstate 1»ò2 Ê±)
 
-6. é—®é¢˜è¯¦æƒ…(done)
-æŸ¥çœ‹é—®é¢˜çš„è¯¦æƒ…
-æœåŠ¡å·ï¼šWS_00006
-å‚æ•°ï¼š{num:}-----æŸ¥çœ‹é—®é¢˜çš„è¯¦æƒ…ä¿¡æ¯
-æ ¹æ®ç™»å½•ç”¨æˆ·ï¼Œnumä¿®æ”¹æ¶ˆæ¯æé†’è¡¨é‡Œé¢çš„stsä¸ºå·²è¯»
-è¿”å›žï¼šjson,
-å½“ver=0æ—¶
-ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:}--éªŒæ”¶çŠ¶æ€ï¼Œæå‡ºäººï¼Œæ ‡é¢˜ï¼Œå†…å®¹ï¼Œå¤‡æ³¨ï¼Œæå‡ºæ—¶é—´ï¼Œæ–‡ä»¶ï¼Œé—®é¢˜ç´§æ€¥åº¦
-å½“ ver != 0 æ—¶
-ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,contents:[contents:,executor:,files:,submittime:,submitter]}--éªŒæ”¶çŠ¶æ€ï¼Œæå‡ºäººï¼Œæ ‡é¢˜ï¼Œå†…å®¹ï¼Œå¤‡æ³¨ï¼Œæå‡ºæ—¶é—´ï¼Œæ–‡ä»¶ï¼Œé—®é¢˜ç´§æ€¥åº¦ï¼Œè¿½åŠ é—®é¢˜:[è¿½åŠ é—®é¢˜ã€å—ç†äººã€å›¾ç‰‡ã€æäº¤æ—¶é—´ã€æäº¤äºº]
-ret={id:0}è¿”å›žå¤±è´¥
+6. ÎÊÌâÏêÇé(done)
+²é¿´ÎÊÌâµÄÏêÇé
+·þÎñºÅ£ºWS_00006
+²ÎÊý£º{num:}-----²é¿´ÎÊÌâµÄÏêÇéÐÅÏ¢
+¸ù¾ÝµÇÂ¼ÓÃ»§£¬numÐÞ¸ÄÏûÏ¢ÌáÐÑ±íÀïÃæµÄstsÎªÒÑ¶Á
+·µ»Ø£ºjson,
+µ±ver=0Ê±
+ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:}--ÑéÊÕ×´Ì¬£¬Ìá³öÈË£¬±êÌâ£¬ÄÚÈÝ£¬±¸×¢£¬Ìá³öÊ±¼ä£¬ÎÄ¼þ£¬ÎÊÌâ½ô¼±¶È
+µ± ver != 0 Ê±
+ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,contents:[contents:,executor:,files:,submittime:,submitter]}--ÑéÊÕ×´Ì¬£¬Ìá³öÈË£¬±êÌâ£¬ÄÚÈÝ£¬±¸×¢£¬Ìá³öÊ±¼ä£¬ÎÄ¼þ£¬ÎÊÌâ½ô¼±¶È£¬×·¼ÓÎÊÌâ:[×·¼ÓÎÊÌâ¡¢ÊÜÀíÈË¡¢Í¼Æ¬¡¢Ìá½»Ê±¼ä¡¢Ìá½»ÈË]
+ret={id:0}·µ»ØÊ§°Ü
 
-7. æäº¤(done)
+7. Ìá½»(done)
 
-é—®é¢˜å¦‚æžœå·²éªŒæ”¶ï¼šä¸èƒ½æäº¤
-é—®é¢˜å¦‚æžœæ²¡éªŒæ”¶ï¼š
-  1. è¯¥é—®é¢˜æœ‰å—ç†äºº
-    1). å¦‚æžœå—ç†äººä¸å˜
-    å¦‚æžœcontentsä¸ºç©ºï¼šT_Problemè¡¨ä¿®æ”¹ver0çš„å¤‡æ³¨ï¼Œlevelã€‚
-    å¦‚æžœcontentsæœ‰å†…å®¹ï¼š
-      å¦‚æžœå½“å‰ç”¨æˆ·ä¸ºæå‡ºäººï¼šT_Problemè¡¨å¢žåŠ ä¸€æ¡è®°å½•ï¼ŒveråŠ 1ï¼ˆå¢žåŠ è®°å½•åªè¦numï¼Œverï¼Œcontentsï¼Œæäº¤æ—¶é—´ï¼Œfilesï¼Œæäº¤äºº,picï¼‰
-        ä¿®æ”¹ver0çš„å¤‡æ³¨ï¼Œlevelï¼›T_Messageè¡¨å¢žåŠ ä¸€æ¡è®°å½•ï¼šOperationä¸ºâ€œè¿½åŠ â€ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºå—ç†äºº
-      å¦‚æžœå½“å‰ç”¨æˆ·ä¸ä¸ºæå‡ºäººï¼šT_Problemè¡¨å¢žåŠ ä¸€æ¡è®°å½•ï¼ŒveråŠ 1ï¼ˆå¢žåŠ è®°å½•åªè¦numï¼Œverï¼Œcontentsï¼Œæäº¤æ—¶é—´ï¼Œfilesï¼Œæäº¤äºº,picï¼‰
-        ä¿®æ”¹ver0çš„å¤‡æ³¨ï¼Œlevelï¼›T_Messageè¡¨å¢žåŠ ä¸¤æ¡è®°å½•ï¼š
-        1.operationä¸ºè¿½åŠ ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºæå‡ºäººã€‚2.operationä¸ºâ€œè¿½åŠ â€ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºå—ç†äººã€‚
-    2). å¦‚æžœå—ç†äººæ”¹å˜
-    å¦‚æžœcontentsä¸ºç©ºï¼šT_Problemè¡¨ä¿®æ”¹å—ç†äººï¼Œä¿®æ”¹ver0çš„å¤‡æ³¨ï¼Œlevelï¼›T_Messageè¡¨å¢žåŠ ä¸¤æ¡è®°å½• ï¼š
-      1.operationä¸ºåˆ†é…ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºå—ç†äººã€‚2.operationä¸ºâ€œå–æ¶ˆåˆ†é…â€æ¶ˆæ¯æŽ¥æ”¶äººä¸ºå‰å—ç†äººã€‚
-    å¦‚æžœcontentsæœ‰å†…å®¹ï¼šT_Problemè¡¨ä¿®æ”¹å—ç†äººï¼ŒveråŠ 1ï¼ˆå¢žåŠ è®°å½•åªè¦numï¼Œverï¼Œcontentsï¼Œæäº¤æ—¶é—´ï¼Œfilesï¼Œæäº¤äºº,picï¼‰
-      ä¿®æ”¹ver0çš„å¤‡æ³¨ï¼Œlevelï¼›T_Messageè¡¨å¢žåŠ ä¸‰æ¡è®°å½•ï¼š
-      1.operationä¸ºåˆ†é…ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºå—ç†äººã€‚
-      2.operationä¸ºå–æ¶ˆåˆ†é…ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºå‰å—ç†äººã€‚
-      3.operationä¸ºè¿½åŠ ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºæå‡ºäººã€‚
-  2.è¯¥é—®é¢˜æ²¡æœ‰å—ç†äºº
-    å¦‚æžœcontentsä¸ºç©ºï¼šT_Problemè¡¨ä¿®æ”¹å—ç†äººï¼ˆå¿…å¡«ï¼‰ï¼Œé—®é¢˜ç´§æ€¥åº¦ï¼ˆå¿…å¡«ï¼‰ï¼Œä¿®æ”¹ver0çš„å¤‡æ³¨ï¼Œlevelï¼›
-      T_Messageè¡¨å¢žåŠ ä¸€æ¡è®°å½•ï¼šoperationä¸ºåˆ†é…ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºå—ç†äºº
-    å¦‚æžœcontentsæœ‰å†…å®¹ï¼š
-      å¦‚æžœå½“å‰ç”¨æˆ·ä¸ºæå‡ºäººï¼šT_Problemè¡¨ä¿®æ”¹å—ç†äººï¼ˆå¿…å¡«ï¼‰ï¼Œé—®é¢˜ç´§æ€¥åº¦ï¼ˆå¿…å¡«ï¼‰ï¼ŒT_Problemè¡¨å¢žåŠ ä¸€æ¡è®°å½•ï¼ŒveråŠ 1
-        ï¼ˆå¢žåŠ è®°å½•åªè¦numï¼Œverï¼Œcontentsï¼Œæäº¤æ—¶é—´ï¼Œfilesï¼Œæäº¤äºº,picï¼‰ä¿®æ”¹ver0çš„å¤‡æ³¨ï¼Œlevelï¼›
-        T_Messageè¡¨å¢žåŠ ä¸€æ¡è®°å½•ï¼šOperationä¸ºâ€œåˆ†é…â€ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºå—ç†äºº
-      å¦‚æžœå½“å‰ç”¨æˆ·ä¸ä¸ºæå‡ºäººï¼šT_Problemè¡¨ä¿®æ”¹å—ç†äººï¼ˆå¿…å¡«ï¼‰ï¼Œé—®é¢˜ç´§æ€¥åº¦ï¼ˆå¿…å¡«ï¼‰ï¼ŒT_Problemè¡¨å¢žåŠ ä¸€æ¡è®°å½•ï¼ŒveråŠ 1
-        ï¼ˆå¢žåŠ è®°å½•åªè¦numï¼Œverï¼Œcontentsï¼Œæäº¤æ—¶é—´ï¼Œfilesï¼Œæäº¤äºº,picï¼‰ä¿®æ”¹ver0çš„å¤‡æ³¨ï¼Œlevelï¼›
-        T_Messageè¡¨å¢žåŠ ä¸¤æ¡è®°å½•ï¼š1.operationä¸ºè¿½åŠ ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºæå‡ºäººã€‚2.operationä¸ºâ€œåˆ†é…â€ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºå—ç†äººã€‚
+ÎÊÌâÈç¹ûÒÑÑéÊÕ£º²»ÄÜÌá½»
+ÎÊÌâÈç¹ûÃ»ÑéÊÕ£º
+  1. ¸ÃÎÊÌâÓÐÊÜÀíÈË
+    1). Èç¹ûÊÜÀíÈË²»±ä
+    Èç¹ûcontentsÎª¿Õ£ºT_Problem±íÐÞ¸Äver0µÄ±¸×¢£¬level¡£
+    Èç¹ûcontentsÓÐÄÚÈÝ£º
+      Èç¹ûµ±Ç°ÓÃ»§ÎªÌá³öÈË£ºT_Problem±íÔö¼ÓÒ»Ìõ¼ÇÂ¼£¬ver¼Ó1£¨Ôö¼Ó¼ÇÂ¼Ö»Òªnum£¬ver£¬contents£¬Ìá½»Ê±¼ä£¬files£¬Ìá½»ÈË,pic£©
+        ÐÞ¸Äver0µÄ±¸×¢£¬level£»T_Message±íÔö¼ÓÒ»Ìõ¼ÇÂ¼£ºOperationÎª¡°×·¼Ó¡±£¬ÏûÏ¢½ÓÊÕÈËÎªÊÜÀíÈË
+      Èç¹ûµ±Ç°ÓÃ»§²»ÎªÌá³öÈË£ºT_Problem±íÔö¼ÓÒ»Ìõ¼ÇÂ¼£¬ver¼Ó1£¨Ôö¼Ó¼ÇÂ¼Ö»Òªnum£¬ver£¬contents£¬Ìá½»Ê±¼ä£¬files£¬Ìá½»ÈË,pic£©
+        ÐÞ¸Äver0µÄ±¸×¢£¬level£»T_Message±íÔö¼ÓÁ½Ìõ¼ÇÂ¼£º
+        1.operationÎª×·¼Ó£¬ÏûÏ¢½ÓÊÕÈËÎªÌá³öÈË¡£2.operationÎª¡°×·¼Ó¡±£¬ÏûÏ¢½ÓÊÕÈËÎªÊÜÀíÈË¡£
+    2). Èç¹ûÊÜÀíÈË¸Ä±ä
+    Èç¹ûcontentsÎª¿Õ£ºT_Problem±íÐÞ¸ÄÊÜÀíÈË£¬ÐÞ¸Äver0µÄ±¸×¢£¬level£»T_Message±íÔö¼ÓÁ½Ìõ¼ÇÂ¼ £º
+      1.operationÎª·ÖÅä£¬ÏûÏ¢½ÓÊÕÈËÎªÊÜÀíÈË¡£2.operationÎª¡°È¡Ïû·ÖÅä¡±ÏûÏ¢½ÓÊÕÈËÎªÇ°ÊÜÀíÈË¡£
+    Èç¹ûcontentsÓÐÄÚÈÝ£ºT_Problem±íÐÞ¸ÄÊÜÀíÈË£¬ver¼Ó1£¨Ôö¼Ó¼ÇÂ¼Ö»Òªnum£¬ver£¬contents£¬Ìá½»Ê±¼ä£¬files£¬Ìá½»ÈË,pic£©
+      ÐÞ¸Äver0µÄ±¸×¢£¬level£»T_Message±íÔö¼ÓÈýÌõ¼ÇÂ¼£º
+      1.operationÎª·ÖÅä£¬ÏûÏ¢½ÓÊÕÈËÎªÊÜÀíÈË¡£
+      2.operationÎªÈ¡Ïû·ÖÅä£¬ÏûÏ¢½ÓÊÕÈËÎªÇ°ÊÜÀíÈË¡£
+      3.operationÎª×·¼Ó£¬ÏûÏ¢½ÓÊÕÈËÎªÌá³öÈË¡£
+  2.¸ÃÎÊÌâÃ»ÓÐÊÜÀíÈË
+    Èç¹ûcontentsÎª¿Õ£ºT_Problem±íÐÞ¸ÄÊÜÀíÈË£¨±ØÌî£©£¬ÎÊÌâ½ô¼±¶È£¨±ØÌî£©£¬ÐÞ¸Äver0µÄ±¸×¢£¬level£»
+      T_Message±íÔö¼ÓÒ»Ìõ¼ÇÂ¼£ºoperationÎª·ÖÅä£¬ÏûÏ¢½ÓÊÕÈËÎªÊÜÀíÈË
+    Èç¹ûcontentsÓÐÄÚÈÝ£º
+      Èç¹ûµ±Ç°ÓÃ»§ÎªÌá³öÈË£ºT_Problem±íÐÞ¸ÄÊÜÀíÈË£¨±ØÌî£©£¬ÎÊÌâ½ô¼±¶È£¨±ØÌî£©£¬T_Problem±íÔö¼ÓÒ»Ìõ¼ÇÂ¼£¬ver¼Ó1
+        £¨Ôö¼Ó¼ÇÂ¼Ö»Òªnum£¬ver£¬contents£¬Ìá½»Ê±¼ä£¬files£¬Ìá½»ÈË,pic£©ÐÞ¸Äver0µÄ±¸×¢£¬level£»
+        T_Message±íÔö¼ÓÒ»Ìõ¼ÇÂ¼£ºOperationÎª¡°·ÖÅä¡±£¬ÏûÏ¢½ÓÊÕÈËÎªÊÜÀíÈË
+      Èç¹ûµ±Ç°ÓÃ»§²»ÎªÌá³öÈË£ºT_Problem±íÐÞ¸ÄÊÜÀíÈË£¨±ØÌî£©£¬ÎÊÌâ½ô¼±¶È£¨±ØÌî£©£¬T_Problem±íÔö¼ÓÒ»Ìõ¼ÇÂ¼£¬ver¼Ó1
+        £¨Ôö¼Ó¼ÇÂ¼Ö»Òªnum£¬ver£¬contents£¬Ìá½»Ê±¼ä£¬files£¬Ìá½»ÈË,pic£©ÐÞ¸Äver0µÄ±¸×¢£¬level£»
+        T_Message±íÔö¼ÓÁ½Ìõ¼ÇÂ¼£º1.operationÎª×·¼Ó£¬ÏûÏ¢½ÓÊÕÈËÎªÌá³öÈË¡£2.operationÎª¡°·ÖÅä¡±£¬ÏûÏ¢½ÓÊÕÈËÎªÊÜÀíÈË¡£
         
-æœåŠ¡å·ï¼šWS_00007
-å‚æ•°ï¼š{executor:,num:,contents:,remarks:,level:,files:}-----å—ç†äººã€é—®é¢˜ç¼–å·ã€è¿½åŠ é—®é¢˜é—®é¢˜ã€å¤‡æ³¨ã€é—®é¢˜ç´§æ€¥åº¦,æ–‡ä»¶
-æ–°å¢žæ¶ˆæ¯åˆ°æ¶ˆæ¯æé†’è¡¨ï¼ˆT_Messageï¼‰
-è¿”å›žï¼šjson,
-ret={id:0}è¿”å›žå¤±è´¥
+·þÎñºÅ£ºWS_00007
+²ÎÊý£º{executor:,num:,contents:,remarks:,level:,files:}-----ÊÜÀíÈË¡¢ÎÊÌâ±àºÅ¡¢×·¼ÓÎÊÌâÎÊÌâ¡¢±¸×¢¡¢ÎÊÌâ½ô¼±¶È,ÎÄ¼þ
+ÐÂÔöÏûÏ¢µ½ÏûÏ¢ÌáÐÑ±í£¨T_Message£©
+·µ»Ø£ºjson,
+ret={id:0}·µ»ØÊ§°Ü
 
-8. éªŒæ”¶(done)
-é—®é¢˜è§£å†³å®Œæ”¾åˆ°åŽ†å²é—®é¢˜å’Œæäº¤åˆ°æ¶ˆæ¯æé†’è¡¨ï¼ˆT_Messageï¼‰
-æœåŠ¡å·ï¼šWS_00008
-å‚æ•°ï¼š{num:}-----é—®é¢˜ç¼–å·ï¼ˆéªŒæ”¶çŠ¶æ€ä¸º1ï¼‰
-æ–°å¢žæ¶ˆæ¯åˆ°æ¶ˆæ¯æé†’è¡¨ï¼ˆT_Messageï¼‰
-æ“ä½œï¼šèŽ·å–å½“å‰æ—¶é—´ï¼Œstsé»˜è®¤ä¸º0ï¼ŒéªŒæ”¶äººåªèƒ½ä¸ºé—®é¢˜æ–°å¢žäººï¼Œoperationä¸ºéªŒæ”¶ï¼Œæ¶ˆæ¯æŽ¥æ”¶äººä¸ºæ‰€æœ‰è¿½åŠ è¿‡é—®é¢˜çš„äºº+é™ˆå·¥
-å‚æ•°ï¼š{}
-è¿”å›žï¼šjson,
-ret={id:1}è¿”å›žå¤±è´¥
+8. ÑéÊÕ(done)
+ÎÊÌâ½â¾öÍê·Åµ½ÀúÊ·ÎÊÌâºÍÌá½»µ½ÏûÏ¢ÌáÐÑ±í£¨T_Message£©
+·þÎñºÅ£ºWS_00008
+²ÎÊý£º{num:}-----ÎÊÌâ±àºÅ£¨ÑéÊÕ×´Ì¬Îª1£©
+ÐÂÔöÏûÏ¢µ½ÏûÏ¢ÌáÐÑ±í£¨T_Message£©
+²Ù×÷£º»ñÈ¡µ±Ç°Ê±¼ä£¬stsÄ¬ÈÏÎª0£¬ÑéÊÕÈËÖ»ÄÜÎªÎÊÌâÐÂÔöÈË£¬operationÎªÑéÊÕ£¬ÏûÏ¢½ÓÊÕÈËÎªËùÓÐ×·¼Ó¹ýÎÊÌâµÄÈË+³Â¹¤
+²ÎÊý£º{}
+·µ»Ø£ºjson,
+ret={id:1}·µ»ØÊ§°Ü
 
-9. æŸ¥è¯¢æ–°æ¶ˆæ¯æé†’(done)
-åœ¨æ¶ˆæ¯æé†’è¡¨ï¼ˆT_Messageï¼‰æŸ¥æ‰¾æ•°æ®
-æ“ä½œï¼šæ ¹æ®stsçš„å€¼è¿”å›žæœªè¯»æˆ–è€…å·²è¯»çš„æ¶ˆæ¯ï¼Œ0æ˜¯æœªè¯»ï¼Œ1æ˜¯å·²è¯»
-æœåŠ¡å·ï¼šWS_00009
-å‚æ•°ï¼š{sts:}---çŠ¶æ€
-è¿”å›žï¼šjson,æ ¹æ®æå‡ºæ—¶é—´å€’åºæŽ’åˆ—
-ret={title,username,date,operation} ---æ ‡é¢˜ï¼Œæ“ä½œäººï¼Œæ“ä½œæ—¶é—´ï¼Œæ“ä½œ
-ret={id:0}è¿”å›žå¤±è´¥
+9. ²éÑ¯ÐÂÏûÏ¢ÌáÐÑ(done)
+ÔÚÏûÏ¢ÌáÐÑ±í£¨T_Message£©²éÕÒÊý¾Ý
+²Ù×÷£º¸ù¾ÝstsµÄÖµ·µ»ØÎ´¶Á»òÕßÒÑ¶ÁµÄÏûÏ¢£¬0ÊÇÎ´¶Á£¬1ÊÇÒÑ¶Á
+·þÎñºÅ£ºWS_00009
+²ÎÊý£º{sts:}---×´Ì¬
+·µ»Ø£ºjson,¸ù¾ÝÌá³öÊ±¼äµ¹ÐòÅÅÁÐ
+ret={title,username,date,operation} ---±êÌâ£¬²Ù×÷ÈË£¬²Ù×÷Ê±¼ä£¬²Ù×÷
+ret={id:0}·µ»ØÊ§°Ü
 
-10. æŸ¥æ‰¾ç”¨æˆ·å(done)
-åœ¨æ–‡ä»¶æŸ¥æ‰¾ç”¨æˆ·å
-æ“ä½œï¼šè°ƒç”¨æœåŠ¡è¿”å›žæ‰€æœ‰çš„ç”¨æˆ·å
-æœåŠ¡å·ï¼šWS_00010
-å‚æ•°ï¼š{}
-è¿”å›žï¼šjson,
-ret={username}---è¿”å›žæ‰€æœ‰çš„ç”¨æˆ·å
-ret={id:0}è¿”å›žå¤±è´¥
+10. ²éÕÒÓÃ»§Ãû(done)
+ÔÚÎÄ¼þ²éÕÒÓÃ»§Ãû
+²Ù×÷£ºµ÷ÓÃ·þÎñ·µ»ØËùÓÐµÄÓÃ»§Ãû
+·þÎñºÅ£ºWS_00010
+²ÎÊý£º{}
+·µ»Ø£ºjson,
+ret={username}---·µ»ØËùÓÐµÄÓÃ»§Ãû
+ret={id:0}·µ»ØÊ§°Ü
 
-11.æ–°å¢žçŸ¥è¯†ç‚¹
-æ–°å¢žçŸ¥è¯†ç‚¹åˆ°é—®é¢˜åº“è¡¨ï¼ˆé—®é¢˜åº“è¡¨(T_ Problem)ï¼‰
-æœåŠ¡å·ï¼šWS_00011
-å‚æ•°ï¼š{title:,content:,pic,files:}---æ ‡é¢˜ã€å†…å®¹ã€æ–‡ä»¶
-æ“ä½œï¼šåŽå°èŽ·å–æäº¤çš„æ—¶é—´ï¼ŒknowledgeçŠ¶æ€æ”¹ä¸º1
-ä¿å­˜ï¼šç¼–å·ï¼Œåç§°ï¼Œå†…å®¹ï¼Œæ–‡ä»¶ï¼Œå›¾ç‰‡ï¼Œæå‡ºäººï¼Œæäº¤æ—¶é—´
-æå‡ºäººä¸ºusernameï¼Œå°±æ˜¯å½“å‰ç™»å½•çš„
-åŽå°
-è¿”å›žï¼šjson,
-ret={id:0}è¿”å›žå¤±è´¥
+11.ÐÂÔöÖªÊ¶µã
+ÐÂÔöÖªÊ¶µãµ½ÎÊÌâ¿â±í£¨ÎÊÌâ¿â±í(T_ Problem)£©
+·þÎñºÅ£ºWS_00011
+²ÎÊý£º{title:,content:,pic,files:}---±êÌâ¡¢ÄÚÈÝ¡¢ÎÄ¼þ
+²Ù×÷£ººóÌ¨»ñÈ¡Ìá½»µÄÊ±¼ä£¬knowledge×´Ì¬¸ÄÎª1
+±£´æ£º±àºÅ£¬Ãû³Æ£¬ÄÚÈÝ£¬ÎÄ¼þ£¬Í¼Æ¬£¬Ìá³öÈË£¬Ìá½»Ê±¼ä
+Ìá³öÈËÎªusername£¬¾ÍÊÇµ±Ç°µÇÂ¼µÄ
+ºóÌ¨
+·µ»Ø£ºjson,
+ret={id:0}·µ»ØÊ§°Ü
 
-12.çŸ¥è¯†åº“æ€»è§ˆ
-èŽ·å–æ‰€æœ‰çŸ¥è¯†ç‚¹åç§°ã€çŸ¥è¯†ç‚¹ç¼–å·ã€æå‡ºäººã€æå‡ºæ—¶é—´ã€å¤‡æ³¨
-æ“ä½œï¼šè¿”å›žæ‰€æœ‰knowledgeçŠ¶æ€ä¸º1çš„æ•°æ®
-æœåŠ¡å·ï¼šWS_00012
-å‚æ•°ï¼š{}
-è¿”å›žï¼šjson,æ ¹æ®æå‡ºæ—¶é—´å€’åºæŽ’åˆ—
-ret={num:,title:,content:,remarks:,introducer:,submittime:}---ç¼–å·ã€åç§°ã€å†…å®¹ã€å¤‡æ³¨ã€æå‡ºäººã€æäº¤æ—¶é—´
-ret={id:0}è¿”å›žå¤±è´¥
+12.ÖªÊ¶¿â×ÜÀÀ
+»ñÈ¡ËùÓÐÖªÊ¶µãÃû³Æ¡¢ÖªÊ¶µã±àºÅ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢±¸×¢
+²Ù×÷£º·µ»ØËùÓÐknowledge×´Ì¬Îª1µÄÊý¾Ý
+·þÎñºÅ£ºWS_00012
+²ÎÊý£º{}
+·µ»Ø£ºjson,¸ù¾ÝÌá³öÊ±¼äµ¹ÐòÅÅÁÐ
+ret={num:,title:,content:,remarks:,introducer:,submittime:}---±àºÅ¡¢Ãû³Æ¡¢ÄÚÈÝ¡¢±¸×¢¡¢Ìá³öÈË¡¢Ìá½»Ê±¼ä
+ret={id:0}·µ»ØÊ§°Ü
 
-13.æäº¤åˆ°çŸ¥è¯†åº“
-æŠŠå·²è§£å†³çš„é—®é¢˜æäº¤åˆ°çŸ¥è¯†åº“
-ä¿å­˜ï¼šç¼–å·ï¼Œåç§°ï¼Œå†…å®¹ï¼Œå¤‡æ³¨ï¼Œæå‡ºäººï¼Œæ–‡ä»¶ï¼Œæäº¤æ—¶é—´
-æ“ä½œï¼šProblemStateçŠ¶æ€æ˜¯å¦éªŒæ”¶ï¼š
-	å¦‚æžœæœªéªŒæ”¶ï¼šret={id:0}è¿”å›žå¤±è´¥
-	å¦‚æžœå·²éªŒæ”¶ï¼šknowledgeæ”¹ä¸º1
-æœåŠ¡å·ï¼šWS_00013
-å‚æ•°ï¼š{num}---ç¼–å·
-è¿”å›žï¼šjson,
-ret={id:0}è¿”å›žå¤±è´¥
+13.Ìá½»µ½ÖªÊ¶¿â
+°ÑÒÑ½â¾öµÄÎÊÌâÌá½»µ½ÖªÊ¶¿â
+±£´æ£º±àºÅ£¬Ãû³Æ£¬ÄÚÈÝ£¬±¸×¢£¬Ìá³öÈË£¬ÎÄ¼þ£¬Ìá½»Ê±¼ä
+²Ù×÷£ºProblemState×´Ì¬ÊÇ·ñÑéÊÕ£º
+	Èç¹ûÎ´ÑéÊÕ£ºret={id:0}·µ»ØÊ§°Ü
+	Èç¹ûÒÑÑéÊÕ£ºknowledge¸ÄÎª1
+·þÎñºÅ£ºWS_00013
+²ÎÊý£º{num}---±àºÅ
+·µ»Ø£ºjson,
+ret={id:0}·µ»ØÊ§°Ü
 
-14.åˆ é™¤é—®é¢˜
-æŠŠæˆ‘è¯¯æäº¤çš„é—®é¢˜åˆ é™¤(åªèƒ½åˆ é™¤å½“å‰ç”¨æˆ·æå‡ºçš„é—®é¢˜)
-æœåŠ¡å·ï¼šWS_00014
-å‚æ•°ï¼š{num}---é—®é¢˜ç¼–å·
-æ“ä½œï¼šåˆ é™¤numé‚£æ¡æ•°æ®
-è¿”å›žï¼šjson,
-ret={id:0}è¿”å›žå¤±è´¥
+14.É¾³ýÎÊÌâ
+°ÑÎÒÎóÌá½»µÄÎÊÌâÉ¾³ý(Ö»ÄÜÉ¾³ýµ±Ç°ÓÃ»§Ìá³öµÄÎÊÌâ)
+·þÎñºÅ£ºWS_00014
+²ÎÊý£º{num}---ÎÊÌâ±àºÅ
+²Ù×÷£ºÉ¾³ýnumÄÇÌõÊý¾Ý
+·µ»Ø£ºjson,
+ret={id:0}·µ»ØÊ§°Ü
+
+15.É¸Ñ¡ÎÊÌâÀà±ð
+·þÎñºÅ£ºWS_00014
+²ÎÊý£º{category:}---ÎÊÌâÀà±ð
+²Ù×÷£º¸ù¾Ý²ÎÊýÉ¸Ñ¡³öËùÓÐÍ¬Àà±ðµÄÎÊÌâ
+·µ»Ø£ºjson,
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge}--ÎÊÌâ±àºÅ¡¢±êÌâ¡¢Ìá³öÈË¡¢Ìá³öÊ±¼ä¡¢Ìá½»Ê±¼ä¡¢ÊÜÀíÈË¡¢ÑéÊÕÈË¡¢ÊÇ·ñÑéÊÕ¡¢ÑéÊÕÊ±¼ä¡¢ÊÇ·ñÌá½»µ½ÖªÊ¶¿â
+ret={id:0}·µ»ØÊ§°Ü
+
+17. ÐÂÔöÎÊÌâ(done)
+ÐÂÔöÎÊÌâµ½ÎÊÌâ¿â±í£¨ÎÊÌâ¿â±í(T_ Problem)£©
+·þÎñºÅ£ºWS_00017
+²ÎÊý£º{title:,content:,pic:,level:,files:,executor:}--±êÌâ¡¢ÄÚÈÝ¡¢ÉÏ´«Í¼Æ¬¡¢ÎÊÌâ½ô¼±¶È¡¢ÎÄ¼þ¡¢ÊÜÀíÈË
+Ìá³öÈËÎªusername£¬¾ÍÊÇµ±Ç°µÇÂ¼µÄÈË
+ÐÂÔöÏûÏ¢µ½ÏûÏ¢ÌáÐÑ±í£¨T_Message£©
+²ÎÊý£º{title:}--±êÌâ
+²Ù×÷£ºÏûÏ¢½ÓÊÕÈË£¨¹Ì¶¨£©£¬proposetime£¬operation£¨ÐÂÔö£©£¬µÇÂ¼ÓÃ»§£¬0
+·µ»Ø£ºjson,
+ret={id:0}·µ»ØÊ§°Ü
