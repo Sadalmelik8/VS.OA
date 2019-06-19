@@ -56,16 +56,29 @@ ret={id:0}返回失败
     1). 如果受理人不变
     如果contents为空：T_Problem表修改ver0的备注，level。
     如果contents有内容：
-      如果当前用户为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人,pic）修改ver0的备注，level；T_Message表增加一条记录：Operation为“追加”，消息接收人为受理人
-      如果当前用户不为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人,pic）修改ver0的备注，level；T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“追加”，消息接收人为受理人。
+      如果当前用户为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人,pic）
+        修改ver0的备注，level；T_Message表增加一条记录：Operation为“追加”，消息接收人为受理人
+      如果当前用户不为提出人：T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人,pic）
+        修改ver0的备注，level；T_Message表增加两条记录：
+        1.operation为追加，消息接收人为提出人。2.operation为“追加”，消息接收人为受理人。
     2). 如果受理人改变
-      如果contents为空：T_Problem表修改受理人，修改ver0的备注，level；T_Message表增加两条记录 ：1.operation为分配，消息接收人为受理人。2.operation为“取消分配”消息接收人为前受理人。
-      如果contents有内容：T_Problem表修改受理人，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人,pic）修改ver0的备注，level；T_Message表增加三条记录：1.operation为分配，消息接收人为受理人。2.operation为取消分配，消息接收人为前受理人。3.operation为追加，消息接收人为提出人。
+    如果contents为空：T_Problem表修改受理人，修改ver0的备注，level；T_Message表增加两条记录 ：
+      1.operation为分配，消息接收人为受理人。2.operation为“取消分配”消息接收人为前受理人。
+    如果contents有内容：T_Problem表修改受理人，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人,pic）
+      修改ver0的备注，level；T_Message表增加三条记录：
+      1.operation为分配，消息接收人为受理人。
+      2.operation为取消分配，消息接收人为前受理人。
+      3.operation为追加，消息接收人为提出人。
   2.该问题没有受理人
-    如果contents为空：T_Problem表修改受理人（必填），问题紧急度（必填），修改ver0的备注，level；T_Message表增加一条记录：operation为分配，消息接收人为受理人
+    如果contents为空：T_Problem表修改受理人（必填），问题紧急度（必填），修改ver0的备注，level；
+      T_Message表增加一条记录：operation为分配，消息接收人为受理人
     如果contents有内容：
-      如果当前用户为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人,pic）修改ver0的备注，level；T_Message表增加一条记录：Operation为“分配”，消息接收人为受理人
-      如果当前用户不为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1（增加记录只要num，ver，contents，提交时间，files，提交人,pic）修改ver0的备注，level；T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“分配”，消息接收人为受理人。
+      如果当前用户为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1
+        （增加记录只要num，ver，contents，提交时间，files，提交人,pic）修改ver0的备注，level；
+        T_Message表增加一条记录：Operation为“分配”，消息接收人为受理人
+      如果当前用户不为提出人：T_Problem表修改受理人（必填），问题紧急度（必填），T_Problem表增加一条记录，ver加1
+        （增加记录只要num，ver，contents，提交时间，files，提交人,pic）修改ver0的备注，level；
+        T_Message表增加两条记录：1.operation为追加，消息接收人为提出人。2.operation为“分配”，消息接收人为受理人。
         
 服务号：WS_00007
 参数：{executor:,num:,contents:,remarks:,level:,files:}-----受理人、问题编号、追加问题问题、备注、问题紧急度,文件
