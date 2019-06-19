@@ -90,7 +90,7 @@ $(document).ready(function () {
     }
     var fsession = session.fsession;
     var userName = session.User_NM;
-    var s = ("svr=WS_00010" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     $.ajax({
         type: "post", //请求的方式，也有get请求
@@ -176,9 +176,6 @@ $(document).ready(function () {
             $('#detailed').html(con);
             $('.firstpic').html(cond);
             $('.firstfile').html(conds);
-            //if (dataObj.ret[0].pic.split('!@#$%^&*')[0] == '') {
-            //    document.getElementsByClassName('pics')[0].style.display = 'none';
-            //}
             if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
                     cons += "<li class='detailed-icon' >"
