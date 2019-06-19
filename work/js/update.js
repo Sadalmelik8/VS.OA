@@ -409,9 +409,9 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result;
                 if (dataObj.ret.id == 0) {
-                    alert('失败');
+                    alert('验收人必须是提出人！');
                 } else {
-                    alert('成功');
+                    alert('验收成功');
                 }
             }
         });
