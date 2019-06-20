@@ -42,12 +42,25 @@
             contentType: false,
             dataType: "json", //json格式，后台返回的数据为json格式的。
             success: function (result) {
-                con = '';
+                let con = '';
                 dataObj = result;
-                $.each(dataObj.ret, function (index, item) {
-                    console.log(item);
-                })
-
+                $.each(dataObj.ret[1], function (index, item) {
+                    con += "<span class='system'>" +item[index]+ "</span>";
+                });
+                con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
+                $('.category').html(con);
+                $("#cancel").click(function () {
+                    category.style.display = 'none';
+                });
+                $(".system").click(function (e) {
+                    let type = e.target.innerHTML;
+                    con = '';
+                    $.each(dataObj.ret[0][type],function () {
+                        con += "<span class='subclass'>" + item[index] + "</span>";
+                    });
+                    con+= "<span class='subclass' id='return'>" +"返回"+ "</span>";
+                    $('.category').html(con);
+                });
             }
         });
         function buildJson() {
@@ -56,6 +69,7 @@
             // stdTemplate.num = oltid;
             // return stdTemplate;
         }
+
     });
     //$("#submit").click(function () {
     //    //获取fsession
