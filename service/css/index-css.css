@@ -37,12 +37,13 @@ body {
 #messge {
     margin-left: 69%;
 }
-table{
+
+table {
     width: 100%;
 }
 
-table tr td {
-}
+    table tr td {
+    }
 
 .tree {
     margin: 0;
@@ -171,10 +172,14 @@ table td {
 #hide {
     width: 20px;
     height: 20px;
+    margin-top: 330px;
+    cursor: pointer;
 }
-.icon{
+
+.icon {
     width: 80%;
 }
-.firsttd{
+
+.firsttd {
     width: 15vw;
 }
