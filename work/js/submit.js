@@ -26,6 +26,42 @@
         window.open('login.html', '_parent');
         return;
     }
+    let category = document.getElementsByClassName("category")[0];
+    let _click = document.getElementsByClassName('click')[0];
+    _click.click(function () {
+        category.style.display = "inline-block";
+        var fsession = session.fsession;
+        var userName = session.User_NM;
+        // _template1 = buildJson();
+        var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
+        var URL = "/webservice/?" + s;
+        // var form = new FormData();
+        // form.append("data", (JSON.stringify(_template1)));
+        $.ajax({
+            type: "post", //请求的方式，也有get请求
+            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+            contentType: "application/json",
+            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
+            cache: false,
+            processData: false,
+            contentType: false,
+            dataType: "json", //json格式，后台返回的数据为json格式的。
+            success: function (result) {
+                con = '';
+                dataObj = result;
+                $.each(dataObj.ret, function (index, item) {
+                    console.log(item);
+                })
+
+            }
+        });
+        function buildJson() {
+            // var std = JSON.stringify({});
+            // var stdTemplate = JSON.parse(std);
+            // stdTemplate.num = oltid;
+            // return stdTemplate;
+        }
+    });
     //$("#submit").click(function () {
     //    //获取fsession
     //    var aCookie = GetCookie('wytSession');
@@ -119,7 +155,7 @@
         }
         // 此时file就是我们的剪切板中的图片对象
         // 如果需要预览，可以执行下面代码
-        var reader = new FileReader()
+        var reader = new FileReader();
         reader.onload = function (event) {
             for (var i = 0; i < 6; i++) {
                 var img = document.getElementsByClassName('imgs')[i];
@@ -135,7 +171,7 @@
                     return;
                 }
             }
-        }
+        };
         reader.readAsDataURL(filed);
     });
     $(document).ready(function () {
@@ -152,7 +188,7 @@
             })
             return;
         })
-    })
+    });
     $("#submit").click(function () {
         //获取fsession
         let _title = document.getElementsByClassName('title')[0].value;
@@ -234,7 +270,7 @@
                 var stdTemplate = JSON.parse(std);
                 stdTemplate.title = title;//标题
                 stdTemplate.content = particular;//内容
-                stdTemplate.level = level;//紧急度                
+                stdTemplate.level = level;//紧急度
                 if (form.get("data") != null) {
                     if (file == "" && img != "") {
                         form.append("pic", img);
