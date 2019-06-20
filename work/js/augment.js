@@ -9,6 +9,23 @@ $(document).ready(function () {
             }
         }
     }
+    if (session) {
+        if (session.fsession == "undefined") {
+            window.open('login.html', '_parent');
+            return;
+        }
+        if (session.User_NM) {
+
+        }
+        else {
+            window.open('login.html', '_parent');
+            return;
+        }
+    }
+    else {
+        window.open('login.html', '_parent');
+        return;
+    }
     $("#submit").click(function () {
         //获取fsession
         var aCookie = GetCookie('wytSession');
