@@ -62,15 +62,16 @@
                 $("#cancel").click(function () {
                     category.style.display = 'none';
                 });
+                console.log(2);
                 $("#return").click(function () {
                     console.log(1);
-                    let con = '';
-                    dataObj = result;
-                    $.each(dataObj.ret[1], function (index, item) {
-                        con += "<span class='system'>" + item + "</span>";
-                    });
-                    con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
-                    $('.category').html(con);
+                    // let con = '';
+                    // dataObj = result;
+                    // $.each(dataObj.ret[1], function (index, item) {
+                    //     con += "<span class='system'>" + item + "</span>";
+                    // });
+                    // con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
+                    // $('.category').html(con);
                     // $(".system").click(function (e) {
                     //     let type = e.target.innerHTML;
                     //     con = '';
