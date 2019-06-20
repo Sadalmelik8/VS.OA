@@ -1,4 +1,14 @@
 ﻿let _click = function(){
+    //获取cookkie
+    function GetCookie(key) {
+        var aCookie = document.cookie.split("; ");
+        for (var i = 0; i < aCookie.length; i++) {
+            var aCrumb = aCookie[i].split("=");
+            if (key == aCrumb[0]) {
+                return unescape(aCrumb[1]);
+            }
+        }
+    }
     let category = document.getElementsByClassName("category")[0];
         category.style.display = "inline-block";
         //获取fsession
