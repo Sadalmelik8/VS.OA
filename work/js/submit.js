@@ -9,23 +9,6 @@
             }
         }
     }
-    if (session) {
-        if (session.fsession == "undefined") {
-            window.open('login.html', '_parent');
-            return;
-        }
-        if (session.User_NM) {
-
-        }
-        else {
-            window.open('login.html', '_parent');
-            return;
-        }
-    }
-    else {
-        window.open('login.html', '_parent');
-        return;
-    }
     let category = document.getElementsByClassName("category")[0];
     let _click = document.getElementsByClassName('click')[0];
     _click.click(function () {
