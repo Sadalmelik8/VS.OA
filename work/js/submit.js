@@ -10,8 +10,7 @@
         }
     }
     let category = document.getElementsByClassName("category")[0];
-    let _click = document.getElementsByClassName('click')[0];
-    _click.click(function () {
+    $("#click").click(function () {
         category.style.display = "inline-block";
         var fsession = session.fsession;
         var userName = session.User_NM;
