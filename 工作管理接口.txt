@@ -40,7 +40,7 @@ ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,proble
 当ver=0时
 ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,category:}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度、问题类别
 当 ver != 0 时
-ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,contents:[contents:,executor:,files:,submittime:,submitter:,category:]}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度，追加问题:[追加问题、受理人、图片、提交时间、提交人、问题类别]
+ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,category:,contents:[contents:,executor:,files:,submittime:,submitter:]}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度，问题类别,追加问题:[追加问题、受理人、图片、提交时间、提交人、问题类别]
 ret={id:0}返回失败
 
 7. 提交(done)
