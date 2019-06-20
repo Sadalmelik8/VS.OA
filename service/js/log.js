@@ -148,7 +148,7 @@ $(document).ready(function () {
         },
         success: function (result) {
             var dataObj = result;
-            if (dataObj.ret.ls.length = 0) {
+            if (dataObj.ret.ls.length == 0) {
                 alert('当天没有服务日志');
             }
             var con = '';
@@ -203,7 +203,7 @@ $(document).ready(function () {
             },
             success: function (result) {
                 var dataObj = result;
-                if (dataObj.ret.ls.length = 0) {
+                if (dataObj.ret.ls.length == 0) {
                     alert('当天没有服务日志');
                 }
                 var con = '';
