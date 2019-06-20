@@ -63,6 +63,7 @@
                     category.style.display = 'none';
                 });
                 $("#return").click(function () {
+                    console.log(1);
                     let con = '';
                     dataObj = result;
                     $.each(dataObj.ret[1], function (index, item) {
