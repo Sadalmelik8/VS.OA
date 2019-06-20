@@ -90,7 +90,7 @@ $(document).ready(function () {
     }
     var fsession = session.fsession;
     var userName = session.User_NM;
-    var s = ("svr=WS_00006" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = ("svr=WS_00010" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     $.ajax({
         type: "post", //请求的方式，也有get请求
