@@ -72,10 +72,10 @@
                             $.each(dataObj.ret[0][type],function (index, item) {
                                 con += "<span class='subclass'>" + item + "</span>";
                             });
-                            con+= "<span class='subclass' id='return'>" +"返回"+ "</span>";
+                            con+= "<span class='subclass' id='back'>" +"返回"+ "</span>";
                             $('.category').html(con);
                         });
-                        
+
 
                     });
                     $(".subclass").click(function (e) {
