@@ -73,19 +73,19 @@ $(document).ready(function () {
     session = eval('(' + aCookie + ')');
     if (session) {
         if (session.fsession == "undefined") {
-            window.open('login.html', '_self');
+            window.open('login.html', '_parent');
             return;
         }
         if (session.User_NM) {
 
         }
         else {
-            window.open('login.html', '_self');
+            window.open('login.html', '_parent');
             return;
         }
     }
     else {
-        window.open('login.html', '_self');
+        window.open('login.html', '_parent');
         return;
     }
     var fsession = session.fsession;
@@ -335,7 +335,7 @@ $(document).ready(function () {
                 success: function (msg) {
                     if (msg.ret.id == '1') {
                         alert('上传成功');
-                        window.open('problem.html', '_self');
+                        window.open('problem.html', '_parent');
                     } else {
                         alert('上传失败');
                     }

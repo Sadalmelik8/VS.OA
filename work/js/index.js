@@ -31,19 +31,19 @@ $(document).ready(function () {
     session = eval('(' + aCookie + ')');
     //if (session) {
     //    if (session.fsession == "undefined") {
-    //        window.open('login.html', '_self');
+    //        window.open('login.html', '_parent');
     //        return;
     //    }
     //    if (session.User_NM) {
     //        document.getElementById('user').innerText = session.User_NM;
     //    }
     //    else {
-    //        window.open('login.html', '_self');
+    //        window.open('login.html', '_parent');
     //        return;
     //    }
     //}
     //else {
-    //    window.open('login.html', '_self');
+    //    window.open('login.html', '_parent');
     //    return;
     //}
 
@@ -114,12 +114,12 @@ $(document).ready(function () {
         session = eval('(' + aCookie + ')');
         if (session) {
             if (session.fsession == "undefined") {
-                window.open('login.html', '_self');
+                window.open('login.html', '_parent');
                 return;
             }
         }
         else {
-            window.open('login.html', '_self');
+            window.open('login.html', '_parent');
             return;
         }
         function buildJson() {
@@ -317,7 +317,7 @@ function clearAllCookie() {
         for (var i = keys.length; i--;)
             document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
     }
-    window.open('problem.html', '_self');
+    window.open('problem.html', '_parent');
 }
 function hide() {
     var a = document.getElementById("hide");

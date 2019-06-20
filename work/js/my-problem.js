@@ -1009,19 +1009,19 @@ var call = function () {
     session = eval('(' + aCookie + ')');
     if (session) {
         if (session.fsession == "undefined") {
-            window.open('login.html', '_self');
+            window.open('login.html', '_parent');
             return;
         }
         if (session.User_NM) {
 
         }
         else {
-            window.open('login.html', '_self');
+            window.open('login.html', '_parent');
             return;
         }
     }
     else {
-        window.open('login.html', '_self');
+        window.open('login.html', '_parent');
         return;
     }
     var fsession = session.fsession;
@@ -1064,12 +1064,12 @@ $(document).ready(function () {
     session = eval('(' + aCookie + ')');
     if (session) {
         if (session.fsession == "undefined") {
-            window.open('login.html', '_self');
+            window.open('login.html', '_parent');
             return;
         }
     }
     else {
-        window.open('login.html', '_self');
+        window.open('login.html', '_parent');
         return;
     }
     var fsession = session.fsession;
@@ -1266,12 +1266,12 @@ $(document).ready(function () {
         session = eval('(' + aCookie + ')');
         if (session) {
             if (session.fsession == "undefined") {
-                window.open('login.html', '_self');
+                window.open('login.html', '_parent');
                 return;
             }
         }
         else {
-            window.open('login.html', '_self');
+            window.open('login.html', '_parent');
             return;
         }
         var fsession = session.fsession;
@@ -1374,12 +1374,12 @@ $(document).ready(function () {
             session = eval('(' + aCookie + ')');
             if (session) {
                 if (session.fsession == "undefined") {
-                    window.open('login.html', '_self');
+                    window.open('login.html', '_parent');
                     return;
                 }
             }
             else {
-                window.open('login.html', '_self');
+                window.open('login.html', '_parent');
                 return;
             }
             var fsession = session.fsession;
@@ -1424,12 +1424,12 @@ $(document).ready(function () {
             session = eval('(' + aCookie + ')');
             if (session) {
                 if (session.fsession == "undefined") {
-                    window.open('login.html', '_self');
+                    window.open('login.html', '_parent');
                     return;
                 }
             }
             else {
-                window.open('login.html', '_self');
+                window.open('login.html', '_parent');
                 return;
             }
             var fsession = session.fsession;
@@ -1474,12 +1474,12 @@ $(document).ready(function () {
             session = eval('(' + aCookie + ')');
             if (session) {
                 if (session.fsession == "undefined") {
-                    window.open('login.html', '_self');
+                    window.open('login.html', '_parent');
                     return;
                 }
             }
             else {
-                window.open('login.html', '_self');
+                window.open('login.html', '_parent');
                 return;
             }
             var fsession = session.fsession;
