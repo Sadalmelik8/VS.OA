@@ -144,6 +144,9 @@ textarea {
 #cancel{
     background: #b10000;
     color: white;
+    position: absolute;
+    top: 160px;
+    left: 200px;
 }
 #cancel:hover{
     background: #830000;
@@ -164,7 +167,7 @@ textarea {
     cursor: pointer
 }
 #return{
-    background: #b10000;
+    background: #a90000;
     color: white;
     position: absolute;
     top: 160px;
