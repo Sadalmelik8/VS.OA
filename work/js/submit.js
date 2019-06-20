@@ -84,7 +84,10 @@
                         con+= "<span class='subclass' id='return'>" +"返回"+ "</span>";
                         $('.category').html(con);
                     });
-                })
+                });
+                $(".subclass").click(function (e) {
+                    document.getElementById("click").innerHTML = e.target.innerHTML;
+                });
             }
         });
         function buildJson() {
