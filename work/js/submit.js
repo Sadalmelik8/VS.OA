@@ -87,157 +87,80 @@ $(document).ready(function () {
             }
         }
     }
-    _click();
-    // let category = document.getElementsByClassName("category")[0];
-    // $("#click").click(function () {
-    //     category.style.display = "inline-block";
-    //        //获取fsession
-    //        var aCookie = GetCookie('wytSession');
-    //        session = eval('(' + aCookie + ')');
-    //        if (session) {
-    //            if (session.fsession == "undefined") {
-    //                window.open('login.html', '_parent');
-    //                return;
-    //            }
-    //        }
-    //        else {
-    //            window.open('login.html', '_parent');
-    //            return;
-    //        }
-    //     var fsession = session.fsession;
-    //     var userName = session.User_NM;
-    //     // _template1 = buildJson();
-    //     var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
-    //     var URL = "/webservice/?" + s;
-    //     // var form = new FormData();
-    //     // form.append("data", (JSON.stringify(_template1)));
-    //     $.ajax({
-    //         type: "post", //请求的方式，也有get请求
-    //         url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-    //         contentType: "application/json",
-    //         data: {},//data是传给后台的字段，后台需要哪些就传入哪些
-    //         cache: false,
-    //         processData: false,
-    //         contentType: false,
-    //         dataType: "json", //json格式，后台返回的数据为json格式的。
-    //         success: function (result) {
-    //             let con = '';
-    //             dataObj = result;
-    //             $.each(dataObj.ret[1], function (index, item) {
-    //                 con += "<span class='system'>" + item + "</span>";
-    //             });
-    //             con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
-    //             $('.category').html(con);
-    //
-    //             $(".system").click(function (e) {
-    //                 let type = e.target.innerHTML;
-    //                 con = '';
-    //                 $.each(dataObj.ret[0][type],function (index, item) {
-    //                     con += "<span class='subclass'>" + item + "</span>";
-    //                 });
-    //                 con+= "<span class='subclass' id='back'>" +"返回"+ "</span>";
-    //                 $('.category').html(con);
-    //                 $("#back").click(function () {
-    //
-    //                 });
-    //                 $(".subclass").click(function (e) {
-    //                     if (e.target.innerHTML == '返回') {
-    //                         document.getElementById("click").innerHTML = "请选择问题类别";
-    //                     }else {
-    //                         document.getElementById("click").innerHTML = e.target.innerHTML;
-    //                         document.getElementsByClassName("category")[0].style.display = 'none';
-    //                     }
-    //                 });
-    //             });
-    //             $("#cancel").click(function () {
-    //                 category.style.display = 'none';
-    //             });
-    //             console.log(2);
-    //             // $("#back").click(function () {
-    //             //     console.log(1);
-    //             // });
-    //
-    //         }
-    //     });
-    //     function buildJson() {
-    //         // var std = JSON.stringify({});
-    //         // var stdTemplate = JSON.parse(std);
-    //         // stdTemplate.num = oltid;
-    //         // return stdTemplate;
-    //     }
-    //
-    // });
-    //$("#submit").click(function () {
-    //    //获取fsession
-    //    var aCookie = GetCookie('wytSession');
-    //    session = eval('(' + aCookie + ')');
-    //    if (session) {
-    //        if (session.fsession == "undefined") {
-    //            window.open('login.html', '_parent');
-    //            return;
-    //        }
-    //    }
-    //    else {
-    //        window.open('login.html', '_parent');
-    //        return;
-    //    }
-    //    var fsession = session.fsession;
-    //    var userName = session.User_NM;
-    //    var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
-    //    var URL = "/webservice/?" + s;
-    //    var form = new FormData();
-    //    if ($("#file")[0].files.length > 0) {
-    //        for (var i = 0; i < $("#file")[0].files.length; i++) {
-    //            var reader = new FileReader();
-    //            reader.readAsDataURL($("#file")[0].files[i]);
-    //            reader.onload = function (e) {
-    //                var data = '';
-    //                data += e.target.result + '!@#$%^&*';
-    //                buildJson(data);
-    //            }
-    //        }
-    //    }
-    //    else {
-    //        var data = '';
-    //        buildJson(data);
-    //    }
-    //    function buildJson(data) {
-    //        let title = document.getElementsByClassName('title')[0].value;
-    //        let particular = document.getElementById('icon').value;
-    //        var std = JSON.stringify({});
-    //        var stdTemplate = JSON.parse(std);
-    //        var level = document.getElementsByClassName('level')[0];
-    //        if (title !== '' && particular !== '') {
-    //            stdTemplate.title = title;
-    //            stdTemplate.content = particular;
-    //            stdTemplate.pic = data;
-    //            stdTemplate.level = level.value;
-    //            form.append("data", (JSON.stringify(stdTemplate)));
-    //            $.ajax({
-    //                type: 'post',
-    //                url: URL,
-    //                contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
-    //                data: form,
-    //                cache: false,
-    //                processData: false,
-    //                contentType: false,
-    //                dataType: "json",//期待返回的数据类型
-    //                success: function (msg) {
-    //                    if (msg.ret.id == '1') {
-    //                        alert('上传成功');
-    //                    } else {
-    //                        alert('上传失败');
-    //                    }
-    //                },
-    //                error: function () {
-    //                    alert("请求失败");
-    //                }
-    //            });
-    //        } else {
-    //            alert("标题和内容不能为空")
-    //        }
-    //    }
-    //});
+    $("#click").click(function () {
+_click();
+    });
+    $("#submit").click(function () {
+       //获取fsession
+       var aCookie = GetCookie('wytSession');
+       session = eval('(' + aCookie + ')');
+       if (session) {
+           if (session.fsession == "undefined") {
+               window.open('login.html', '_parent');
+               return;
+           }
+       }
+       else {
+           window.open('login.html', '_parent');
+           return;
+       }
+       var fsession = session.fsession;
+       var userName = session.User_NM;
+       var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
+       var URL = "/webservice/?" + s;
+       var form = new FormData();
+       if ($("#file")[0].files.length > 0) {
+           for (var i = 0; i < $("#file")[0].files.length; i++) {
+               var reader = new FileReader();
+               reader.readAsDataURL($("#file")[0].files[i]);
+               reader.onload = function (e) {
+                   var data = '';
+                   data += e.target.result + '!@#$%^&*';
+                   buildJson(data);
+               }
+           }
+       }
+       else {
+           var data = '';
+           buildJson(data);
+       }
+       function buildJson(data) {
+           let title = document.getElementsByClassName('title')[0].value;
+           let particular = document.getElementById('icon').value;
+           var std = JSON.stringify({});
+           var stdTemplate = JSON.parse(std);
+           var level = document.getElementsByClassName('level')[0];
+           if (title !== '' && particular !== '') {
+               stdTemplate.title = title;
+               stdTemplate.content = particular;
+               stdTemplate.pic = data;
+               stdTemplate.level = level.value;
+               form.append("data", (JSON.stringify(stdTemplate)));
+               $.ajax({
+                   type: 'post',
+                   url: URL,
+                   contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
+                   data: form,
+                   cache: false,
+                   processData: false,
+                   contentType: false,
+                   dataType: "json",//期待返回的数据类型
+                   success: function (msg) {
+                       if (msg.ret.id == '1') {
+                           alert('上传成功');
+                       } else {
+                           alert('上传失败');
+                       }
+                   },
+                   error: function () {
+                       alert("请求失败");
+                   }
+               });
+           } else {
+               alert("标题和内容不能为空")
+           }
+       }
+    });
     document.addEventListener('paste', function (event) {
         var items = (event.clipboardData || window.clipboardData).items;
         var filed = null;
