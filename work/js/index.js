@@ -29,24 +29,24 @@ $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
     session = eval('(' + aCookie + ')');
-    if (session) {
-        if (session.fsession == "undefined") {
-            window.open('login.html', '_self');
-            return;
-        }
-        if (session.User_NM) {
+    //if (session) {
+    //    if (session.fsession == "undefined") {
+    //        window.open('login.html', '_self');
+    //        return;
+    //    }
+    //    if (session.User_NM) {
+    //        document.getElementById('user').innerText = session.User_NM;
+    //    }
+    //    else {
+    //        window.open('login.html', '_self');
+    //        return;
+    //    }
+    //}
+    //else {
+    //    window.open('login.html', '_self');
+    //    return;
+    //}
 
-        }
-        else {
-            window.open('login.html', '_self');
-            return;
-        }
-    }
-    else {
-        window.open('login.html', '_self');
-        return;
-    }
-    document.getElementById('user').innerText = session.User_NM;
     function buildJson() {
         var std = JSON.stringify({});
         var stdTemplate = JSON.parse(std);
@@ -317,7 +317,7 @@ function clearAllCookie() {
         for (var i = keys.length; i--;)
             document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
     }
-    window.open('login.html', '_self');
+    window.open('problem.html', '_self');
 }
 function hide() {
     var a = document.getElementById("hide");
