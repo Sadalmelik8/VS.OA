@@ -320,7 +320,7 @@ function clearAllCookie() {
     window.open('index.html', '_parent');
 }
 function hide() {
-    var a = document.getElementById("hide");
+    var a = document.getElementById("hides");
     var div = document.getElementsByClassName("left")[0];
     var iframe = document.getElementsByClassName("center")[0];
     if (a.src == window.location.origin + "/img/left.png") {
