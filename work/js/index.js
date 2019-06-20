@@ -29,23 +29,23 @@ $(document).ready(function () {
     //获取fsession
     var aCookie = GetCookie('wytSession');
     session = eval('(' + aCookie + ')');
-    //if (session) {
-    //    if (session.fsession == "undefined") {
-    //        window.open('login.html', '_parent');
-    //        return;
-    //    }
-    //    if (session.User_NM) {
-    //        document.getElementById('user').innerText = session.User_NM;
-    //    }
-    //    else {
-    //        window.open('login.html', '_parent');
-    //        return;
-    //    }
-    //}
-    //else {
-    //    window.open('login.html', '_parent');
-    //    return;
-    //}
+    if (session) {
+       if (session.fsession == "undefined") {
+           window.open('login.html', '_parent');
+           return;
+       }
+       if (session.User_NM) {
+           document.getElementById('user').innerText = session.User_NM;
+       }
+       else {
+           window.open('login.html', '_parent');
+           return;
+       }
+    }
+    else {
+       window.open('login.html', '_parent');
+       return;
+    }
 
     function buildJson() {
         var std = JSON.stringify({});
@@ -74,7 +74,7 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             contentType: false,
-            success: function (result) {                                                                                                                                                                                          
+            success: function (result) {
                 dataObj = result; //返回的result为json格式的数据)
                 //mes = dataObj.ret.length;
                 //document.getElementById('messge').innerHTML = '未读消息数' + mes;

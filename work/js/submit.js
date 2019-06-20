@@ -12,6 +12,19 @@
     let category = document.getElementsByClassName("category")[0];
     $("#click").click(function () {
         category.style.display = "inline-block";
+           //获取fsession
+           var aCookie = GetCookie('wytSession');
+           session = eval('(' + aCookie + ')');
+           if (session) {
+               if (session.fsession == "undefined") {
+                   window.open('login.html', '_parent');
+                   return;
+               }
+           }
+           else {
+               window.open('login.html', '_parent');
+               return;
+           }
         var fsession = session.fsession;
         var userName = session.User_NM;
         // _template1 = buildJson();
