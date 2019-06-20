@@ -58,6 +58,27 @@
                     });
                     con+= "<span class='subclass' id='back'>" +"返回"+ "</span>";
                     $('.category').html(con);
+                    $("#back").click(function () {
+                        let con = '';
+                        dataObj = result;
+                        $.each(dataObj.ret[1], function (index, item) {
+                            con += "<span class='system'>" + item + "</span>";
+                        });
+                        con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
+                        $('.category').html(con);
+                        // $(".system").click(function (e) {
+                        //     let type = e.target.innerHTML;
+                        //     con = '';
+                        //     $.each(dataObj.ret[0][type],function (index, item) {
+                        //         con += "<span class='subclass'>" + item + "</span>";
+                        //     });
+                        //     con+= "<span class='subclass' id='return'>" +"返回"+ "</span>";
+                        //     $('.category').html(con);
+                        // });
+                    });
+                    $(".subclass").click(function (e) {
+                        document.getElementById("click").innerHTML = e.target.innerHTML;
+                    });
                 });
                 $("#cancel").click(function () {
                     category.style.display = 'none';
@@ -66,28 +87,7 @@
                 // $("#back").click(function () {
                 //     console.log(1);
                 // });
-                $("#back").click(function () {
-                    console.log(1);
-                    let con = '';
-                    dataObj = result;
-                    $.each(dataObj.ret[1], function (index, item) {
-                        con += "<span class='system'>" + item + "</span>";
-                    });
-                    con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
-                    $('.category').html(con);
-                    $(".system").click(function (e) {
-                        let type = e.target.innerHTML;
-                        con = '';
-                        $.each(dataObj.ret[0][type],function (index, item) {
-                            con += "<span class='subclass'>" + item + "</span>";
-                        });
-                        con+= "<span class='subclass' id='return'>" +"返回"+ "</span>";
-                        $('.category').html(con);
-                    });
-                });
-                $(".subclass").click(function (e) {
-                    document.getElementById("click").innerHTML = e.target.innerHTML;
-                });
+
             }
         });
         function buildJson() {
