@@ -38,9 +38,9 @@ ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,proble
 根据登录用户，num修改消息提醒表里面的sts为已读
 返回：json,
 当ver=0时
-ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度
+ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,category:}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度、问题类别
 当 ver != 0 时
-ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,contents:[contents:,executor:,files:,submittime:,submitter]}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度，追加问题:[追加问题、受理人、图片、提交时间、提交人]
+ret={problemstate:0/1,introducer:,title:,content:remarks:,proposetime:,files:,level:,contents:[contents:,executor:,files:,submittime:,submitter:,category:]}--验收状态，提出人，标题，内容，备注，提出时间，文件，问题紧急度，追加问题:[追加问题、受理人、图片、提交时间、提交人、问题类别]
 ret={id:0}返回失败
 
 7. 提交(done)
@@ -76,6 +76,7 @@ ret={id:0}返回失败
         
 服务号：WS_00007
 参数：{executor:,num:,contents:,remarks:,level:,files:,category:}-----受理人、问题编号、追加问题问题、备注、问题紧急度,文件、问题类别
+当受理人改变时，当前受理人收到短信提醒
 新增消息到消息提醒表（T_Message）
 返回：json,
 ret={id:0}返回失败
@@ -160,6 +161,7 @@ ret={id:0}返回失败
 服务号：WS_00017
 参数：{title:,content:,pic:,level:,files:,executor:,category:}--标题、内容、上传图片、问题紧急度、文件、受理人、问题类别
 提出人为username，就是当前登录的人
+如果有受理人，受理人收到短信提醒
 新增消息到消息提醒表（T_Message）
 参数：{title:}--标题
 操作：消息接收人（固定），proposetime，operation（新增），登录用户，0
