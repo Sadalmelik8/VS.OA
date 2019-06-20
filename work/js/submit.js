@@ -66,21 +66,24 @@
                         });
                         con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
                         $('.category').html(con);
-                        // $(".system").click(function (e) {
-                        //     let type = e.target.innerHTML;
-                        //     con = '';
-                        //     $.each(dataObj.ret[0][type],function (index, item) {
-                        //         con += "<span class='subclass'>" + item + "</span>";
-                        //     });
-                        //     con+= "<span class='subclass' id='return'>" +"返回"+ "</span>";
-                        //     $('.category').html(con);
-                        // });
+                        $(".system").click(function (e) {
+                            let type = e.target.innerHTML;
+                            con = '';
+                            $.each(dataObj.ret[0][type],function (index, item) {
+                                con += "<span class='subclass'>" + item + "</span>";
+                            });
+                            con+= "<span class='subclass' id='return'>" +"返回"+ "</span>";
+                            $('.category').html(con);
+                        });
+                        
+
                     });
                     $(".subclass").click(function (e) {
                         if (e.target.innerHTML == '返回') {
                             document.getElementById("click").innerHTML = "请选择问题类别";
                         }else {
                             document.getElementById("click").innerHTML = e.target.innerHTML;
+                            document.getElementsByClassName("category")[0].style.display = 'none';
                         }
                     });
                 });
