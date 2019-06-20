@@ -77,7 +77,11 @@
                         // });
                     });
                     $(".subclass").click(function (e) {
-                        document.getElementById("click").innerHTML = e.target.innerHTML;
+                        if (e.target.innerHTML == '返回') {
+                            document.getElementById("click").innerHTML = "请选择问题类别";
+                        }else {
+                            document.getElementById("click").innerHTML = e.target.innerHTML;
+                        }
                     });
                 });
                 $("#cancel").click(function () {
