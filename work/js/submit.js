@@ -352,7 +352,7 @@ $(document).ready(function () {
                 var particular = document.getElementById('icon').value;
                 var level = document.getElementsByClassName('level')[0].value;
                 let click = document.getElementById("click").innerHTML;
-                let presents = document.getElementById("presents").innerHTML;
+                let presents = document.getElementById("presents").value;
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
                 stdTemplate.title = title;//标题
