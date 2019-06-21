@@ -274,8 +274,12 @@ $(document).ready(function () {
         //获取fsession
         let _title = document.getElementsByClassName('title')[0].value;
         let _icon = document.getElementById('icon').value;
+        let _click = document.getElementById("click");
         if (_icon === '' || _title === '') {
             alert('标题或者内容为空');
+        }
+        if (_click.innerHTML == ''){
+            alert("请选择问题类别")
         }
         else {
             var aCookie = GetCookie('wytSession');
@@ -347,11 +351,15 @@ $(document).ready(function () {
                 var title = document.getElementsByClassName('title')[0].value;
                 var particular = document.getElementById('icon').value;
                 var level = document.getElementsByClassName('level')[0].value;
+                let click = document.getElementById("click").innerHTML;
+                let presents = document.getElementById("presents").innerHTML;
                 var std = JSON.stringify({});
                 var stdTemplate = JSON.parse(std);
                 stdTemplate.title = title;//标题
                 stdTemplate.content = particular;//内容
                 stdTemplate.level = level;//紧急度
+                stdTemplate.category = click;//问题类别
+                stdTemplate.executor = presents;//紧急度
                 if (form.get("data") != null) {
                     if (file == "" && img != "") {
                         form.append("pic", img);
