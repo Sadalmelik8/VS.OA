@@ -1,6 +1,36 @@
 ﻿function preLogin() {
     if (event.keyCode == 13) {
-        login();
+        //获取fsession
+        var aCookie = GetCookie('wytSession');
+        var fsession = aCookie;
+        tohtml = "index.html";
+        var username = document.getElementById('nm').value;
+        var password = document.getElementById('pw').value;
+        var s = "svr=WS_00000&mobile=" + username + "&smscode=" + password + "&fsession=" + fsession;
+        var URL = "/webservice/?" + s;
+        $.ajax({
+            type: 'get',
+            url: URL,
+            datatype: 'json',
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function (msg) {
+                try {
+                    if (msg.status == "ok") {
+                        var aCookie = '{\'User_NM\':\'' + msg.ret.username;
+                        aCookie += '\',\'fsession\':\'' + msg.ret.session + "/'";
+                        aCookie += '}';
+                        var expdate = new Date();
+                        expdate.setTime(expdate.getTime() + (86400 * 1000 * 1));
+                        document.cookie = 'wytSession=' + escape(aCookie)
+                            + ';expires=' + expdate.toGMTString();
+                        window.open(tohtml, '_self');
+                    }
+                }
+                catch (e) { }
+            }
+        })
     }
 }
 //获取cookkie
