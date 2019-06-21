@@ -23,6 +23,20 @@ $(document).ready(function () {
 let redirect = function () {
     let oltid = '';
     $(".caption").click(function (e) {
+        var aCookie = GetCookie('wytSession');
+        session = eval('(' + aCookie + ')');
+        if (session) {
+            if (session.fsession == "undefined" && session.User_NM == "undefined") {
+                alert('请先登录');
+                window.open('login.html', '_parent');
+                return;
+            }
+        }
+        else {
+            alert('请先登录');
+            window.open('login.html', '_parent');
+            return;
+        }
         oltid = e.target.id;
         location.href = "update.html?num=" + oltid;
     });
