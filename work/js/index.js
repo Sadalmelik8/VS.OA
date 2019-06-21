@@ -317,7 +317,7 @@ function clearAllCookie() {
         for (var i = keys.length; i--;)
             document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
     }
-    window.open('index.html', '_parent');
+    window.open('problem.html', '_parent');
 }
 function hide() {
     var a = document.getElementById("hide");
