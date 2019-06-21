@@ -278,7 +278,7 @@ $(document).ready(function () {
         if (_icon === '' || _title === '') {
             alert('标题或者内容为空');
         }
-        if (_click.innerHTML == ''){
+        if (_click.innerHTML === '请选择问题类别'){
             alert("请选择问题类别")
         }
         else {
