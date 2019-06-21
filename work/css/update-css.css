@@ -64,6 +64,7 @@ li {
 .textarea {
     width: 100%;
     height: 620px;
+    margin-top: 10px;
 }
 
 .textarea--left {
@@ -300,4 +301,70 @@ a{
     display: inline-block;
     margin: 160px 0 0 340px;
     color: #d6d6d6;
+}
+.category{
+    display: none;
+    width: 302px;
+    height: 202px;
+    position: absolute;
+    /*background: #3fbded;*/
+    border: 1px solid #888;
+    background: #e9e9e9;
+    top: 19.3%    ;
+    left: 39%;
+    box-sizing: border-box;
+}
+.system{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    box-sizing: border-box;
+}
+.system:hover{
+    background: #dadada;
+    cursor: pointer
+}
+#cancel{
+    background: #b10000;
+    color: white;
+    position: absolute;
+    top: 160px;
+    left: 200px;
+}
+#cancel:hover{
+    background: #830000;
+    color: #FFF;
+}
+.subclass{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    box-sizing: border-box;
+}
+.subclass:hover{
+    background: #dadada;
+    cursor: pointer
+}
+#back{
+    background: #a90000;
+    color: white;
+    position: absolute;
+    top: 160px;
+    left: 200px;
+}
+#back:hover{
+    background: #830000;
+    color: #FFF;
+}
+#click{
+    height: 30px;
+    line-height: 27px;
 }
