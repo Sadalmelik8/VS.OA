@@ -150,7 +150,7 @@ ret={id:0}返回失败
 
 15.筛选问题类别
 服务号：WS_00015
-参数：{category:}---问题类别
+参数：{category:,problemstate:0/1/2}---问题类别，是否验收（0未验收，1已验收，2全部问题）
 操作：根据参数筛选出所有同类别的问题
 返回：json,
 ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间、是否提交到知识库
