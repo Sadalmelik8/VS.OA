@@ -47,9 +47,9 @@ li {
     padding-left: 10px;
     line-height: 80px;
 }
-.problem--top>*{
-    vertical-align: middle;
-}
+/*.problem--top>*{*/
+    /*vertical-align: middle;*/
+/*}*/
 /*.search {*/
     /*width: 5%;*/
     /*height: 31px;*/
@@ -87,6 +87,7 @@ button {
     color: #666;
     vertical-align: middle;
     border: none;
+
 }
 
 li > * {
@@ -305,4 +306,7 @@ a{
 #back:hover{
     background: #830000;
     color: #FFF;
+}
+#click{
+    vertical-align: middle;
 }
