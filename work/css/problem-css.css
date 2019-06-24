@@ -251,6 +251,7 @@ a{
     top: 8%    ;
     left: 67%;
     box-sizing: border-box;
+    z-index: 999;
 }
 .system{
     display: inline-block;
