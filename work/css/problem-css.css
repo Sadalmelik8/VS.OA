@@ -56,7 +56,7 @@ li {
 /*}*/
 
 .problem--top__right {
-    width: 50%;
+    width: 45%;
     height: 80px;
     line-height: 80px;
     border: none;
@@ -102,11 +102,11 @@ li > * {
 }
 
 .title {
-    width: 50%;
+    width: 40%;
 }
 
 .caption{
-    width: 50%;
+    width: 40%;
     font-size: 15px;
     text-decoration: none;
     display: inline-block;
@@ -182,14 +182,6 @@ b:hover{
 .li>span{
     vertical-align: top;
 }
-#introducer:hover{
-    cursor: pointer;
-    color: #3BA9E8;
-}
-#receiver:hover{
-    cursor: pointer;
-    color: #3BA9E8;
-}
 
 #box{
     display: inline-block;
@@ -250,4 +242,65 @@ a{
     background: #d5d8db;
     color: white;
 }
-
+.category{
+    display: none;
+    width: 302px;
+    height: 202px;
+    position: absolute;
+    /*background: #3fbded;*/
+    border: 1px solid #888;
+    background: #e9e9e9;
+    top: 8%    ;
+    left: 67%;
+    box-sizing: border-box;
+}
+.system{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    box-sizing: border-box;
+}
+.system:hover{
+    background: #dadada;
+    cursor: pointer
+}
+#cancel1{
+    background: #b10000;
+    color: white;
+    position: absolute;
+    top: 160px;
+    left: 200px;
+}
+#cancel1:hover{
+    background: #830000;
+    color: #FFF;
+}
+.subclass{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    box-sizing: border-box;
+}
+.subclass:hover{
+    background: #dadada;
+    cursor: pointer
+}
+#back{
+    background: #a90000;
+    color: white;
+    position: absolute;
+    top: 160px;
+    left: 200px;
+}
+#back:hover{
+    background: #830000;
+    color: #FFF;
+}
