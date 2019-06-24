@@ -122,7 +122,7 @@ let _click = function(){
                             dataType: "json", //json格式，后台返回的数据为json格式的。
                             success: function (result) {
                                 dataObj = result;
-                                $.each(dataObj.ret.username, function (indexs, item) {
+                                $.each(dataObj.ret, function (indexs, item) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
