@@ -74,6 +74,7 @@ let _click = function(){
                     _click();
                 });
                 $(".subclass").click(function (e) {
+                    let coned = e.target.innerHTML;
                     if (e.target.innerHTML == '返回') {
                         document.getElementById("click").innerHTML = "请选择问题类别";
                     }else {
@@ -139,8 +140,8 @@ let _click = function(){
                         function buildJson() {
                             var std = JSON.stringify({});
                             var stdTemplate = JSON.parse(std);
-                            stdTemplate.category = e.target.innerHTML;
-                            console.log(e.target.innerHTML);
+                            stdTemplate.category = coned;
+                            console.log(coned);
                             return stdTemplate;
                         }
                     }
