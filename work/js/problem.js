@@ -140,6 +140,7 @@ let _click = function(){
                             var std = JSON.stringify({});
                             var stdTemplate = JSON.parse(std);
                             stdTemplate.category = e.target.innerHTML;
+                            console.log(e.target.innerHTML);
                             return stdTemplate;
                         }
                     }
