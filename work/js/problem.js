@@ -11,6 +11,162 @@ function GetCookie(key) {
 window.onload = function () {
     call()
 };
+let _click = function(){
+    //获取cookkie
+    function GetCookie(key) {
+        var aCookie = document.cookie.split("; ");
+        for (var i = 0; i < aCookie.length; i++) {
+            var aCrumb = aCookie[i].split("=");
+            if (key == aCrumb[0]) {
+                return unescape(aCrumb[1]);
+            }
+        }
+    }
+    let category = document.getElementsByClassName("category")[0];
+    category.style.display = "inline-block";
+    //获取fsession
+    var aCookie = GetCookie('wytSession');
+    session = eval('(' + aCookie + ')');
+    if (session) {
+        if (session.fsession == "undefined") {
+            window.open('login.html', '_parent');
+            return;
+        }
+    }
+    else {
+        window.open('login.html', '_parent');
+        return;
+    }
+    var fsession = session.fsession;
+    var userName = session.User_NM;
+    // _template1 = buildJson();
+    var s = ("svr=WS_00002" + "&fsession=" + fsession + "&userName=" + userName);
+    var URL = "/webservice/?" + s;
+    // var form = new FormData();
+    // form.append("data", (JSON.stringify(_template1)));
+    $.ajax({
+        type: "post", //请求的方式，也有get请求
+        url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+        contentType: "application/json",
+        data: {},//data是传给后台的字段，后台需要哪些就传入哪些
+        cache: false,
+        processData: false,
+        contentType: false,
+        dataType: "json", //json格式，后台返回的数据为json格式的。
+        success: function (result) {
+            let con = '';
+            dataObj = result;
+            $.each(dataObj.ret[1], function (index, item) {
+                con += "<span class='system'>" + item + "</span>";
+            });
+            con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
+            $('.category').html(con);
+
+            $(".system").click(function (e) {
+                let type = e.target.innerHTML;
+                con = '';
+                $.each(dataObj.ret[0][type],function (index, item) {
+                    con += "<span class='subclass'>" + item + "</span>";
+                });
+                con+= "<span class='subclass' id='back'>" +"返回"+ "</span>";
+                $('.category').html(con);
+                $("#back").click(function () {
+                    _click();
+                });
+                $(".subclass").click(function (e) {
+                    if (e.target.innerHTML == '返回') {
+                        document.getElementById("click").innerHTML = "请选择问题类别";
+                    }else {
+                        document.getElementById("click").innerHTML = e.target.innerHTML;
+                        document.getElementsByClassName("category")[0].style.display = 'none';
+                        //获取cookkie
+                        function GetCookie(key) {
+                            var aCookie = document.cookie.split("; ");
+                            for (var i = 0; i < aCookie.length; i++) {
+                                var aCrumb = aCookie[i].split("=");
+                                if (key == aCrumb[0]) {
+                                    return unescape(aCrumb[1]);
+                                }
+                            }
+                        }
+                        let category = document.getElementsByClassName("category")[0];
+                        category.style.display = "inline-block";
+                        //获取fsession
+                        var aCookie = GetCookie('wytSession');
+                        session = eval('(' + aCookie + ')');
+                        if (session) {
+                            if (session.fsession == "undefined") {
+                                window.open('login.html', '_parent');
+                                return;
+                            }
+                        }
+                        else {
+                            window.open('login.html', '_parent');
+                            return;
+                        }
+                        var fsession = session.fsession;
+                        var userName = session.User_NM;
+                        _template1 = buildJson();
+                        var s = ("svr=WS_00015" + "&fsession=" + fsession + "&userName=" + userName);
+                        var URL = "/webservice/?" + s;
+                        var form = new FormData();
+                        form.append("data", (JSON.stringify(_template1)));
+                        $.ajax({
+                            type: "post", //请求的方式，也有get请求
+                            url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
+                            contentType: "application/json",
+                            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
+                            cache: false,
+                            processData: false,
+                            contentType: false,
+                            dataType: "json", //json格式，后台返回的数据为json格式的。
+                            success: function (result) {
+                                dataObj = result;
+                                $.each(dataObj.ret.username, function (indexs, item) {
+                                    con += "<li class='datas'>"
+                                        + "<span class='number'>" + (indexs + 1) + "</span>"//序号
+                                        + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>" //问题类别
+                                        + "<span>" + item.introducer + "</span>"//提出人
+                                        + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
+                                        + "<span>" + '&nbsp;' + "</span>"//受理人
+                                        + "<span>" + '&nbsp;' + "</span>"//提出时间
+                                        + "</li>";
+                                    $("#ul").html(con); //把内容入到这个div中
+                                })
+                            }
+                        });
+                        function buildJson() {
+                            var std = JSON.stringify({});
+                            var stdTemplate = JSON.parse(std);
+                            stdTemplate.category = e.target.innerHTML;
+                            return stdTemplate;
+                        }
+                    }
+                });
+            });
+            $("#cancel").click(function () {
+                category.style.display = 'none';
+            });
+            // console.log(2);
+            // $("#back").click(function () {
+            //     console.log(1);
+            // });
+
+        }
+    });
+    function buildJson() {
+        // var std = JSON.stringify({});
+        // var stdTemplate = JSON.parse(std);
+        // stdTemplate.num = oltid;
+        // return stdTemplate;
+    }
+};
+$(document).ready(function () {
+    $("#click").click(function () {
+        _click();
+    });
+});
 // 默认日期
 $(document).ready(function () {
     let time = new Date();
@@ -101,6 +257,7 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
@@ -112,9 +269,10 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span>" + '&nbsp;' + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -123,10 +281,11 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + '&nbsp;' + "</span>"//受理人
+                                + "<span>" + '&nbsp;' + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
@@ -151,6 +310,7 @@ var paginationed = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>" //问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + '&nbsp;' + "</span>"//受理人
@@ -162,9 +322,10 @@ var paginationed = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>" //问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                        + "<span>" + item.executor + "</span>"//受理人
+                                        + "<span>" + '&nbsp;' + "</span>"//受理人
                                         + "<span>" + '&nbsp;' + "</span>"//提出时间
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
@@ -173,10 +334,11 @@ var paginationed = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>" //问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                        + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                        + "<span>" + '&nbsp;' + "</span>"//受理人
+                                        + "<span>" + '&nbsp;' + "</span>"//提出时间
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
@@ -218,6 +380,7 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
@@ -229,9 +392,10 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span>" + '&nbsp;' + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -240,10 +404,11 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + '&nbsp;' + "</span>"//受理人
+                                + "<span>" + '&nbsp;' + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
@@ -268,6 +433,7 @@ var paginationed = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>" //问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + '&nbsp;' + "</span>"//受理人
@@ -279,9 +445,10 @@ var paginationed = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>" //问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                        + "<span>" + item.executor + "</span>"//受理人
+                                        + "<span>" + '&nbsp;' + "</span>"//受理人
                                         + "<span>" + '&nbsp;' + "</span>"//提出时间
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
@@ -290,10 +457,11 @@ var paginationed = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>" //问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                        + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                        + "<span>" + '&nbsp;' + "</span>"//受理人
+                                        + "<span>" + '&nbsp;' + "</span>"//提出时间
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
@@ -336,6 +504,7 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
@@ -347,9 +516,10 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
+                                + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span>" + '&nbsp;' + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -358,10 +528,11 @@ var paginationed = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + item.executor + "</span>"//受理人
-                                + "<span>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
+                                + "<span>" + '&nbsp;' + "</span>"//受理人
+                                + "<span>" + '&nbsp;' + "</span>"//提出时间
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
                         }
@@ -437,10 +608,11 @@ var paginationeds = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + xx + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span class='sort'>" + item.category + "</span>" //问题类别
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                    + "<span>" + item.executor + "</span>"//受理人
-                                    + "<span>" + item.submittime + "</span>"//提交时间
+                                    + "<span>" + '&nbsp;' + "</span>"//受理人
+                                    + "<span>" + '&nbsp;' + "</span>"//提出时间
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
                             }
@@ -448,10 +620,11 @@ var paginationeds = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span class='sort'>" + item.category + "</span>" //问题类别
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                    + "<span>" + item.executor + "</span>"//受理人
-                                    + "<span>" + item.submittime + "</span>"//提交时间
+                                    + "<span>" + '&nbsp;' + "</span>"//受理人
+                                    + "<span>" + '&nbsp;' + "</span>"//提出时间
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
                             }
@@ -484,10 +657,11 @@ var paginationeds = function () {
                                         con += "<li class='datas'>"
                                             + "<span class='number'>" + xx + "</span>"//序号
                                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                            + "<span class='sort'>" + item.category + "</span>" //问题类别
                                             + "<span>" + item.introducer + "</span>"//提出人
                                             + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                            + "<span>" + item.executor + "</span>"//受理人
-                                            + "<span>" + item.submittime + "</span>"//提交时间
+                                            + "<span>" + '&nbsp;' + "</span>"//受理人
+                                            + "<span>" + '&nbsp;' + "</span>"//提出时间
                                             + "</li>";
                                         $("#ul").html(con); //把内容入到这个div中
                                     }
@@ -495,6 +669,7 @@ var paginationeds = function () {
                                         con += "<li class='datas'>"
                                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                            + "<span class='sort'>" + item.category + "</span>" //问题类别
                                             + "<span>" + item.introducer + "</span>"//提出人
                                             + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                             + "<span>" + item.executor + "</span>"//受理人
@@ -547,6 +722,7 @@ var paginationeds = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + xx + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span class='sort'>" + item.category + "</span>" //问题类别
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
@@ -558,6 +734,7 @@ var paginationeds = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span class='sort'>" + item.category + "</span>" //问题类别
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
@@ -594,6 +771,7 @@ var paginationeds = function () {
                                         con += "<li class='datas'>"
                                             + "<span class='number'>" + xx + "</span>"//序号
                                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                            + "<span class='sort'>" + item.category + "</span>" //问题类别
                                             + "<span>" + item.introducer + "</span>"//提出人
                                             + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                             + "<span>" + item.executor + "</span>"//受理人
@@ -605,6 +783,7 @@ var paginationeds = function () {
                                         con += "<li class='datas'>"
                                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                            + "<span class='sort'>" + item.category + "</span>" //问题类别
                                             + "<span>" + item.introducer + "</span>"//提出人
                                             + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                             + "<span>" + item.executor + "</span>"//受理人
@@ -643,6 +822,7 @@ var paginationeds = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + xx + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span class='sort'>" + item.category + "</span>" //问题类别
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
@@ -654,6 +834,7 @@ var paginationeds = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                    + "<span class='sort'>" + item.category + "</span>" //问题类别
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
@@ -808,6 +989,7 @@ $(document).ready(function () {
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + '&nbsp;' + "</span>"//受理人
@@ -819,6 +1001,7 @@ $(document).ready(function () {
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
@@ -830,6 +1013,7 @@ $(document).ready(function () {
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
@@ -928,6 +1112,7 @@ $(document).ready(function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
@@ -939,6 +1124,7 @@ $(document).ready(function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
@@ -950,6 +1136,7 @@ $(document).ready(function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>" //问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
