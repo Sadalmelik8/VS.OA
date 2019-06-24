@@ -79,7 +79,6 @@ let _click = function(){
                         document.getElementById("click").innerHTML = "请选择问题类别";
                     }else {
                         document.getElementById("click").innerHTML = e.target.innerHTML;
-                        document.getElementsByClassName("category")[0].style.display = 'none';
                         //获取cookkie
                         function GetCookie(key) {
                             var aCookie = document.cookie.split("; ");
@@ -144,6 +143,7 @@ let _click = function(){
                             console.log(coned);
                             return stdTemplate;
                         }
+                        document.getElementsByClassName("category")[0].style.display = 'none';
                     }
                 });
             });
