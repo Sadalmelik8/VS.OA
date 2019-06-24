@@ -133,7 +133,8 @@ let _click = function(){
                                         + "<span>" + '&nbsp;' + "</span>"//提出时间
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
-                                    paginationed()
+                                    paginationed();
+                                    actived();
                                     document.getElementsByClassName("subclass").style.display = 'none';
                                     document.getElementById("back").style.display = "none"
                                 })
