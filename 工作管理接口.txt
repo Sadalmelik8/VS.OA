@@ -11,8 +11,8 @@ ret={id:0}返回失败
 服务号：WS_00003
 参数：{problemstate:0/1/2,}-----是否验收   2为获取全部问题
 返回：json,根据提出时间倒序排列
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（problemstate为 0 时)
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间、是否提交到知识库（problemstate 为 1或2 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,category:}--问题编号、标题、提出人、提出时间、提交时间、受理人、问题类别（problemstate为 0 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge:,category:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间、是否提交到知识库、问题类别（problemstate 为 1或2 时)
 ret={id:0}返回失败
 
 4. 筛选关于我的问题(done)
@@ -20,7 +20,7 @@ ret={id:0}返回失败
 服务号：WS_00004
 参数：{type:1/2/3}-----1是提出人，2是受理人，3是验收人
 返回：json,
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,inspecttime:,knowledge:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、验收时间、是否提交到知识库（problemstate传 1 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,inspecttime:,knowledge:,category:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、验收时间、是否提交到知识库、问题类别（problemstate传 1 时)
 ret={id:0}返回失败
 
 5. 日期搜索(done)
@@ -28,8 +28,8 @@ ret={id:0}返回失败
 服务号：WS_00005
 参数：{proposetime:,problemstate:0/1/2}
 返回：json,根据提出时间倒序排列
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:}--问题编号、标题、提出人、提出时间、提交时间、受理人（problemstate 0 时)
-ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间、是否提交到知识库（problemstate 1或2 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,category:}--问题编号、标题、提出人、提出时间、提交时间、受理人、问题类别（problemstate 0 时)
+ret={num:,title:,introducer:,proposetime:,submittime:,executor:,acceptor:,problemstate:,inspecttime:,knowledge:,category:}--问题编号、标题、提出人、提出时间、提交时间、受理人、验收人、是否验收、验收时间、是否提交到知识库、问题类别（problemstate 1或2 时)
 
 6. 问题详情(done)
 查看问题的详情
