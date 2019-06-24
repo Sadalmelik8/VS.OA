@@ -74,7 +74,7 @@ let _click = function(){
                     _click();
                 });
                 $(".subclass").click(function (e) {
-                    let coned = e.target.innerHTML;
+                    let coned = e.target.innerText;
                     if (e.target.innerHTML == '返回') {
                         document.getElementById("click").innerHTML = "请选择问题类别";
                     }else {
