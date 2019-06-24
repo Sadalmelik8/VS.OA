@@ -115,7 +115,7 @@ let _click = function(){
                             type: "post", //请求的方式，也有get请求
                             url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
                             contentType: "application/json",
-                            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
+                            data: form,//data是传给后台的字段，后台需要哪些就传入哪些
                             cache: false,
                             processData: false,
                             contentType: false,
