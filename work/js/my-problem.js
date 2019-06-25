@@ -154,7 +154,7 @@ let _click = function(){
                     }
                 });
             });
-            $("#cancel").click(function () {
+            $("#cancel1").click(function () {
                 category.style.display = 'none';
             });
             // console.log(2);

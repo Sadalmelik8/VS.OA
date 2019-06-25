@@ -67,7 +67,7 @@ let _click = function(){
             $.each(dataObj.ret[1], function (index, item) {
                 con += "<span class='system'>" + item + "</span>";
             });
-            con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
+            con+= "<span class='system' id='cancel1'>" +"取消"+ "</span>";
             $('.category').html(con);
 
             $(".system").click(function (e) {
@@ -153,7 +153,7 @@ let _click = function(){
                     }
                 });
             });
-            $("#cancel").click(function () {
+            $("#cancel1").click(function () {
                 category.style.display = 'none';
             });
             // console.log(2);
