@@ -479,10 +479,6 @@ var paginationed = function (userName) {
                             $("#ul").html(con); //把内容入到这个div中
                         }
                     }
-                    else {
-                        con = '';
-                        $("#ul").html(con); //把内容入到这个div中
-                    }
                 });
                 // if ($('input').className == "knowledge1") {
                 //     $('input').className = "a";
