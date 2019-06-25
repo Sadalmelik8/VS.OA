@@ -128,7 +128,6 @@ let _click = function(){
                                         alert('该类别下没有相关问题');
                                     } else {
                                         paginationed();
-                                        actived();
                                         redirect();
                                         document.getElementsByClassName("subclass").style.display = 'none';
                                         document.getElementById("back").style.display = "none"
@@ -308,7 +307,6 @@ var paginationed = function () {
                         }
                     }
                 });
-                actived();
                 redirect();
                 con = "";
                 //点击显示第几页
