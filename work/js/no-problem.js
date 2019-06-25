@@ -250,12 +250,12 @@ var paginationed = function () {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.category + "</span>"//问题类别
+                            + "<span class='sort'>" + item.category + "</span>"//问题类别
                             + "<span>" + item.introducer + "</span>"//提出人
                             + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                             + "<span>" + item.executor + "</span>"//受理人
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                            + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                            + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                             + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                             + "</li>";
                         $("#ul").html(con + cons); //把内容入到这个div中
@@ -284,12 +284,12 @@ var paginationed = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                    + "<span>" + item.category + "</span>"//问题类别
+                                    + "<span class='sort'>" + item.category + "</span>"//问题类别
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
                                     + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                    + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                    + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                     + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
@@ -335,12 +335,12 @@ var paginationed = function () {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.category + "</span>"//问题类别
+                            + "<span class='sort'>" + item.category + "</span>"//问题类别
                             + "<span>" + item.introducer + "</span>"//提出人
                             + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                             + "<span>" + item.executor + "</span>"//受理人
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                            + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                            + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                             + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
@@ -369,12 +369,12 @@ var paginationed = function () {
                                 con += "<li class='datas'>"
                                     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                    + "<span>" + item.category + "</span>"//问题类别
+                                    + "<span class='sort'>" + item.category + "</span>"//问题类别
                                     + "<span>" + item.introducer + "</span>"//提出人
                                     + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                     + "<span>" + item.executor + "</span>"//受理人
                                     + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                    + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                    + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                     + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                     + "</li>";
                                 $("#ul").html(con); //把内容入到这个div中
@@ -421,12 +421,12 @@ var paginationed = function () {
                         con += "<li class='datas'>"
                             + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                             + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                            + "<span>" + item.category + "</span>"//问题类别
+                            + "<span class='sort'>" + item.category + "</span>"//问题类别
                             + "<span>" + item.introducer + "</span>"//提出人
                             + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                             + "<span>" + item.executor + "</span>"//受理人
                             + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                            + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                            + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                             + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                             + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
@@ -504,12 +504,12 @@ var paginationeds = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.category + "</span>"//问题类别
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -537,14 +537,14 @@ var paginationeds = function () {
                                 if (arr.length > page * (vid[1] - 1) && arr.length <= page * vid[1]) {
                                     i = li.length - 1;
                                     con += "<li class='datas'>"
-                                        + "<span class='number'>" + xx + "</span>"//序号
+                                        + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                        + "<span>" + item.category + "</span>"//问题类别
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                        + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                        + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                         + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
@@ -590,12 +590,12 @@ var paginationeds = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.category + "</span>"//问题类别
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "</li>";
                         $("#ul").html(con); //把内容入到这个div中
@@ -625,12 +625,12 @@ var paginationeds = function () {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + xx + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                        + "<span>" + item.category + "</span>"//问题类别
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                        + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                        + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                         + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
@@ -662,12 +662,12 @@ var paginationeds = function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + xx + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.category + "</span>"//问题类别
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -820,12 +820,12 @@ $(document).ready(function () {
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                                + "<span>" + item.category + "</span>"//问题类别
+                                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
                                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                                + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                                + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                                 + "</li>";
                                             $("#ul").html(con); //把内容入到这个div中
@@ -833,12 +833,12 @@ $(document).ready(function () {
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                                + "<span>" + item.category + "</span>"//问题类别
+                                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
                                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                                + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                                + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                                 + "</li>";
                                             $("#ul").html(con); //把内容入到这个div中
@@ -941,12 +941,12 @@ $(document).ready(function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.category + "</span>"//问题类别
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -954,12 +954,12 @@ $(document).ready(function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.category + "</span>"//问题类别
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span class='time'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
+                                + "<span class='time1'>"+  item.acceptor + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
