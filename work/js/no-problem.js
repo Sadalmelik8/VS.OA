@@ -131,21 +131,16 @@ let _click = function(){
                             success: function (result) {
                                 dataObj = result;
                                 $.each(dataObj.ret, function (indexs, item) {
-                                    // con += "<li class='datas'>"
-                                    //     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
-                                    //     + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                    //     + "<span class='sort'>" + item.category + "</span>" //问题类别
-                                    //     + "<span>" + item.introducer + "</span>"//提出人
-                                    //     + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
-                                    //     + "<span>" + '&nbsp;' + "</span>"//受理人
-                                    //     + "<span>" + '&nbsp;' + "</span>"//提出时间
-                                    //     + "</li>";
-                                    // $("#ul").html(con); //把内容入到这个div中
-                                    paginationed();
-                                    actived();
-                                    redirect();
-                                    document.getElementsByClassName("subclass").style.display = 'none';
-                                    document.getElementById("back").style.display = "none"
+                                    if (dataObj.ret){
+                                        alert('没有该问题类别')
+                                    } else {
+                                        paginationed();
+                                        actived();
+                                        redirect();
+                                        document.getElementsByClassName("subclass").style.display = 'none';
+                                        document.getElementById("back").style.display = "none"
+                                    }
+
                                 })
                             }
                         });
@@ -153,7 +148,7 @@ let _click = function(){
                             var std = JSON.stringify({});
                             var stdTemplate = JSON.parse(std);
                             stdTemplate.category = coned;
-                            stdTemplate.problemstate = 0;
+                            stdTemplate.problemstate = 1;
                             return stdTemplate;
                         }
                         document.getElementsByClassName("category")[0].style.display = 'none';

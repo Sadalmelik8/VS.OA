@@ -11,6 +11,14 @@ function GetCookie(key) {
 window.onload = function () {
     call()
 };
+// 默认日期
+$(document).ready(function () {
+    let time = new Date();
+    let day = ("0" + time.getDate()).slice(-2);
+    let month = ("0" + (time.getMonth() + 1)).slice(-2);
+    let today = time.getFullYear() + "-" + (month) + "-" + (day);
+    $('#data').val(today);
+});
 //筛选问题类别
 let _click = function(){
     //获取cookkie
@@ -60,7 +68,7 @@ let _click = function(){
             $.each(dataObj.ret[1], function (index, item) {
                 con += "<span class='system'>" + item + "</span>";
             });
-            con+= "<span class='system' id='cancel1'>" +"取消"+ "</span>";
+            con+= "<span class='system' id='cancel'>" +"取消"+ "</span>";
             $('.category').html(con);
 
             $(".system").click(function (e) {
@@ -124,11 +132,16 @@ let _click = function(){
                             success: function (result) {
                                 dataObj = result;
                                 $.each(dataObj.ret, function (indexs, item) {
-                                    actived();
-                                    redirect();
-                                    paginationed();
-                                    document.getElementsByClassName("subclass").style.display = 'none';
-                                    document.getElementById("back").style.display = "none"
+                                    if (dataObj.ret){
+                                        alert('没有该问题类别')
+                                    } else {
+                                        paginationed();
+                                        actived();
+                                        redirect();
+                                        document.getElementsByClassName("subclass").style.display = 'none';
+                                        document.getElementById("back").style.display = "none"
+                                    }
+
                                 })
                             }
                         });
@@ -164,14 +177,6 @@ $(document).ready(function () {
     $("#click").click(function () {
         _click();
     });
-});
-// 默认日期
-$(document).ready(function () {
-    let time = new Date();
-    let day = ("0" + time.getDate()).slice(-2);
-    let month = ("0" + (time.getMonth() + 1)).slice(-2);
-    let today = time.getFullYear() + "-" + (month) + "-" + (day);
-    $('#data').val(today);
 });
 //点击标题跳转
 let redirect = function () {
@@ -239,11 +244,11 @@ var paginationed = function (userName) {
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
@@ -253,12 +258,12 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
@@ -268,12 +273,12 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
@@ -283,11 +288,12 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span>" + item.acceptor + "</span>"//验收人
+                                + "<span class='time1'>" + item.category + '&nbsp;'+ item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
@@ -325,12 +331,12 @@ var paginationed = function (userName) {
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                         + "<span>" + item.introducer + "</span>"//提出人
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + '&nbsp;' + "</span>"//受理人
                                         + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                        + "<span>" + '&nbsp;' + "</span>"//验收人
-                                        + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
-                                        + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                        + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
+                                        + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
@@ -339,13 +345,13 @@ var paginationed = function (userName) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                        + "<span>" + '&nbsp;' + "</span>"//验收人
-                                        + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
-                                        + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                        + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
+                                        + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
@@ -354,12 +360,12 @@ var paginationed = function (userName) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                        + "<span>" + '&nbsp;' + "</span>"//验收人
-                                        + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                        + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                         + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                         + "</li>";
@@ -369,11 +375,12 @@ var paginationed = function (userName) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                        + "<span>" + item.acceptor + "</span>"//验收人
+                                        + "<span class='time1'>" + item.category + '&nbsp;'+ item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + "</span>"//验收人
                                         + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
                                         + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
@@ -424,12 +431,12 @@ var paginationed = function (userName) {
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
-                                + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
+                                + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -438,13 +445,13 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
-                                + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
+                                + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -453,12 +460,12 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
@@ -468,11 +475,12 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span>" + item.acceptor + "</span>"//验收人
+                                + "<span class='time1'>" + item.category + '&nbsp;'+ item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
@@ -510,12 +518,12 @@ var paginationed = function (userName) {
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                         + "<span>" + item.introducer + "</span>"//提出人
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + '&nbsp;' + "</span>"//受理人
                                         + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                        + "<span>" + '&nbsp;' + "</span>"//验收人
-                                        + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
-                                        + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                        + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
+                                        + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
@@ -524,12 +532,12 @@ var paginationed = function (userName) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
-                                        + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
-                                        + "<span>" + '&nbsp;' + "</span>"//验收人
-                                        + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                        + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
+                                        + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                         + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                         + "</li>";
@@ -539,12 +547,12 @@ var paginationed = function (userName) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                        + "<span>" + '&nbsp;' + "</span>"//验收人
-                                        + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                        + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                         + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                         + "</li>";
@@ -554,11 +562,12 @@ var paginationed = function (userName) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                        + "<span class='sort'>" + item.category + "</span>"//问题类别
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + item.executor + "</span>"//受理人
                                         + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                        + "<span>" + item.acceptor + "</span>"//验收人
+                                        + "<span class='time1'>" + item.category + '&nbsp;'+ item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + "</span>"//验收人
                                         + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
                                         + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                         + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
@@ -610,12 +619,12 @@ var paginationed = function (userName) {
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
                                 + "<span>" + item.introducer + "</span>"//提出人
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
-                                + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
+                                + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
                             $("#ul").html(con); //把内容入到这个div中
@@ -624,12 +633,12 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
-                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
@@ -639,12 +648,12 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
@@ -654,11 +663,12 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span>" + item.acceptor + "</span>"//验收人
+                                + "<span class='time1'>" + item.category + '&nbsp;'+ item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + "</span>"//验收人
                                 + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
@@ -1352,12 +1362,12 @@ $(document).ready(function () {
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + '&nbsp;' + "</span>"//受理人
                                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                                 + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
                                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                                 + "</li>";
@@ -1369,12 +1379,12 @@ $(document).ready(function () {
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
                                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
-                                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                                 + "</li>";
@@ -1388,8 +1398,7 @@ $(document).ready(function () {
                                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
                                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                                + "<span>" + item.acceptor + "</span>"//验收人
-                                                + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
+                                                + "<span class='time1'>" + item.category + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + "</span>"//验收
                                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                                 + "</li>";
@@ -1538,12 +1547,12 @@ $(document).ready(function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge"+item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
@@ -1555,12 +1564,12 @@ $(document).ready(function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提出时间
-                                + "<span>" + '&nbsp;' + "</span>"//验收人
-                                + "<span class='time'>" + '&nbsp;' + "</span>"//验收时间
+                                + "<span class='time1'>" + '&nbsp;' + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
@@ -1574,8 +1583,7 @@ $(document).ready(function () {
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
                                 + "<span class='time'>" + item.submittime.substr(0, 4) + '/' + item.submittime.substr(4, 2) + '/' + item.submittime.substr(6, 2) + '&nbsp;' + item.submittime.substr(8, 2) + ':' + item.submittime.substr(10, 2) + ':' + item.submittime.substr(12, 2) + "</span>"//提交时间
-                                + "<span>" + item.acceptor + "</span>"//验收人
-                                + "<span class='time'>" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + '&nbsp;' + item.inspecttime.substr(8, 2) + ':' + item.inspecttime.substr(10, 2) + ':' + item.inspecttime.substr(12, 2) + "</span>"//验收时间
+                                + "<span class='time1'>" + item.category + "&nbsp;" + item.inspecttime.substr(0, 4) + '/' + item.inspecttime.substr(4, 2) + '/' + item.inspecttime.substr(6, 2) + "</span>"//验收
                                 + "<input type='submit' class=" + "knowledge" + item.knowledge + ">"
                                 + "<span class='deletes'>" + "<span class='deletes--delete'>" + "删除" + "</span>" + "</span>"//删除
                                 + "</li>";
