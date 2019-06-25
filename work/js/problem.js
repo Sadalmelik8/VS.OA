@@ -124,7 +124,8 @@ let _click = function(){
                                 dataObj = result;
                                 $.each(dataObj.ret, function (indexs, item) {
                                     if (dataObj.ret[0].id == 0){
-                                        alert('该类别下没有相关问题')
+                                        con = '';
+                                        alert('该类别下没有相关问题');
                                     } else {
                                         paginationed();
                                         actived();
