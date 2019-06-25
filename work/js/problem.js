@@ -308,6 +308,7 @@ var paginationed = function () {
                         }
                     }
                 });
+                actived();
                 redirect();
                 con = "";
                 //点击显示第几页
@@ -454,7 +455,7 @@ var paginationed = function () {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + '&nbsp;' + "</span>"//受理人
-                                        + "<span>" + '&nbsp;' + "</span>"//提出时间
+                                        + "<span>" + '&nbsp;' + "</span>"//提交
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
@@ -466,7 +467,7 @@ var paginationed = function () {
                                         + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + '&nbsp;' + "</span>"//受理人
-                                        + "<span>" + '&nbsp;' + "</span>"//提出时间
+                                        + "<span>" + '&nbsp;' + "</span>"//提交时间
                                         + "</li>";
                                     $("#ul").html(con); //把内容入到这个div中
                                 }
