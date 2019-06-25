@@ -422,8 +422,8 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='sort'>" + item.category + "</span>"//问题类别
+                                + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
@@ -504,8 +504,8 @@ var paginationed = function (userName) {
                                     con += "<li class='datas'>"
                                         + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                         + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                        + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='sort'>" + item.category + "</span>"//问题类别
+                                        + "<span>" + item.introducer + "</span>"//提出人
                                         + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                         + "<span>" + '&nbsp;' + "</span>"//受理人
                                         + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
@@ -604,8 +604,8 @@ var paginationed = function (userName) {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
-                                + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='sort'>" + item.category + "</span>"//问题类别
+                                + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + '&nbsp;' + "</span>"//受理人
                                 + "<span class='time'>" + '&nbsp;' + "</span>"//提交时间
@@ -1379,6 +1379,7 @@ $(document).ready(function () {
                                             con += "<li class='datas'>"
                                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                                 + "<span>" + item.introducer + "</span>"//提出人
                                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                                 + "<span>" + item.executor + "</span>"//受理人
@@ -1564,6 +1565,7 @@ $(document).ready(function () {
                             con += "<li class='datas'>"
                                 + "<span class='number'>" + (indexs + 1) + "</span>"//序号
                                 + "<span class='caption' id=" + item.num + ">" + item.title + "</span>"//标题
+                                + "<span class='sort'>" + item.category + "</span>"//问题类别
                                 + "<span>" + item.introducer + "</span>"//提出人
                                 + "<span class='time'>" + item.proposetime.substr(0, 4) + '/' + item.proposetime.substr(4, 2) + '/' + item.proposetime.substr(6, 2) + '&nbsp;' + item.proposetime.substr(8, 2) + ':' + item.proposetime.substr(10, 2) + ':' + item.proposetime.substr(12, 2) + "</span>"//提出时间
                                 + "<span>" + item.executor + "</span>"//受理人
