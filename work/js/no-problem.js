@@ -145,7 +145,7 @@ let _click = function(){
                             var std = JSON.stringify({});
                             var stdTemplate = JSON.parse(std);
                             stdTemplate.category = coned;
-                            stdTemplate.problemstate = 0;
+                            stdTemplate.problemstate = 1;
                             return stdTemplate;
                         }
                         document.getElementsByClassName("category")[0].style.display = 'none';
