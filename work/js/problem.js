@@ -129,8 +129,6 @@ let _click = function(){
                                     } else {
                                         paginationed();
                                         redirect();
-                                        // document.getElementsByClassName("subclass").style.display = 'none';
-                                        // document.getElementById("back").style.display = "none"
                                     }
                                     // con += "<li class='datas'>"
                                     //     + "<span class='number'>" + (indexs + 1) + "</span>"//序号

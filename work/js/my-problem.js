@@ -132,15 +132,13 @@ let _click = function(){
                             success: function (result) {
                                 dataObj = result;
                                 $.each(dataObj.ret, function (indexs, item) {
-                                    // if (dataObj.ret.id == 0){
-                                    //     alert('该类别下没有相关问题')
-                                    // } else {
+                                    if (dataObj.ret[0].id == 0){
+                                        con = '';
+                                        alert('该类别下没有相关问题');
+                                    } else {
                                         paginationed();
-                                        actived();
                                         redirect();
-                                        document.getElementsByClassName("subclass").style.display = 'none';
-                                        document.getElementById("back").style.display = "none"
-                                    // }
+                                    }
 
                                 })
                             }

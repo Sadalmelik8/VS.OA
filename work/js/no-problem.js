@@ -136,10 +136,7 @@ let _click = function(){
                                         alert('该类别下没有相关问题');
                                     } else {
                                         paginationed();
-                                        actived();
                                         redirect();
-                                        document.getElementsByClassName("subclass").style.display = 'none';
-                                        document.getElementById("back").style.display = "none"
                                     }
 
                                 })
