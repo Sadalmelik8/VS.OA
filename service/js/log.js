@@ -268,6 +268,7 @@ $(document).ready(function () {
                 $.each(dataObj.ret, function (index, item) {
                     if (item.svr != input && dataObj.ret.length == (index + 1)) {
                         alert("无此服务");
+                        return false;
                     }else {
                         var time = new Date();
                         var day = time.getDate();
