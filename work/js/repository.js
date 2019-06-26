@@ -1212,7 +1212,7 @@ $(document).ready(function () {
                 function buildJson() {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
-                    stdTemplate.num = e.target.parentNode.parentNode.children[1].id;
+                    stdTemplate.num = x;
                     return stdTemplate;
                 }
             }
