@@ -8,11 +8,13 @@
     <title>日志</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <link href="css/log-css.css" rel="stylesheet" />
-    <script src="js/log.js"></script>
+    <!--<script src="js/log.js"></script>-->
 </head>
 <body>
     <div class="log">
         <div class="log--header">
+            <input type="text" placeholder="搜索服务号" class="log--header__left">
+            <button id="search">搜索</button>
             <span>当前服务:</span>
             <span class="log--header__serve" id="service"></span>
             <span>日期：</span>
