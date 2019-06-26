@@ -8,6 +8,15 @@ function GetCookie(key) {
         }
     }
 }
+function stopBubble(e) {
+    //如果提供了事件对象，则这是一个非IE浏览器
+    if (e && e.stopPropagation)
+    //因此它支持W3C的stopPropagation()方法
+        e.stopPropagation();
+    else
+    //否则，我们需要使用IE的方式来取消事件冒泡
+        window.event.cancelBubble = true;
+}
 window.onload = function () {
     call()
 };
@@ -1155,6 +1164,8 @@ $(document).ready(function () {
                             dataObj = result;
                             if (dataObj.ret.id == 0){
                                 alert('只能删除自己提出的知识点');
+                                stopBubble(e);//这样就不会再冒泡给父级了
+                                return false;
                             }
                             else if (dataObj.ret.id == 2) {
                                 console.log(1);
