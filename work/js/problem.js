@@ -128,7 +128,6 @@ let _click = function(){
                                         alert('该类别下没有相关问题');
                                     } else {
                                         paginationed();
-                                        redirect();
                                     }
                                     // con += "<li class='datas'>"
                                     //     + "<span class='number'>" + (indexs + 1) + "</span>"//序号
