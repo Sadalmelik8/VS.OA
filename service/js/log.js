@@ -266,10 +266,7 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result;//返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
-                    if (item.svr != input && dataObj.ret.length == (index + 1)) {
-                        alert("无此服务");
-                        return false;
-                    }else {
+                    if (item.svr == seek) {
                         var time = new Date();
                         var day = time.getDate();
                         var month = time.getMonth() + 1;
@@ -338,6 +335,11 @@ $(document).ready(function () {
                             stdTemplate.svr = input;
                             return stdTemplate;
                         }
+                        return false;
+                    }
+                    if (item.svr != input && dataObj.ret.length == (index + 1)) {
+                        alert("无此服务");
+                        return false;
                     }
                 });
             }
