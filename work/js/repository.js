@@ -1151,8 +1151,8 @@ $(document).ready(function () {
                 _popup.style.display = 'inline-block';
                 $("#cancel").click(function () {
                     _popup.style.display = 'none';
-                    stopBubble(e);//这样就不会再冒泡给父级了
                 });
+                stopBubble(e);//这样就不会再冒泡给父级了
                 $('#delete').click(function () {
                     var fsession = session.fsession;
                     var userName = session.User_NM;
