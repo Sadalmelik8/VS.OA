@@ -233,7 +233,7 @@ $(document).ready(function () {
         }
     });
     $('#search').click(function () {
-        let input = document.getElementById("log--header__left")[0].value;
+        let input = document.getElementsByClassName("log--header__left")[0].value;
         var time = new Date();
         var day = time.getDate();
         var month = time.getMonth() + 1;
