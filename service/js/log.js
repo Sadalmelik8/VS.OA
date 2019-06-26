@@ -335,6 +335,8 @@ $(document).ready(function () {
                             stdTemplate.svr = input;
                             return stdTemplate;
                         }
+                        let span = document.getElementsByClassName("log--header__serve")[0];
+                        span.innerHTML = input;
                         return false;
                     }
                     if (item.svr != input && dataObj.ret.length == (index + 1)) {
