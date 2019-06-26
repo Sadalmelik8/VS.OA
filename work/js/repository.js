@@ -1137,10 +1137,10 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
-    let x = e.target.parentNode.parentNode.children[1].id;
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
+                let x = e.target.parentNode.parentNode.children[1].id;
                 _popup.style.display = 'inline-block';
                 $("#cancel").click(function () {
                     _popup.style.display = 'none';
