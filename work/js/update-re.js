@@ -39,12 +39,10 @@ $(document).ready(function () {
     var cons = '';
     var coneds = '';
     var title = document.getElementsByClassName('title')[0];
-    var presents = document.getElementsByClassName('present')[0];
-    // var contents = document.getElementsByClassName('contents')[0];
     var remarks = document.getElementsByClassName('title')[1];
-    // var level = document.getElementsByClassName('bottom--middle__urgency')[0];
-    // let click = document.getElementById("click");
     _template1 = buildJson();
+    var fsession = session.fsession;
+    var userName = session.User_NM;
     var s = ("svr=WS_00006" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     var form = new FormData();
