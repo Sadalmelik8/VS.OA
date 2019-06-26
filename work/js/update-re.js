@@ -32,36 +32,18 @@ $(document).ready(function () {
         window.open('login.html', '_parent');
         return;
     }
-    var fsession = session.fsession;
-    var userName = session.User_NM;
-    var s = ("svr=WS_00010" + "&fsession=" + fsession + "&userName=" + userName);
-    var URL = "/webservice/?" + s;
-    $.ajax({
-        type: "post", //请求的方式，也有get请求
-        url: URL, //请求地址，后台提供的,这里我在//本地自己建立了个json的文件做例子
-        contentType: "application/json",
-        data: {},//data是传给后台的字段，后台需要哪些就传入哪些
-        cache: false,
-        processData: false,
-        contentType: false,
-        dataType: "json", //json格式，后台返回的数据为json格式的。
-        success: function (result) {
-            var dataObj = result;
-            $.each(dataObj.ret.username, function (index, item) {
-                var option = document.createElement("option");
-                $(option).val(item);
-                $(option).text(item);
-                $('#presents').append(option);
-            })
-        }
-    });
     var con = '';
+    var cond = '';
+    var coned = '';
+    var conds = '';
     var cons = '';
+    var coneds = '';
     var title = document.getElementsByClassName('title')[0];
-    // var presents = document.getElementsByClassName('present')[0];
-    var contents = document.getElementsByClassName('contents')[0];
+    var presents = document.getElementsByClassName('present')[0];
+    // var contents = document.getElementsByClassName('contents')[0];
     var remarks = document.getElementsByClassName('title')[1];
     // var level = document.getElementsByClassName('bottom--middle__urgency')[0];
+    // let click = document.getElementById("click");
     _template1 = buildJson();
     var s = ("svr=WS_00006" + "&fsession=" + fsession + "&userName=" + userName);
     var URL = "/webservice/?" + s;
@@ -81,38 +63,46 @@ $(document).ready(function () {
             title.value = dataObj.ret[0].title;
             // presents.value = dataObj.ret[0].executor;
             remarks.value = dataObj.ret[0].remarks;
-            con =
-                "<li class='detailed--icon'>"
-                + "<div class='firstdate'><span>"
+            con = "<li class='detailed--icon'>"
+                + "<div class='firstdate'>"
+                + "<span>"
                 + dataObj.ret[0].proposetime.substr(0, 4)
                 + '/' + dataObj.ret[0].proposetime.substr(4, 2)
                 + '/' + dataObj.ret[0].proposetime.substr(6, 2)
-                + '&nbsp;' + dataObj.ret[0].proposetime.substr(8, 2)
-                + ':' + dataObj.ret[0].proposetime.substr(10, 2)
-                + ':' + dataObj.ret[0].proposetime.substr(12, 2)
                 + "</span>"
+                + "<span>" + dataObj.ret[0].proposetime.substr(8, 2)
+                + ':' + dataObj.ret[0].proposetime.substr(10, 2)
+                + ':' + dataObj.ret[0].proposetime.substr(12, 2) + "</span>"
                 + "<span>" + dataObj.ret[0].introducer + "</span>"
                 + "</div>"
                 + "<div class='firsticon'><span>"
                 + dataObj.ret[0].content
                 + "</span>"
                 + "<div class='firstpic'>"
-                + "<img class='pics' src=" + dataObj.ret[0].pic.split('!@#$%^&*')[0] + ">"
+                + "</div>"
+                + "<div class='firstfile'>"
                 + "</div>"
                 + "</div>"
                 + "</li>";
-            $('#detailed').html(con);
-            if (dataObj.ret[0].pic.split('!@#$%^&*')[0] == '') {
-                document.getElementsByClassName('pics')[0].style.display = 'none';
+            for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').pic.length; i++) {
+                cond += "<img class='pics' src=download/" + eval('(' + dataObj.ret[0].files + ')').pic[i].dir + "/>";
             }
+            for (var i = 0; i < eval('(' + dataObj.ret[0].files + ')').nopic.length; i++) {
+                conds += "<a href=download/" + eval('(' + dataObj.ret[0].files + ')').nopic[i].dir + ">" + eval('(' + dataObj.ret[0].files + ')').nopic[i].fn + "</a>";
+            }
+            $('#detailed').html(con);
+            $('.firstpic').html(cond);
+            $('.firstfile').html(conds);
             if (dataObj.ret.length > 1) {
                 $.each(dataObj.ret[1].contents, function (index, item) {
-                    cons += "<li class='detailed--icon' >"
+                    cons += "<li class='detailed-icon' >"
                         + "<div class='firstdate'><span>"
                         + item.submittime.substr(0, 4)
                         + '/' + item.submittime.substr(4, 2)
                         + '/' + item.submittime.substr(6, 2)
-                        + '&nbsp;' + item.submittime.substr(8, 2)
+                        + "</span>"
+                        + "<span>"
+                        + item.submittime.substr(8, 2)
                         + ':' + item.submittime.substr(10, 2)
                         + ':' + item.submittime.substr(12, 2)
                         + "</span>"
@@ -122,26 +112,40 @@ $(document).ready(function () {
                         + item.contents
                         + "</span>"
                         + "<div class='firstpic'>"
-                        + "<img class='pics' src=" + item.pic.split('!@#$%^&*')[0] + ">"
+                        + "</div>"
+                        + "<div class='firstfile'>"
                         + "</div>"
                         + "</div>"
                         + "</li>";
                     $("#detalis").html(cons); //把内容入到这个div中
                 });
-                for (var i = 1; i <= dataObj.ret[1].contents.length; i++) {
+                $.each(dataObj.ret[1].contents, function (index, item) {
+                    for (var i = 0; i < eval('(' + item.files + ')').pic.length; i++) {
+                        coned += "<img class='pics' src=download/" + eval('(' + item.files + ')').pic[i].dir + "/>";
+                    }
+                    for (var i = 0; i < eval('(' + item.files + ')').nopic.length; i++) {
+                        coneds += "<a  href=download/" + eval('(' + item.files + ')').nopic[i].dir + ">" + eval('(' + item.files + ')').nopic[i].fn + "</a>";
+                    }
+                    document.getElementsByClassName('firstpic')[index + 1].innerHTML = coned;
+                    coned = '';
+                    document.getElementsByClassName('firstfile')[index + 1].innerHTML = coneds;
+                    coneds = '';
+                });
+                for (var i = 0; i < document.getElementsByClassName('pics').length; i++) {
                     //后期修改
                     //后期修改
                     //后期修改
                     //后期修改
                     //后期修改
-                    if (document.getElementsByClassName('pics')[i].src == ('http://192.168.5.58:29999/update.html?num=' + oltid)) {
+                    if (document.getElementsByClassName('pics')[i].src == document.location.href) {
                         document.getElementsByClassName('pics')[i].style.display = 'none';
                     }
                 }
             }
             $(".pics").click(function (e) {
                 var img = document.getElementById("big");
-                img.style.display = 'block';
+                let big = document.getElementsByClassName("big")[0];
+                big.style.display = "inline-block";
                 img.src = e.target.src;
             })
 
@@ -154,13 +158,16 @@ $(document).ready(function () {
         stdTemplate.sts = 1;
         return stdTemplate;
     }
-
     $("#big").click(function () {
         var big = document.getElementById('big');
+        let _big = document.getElementsByClassName('big')[0];
+        _big.style.display = 'none';
         big.src = '';
-        big.style.display = 'none';
     });
+    $("#delete").click(function () {
+        var big = document.getElementById('big');
+        let _big = document.getElementsByClassName('big')[0];
+        _big.style.display = 'none';
+        big.src = '';
+    })
 });
-
-
-
