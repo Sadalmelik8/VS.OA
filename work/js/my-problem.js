@@ -136,8 +136,8 @@ let _click = function(){
                                         con = '';
                                         alert('该类别下没有相关问题');
                                     } else {
+                                        age = dataObj.ret.length;
                                         paginationed();
-                                        redirect();
                                     }
 
                                 })
