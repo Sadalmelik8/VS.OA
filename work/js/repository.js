@@ -1142,6 +1142,7 @@ $(document).ready(function () {
                 _popup.style.display = 'inline-block';
                 $("#cancel").click(function () {
                     _popup.style.display = 'none';
+                    stopBubble(e);//这样就不会再冒泡给父级了
                 });
                 $('#delete').click(function () {
                     var fsession = session.fsession;
@@ -1164,7 +1165,6 @@ $(document).ready(function () {
                             dataObj = result;
                             if (dataObj.ret.id == 0){
                                 alert('只能删除自己提出的知识点');
-                                stopBubble(e);//这样就不会再冒泡给父级了
                                 return false;
                             }
                             else if (dataObj.ret.id == 2) {
