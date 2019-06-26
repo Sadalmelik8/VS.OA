@@ -107,6 +107,12 @@ li {
     height: 100%;
     border-left: 1px solid #888;
 }
+.firstfile{
+    display: inline-block;
+    width: 100%;
+    overflow-x: auto;
+    padding-top: 30px;
+}
 
     .firsticon > span {
         display: inline-block;
