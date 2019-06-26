@@ -61,16 +61,21 @@ li {
     line-height: 1;
     color: #6D5A62;
     text-align: left;
+    overflow-y: auto;
+    vertical-align: top;
+    border: 1px solid #888;
     background: #fff;
-    overflow-y: scroll;
 }
 
 .detailed--icon {
     width: 100%;
-    height: 250px;
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid #888;
 }
 
+.detailed--icon {
+    width: 100%;
+    border-bottom: 1px solid #888;
+}
 .firstdate {
     display: inline-block;
     width: 20%;
