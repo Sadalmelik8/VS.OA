@@ -266,7 +266,7 @@ $(document).ready(function () {
             success: function (result) {
                 dataObj = result;//返回的result为json格式的数据
                 $.each(dataObj.ret, function (index, item) {
-                    if (item.svr == seek) {
+                    if (item.svr == input) {
                         var time = new Date();
                         var day = time.getDate();
                         var month = time.getMonth() + 1;
