@@ -1134,25 +1134,25 @@ $(document).ready(function () {
     })
 });
 //删除
+function stopBubble(e) {
+    //如果提供了事件对象，则这是一个非IE浏览器
+    if (e && e.stopPropagation)
+    //因此它支持W3C的stopPropagation()方法
+        e.stopPropagation();
+    else
+    //否则，我们需要使用IE的方式来取消事件冒泡
+        window.event.cancelBubble = true;
+}
 $(document).ready(function () {
-    function stopBubble(e) {
-        //如果提供了事件对象，则这是一个非IE浏览器
-        if (e && e.stopPropagation)
-        //因此它支持W3C的stopPropagation()方法
-            e.stopPropagation();
-        else
-        //否则，我们需要使用IE的方式来取消事件冒泡
-            window.event.cancelBubble = true;
-    }
     let _popup = document.getElementsByClassName('popup')[0];
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
+                stopBubble(e);//这样就不会再冒泡给父级了
                 _popup.style.display = 'inline-block';
                 $("#cancel").click(function () {
                     _popup.style.display = 'none';
                 });
-                stopBubble(e);//这样就不会再冒泡给父级了
                 $('#delete').click(function () {
                     var fsession = session.fsession;
                     var userName = session.User_NM;
