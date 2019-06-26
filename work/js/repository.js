@@ -1137,14 +1137,16 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
-    $("#cancel").click(function () {
-        _popup.style.display = 'none';
-        return false;
-    });
+    let x = e.target.parentNode.parentNode.children[1].id;
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
             if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
                 _popup.style.display = 'inline-block';
+                $("#cancel").click(function () {
+                    _popup.style.display = 'none';
+                    x = '';
+                    return false;
+                });
                 $('#delete').click(function () {
                     var fsession = session.fsession;
                     var userName = session.User_NM;
@@ -1200,7 +1202,6 @@ $(document).ready(function () {
                                 function buildJsons() {
                                     var std = JSON.stringify({});
                                     var stdTemplate = JSON.parse(std);
-                                    stdTemplate.type = 1;
                                     return stdTemplate;
                                 }
                             }
