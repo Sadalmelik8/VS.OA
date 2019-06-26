@@ -137,7 +137,6 @@ textarea {
     border: 1px solid #888;
     background: #fff;
 }
-
 .detailed--icon {
     width: 100%;
     border-bottom: 1px solid #888;
@@ -153,8 +152,7 @@ textarea {
     vertical-align: top;
     line-height: 30px;
 }
-
-    .firstdate > span {
+.firstdate > span {
         display: inline-block;
         width: 100%;
         text-align: right;
@@ -163,7 +161,6 @@ textarea {
         height: 30px;
         line-height: 30px;
     }
-
 .firsticon {
     display: inline-block;
     width: 90%;
@@ -175,27 +172,22 @@ textarea {
     height: 100%;
     border-left: 1px solid #888;
 }
-
-    .firsticon > span {
+.firsticon > span {
         display: inline-block;
         width: 100%;
         font-size: 15px;
     }
-
 .firstpic {
     display: inline-block;
     text-align: left;
     width: 100%;
 }
-
 .singular {
     background: #f0f0f0;
 }
-
 .particulars {
     top: -240px;
 }
-
 #big {
     display: inline-block;
     position: fixed;
