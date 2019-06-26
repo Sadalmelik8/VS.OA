@@ -1137,12 +1137,12 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     let _popup = document.getElementsByClassName('popup')[0];
+    $("#cancel").click(function () {
+        _popup.style.display = 'none';
+        return false;
+    });
     document.getElementById('ul').addEventListener('click', function (e) {
         this.childNodes.forEach(function (v, k) {
-            $("#cancel").click(function () {
-                _popup.style.display = 'none';
-                return false;
-            });
             if (e.target === document.getElementsByClassName('deletes--delete')[k]) {
                 _popup.style.display = 'inline-block';
                 $('#delete').click(function () {
