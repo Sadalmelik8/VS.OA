@@ -37,7 +37,7 @@ $(document).ready(function () {
             var t = new Date().getTime();
             var URL = "/finservices/?" + data + "&t=" + t;
             $.ajax({
-                type: "get",
+                type: "post",
                 url: URL,
                 cache: true,
                 processData: false,
