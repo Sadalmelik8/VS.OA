@@ -222,13 +222,13 @@ $(document).ready(function () {
                 });
             }
         });
-        function buildJson(oltid) {
+        function buildJson() {
             var std = JSON.stringify({});
             var stdTemplate = JSON.parse(std);
             stdTemplate.y = year.toString();
             stdTemplate.m = month.toString();
             stdTemplate.d = day.toString();
-            stdTemplate.svr = oltid;
+            stdTemplate.svr = document.getElementById('service').innerHTML;
             return stdTemplate;
         }
     });

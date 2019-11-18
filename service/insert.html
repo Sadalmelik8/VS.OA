@@ -5,40 +5,51 @@
     <title>新增服务</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <link href="css/insert-css.css" rel="stylesheet" />
-    <script src="js/insert.js"></script>
+    <script src="js/insert.js"></script> 
 </head>
 <body>
     <div class="particulars">
         <div class="header">
+            <input type="text" class="search" placeholder="搜索服务" id="seek">
+            <button id="search">搜索</button>
             <span class="header--left">当前服务：</span>
             <span class="header--right" id="data"> </span>
+            <input type="button" value="查看日志" class="btn-l" id="btn">
         </div>
         <ul>
-            <li>Package</li>
-            <input type="text" class="icon--left" id="package">
+            <li class="li-1">Package</li>
+            <input style="cursor: default;" type="text" class="icon--left" id="package">
             <li>Module</li>
-            <input type="text" class="icon--left" id="module">
+            <input style="cursor: default;" type="text" class="icon--left" id="module">
             <li>Service</li>
-            <input type="text" class="icon--left" id="service">
+            <input style="cursor: default;" type="text" class="icon--left" id="service">
             <li>服务状态</li>
-            <input type="text" class="icon--left" id="state">
+            <input style="cursor: default;" type="text" class="icon--left" id="state">
             <li>日志</li>
-            <input type="text" class="icon--left" id="log">
+            <input style="cursor: default;" type="text" class="icon--left" id="log">
             <li>服务说明</li>
             <input type="text" class="icon--left" id="explain">
             <li>前处理</li>
-            <input type="text" class="icon--left" id="ago">
+            <input style="cursor: default;" type="text" class="icon--left" id="ago">
             <li>后处理</li>
-            <input type="text" class="icon--left" id="later">
+            <input style="cursor: default;" type="text" class="icon--left" id="later">
             <li>是否允许浏览器访问</li>
-            <input type="text" class="icon--left" id="whether">
+            <input style="cursor: default;" type="text" class="icon--left" id="whether">
         </ul>
         <div class="icon--right">
-            <div>服务代码</div>
-            <textarea id="code"></textarea>
+            <div>
+                <span>服务代码</span>
+                <button id="edit">编辑</button>
+                <button id="cancel">取消</button>
+                <button id="complete">完成</button>
+            </div>
+            <textarea style="cursor: default;" id="code"></textarea>
         </div>
         <input type="button" value="保存服务" id="bottom" class="btn">
-        <input type="button" value="查看日志" class="btn" id="btn">
     </div>
 </body>
 </html>
+
+
+
+

@@ -18,7 +18,7 @@ function GetCookie(key) {
     }
 }
 //点击标题跳转
-let redirect = function (fsession, userName) {
+let redirect = function (session, userName) {
     let oltid = '';
     $(".icon").click(function (e) {
         oltid = e.currentTarget.id;
@@ -26,11 +26,11 @@ let redirect = function (fsession, userName) {
     });
 };
 $(document).ready(function () {
-    //获取fsession
+    //获取session
     var aCookie = GetCookie('wytSession');
     session = eval('(' + aCookie + ')');
     if (session) {
-       if (session.fsession == "undefined") {
+       if (session.session == "undefined") {
            window.open('login.html', '_parent');
            return;
        }
@@ -54,10 +54,12 @@ $(document).ready(function () {
         return stdTemplate;
     }
     var mes = '';
-    var fsession = session.fsession;
+    var session = session.session;
     var userName = session.User_NM;
+    var empId = session.empId;
+    var sign = session.sign;
     _template1 = buildJson();
-    var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = ("svr=WS_00009" + "&session=" + session + "&userName=" + userName + "&empId=" + empId + "&sign=" + sign);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));
@@ -113,7 +115,7 @@ $(document).ready(function () {
         var aCookie = GetCookie('wytSession');
         session = eval('(' + aCookie + ')');
         if (session) {
-            if (session.fsession == "undefined") {
+            if (session.session == "undefined") {
                 window.open('login.html', '_parent');
                 return;
             }
@@ -128,10 +130,10 @@ $(document).ready(function () {
             stdTemplate.sts = 0;
             return stdTemplate;
         }
-        var fsession = session.fsession;
+        var session = session.session;
         var userName = session.User_NM;
         _template1 = buildJson();
-        var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+        var s = ("svr=WS_00009" + "&session=" + session + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
@@ -159,7 +161,7 @@ $(document).ready(function () {
                         $("#data").html(con);
                     }
                 });
-                redirect(fsession, userName);
+                redirect(session, userName);
                 con = '';
             }
         });
@@ -178,10 +180,10 @@ $(document).ready(function () {
             stdTemplate.sts = 0;
             return stdTemplate;
         }
-        var fsession = session.fsession;
+        var session = session.session;
         var userName = session.User_NM;
         _template1 = buildJson();
-        var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+        var s = ("svr=WS_00009" + "&session=" + session + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
@@ -209,7 +211,7 @@ $(document).ready(function () {
                         $("#data").html(con);
                     }
                 });
-                redirect(fsession, userName);
+                redirect(session, userName);
                 con = '';
             }
         });
@@ -227,10 +229,10 @@ $(document).ready(function () {
             stdTemplate.sts = 1;
             return stdTemplate;
         }
-        var fsession = session.fsession;
+        var session = session.session;
         var userName = session.User_NM;
         _template1 = buildJson();
-        var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+        var s = ("svr=WS_00009" + "&session=" + session + "&userName=" + userName);
         var URL = "/webservice/?" + s;
         var form = new FormData();
         form.append("data", (JSON.stringify(_template1)));
@@ -258,7 +260,7 @@ $(document).ready(function () {
                         $("#data").html(con);
                     }
                 });
-                redirect(fsession, userName);
+                redirect(session, userName);
                 con = '';
             }
         });
@@ -280,10 +282,10 @@ $(document).ready(function () {
         return stdTemplate;
     }
     let remind = '';
-    var fsession = session.fsession;
+    var session = session.session;
     var userName = session.User_NM;
     _template1 = buildJson();
-    var s = ("svr=WS_00009" + "&fsession=" + fsession + "&userName=" + userName);
+    var s = ("svr=WS_00009" + "&session=" + session + "&userName=" + userName);
     var URL = "/webservice/?" + s;
     var form = new FormData();
     form.append("data", (JSON.stringify(_template1)));

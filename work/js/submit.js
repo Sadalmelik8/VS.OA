@@ -177,7 +177,7 @@ $(document).ready(function () {
             var fsession = session.fsession;
             var userName = session.User_NM;
             var s = ("svr=WS_00017" + "&fsession=" + fsession + "&userName=" + userName);
-            var URL = "/webservice/?" + s;
+            var URL = "/hrpweb_svr/?" + s;
             var form = new FormData();
             for (var i = 0; i < 6; i++) {
                 var img = document.getElementsByClassName('imgs')[i].src;

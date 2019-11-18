@@ -203,7 +203,7 @@ $(document).ready(function () {
                         if (msg.ret.id == 1) {
                             alert('新增成功');
                         }
-                        if (msg.ret.id == 2) {
+                        else if (msg.ret.id == 2) {
                             alert('已存在该服务！');
                         }
                         else {
@@ -414,10 +414,10 @@ $(document).ready(function () {
                     dataType: "json",//期待返回的数据类型
                     success: function (msg) {
                         if (msg.ret.id == 1) {
-                            alert('更新成功');
+                            alert('服务说明更新成功');
                         }
-                        else {
-                            alert('更新失败');
+                        else if (msg.ret.id == 0){
+                            alert('服务说明更新失败');
                         }
                     },
                     error: function () {
@@ -428,7 +428,8 @@ $(document).ready(function () {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
                     stdTemplate.svr = service.value;
-                    stdTemplate.content = code.value;
+                    stdTemplate.content = 'a';
+                    stdTemplate.descript = document.getElementById('explain').value;
                     return stdTemplate;
                 }
             }
@@ -447,13 +448,13 @@ $(document).ready(function () {
         let data = document.getElementById('data');
         data.innerText = oltid;
         mode = 'view';
-        keep.value = '更新服务';
+        keep.value = '更新服务代码';
         package.readOnly = true;
         module.readOnly = true;
         service.readOnly = true;
         state.readOnly = true;
         log.readOnly = true;
-        explain.readOnly = true;
+        explain.readOnly = false;
         ago.readOnly = true;
         later.readOnly = true;
         whether.readOnly = true;
@@ -504,4 +505,175 @@ $(document).ready(function () {
             return stdTemplate;
         }
     }
+});
+//搜索
+$(function () {
+    $("#search").click(function () {
+        var seek = document.getElementById("seek").value;
+        var seeks = seek.trim();
+        var aCookie = GetCookie('wytSession');
+        session = eval('(' + aCookie + ')');
+        if (session) {
+            if (session.fsession == "undefined") {
+                window.open('login.html', '_self');
+                return;
+            }
+        }
+        else {
+            window.open('login.html', '_self');
+            return;
+        }
+        var fsession = session.fsession;
+        var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
+        var URL = "/webadmin/?" + s;
+        $.ajax({
+            type: "get", //请求的方式，也有get请求
+            url: URL,
+            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
+            dataType: "json", //json格式，后台返回的数据为json格式的。
+            //beforeSend: LoadFunction, //加载执行方法
+            //错误执行方法
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+                alert(errorThrown);
+            },
+            success: function (result) {
+                dataObj = result;//返回的result为json格式的数据
+                $.each(dataObj.ret, function (index, item) {
+                    if (item.svr == seeks) {
+                        location.href = "insert.html?age=" + seeks;
+                        return false;
+                    }
+                    if (item.svr != seeks && dataObj.ret.length == (index + 1)) {
+                        alert("无此服务");
+                    }
+                });
+            }
+        })
+    })
+});
+$(function(){
+    let url = window.location.search;
+    let oltid = url.substr(url.indexOf("=") + 1);
+    if(oltid == ''){
+        document.getElementById('edit').style.display = 'none';
+        document.getElementById('btn').style.display = 'none';
+    }else{
+        let serve = document.getElementById('data').innerHTML;
+    document.getElementById("code").readOnly = true;
+    $("#edit").click(function () {
+        $("#edit").hide();
+        document.getElementById("cancel").style.display = "inline-block";
+        document.getElementById("complete").style.display = "inline-block";
+        document.getElementById("code").readOnly = false;
+        document.getElementById('code').style.cursor = 'auto';
+    });
+    $("#cancel").click(function(){
+        cancelHandle();
+        document.getElementById('code').style.cursor = 'default';
+    });
+    function cancelHandle() {
+        location.reload();
+        var aCookie = GetCookie('wytSession');
+        session = eval('(' + aCookie + ')');
+        if (session) {
+            if (session.fsession == "undefined") {
+                window.open('login.html', '_self');
+                return;
+            }
+        }
+        else {
+            window.open('login.html', '_self');
+            return;
+        }
+        var fsession = session.fsession;
+        var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
+        var URL = "/webadmin/?" + s;
+        $.ajax({
+            type: "get", //请求的方式，也有get请求
+            url: URL,
+            data: {},//data是传给后台的字段，后台需要哪些就传入哪些
+            dataType: "json", //json格式，后台返回的数据为json格式的。
+            //beforeSend: LoadFunction, //加载执行方法
+            //错误执行方法
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+                alert(errorThrown);
+            },
+            success: function (result) {
+                dataObj = result;//返回的result为json格式的数据
+                $.each(dataObj.ret, function (index, item) {
+                    if (item.svr == serve) {
+                        location.href = "insert.html?age=" + serve;
+                    }
+                });
+            }
+        })
+    }
+    function completeHandle() {
+        document.getElementById("code").readOnly = true;
+    }
+    $("#complete").click(function(){
+        document.getElementById("cancel").style.display = "none";
+        document.getElementById("complete").style.display = "none";
+        document.getElementById("edit").style.display = "inline-block";
+        completeHandle();
+        document.getElementById('code').style.cursor = 'default';
+        // $('#bottom').unbind('click').click(function () {
+            //获取fsession
+            var aCookie = GetCookie('wytSession');
+            session = eval('(' + aCookie + ')');
+            if (session) {
+                if (session.fsession == "undefined") {
+                    window.open('login.html', '_self');
+                    return;
+                }
+            }
+            else {
+                window.open('login.html', '_self');
+                return;
+            }
+            fsession = session.fsession;
+            _template1 = buildJson();
+            var s = ("svr=webadmin_00006" + "&fsession=" + fsession);
+            var URL = "/webadmin/?" + s;
+            var form = new FormData();
+            form.append("data", (JSON.stringify(_template1)));
+            $.ajax({
+                type: 'post',
+                url: URL,
+                contentType: "application/json",//如果想以json格式把数据提交到后台的话，这个必须有，否则只会当做表单提交
+                data: form,
+                cache: false,
+                processData: false,
+                contentType: false,
+                dataType: "json",//期待返回的数据类型
+                success: function (msg) {
+                    if (msg.ret.id == 1) {
+                        alert('服务代码更新成功');
+                    }
+                    else if (msg.ret.id == 0){
+                        alert('服务代码更新失败');
+                    }
+                },
+                error: function () {
+                    alert("请求失败");
+                }
+            });
+            function buildJson() {
+                var std = JSON.stringify({});
+                var stdTemplate = JSON.parse(std);
+                stdTemplate.svr = service.value;
+                stdTemplate.content = code.value;
+                // stdTemplate.descript = document.getElementById('explain').value;
+                return stdTemplate;
+            }
+        })
+    // })
+    }
+
 });

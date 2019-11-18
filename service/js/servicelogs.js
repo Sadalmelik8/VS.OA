@@ -1,14 +1,4 @@
-﻿//获取后台服务列表
-window.onload = function () {
-    call();
-};
-//加载中
-function LoadFunction() {
-}
-//失败
-function erryFunction() {
-    //alert('error')
-}
+﻿let pp = 0;
 //获取cookie
 function GetCookie(key) {
     var aCookie = document.cookie.split("; ");
@@ -18,6 +8,26 @@ function GetCookie(key) {
             return unescape(aCrumb[1]);
         }
     }
+}
+function GetCookies(key) {
+    var aCookie = document.cookie.split("; ");
+    for (var i = 0; i < aCookie.length; i++) {
+        var aCrumb = aCookie[i].split("=");
+        if (key == aCrumb[0]) {
+            pp = aCrumb[1];
+        }
+    }
+}
+//获取后台服务列表
+window.onload = function () {
+    call();
+};
+//加载中
+function LoadFunction() {
+}
+//失败
+function erryFunction() {
+    //alert('error')
 }
 //点击名称跳转页面
 let redirect = function () {
@@ -30,7 +40,9 @@ let redirect = function () {
 //获取后台服务列表
 var call = function () {
     var aCookie = GetCookie('wytSession');
+    var aCookies = GetCookies('pp');
     session = eval('(' + aCookie + ')');
+    sessioned = eval('(' + aCookies + ')');
     if (session) {
         if (session.fsession == "undefined") {
             window.open('login.html', '_self');
@@ -42,6 +54,7 @@ var call = function () {
         return;
     }
     var fsession = session.fsession;
+    // pp = sessioned.pp;
     var s = ("svr=webadmin_00005" + "&fsession=" + fsession);
     var URL = "/webadmin/?" + s;
     $.ajax({
@@ -93,34 +106,64 @@ var paginationed = function () {
         var a = ul.getElementsByTagName("a");
         //标签
         if (Math.ceil(age / page) >= 11) {
-            for (var i = 10; i < li.length; i++) {
-                li[i].style.display = "none";
+            if(pp != '' && pp != '»' && pp != '«'){
+                li[pp - 1].className = 'active';
+                for (var i = 10; i < li.length; i++) {
+                    li[i].style.display = "inline-block";
+                }
+                a[9].innerHTML = 10;
+                a[Math.ceil(age / page)].innerHTML = "&laquo;";
+            }else {
+                li[0].className = "active";
+                for (var i = 10; i < li.length; i++) {
+                    li[i].style.display = "none";
+                    a[9].innerHTML = "&raquo;";
+                    a[9].id = "a10";
+                }
             }
-            li[0].className = "active";
+            // li[0].className = "active";
             activeds();
-            a[9].innerHTML = "&raquo;";
-            a[9].id = "a10";
             for (var i = 1; i <= li.length; i++) {
                 a[i - 1].id = "a" + i;
                 var aid = a[i - 1].id;
                 //每页显示条数
                 $.each(dataObj.ret, function (indexs, msg) {
-                    if (indexs < page) {
-                        con += "<li>"
-                            + "<span class='span-success'>" + (indexs + 1) + "</span>"
-                            + "<span class='message'>" + msg.svr + "</span>"
-                            + "<lable class='label-success'>" + msg.sts + "</lable>"
-                            + "<button></button>" + "<hr/>"
-                            + "</li>";
-                        $("#ul1").html(con); //把内容入到这个div中
+                    if (pp != 0){
+                        if (indexs >= page * (pp - 1) && indexs < page * pp) {
+                            con += "<li>"
+                                + "<span class='span-success'>" + (indexs + 1) + "</span>"
+                                + "<span class='message'>" + msg.svr + "</span>"
+                                + "<lable class='label-success'>" + msg.sts + "</lable>"
+                                + "<button></button>" + "<hr/>"
+                                + "</li>";
+                            $("#ul1").html(con); //把内容入到这个div中
+                        }
+                    } else if (pp == 0){
+                        if (indexs < page) {
+                            con += "<li>"
+                                + "<span class='span-success'>" + (indexs + 1) + "</span>"
+                                + "<span class='message'>" + msg.svr + "</span>"
+                                + "<lable class='label-success'>" + msg.sts + "</lable>"
+                                + "<button></button>" + "<hr/>"
+                                + "</li>";
+                            $("#ul1").html(con); //把内容入到这个div中
+                        }
                     }
+
                 });
+                // }
                 control();
                 redirect();
                 con = "";
                 //点击显示第几页
                 $("#" + aid).click(function (e) {
                     var vid = e.target.id.split('a');
+                    pp = e.target.innerHTML;
+                    if(pp == '»' || pp == '«'){
+                        pp = 0;
+                    }else {
+                        document.cookie = "pp=" + pp;
+                    }
                     //数字页
                     if (a[vid[1] - 1].innerText != "»") {
                         for (var i = 0; i < li.length; i++) {
@@ -163,25 +206,50 @@ var paginationed = function () {
                     }
                 })
             }
+            // if(pp != '' && pp != '»' && pp != '«'){
+            //     $("#a" + pp).parentNode.attr('class','active');
+            // }
         }
         if (Math.ceil(age / page) < 11) {
-            li[0].className = "active";
+            if(pp != '' && pp != '»' && pp != '«'){
+                li[pp - 1].className = 'active';
+            }else {
+                li[0].className = "active";
+            }
             activeds();
             for (var i = 1; i <= li.length; i++) {
                 a[i - 1].id = "a" + i;
                 var aid = a[i - 1].id;
                 //每页显示条数
-                $.each(dataObj.ret, function (indexs, msg) {
-                    if (indexs < page) {
-                        con += "<li>"
-                            + "<span class='span-success'>" + (indexs + 1) + "</span>"
-                            + "<span class='message'>" + msg.svr + "</span>"
-                            + "<lable class='label-success'>" + msg.sts + "</lable>"
-                            + "<button></button>" + "<hr/>"
-                            + "</li>";
-                        $("#ul1").html(con); //把内容入到这个div中
-                    }
-                });
+                // if(pp != '' || pp != undefined){
+                //     $.each(dataObj.ret, function (indexs, msg) {
+                //         if (indexs >= page * (pp - 1) && indexs < page * pp) {
+                //             i = li.length - 1;
+                //             con += "<li>"
+                //                 + "<span class='span-success'>" + (indexs + 1) + "</span>"
+                //                 + "<span class='message'>" + msg.svr + "</span>"
+                //                 + "<lable class='label-success'>" + msg.sts + "</lable>"
+                //                 + "<button></button>" + "<hr/>"
+                //                 + "</li>";
+                //             $("#ul1").html(con); //把内容入到这个div中
+                //             li[pp].className = "active";
+                //         }
+                //     });
+                //     activeds();
+                // }else {
+                    $.each(dataObj.ret, function (indexs, msg) {
+                        if (indexs < page) {
+                            con += "<li>"
+                                + "<span class='span-success'>" + (indexs + 1) + "</span>"
+                                + "<span class='message'>" + msg.svr + "</span>"
+                                + "<lable class='label-success'>" + msg.sts + "</lable>"
+                                + "<button></button>" + "<hr/>"
+                                + "</li>";
+                            $("#ul1").html(con); //把内容入到这个div中
+                        }
+
+                    });
+                // }
                 control();
                 redirect();
                 con = "";
@@ -229,7 +297,7 @@ var paginationed = function () {
                         con += "<li>"
                             + "<span class='span-success'>" + (indexs + 1) + "</span>"
                             + "<span class='message'>" + msg.svr + "</span>"
-                            + "<lable class='label-success'>" + msg.status + "</lable>"
+                            + "<lable class='label-success'>" + msg.sts + "</lable>"
                             + "<button></button>" + "<hr/>"
                             + "</li>";
                         $("#ul1").html(con); //把内容入到这个div中
@@ -280,7 +348,7 @@ var control = function () {
         $("#" + btnid).click(function (e) {
             var vid = e.target.id.split('btn');
             if (lable[vid[1]].innerText.trim() == 0) {
-                var data = li[i].span[2*i+1].innerHTML;
+                var data = li[i].span[2 * i + 1].innerHTML;
                 _template1 = buildJson(data);
                 var s = ("svr=webadmin_00007" + "&fsession=" + fsession);
                 var URL = "/webadmin/?" + s;
@@ -303,7 +371,7 @@ var control = function () {
                     dataType: "json", //json格式，后台返回的数据为json格式的。
                     success: function () {
                         if (id === 1) {
-                            alert('已启动服务！')
+                            alert('已启动服务！');
                             lable[vid[1]].innerText = 1;
                             btn[vid[1]].innerHTML = "停止";
                             btn[vid[1]].style.backgroundColor = "red";
@@ -314,7 +382,7 @@ var control = function () {
                     error: function () {
                         alert("请求失败");
                     }
-                })
+                });
                 function buildJson(data) {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
@@ -341,7 +409,7 @@ var control = function () {
                     dataType: "json", //json格式，后台返回的数据为json格式的。
                     success: function () {
                         if (id === 1) {
-                            alert('已停止服务！')
+                            alert('已停止服务！');
                             lable[vid[1]].innerText = 0;
                             btn[vid[1]].innerHTML = "启动";
                             btn[vid[1]].style.backgroundColor = "green";
@@ -352,7 +420,7 @@ var control = function () {
                     error: function () {
                         alert("请求失败");
                     }
-                })
+                });
                 function buildJson(data) {
                     var std = JSON.stringify({});
                     var stdTemplate = JSON.parse(std);
@@ -367,6 +435,7 @@ var control = function () {
 //刷新
 $(document).ready(function () {
     $("#flush").click(function () {
+        document.cookie = "pp=" + 0;
         call()
     })
 });
@@ -417,4 +486,9 @@ $(document).ready(function () {
         })
     })
 });
-
+document.onkeydown = function (e) {//键盘按键控制
+    e = e || window.event;
+    if ((e.ctrlKey && e.keyCode == 82) || e.keyCode == 116) {
+        document.cookie = 'pp=' + 0;
+    }
+};
